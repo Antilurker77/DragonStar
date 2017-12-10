@@ -45,10 +45,10 @@ Au_Venom::Au_Venom() {
 }
 
 std::string Au_Venom::GetDescription() {
-	std::string damage = "2";
+	std::string damage = "3";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 2.0 * snapshotPower, Attribute::INT, auraOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 3.0 * snapshotPower, Attribute::INT, auraOptions));
 	}
 
 	return "Deals #damage " + damage + " #default poison damage every 1s.";
@@ -56,7 +56,7 @@ std::string Au_Venom::GetDescription() {
 }
 
 void Au_Venom::OnTick() {
-	double dmg = 2.0 * nextTickPower * snapshotPower;
+	double dmg = 3.0 * nextTickPower * snapshotPower;
 	Combat::ScalingAttack(user, target, dmg, Attribute::INT, auraOptions);
 	//messageLog.AddMessage("Venom - Duration: " + std::to_string(durationRemaining));
 }

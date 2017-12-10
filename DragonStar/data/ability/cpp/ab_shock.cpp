@@ -44,10 +44,10 @@ std::vector<sf::Vector3i> Ab_Shock::GetTargetArea(sf::Vector3i selectedTile) {
 }
 
 std::string Ab_Shock::GetDescription() {
-	std::string damage = "15";
+	std::string damage = "23";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 15, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 23.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Electrocute the target, dealing #damage " + damage + " #default lightning\ndamage.";
@@ -55,5 +55,5 @@ std::string Ab_Shock::GetDescription() {
 }
 
 void Ab_Shock::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 15, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 23.0, Attribute::INT, abilityOptions);
 }

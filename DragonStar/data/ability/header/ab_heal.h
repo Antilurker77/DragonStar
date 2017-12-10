@@ -19,6 +19,4 @@ public:
 	std::string GetDescription();
 protected:
 	void execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea);
-
-	const double heal = 30;
 };

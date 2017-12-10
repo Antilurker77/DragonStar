@@ -52,10 +52,10 @@ std::vector<sf::Vector3i> Ab_Splash::GetTargetArea(sf::Vector3i selectedTile) {
 }
 
 std::string Ab_Splash::GetDescription() {
-	std::string damage = "6";
+	std::string damage = "18";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 6, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 18.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Splash water on to a targeted area of radius 1,\ndealing #damage " + damage + " #default water damage.";
@@ -65,6 +65,6 @@ std::string Ab_Splash::GetDescription() {
 
 void Ab_Splash::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	for (size_t i = 0; i < targets.size(); i++) {
-		Combat::ScalingAttack(user, targets[i], 6, Attribute::INT, abilityOptions);
+		Combat::ScalingAttack(user, targets[i], 18.0, Attribute::INT, abilityOptions);
 	}
 }

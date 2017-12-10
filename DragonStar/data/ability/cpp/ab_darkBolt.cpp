@@ -45,10 +45,10 @@ std::vector<sf::Vector3i> Ab_DarkBolt::GetTargetArea(sf::Vector3i selectedTile) 
 }
 
 std::string Ab_DarkBolt::GetDescription() {
-	std::string damage = "28";
+	std::string damage = "40";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 28, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 40.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Shoot a bolt of darkness at the target, dealing\n#damage " + damage + " #default dark damage.";
@@ -56,5 +56,5 @@ std::string Ab_DarkBolt::GetDescription() {
 }
 
 void Ab_DarkBolt::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 28, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 40.0, Attribute::INT, abilityOptions);
 }

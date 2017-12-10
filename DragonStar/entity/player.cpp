@@ -508,7 +508,7 @@ double Player::GetMainHandDamage(bool consumeBuffs) {
 
 	// Unarmed
 	if (equipment[0] == nullptr) {
-		damage = CalcExpDoubleValue(15.0, level);
+		damage = CalcExpDoubleValue(22.5, level);
 		attributeMultiplier = 0.75;
 	}
 	// Weapon Damage

@@ -63,10 +63,10 @@ std::vector<sf::Vector3i> Ab_DragonBreath::GetTargetArea(sf::Vector3i selectedTi
 }
 
 std::string Ab_DragonBreath::GetDescription() {
-	std::string damage = "30";
+	std::string damage = "45";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 30, Attribute::NONE, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 45.0, Attribute::NONE, abilityOptions));
 	}
 
 	std::string desc = "Breathe fire, dealing #damage " + damage + " #default fire damage to all enemies\nin a cone of length 2 in front of you.";
@@ -76,6 +76,6 @@ std::string Ab_DragonBreath::GetDescription() {
 
 void Ab_DragonBreath::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	for (size_t i = 0; i < targets.size(); i++) {
-		Combat::ScalingAttack(user, targets[i], 30, Attribute::NONE, abilityOptions);
+		Combat::ScalingAttack(user, targets[i], 45.0, Attribute::NONE, abilityOptions);
 	}
 }

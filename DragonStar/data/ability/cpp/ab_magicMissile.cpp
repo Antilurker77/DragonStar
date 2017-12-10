@@ -45,10 +45,10 @@ std::vector<sf::Vector3i> Ab_MagicMissile::GetTargetArea(sf::Vector3i selectedTi
 }
 
 std::string Ab_MagicMissile::GetDescription() {
-	std::string damage = "20";
+	std::string damage = "30";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 20, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 30.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Shoot a missile of arcane energy at the target,\ndealing #damage " + damage + " #default arcane damage.";
@@ -56,5 +56,5 @@ std::string Ab_MagicMissile::GetDescription() {
 }
 
 void Ab_MagicMissile::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 20, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 30.0, Attribute::INT, abilityOptions);
 }

@@ -44,10 +44,10 @@ std::vector<sf::Vector3i> Ab_FlameBolt::GetTargetArea(sf::Vector3i selectedTile)
 }
 
 std::string Ab_FlameBolt::GetDescription() {
-	std::string damage = "25";
+	std::string damage = "35";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 25.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 35.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Shoot a bolt of fire at the target, dealing\n#damage " + damage + " #default fire damage.";
@@ -55,5 +55,5 @@ std::string Ab_FlameBolt::GetDescription() {
 }
 
 void Ab_FlameBolt::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 25.0, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 35.0, Attribute::INT, abilityOptions);
 }

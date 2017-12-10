@@ -44,12 +44,12 @@ std::vector<sf::Vector3i> Ab_Venom::GetTargetArea(sf::Vector3i selectedTile) {
 }
 
 std::string Ab_Venom::GetDescription() {
-	std::string mainDamage = "6";
-	std::string dotDamage = "2";
+	std::string mainDamage = "9";
+	std::string dotDamage = "3";
 
 	if (user != nullptr) {
-		mainDamage = std::to_string(Combat::ScalingAttackEstimate(user, 6, Attribute::INT, abilityOptions));
-		dotDamage = std::to_string(Combat::ScalingAttackEstimate(user, 2, Attribute::INT, abilityOptions));
+		mainDamage = std::to_string(Combat::ScalingAttackEstimate(user, 9.0, Attribute::INT, abilityOptions));
+		dotDamage = std::to_string(Combat::ScalingAttackEstimate(user, 3.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Lob a ball of venom at the target, dealing #damage " + mainDamage +
@@ -59,6 +59,6 @@ std::string Ab_Venom::GetDescription() {
 }
 
 void Ab_Venom::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 6, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 9.0, Attribute::INT, abilityOptions);
 	Combat::AddAuraStack(user, targets[0], AuraID::VENOM);
 }

@@ -14,17 +14,17 @@ En_TestMage::En_TestMage() {
 
 	creatureType = CreatureType::HUMANOID;
 
-	baseHP = 90;
-	baseMP = 180;
+	baseHP = 135;
+	baseMP = 360;
 	baseSP = 80;
 
-	baseSTR = 12;
-	baseDEX = 15;
-	baseINT = 24;
-	baseWIS = 19;
+	baseSTR = 18;
+	baseDEX = 22;
+	baseINT = 32;
+	baseWIS = 28;
 
 	baseVIT = 100;
-	baseArmor = 12;
+	baseArmor = 15;
 
 	canFly = false;
 	canSwim = false;
@@ -42,8 +42,8 @@ En_TestMage::En_TestMage() {
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
-	baseGold = 8u;
-	baseEXP = 125u;
+	baseGold = 20u;
+	baseEXP = 40u;
 	lootPoints = 80u;
 
 	statMods = { StatMod(StatModType::RESISTANCE, 0.1, { Category::SPELL }) };

@@ -14,14 +14,14 @@ En_TestAssassin::En_TestAssassin() {
 
 	creatureType = CreatureType::HUMANOID;
 
-	baseHP = 110;
-	baseMP = 20;
+	baseHP = 240;
+	baseMP = 40;
 	baseSP = 100;
 
-	baseSTR = 14;
-	baseDEX = 25;
-	baseINT = 17;
-	baseWIS = 18;
+	baseSTR = 21;
+	baseDEX = 37;
+	baseINT = 25;
+	baseWIS = 26;
 
 	baseVIT = 80;
 	baseArmor = 25;
@@ -34,16 +34,16 @@ En_TestAssassin::En_TestAssassin() {
 
 	attackType = EquipType::DAGGER;
 	attackElement = { Element::PHYSICAL };
-	attackDamage = 18;
+	attackDamage = 27;
 	attackMod = 0.9;
 
 	offHandAttackType = EquipType::DAGGER;
 	offHandAttackElement = { Element::PHYSICAL };
-	offHandAttackDamage = 18;
+	offHandAttackDamage = 27;
 	offHandAttackMod = 0.9;
 
-	baseGold = 5u;
-	baseEXP = 125u;
+	baseGold = 15u;
+	baseEXP = 30u;
 	lootPoints = 80u;
 
 	statMods = { StatMod(StatModType::CRIT_CHANCE, 0.2), StatMod(StatModType::DODGE_CHANCE, 0.1) };

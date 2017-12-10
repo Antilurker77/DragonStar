@@ -41,12 +41,12 @@ std::vector<sf::Vector3i> Ab_MendWounds::GetTargetArea(sf::Vector3i selectedTile
 }
 
 std::string Ab_MendWounds::GetDescription() {
-	std::string mainHeal = "20";
-	std::string hotHeal = "4";
+	std::string mainHeal = "35";
+	std::string hotHeal = "5";
 
 	if (user != nullptr) {
-		mainHeal = std::to_string(Combat::ScalingHealEstimate(user, 20, Attribute::HP, abilityOptions));
-		hotHeal = std::to_string(Combat::ScalingHealEstimate(user, 4, Attribute::HP, abilityOptions));
+		mainHeal = std::to_string(Combat::ScalingHealEstimate(user, 35.0, Attribute::HP, abilityOptions));
+		hotHeal = std::to_string(Combat::ScalingHealEstimate(user, 5.0, Attribute::HP, abilityOptions));
 	}
 
 	std::string desc = "Heal an ally with natural energies, restoring #heal " + mainHeal + " #default HP\nplus an additional #heal "
@@ -55,6 +55,6 @@ std::string Ab_MendWounds::GetDescription() {
 }
 
 void Ab_MendWounds::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingHeal(user, targets[0], 20, Attribute::HP, abilityOptions);
+	Combat::ScalingHeal(user, targets[0], 35.0, Attribute::HP, abilityOptions);
 	Combat::AddAuraStack(user, targets[0], AuraID::MEND_WOUNDS);
 }

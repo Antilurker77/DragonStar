@@ -14,7 +14,7 @@ En_TargetDummy::En_TargetDummy() {
 
 	creatureType = CreatureType::CONSTRUCT;
 
-	baseHP = 10000;
+	baseHP = 5000;
 	baseMP = 250;
 	baseSP = 100;
 
@@ -24,7 +24,7 @@ En_TargetDummy::En_TargetDummy() {
 	baseWIS = 10;
 	baseVIT = 100;
 
-	baseArmor = 40;
+	baseArmor = 50;
 
 	canFly = false;
 	canSwim = false;
@@ -43,7 +43,7 @@ En_TargetDummy::En_TargetDummy() {
 	offHandAttackMod = 0;
 
 	baseGold = 70u;
-	baseEXP = 30u;
+	baseEXP = 100u;
 	lootPoints = 450u;
 
 	abilities = { };

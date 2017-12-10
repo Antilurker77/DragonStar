@@ -77,7 +77,7 @@ static void applyArmor(double& value, ActorPtr& user, ActorPtr& target, EventOpt
 	targetArmor = targetArmor * (1.0 - (target->GetArmorPen(eventOptions, true) + eventOptions.BonusArmorPen));
 
 	if (targetArmor > 0) {
-		armorMitigation = (double)targetArmor / (double)(targetArmor + CalcExpStat(40, user->GetLevel()));
+		armorMitigation = (double)targetArmor / (double)(targetArmor + CalcExpStat(50, user->GetLevel()));
 	}
 
 	value = value * (1.0 - armorMitigation);
@@ -283,7 +283,7 @@ EventResult Combat::ScalingAttack(ActorPtr& user, ActorPtr& target, double baseD
 	eventResult.DidDoubleStrike = false;
 
 	double damage = baseDamage;
-	double scaleFactor = baseDamage / 20.0;
+	double scaleFactor = baseDamage / 30.0;
 	double attributeValue = 0;
 
 	// todo: get attribute values
@@ -461,7 +461,7 @@ EventResult Combat::ScalingHeal(ActorPtr& user, ActorPtr& target, double healAmo
 	eventResult.DidDoubleStrike = false;
 
 	double heal = healAmount;
-	double scaleFactor = healAmount / 20.0;
+	double scaleFactor = healAmount / 30.0;
 	double attributeValue = user->GetWIS(true);
 
 	// Crit roll.
@@ -629,7 +629,7 @@ int Combat::WeaponAttackEstimate(ActorPtr& user, double multiplier, bool isOffHa
 
 int Combat::ScalingAttackEstimate(ActorPtr& user, double baseDamage, Attribute attribute, EventOptions eventOptions) {
 	double damage = baseDamage;
-	double scaleFactor = baseDamage / 20.0;
+	double scaleFactor = baseDamage / 30.0;
 	double attributeValue = 0;
 
 	// todo: get attribute values
@@ -661,7 +661,7 @@ int Combat::ScalingAttackEstimate(ActorPtr& user, double baseDamage, Attribute a
 
 int Combat::ScalingHealEstimate(ActorPtr & user, double healAmount, Attribute attribute, EventOptions eventOptions) {
 	double heal = healAmount;
-	double scaleFactor = healAmount / 20.0;
+	double scaleFactor = healAmount / 30.0;
 	double attributeValue = user->GetWIS(true);
 
 	// Damage Calculation

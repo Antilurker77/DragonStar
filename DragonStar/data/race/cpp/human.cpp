@@ -21,16 +21,16 @@ Human::Human(){
 		StatMod(StatModType::GOLD_FIND, 0.1, {Category::ANY}) 
 	});
 
-	baseEXPPerLevel = 1000;
+	baseEXPPerLevel = 300;
 
-	baseHP = 200;
-	baseMP = 100;
+	baseHP = 400;
+	baseMP = 200;
 	baseSP = 100;
 
-	baseSTR = 20;
-	baseDEX = 20;
-	baseINT = 20;
-	baseWIS = 20;
+	baseSTR = 30;
+	baseDEX = 30;
+	baseINT = 30;
+	baseWIS = 30;
 
 	baseVIT = 100;
 

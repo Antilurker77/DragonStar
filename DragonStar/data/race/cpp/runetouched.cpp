@@ -22,16 +22,16 @@ Runetouched::Runetouched() {
 		StatMod(StatModType::CRIT_CHANCE, 0.05, { Category::SPELL })
 	});
 
-	baseEXPPerLevel = 1000;
+	baseEXPPerLevel = 300;
 
-	baseHP = 200;
-	baseMP = 120;
+	baseHP = 400;
+	baseMP = 240;
 	baseSP = 100;
 
-	baseSTR = 24;
-	baseDEX = 18;
-	baseINT = 24;
-	baseWIS = 15;
+	baseSTR = 36;
+	baseDEX = 25;
+	baseINT = 36;
+	baseWIS = 21;
 
 	baseVIT = 100;
 

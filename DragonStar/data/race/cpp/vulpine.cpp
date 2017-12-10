@@ -22,16 +22,16 @@ Vulpine::Vulpine(){
 		StatMod(StatModType::RESISTANCE, 0.1, { Category::ANY }, { Element::WATER, Element::WIND, Element::EARTH } )
 	});
 
-	baseEXPPerLevel = 1000;
+	baseEXPPerLevel = 300;
 
-	baseHP = 160;
-	baseMP = 115;
+	baseHP = 340;
+	baseMP = 230;
 	baseSP = 100;
 
-	baseSTR = 16;
-	baseDEX = 23;
-	baseINT = 22;
-	baseWIS = 25;
+	baseSTR = 24;
+	baseDEX = 34;
+	baseINT = 33;
+	baseWIS = 37;
 
 	baseVIT = 100;
 

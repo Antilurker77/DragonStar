@@ -14,17 +14,17 @@ En_TestEnemy::En_TestEnemy() {
 
 	creatureType = CreatureType::HUMANOID;
 
-	baseHP = 150;
+	baseHP = 250;
 	baseMP = 30;
 	baseSP = 100;
 
-	baseSTR = 16;
-	baseDEX = 16;
-	baseINT = 16;
-	baseWIS = 16;
+	baseSTR = 24;
+	baseDEX = 24;
+	baseINT = 24;
+	baseWIS = 24;
 	baseVIT = 100;
 
-	baseArmor = 23;
+	baseArmor = 30;
 
 	canFly = false;
 	canSwim = false;
@@ -43,7 +43,7 @@ En_TestEnemy::En_TestEnemy() {
 	offHandAttackMod = 0;
 
 	baseGold = 15u;
-	baseEXP = 10u;
+	baseEXP = 30u;
 	lootPoints = 100u;
 
 	abilities = { AbilityID::RACIAL_DRAGON_BREATH };
