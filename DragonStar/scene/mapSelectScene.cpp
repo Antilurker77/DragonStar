@@ -46,10 +46,10 @@ void MapSelectScene::ReadInput(sf::RenderWindow& window) {
 			window.close();
 			break;
 		case sf::Event::MouseButtonReleased:
-			if (ev.mouseButton.button == sf::Mouse::Left) {
+			if (ev.mouseButton.button == sf::Mouse::Left && clickBuffer == 0.f) {
 				leftClick = true;
 			}
-			if (ev.mouseButton.button == sf::Mouse::Right) {
+			if (ev.mouseButton.button == sf::Mouse::Right && clickBuffer == 0.f) {
 				rightClick = true;
 			}
 			break;
@@ -69,6 +69,11 @@ GameState MapSelectScene::Update(float secondsPerUpdate) {
 	GameState gameState = GameState::MAP_SELECT;
 	displayFormationTooltip = false;
 
+	clickBuffer -= secondsPerUpdate;
+	if (clickBuffer < 0.f) {
+		clickBuffer = 0.f;
+	}
+
 	if (displayWindow == false) {
 		for (size_t i = 0; i < nodeRects.size(); i++) {
 			if (leftClick == true && nodeRects[i].getGlobalBounds().contains(windowMousePos.x, windowMousePos.y)) {
@@ -76,12 +81,15 @@ GameState MapSelectScene::Update(float secondsPerUpdate) {
 					selectedMapNode = maps[currentDomain][i];
 					currentMap = i;
 					gameState = GameState::BATTLE;
+					break;
 				}
 				else if (!displayMaps && isReachableDomain(i)) {
 					currentDomain = i;
 					currentMapStep = 0;
 					displayMaps = true;
+					clickBuffer = 0.25f;
 					buildVertexArray(maps[currentDomain]);
+					break;
 				}
 			}
 			else if (nodeRects[i].getGlobalBounds().contains(windowMousePos.x, windowMousePos.y)) {
@@ -149,6 +157,11 @@ void MapSelectScene::Render(sf::RenderTarget& window, float timeRatio) {
 	else if (displayAbilityWindow) {
 		abilityWindow.Render(window);
 	}
+
+}
+
+void MapSelectScene::SetClickBuffer(float seconds) {
+	clickBuffer = seconds;
 }
 
 void MapSelectScene::SetSeed(uint64_t seed) {
@@ -239,7 +252,7 @@ void MapSelectScene::buildDomains() {
 			d.NodesInStep = nodesPerStep[i];
 			// node connections
 			std::vector<size_t> connections;
-			if (i < 7) {
+			if (i < 5) {
 				//connections.push_back(i + 1);
 				size_t nodeNumber = domains.size();
 				connections = calcConnections(nodeNumber, nodesPerStep, i, j);
@@ -262,6 +275,7 @@ void MapSelectScene::buildMaps(size_t index, uint64_t seed) {
 
 	std::vector<FormationWeight> commonFormations = Weight::GetCommonFaWeights(0);
 	std::vector<FormationWeight> uniqueFormations = Weight::GetUniqueFaWeights(0);
+	double uniqueBLP = 0.1; // Base 10% unique spawn chance.
 
 	// remove uniques that have already spawned
 	Weight::RemoveUniqueFa(uniqueFormations, spawnedUniques);
@@ -285,14 +299,16 @@ void MapSelectScene::buildMaps(size_t index, uint64_t seed) {
 			// determine formation ID
 
 			// determine if unique
-			if (uniqueFormations.size() > 0 && Random::RandDouble(mt, 0.0, 1.0) <= 0.30) {
+			if (uniqueFormations.size() > 0 && Random::RandDouble(mt, 0.0, 1.0) <= uniqueBLP) {
 				m.FormationID = Weight::GetRandomFa(mt, uniqueFormations);
 				m.IsUnique = true;
 				spawnedUniques.push_back(m.FormationID);
 				Weight::RemoveUniqueFa(uniqueFormations, m.FormationID);
+				uniqueBLP = 0.1; // Reset BLP
 			}
 			else {
 				m.FormationID = Weight::GetRandomFa(mt, commonFormations);
+				uniqueBLP += 0.1; // When we fail to spawn a unique, increase the chance the next node will be unique.
 			}
 
 			m.Seed = Random::RandSeed(mt);
@@ -514,11 +530,11 @@ std::vector<size_t> MapSelectScene::calcConnections(size_t nodeNumber, std::vect
 	std::vector<size_t> connections;
 	
 	switch (nodesPerStep[i + 1]) {
-		// next step has one node
+	// next step has one node
 	case 1:
 		connections.push_back(nodeNumber + nodesPerStep[i] - j);
 		break;
-		// next step has two nodes
+	// next step has two nodes
 	case 2:
 		switch (nodesPerStep[i]) {
 		case 1:
@@ -566,7 +582,7 @@ std::vector<size_t> MapSelectScene::calcConnections(size_t nodeNumber, std::vect
 			break;
 		}
 		break;
-		// next step has 3 nodes
+	// next step has 3 nodes
 	case 3:
 		switch (nodesPerStep[i]) {
 		case 1:
@@ -603,7 +619,7 @@ std::vector<size_t> MapSelectScene::calcConnections(size_t nodeNumber, std::vect
 			break;
 		}
 		break;
-		// next step has 4 nodes
+	// next step has 4 nodes
 	case 4:
 		switch (nodesPerStep[i]) {
 		case 1:

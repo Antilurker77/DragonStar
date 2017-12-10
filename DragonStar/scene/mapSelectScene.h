@@ -43,6 +43,9 @@ public:
 	// Renders the UI to the screen.
 	void Render(sf::RenderTarget& window, float timeRatio);
 
+	// Causes the scene to ignore click inputs for a given number of seconds.
+	void SetClickBuffer(float seconds);
+
 	// Sets the seed and rebuilds the domains.
 	void SetSeed(uint64_t seed);
 
@@ -92,6 +95,7 @@ private:
 	sf::Vector2f worldMousePos;
 	bool leftClick;
 	bool rightClick;
+	float clickBuffer = 0.f; // Buffer for click input. Stops clicks from immediately firing off on scene change.
 
 	Button equipButton;
 	Button abilityButton;

@@ -99,6 +99,7 @@ void Game::update(float secondsPerUpdate){
 		if (gameState == GameState::MAP_SELECT) {
 			mapSelectScene.SetSeed(partyCreationScene.GetSeed());
 			mapSelectScene.SetParty(partyCreationScene.GetParty());
+			mapSelectScene.SetClickBuffer(0.05f);
 		}
 		break;
 	case GameState::MAP_SELECT:
@@ -115,6 +116,7 @@ void Game::update(float secondsPerUpdate){
 		// transistion from battle back to map selection
 		if (gameState == GameState::MAP_SELECT) {
 			mapSelectScene.CompleteMap(battleScene.GetItemsAwarded(), battleScene.GetGoldAwared());
+			mapSelectScene.SetClickBuffer(0.4f);
 		}
 
 		break;
