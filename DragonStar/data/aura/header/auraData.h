@@ -14,6 +14,7 @@
 #include "au_icicle.h"
 #include "au_mendWounds.h"
 #include "au_prismaticBolt.h"
+#include "au_rendingSlash.h"
 #include "au_venom.h"
 
 #pragma once

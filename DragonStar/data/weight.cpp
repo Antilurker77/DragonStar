@@ -208,6 +208,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 		switch (tierPicked) {
 		case 1:
 			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
+			weights.push_back({ AbilityID::RENDING_SLASH, 1.00 });
 			weights.push_back({ AbilityID::FLAME_SLASH, 1.00 });
 			break;
 		case 2:
@@ -223,6 +224,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 		switch (tierPicked) {
 		case 1:
 			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
+			weights.push_back({ AbilityID::RENDING_SLASH, 1.00 });
 			break;
 		case 2:
 			break;
@@ -251,6 +253,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 		switch (tierPicked) {
 		case 1:
 			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
+			weights.push_back({ AbilityID::RENDING_SLASH, 1.00 });
 			break;
 		case 2:
 			break;
@@ -295,6 +298,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 			weights.push_back({ AbilityID::PRISMATIC_BOLT, 1.00 });
 			weights.push_back({ AbilityID::ELEMENTAL_ENERGY, 1.00 });
 			weights.push_back({ AbilityID::MAGIC_MISSILE, 1.00 });
+			weights.push_back({ AbilityID::ARCANE_BLAST, 1.00 });
 			weights.push_back({ AbilityID::FLAME_BOLT, 1.00 });
 			weights.push_back({ AbilityID::ICICLE, 1.00 });
 			weights.push_back({ AbilityID::SHOCK, 1.00 });

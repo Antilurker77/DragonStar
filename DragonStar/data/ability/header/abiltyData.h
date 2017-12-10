@@ -6,6 +6,7 @@
 //
 // ==================================
 
+#include "ab_arcaneBlast.h"
 #include "ab_attack.h"
 #include "ab_commandingShout.h"
 #include "ab_darkBolt.h"
@@ -21,6 +22,7 @@
 #include "ab_mendWounds.h"
 #include "ab_powerStrike.h"
 #include "ab_prismaticBolt.h"
+#include "ab_rendingSlash.h"
 #include "ab_shock.h"
 #include "ab_splash.h"
 #include "ab_venom.h"

@@ -318,6 +318,15 @@
     <ClCompile Include="data\equipment\cpp\eq_ring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_arcaneBlast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_rendingSlash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\aura\cpp\au_rendingSlash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -663,6 +672,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\equipment\header\eq_ring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_arcaneBlast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_rendingSlash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\aura\header\au_rendingSlash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

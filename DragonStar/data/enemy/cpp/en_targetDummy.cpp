@@ -34,8 +34,8 @@ En_TargetDummy::En_TargetDummy() {
 
 	attackType = EquipType::UNARMED_STR;
 	attackElement = { Element::PHYSICAL };
-	attackDamage = 0;
-	attackMod = 2.0;
+	attackDamage = 30;
+	attackMod = 1.0;
 
 	offHandAttackType = EquipType::NONE;
 	offHandAttackElement = { Element::NONE };
