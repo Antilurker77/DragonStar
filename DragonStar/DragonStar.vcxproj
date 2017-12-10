@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{957049CB-79E5-4649-9555-A3E7CEC80A4D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DragonStar</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\SFML-2.4.2\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\SFML-2.4.2\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib</AdditionalDependencies>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\SFML-2.4.2\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\SFML-2.4.2\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main.lib;sfml-system.lib;sfml-window.lib;sfml-graphics.lib;sfml-audio.lib;sfml-network.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="command\abilityCommand.cpp" />
+    <ClCompile Include="command\command.cpp" />
+    <ClCompile Include="command\moveCommand.cpp" />
+    <ClCompile Include="command\waitCommand.cpp" />
+    <ClCompile Include="core\camera.cpp" />
+    <ClCompile Include="core\combat.cpp" />
+    <ClCompile Include="core\random.cpp" />
+    <ClCompile Include="data\ability.cpp" />
+    <ClCompile Include="data\abilityScroll.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_commandingShout.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_darkBolt.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_elementalEnergy.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_flameBolt.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_flameSlash.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_gale.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_healingRain.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_icicle.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_mendWounds.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_powerStrike.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_prismaticBolt.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_attack.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_dragonBreath.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_heal.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_magicMissile.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_shock.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_splash.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_venom.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_waterBolt.cpp" />
+    <ClCompile Include="data\aura.cpp" />
+    <ClCompile Include="data\aura\cpp\au_commandingShout.cpp" />
+    <ClCompile Include="data\aura\cpp\au_elementalEnergy.cpp" />
+    <ClCompile Include="data\aura\cpp\au_flameSlash.cpp" />
+    <ClCompile Include="data\aura\cpp\au_gale.cpp" />
+    <ClCompile Include="data\aura\cpp\au_healingRain.cpp" />
+    <ClCompile Include="data\aura\cpp\au_icicle.cpp" />
+    <ClCompile Include="data\aura\cpp\au_mendWounds.cpp" />
+    <ClCompile Include="data\aura\cpp\au_prismaticBolt.cpp" />
+    <ClCompile Include="data\aura\cpp\au_venom.cpp" />
+    <ClCompile Include="data\damageHeal.cpp" />
+    <ClCompile Include="data\enemyInfo.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_targetDummy.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_testAssassin.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_testEnemy.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_testMage.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_testUnique.cpp" />
+    <ClCompile Include="data\equipment.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_ring.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_ironSpear.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_neck.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_omegaRing.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_silkRobes.cpp" />
+    <ClCompile Include="data\factory.cpp" />
+    <ClCompile Include="data\formation.cpp" />
+    <ClCompile Include="data\formation\cpp\fa_testFormations.cpp" />
+    <ClCompile Include="data\dataString.cpp" />
+    <ClCompile Include="data\item.cpp" />
+    <ClCompile Include="data\map.cpp" />
+    <ClCompile Include="data\map\cpp\mp_testArena.cpp" />
+    <ClCompile Include="data\map\cpp\mp_testArenaB.cpp" />
+    <ClCompile Include="data\playerClass.cpp" />
+    <ClCompile Include="data\playerClass\playerClassData.cpp" />
+    <ClCompile Include="data\race.cpp" />
+    <ClCompile Include="data\race\cpp\human.cpp" />
+    <ClCompile Include="data\race\cpp\runetouched.cpp" />
+    <ClCompile Include="data\race\cpp\vulpine.cpp" />
+    <ClCompile Include="data\statMod.cpp" />
+    <ClCompile Include="data\tileset.cpp" />
+    <ClCompile Include="data\map\cpp\mp_basicDungeon.cpp" />
+    <ClCompile Include="data\map\cpp\mp_testMap.cpp" />
+    <ClCompile Include="data\map\cpp\mp_testMapXL.cpp" />
+    <ClCompile Include="data\map\cpp\mp_testMapXS.cpp" />
+    <ClCompile Include="data\tileset\cpp\testTileset.cpp" />
+    <ClCompile Include="data\weight.cpp" />
+    <ClCompile Include="entity\actor.cpp" />
+    <ClCompile Include="core\assetManager.cpp" />
+    <ClCompile Include="entity\actorFilter.cpp" />
+    <ClCompile Include="entity\enemy.cpp" />
+    <ClCompile Include="entity\player.cpp" />
+    <ClCompile Include="entity\statMath.cpp" />
+    <ClCompile Include="entity\entity.cpp" />
+    <ClCompile Include="core\game.cpp" />
+    <ClCompile Include="hex\hexMath.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="scene\battleScene.cpp" />
+    <ClCompile Include="scene\mainMenuScene.cpp" />
+    <ClCompile Include="scene\mapSelectScene.cpp" />
+    <ClCompile Include="scene\partyCreationScene.cpp" />
+    <ClCompile Include="ui\abilityBar.cpp" />
+    <ClCompile Include="ui\abilityTooltip.cpp" />
+    <ClCompile Include="ui\abilityWindow.cpp" />
+    <ClCompile Include="ui\auraTooltip.cpp" />
+    <ClCompile Include="ui\button.cpp" />
+    <ClCompile Include="ui\cursorActorHUD.cpp" />
+    <ClCompile Include="ui\equipWindow.cpp" />
+    <ClCompile Include="ui\formationTooltip.cpp" />
+    <ClCompile Include="ui\inspectWindow.cpp" />
+    <ClCompile Include="ui\itemTooltip.cpp" />
+    <ClCompile Include="ui\messageLog.cpp" />
+    <ClCompile Include="ui\richText.cpp" />
+    <ClCompile Include="ui\victoryWindow.cpp" />
+    <ClCompile Include="ui\window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="command\abilityCommand.h" />
+    <ClInclude Include="command\command.h" />
+    <ClInclude Include="command\moveCommand.h" />
+    <ClInclude Include="command\waitCommand.h" />
+    <ClInclude Include="core\camera.h" />
+    <ClInclude Include="core\combat.h" />
+    <ClInclude Include="core\gameState.h" />
+    <ClInclude Include="core\random.h" />
+    <ClInclude Include="core\settings.h" />
+    <ClInclude Include="data\ability.h" />
+    <ClInclude Include="data\abilityScroll.h" />
+    <ClInclude Include="data\ability\header\abiltyData.h" />
+    <ClInclude Include="data\ability\header\ab_commandingShout.h" />
+    <ClInclude Include="data\ability\header\ab_darkBolt.h" />
+    <ClInclude Include="data\ability\header\ab_elementalEnergy.h" />
+    <ClInclude Include="data\ability\header\ab_flameBolt.h" />
+    <ClInclude Include="data\ability\header\ab_flameSlash.h" />
+    <ClInclude Include="data\ability\header\ab_gale.h" />
+    <ClInclude Include="data\ability\header\ab_icicle.h" />
+    <ClInclude Include="data\ability\header\ab_mendWounds.h" />
+    <ClInclude Include="data\ability\header\ab_powerStrike.h" />
+    <ClInclude Include="data\ability\header\ab_prismaticBolt.h" />
+    <ClInclude Include="data\ability\header\ab_attack.h" />
+    <ClInclude Include="data\ability\header\ab_dragonBreath.h" />
+    <ClInclude Include="data\ability\header\ab_heal.h" />
+    <ClInclude Include="data\ability\header\ab_magicMissile.h" />
+    <ClInclude Include="data\ability\header\ab_shock.h" />
+    <ClInclude Include="data\ability\header\ab_splash.h" />
+    <ClInclude Include="data\ability\header\ab_venom.h" />
+    <ClInclude Include="data\ability\header\ab_healingRain.h" />
+    <ClInclude Include="data\ability\header\ab_waterBolt.h" />
+    <ClInclude Include="data\aura.h" />
+    <ClInclude Include="data\aura\header\auraData.h" />
+    <ClInclude Include="data\aura\header\au_commandingShout.h" />
+    <ClInclude Include="data\aura\header\au_elementalEnergy.h" />
+    <ClInclude Include="data\aura\header\au_flameSlash.h" />
+    <ClInclude Include="data\aura\header\au_gale.h" />
+    <ClInclude Include="data\aura\header\au_healingRain.h" />
+    <ClInclude Include="data\aura\header\au_icicle.h" />
+    <ClInclude Include="data\aura\header\au_mendWounds.h" />
+    <ClInclude Include="data\aura\header\au_prismaticBolt.h" />
+    <ClInclude Include="data\aura\header\au_venom.h" />
+    <ClInclude Include="data\damageHeal.h" />
+    <ClInclude Include="data\enemy\header\en_targetDummy.h" />
+    <ClInclude Include="data\enemy\header\en_testAssassin.h" />
+    <ClInclude Include="data\enemy\header\en_testMage.h" />
+    <ClInclude Include="data\enemy\header\en_testUnique.h" />
+    <ClInclude Include="data\equipment.h" />
+    <ClInclude Include="data\equipment\header\equipmentData.h" />
+    <ClInclude Include="data\equipment\header\eq_ring.h" />
+    <ClInclude Include="data\equipment\header\eq_ironSpear.h" />
+    <ClInclude Include="data\equipment\header\eq_neck.h" />
+    <ClInclude Include="data\equipment\header\eq_omegaRing.h" />
+    <ClInclude Include="data\equipment\header\eq_silkRobes.h" />
+    <ClInclude Include="data\formation.h" />
+    <ClInclude Include="data\formation\header\fa_testFormations.h" />
+    <ClInclude Include="data\formation\header\formationData.h" />
+    <ClInclude Include="data\groundEffect.h" />
+    <ClInclude Include="data\dataString.h" />
+    <ClInclude Include="data\item.h" />
+    <ClInclude Include="data\map\header\mp_testArena.h" />
+    <ClInclude Include="data\map\header\mp_testArenaB.h" />
+    <ClInclude Include="data\playerClass.h" />
+    <ClInclude Include="data\playerClass\playerClassData.h" />
+    <ClInclude Include="data\race\header\runetouched.h" />
+    <ClInclude Include="data\weight.h" />
+    <ClInclude Include="entity\actorFilter.h" />
+    <ClInclude Include="entity\statMath.h" />
+    <ClInclude Include="data\enemyInfo.h" />
+    <ClInclude Include="data\enemy\header\enemyData.h" />
+    <ClInclude Include="data\enemy\header\en_testEnemy.h" />
+    <ClInclude Include="data\factory.h" />
+    <ClInclude Include="data\id.h" />
+    <ClInclude Include="data\map.h" />
+    <ClInclude Include="data\race.h" />
+    <ClInclude Include="data\race\header\raceData.h" />
+    <ClInclude Include="data\race\header\human.h" />
+    <ClInclude Include="data\race\header\vulpine.h" />
+    <ClInclude Include="data\statMod.h" />
+    <ClInclude Include="data\tile.h" />
+    <ClInclude Include="data\tileset.h" />
+    <ClInclude Include="data\map\header\mp_basicDungeon.h" />
+    <ClInclude Include="data\map\header\mapData.h" />
+    <ClInclude Include="data\map\header\mp_testMap.h" />
+    <ClInclude Include="data\map\header\mp_testMapXL.h" />
+    <ClInclude Include="data\map\header\mp_testMapXS.h" />
+    <ClInclude Include="data\tileset\header\testTileset.h" />
+    <ClInclude Include="data\tileset\header\tilesetData.h" />
+    <ClInclude Include="entity\actor.h" />
+    <ClInclude Include="core\assetManager.h" />
+    <ClInclude Include="entity\enemy.h" />
+    <ClInclude Include="entity\entity.h" />
+    <ClInclude Include="core\game.h" />
+    <ClInclude Include="entity\player.h" />
+    <ClInclude Include="hex\hexMath.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="scene\battleScene.h" />
+    <ClInclude Include="scene\mainMenuScene.h" />
+    <ClInclude Include="scene\mapNode.h" />
+    <ClInclude Include="scene\mapSelectScene.h" />
+    <ClInclude Include="scene\partyCreationScene.h" />
+    <ClInclude Include="ui\abilityBar.h" />
+    <ClInclude Include="ui\abilityTooltip.h" />
+    <ClInclude Include="ui\abilityWindow.h" />
+    <ClInclude Include="ui\auraTooltip.h" />
+    <ClInclude Include="ui\button.h" />
+    <ClInclude Include="ui\cursorActorHUD.h" />
+    <ClInclude Include="ui\equipWindow.h" />
+    <ClInclude Include="ui\formationTooltip.h" />
+    <ClInclude Include="ui\inspectWindow.h" />
+    <ClInclude Include="ui\itemTooltip.h" />
+    <ClInclude Include="ui\messageLog.h" />
+    <ClInclude Include="ui\richText.h" />
+    <ClInclude Include="ui\victoryWindow.h" />
+    <ClInclude Include="ui\window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="gfx\dungeon\dungeon_test.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
