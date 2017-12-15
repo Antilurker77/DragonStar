@@ -430,10 +430,18 @@ std::vector<sf::Vector3i> BattleScene::Pathfind(ActorPtr& actor, sf::Vector3i de
 	sf::Vector3i start = actor->GetHexPosition();
 	bool flying = actor->CanFly();
 	bool swimming = actor->CanSwim();
+	bool isPlayer = actor->IsPlayer();
+	int moves = 2;
 
 	frontier.push_back(std::pair<sf::Vector3i, double>(start, 0));
 	cameFrom[start] = start;
 	costSoFar[start] = 0;
+
+	enum class LineType {
+		NegativeOnly,
+		PositiveOnly,
+		Both
+	};
 
 	while (!frontier.empty()) {
 		// sorts the frontier
@@ -449,33 +457,130 @@ std::vector<sf::Vector3i> BattleScene::Pathfind(ActorPtr& actor, sf::Vector3i de
 			break;
 		}
 
+
 		// Get neighbors of the current tile the actor can actually travel to.
 		// Don't include tiles that are occupied by another actor.
-		std::vector<sf::Vector3i> neighbors = Hex::GetHexNeighbors(current);
+		std::vector<sf::Vector3i> neighbors = Hex::GetHexNeighbors(current, moves);
 		std::vector<sf::Vector3i> goodNeighbors;
-		for (unsigned int i = 0; i < neighbors.size(); i++) {
+		std::vector<LineType> neighborLineType;
+
+		for (size_t i = 0; i < neighbors.size(); i++) {
 			Tile tile = currentMap->GetTile(neighbors[i]);
-			if (tile.IsPassible == true || (tile.IsWater == true && swimming == true) || (tile.IsFlyable == true && flying == true)) {
+			if (IsTileWalkable(neighbors[i], flying, swimming)) {
 				if (IsTileOccupied(neighbors[i]) == false) {
-					goodNeighbors.push_back(neighbors[i]);
+					// Need to test offsets for both lines.
+					auto line = Hex::HexLine(current, neighbors[i], false);
+					bool passableN = true;
+					for (auto t : line) {
+						if (t != current && t != neighbors[i]) {
+							if (IsTileWalkable(t, flying, swimming)) {
+								auto actorOnTile = GetActorAtHex(t);
+								if (actorOnTile != nullptr) {
+									bool actorOnTileFlying = actorOnTile->CanFly();
+									bool actorOnTilePlayer = actorOnTile->IsPlayer();
+
+									// Flying actors can fly over non-flying actors.
+									if (flying && !actorOnTileFlying) {
+										passableN = true;
+									}
+									// Can pass by allies.
+									else if (isPlayer == actorOnTilePlayer) {
+										passableN = true;
+									}
+									else {
+										passableN = false;
+										break;
+									}
+								}
+							}
+							else {
+								passableN = false;
+								break;
+							}
+						}
+					}
+
+					// Check other line.
+					bool passableP = true;
+					line = Hex::HexLine(current, neighbors[i], true);
+					for (auto t : line) {
+						if (t != current && t != neighbors[i]) {
+							if (IsTileWalkable(t, flying, swimming)) {
+								auto actorOnTile = GetActorAtHex(t);
+								if (actorOnTile != nullptr) {
+									bool actorOnTileFlying = actorOnTile->CanFly();
+									bool actorOnTilePlayer = actorOnTile->IsPlayer();
+
+									// Flying actors can fly over non-flying actors.
+									if (flying && !actorOnTileFlying) {
+										passableP = true;
+									}
+									// Can pass by allies.
+									else if (isPlayer == actorOnTilePlayer) {
+										passableP = true;
+									}
+									else {
+										passableP = false;
+										break;
+									}
+								}
+							}
+							else {
+								passableP = false;
+								break;
+							}
+						}
+					}
+					
+					// Pass on valid offsets.
+					if (passableN || passableP) {
+						goodNeighbors.push_back(neighbors[i]);
+						if (passableN && passableP) {
+							neighborLineType.push_back(LineType::Both);
+						}
+						else if (passableN) {
+							neighborLineType.push_back(LineType::NegativeOnly);
+						}
+						else {
+							neighborLineType.push_back(LineType::PositiveOnly);
+						}
+					}
 				}
 			}
 		}
 
 		// Not even gonna pretend I understand this.
-		for (auto next : goodNeighbors) {
-			double newCost = costSoFar[current] + currentMap->DistanceHeuristic(current, next);
+		for (size_t i = 0; i < goodNeighbors.size(); i++) {
+			auto next = goodNeighbors[i];
+			auto offsets = neighborLineType[i];
+			double newCost = 0.0;
+			bool offset = false;
+
+			// Figure out which offset leads to the cheapest path.
+			if (offsets == LineType::NegativeOnly) {
+				newCost = costSoFar[current] + currentMap->DistanceHeuristic(current, next, false);
+				offset = false;
+			}
+			else if (offsets == LineType::PositiveOnly) {
+				newCost = costSoFar[current] + currentMap->DistanceHeuristic(current, next, true);
+				offset = true;
+			}
+			else {
+				double costN = costSoFar[current] + currentMap->DistanceHeuristic(current, next, false);
+				double costP = costSoFar[current] + currentMap->DistanceHeuristic(current, next, true);
+				newCost = std::min(costN, costP);
+				offset = costN > costP;
+			}
+
 			if (!costSoFar.count(next) || newCost < costSoFar[next]) {
 				costSoFar[next] = newCost;
-				double priority = newCost + currentMap->DistanceHeuristic(next, destination);
+				double priority = newCost + currentMap->DistanceHeuristic(next, destination, offset);
 				cameFrom[next] = current;
 				frontier.push_back(std::pair<sf::Vector3i, double>(next, priority));
 			}
 		}
 
 		frontier.erase(frontier.begin());
-
-
 	}
 
 	// Create the vector and return the path.
@@ -499,13 +604,110 @@ std::vector<sf::Vector3i> BattleScene::Pathfind(ActorPtr& actor, sf::Vector3i de
 	return path;
 }
 
-double BattleScene::GetPathCost(std::vector<sf::Vector3i>& path) {
-	double cost = 0.0;
-	for (auto t : path) {
-		auto tile = currentMap->GetTile(t);
-		cost += tile.MoveMod;
+double BattleScene::GetPathCost(ActorPtr& actor, std::vector<sf::Vector3i>& path) {
+	double cost = currentMap->GetTile(path[0]).MoveMod;
+	auto position = actor->GetHexPosition();
+	for (size_t i = 1; i < path.size(); i++) {
+		actor->MoveToHex(path[i - 1]); // so hacky
+		cost += GetMoveCost(actor, path[i]);
 	}
+	actor->MoveToHex(position);
 	return cost;
+}
+
+double BattleScene::GetMoveCost(ActorPtr& actor, sf::Vector3i destination) {
+	double costN = 0.0;
+	double costP = 0.0;
+
+	auto current = actor->GetHexPosition();
+	bool flying = actor->CanFly();
+	bool swimming = actor->CanSwim();
+	bool isPlayer = actor->IsPlayer();
+
+	auto line = Hex::HexLine(current, destination, false);
+	bool passableN = true;
+	for (auto t : line) {
+		if (t != current && t != destination) {
+			if (IsTileWalkable(t, flying, swimming)) {
+				auto actorOnTile = GetActorAtHex(t);
+				if (actorOnTile != nullptr) {
+					bool actorOnTileFlying = actorOnTile->CanFly();
+					bool actorOnTilePlayer = actorOnTile->IsPlayer();
+
+					// Flying actors can fly over non-flying actors.
+					if (flying && !actorOnTileFlying) {
+						passableN = true;
+					}
+					// Can pass by allies.
+					else if (isPlayer == actorOnTilePlayer) {
+						passableN = true;
+					}
+					else {
+						passableN = false;
+						break;
+					}
+				}
+			}
+			else {
+				passableN = false;
+				break;
+			}
+		}
+	}
+
+	for (auto t : line) {
+		if (t != current) {
+			costN += currentMap->GetTile(t).MoveMod;
+		}
+	}
+
+	// Check other line.
+	bool passableP = true;
+	line = Hex::HexLine(current, destination, true);
+	for (auto t : line) {
+		if (t != current && t != destination) {
+			if (IsTileWalkable(t, flying, swimming)) {
+				auto actorOnTile = GetActorAtHex(t);
+				if (actorOnTile != nullptr) {
+					bool actorOnTileFlying = actorOnTile->CanFly();
+					bool actorOnTilePlayer = actorOnTile->IsPlayer();
+
+					// Flying actors can fly over non-flying actors.
+					if (flying && !actorOnTileFlying) {
+						passableP = true;
+					}
+					// Can pass by allies.
+					else if (isPlayer == actorOnTilePlayer) {
+						passableP = true;
+					}
+					else {
+						passableP = false;
+						break;
+					}
+				}
+			}
+			else {
+				passableP = false;
+				break;
+			}
+		}
+	}
+
+	for (auto t : line) {
+		if (t != current) {
+			costP += currentMap->GetTile(t).MoveMod;
+		}
+	}
+
+	if (passableN && !passableP) {
+		return costN;
+	}
+	else if (passableP && !passableN) {
+		return costP;
+	}
+	else {
+		return std::min(costN, costP);
+	}
 }
 
 bool BattleScene::IsTileOccupied(sf::Vector3i tile) {

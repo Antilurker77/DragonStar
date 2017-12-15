@@ -140,7 +140,7 @@ CommandPtr Enemy::CalcAICommand(BattleScene& battleScene)
 	for (auto tile : checkableTiles) {
 		std::vector<sf::Vector3i> testPath = battleScene.Pathfind(this->getPtr(), tile);
 		if (testPath.size() > 0) {
-			double testCost = battleScene.GetPathCost(testPath);
+			double testCost = battleScene.GetPathCost(getPtr(), testPath);
 			if (testCost < fastest) {
 				path = testPath;
 				fastest = testCost;

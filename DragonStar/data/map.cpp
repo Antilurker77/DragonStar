@@ -45,10 +45,10 @@ Tile Map::GetTile(int x, int z){
 }
 
 // Returns the distance between two hexes, including movement costs.
-float Map::DistanceHeuristic(sf::Vector3i start, sf::Vector3i end){
-	float distance = 0.00f;
+double Map::DistanceHeuristic(sf::Vector3i start, sf::Vector3i end, bool positiveOffset){
+	double distance = 0.0;
 
-	std::vector<sf::Vector3i> line = Hex::HexLine(start, end);
+	std::vector<sf::Vector3i> line = Hex::HexLine(start, end, positiveOffset);
 	for (int i = 1; i < line.size(); i++){
 		distance += GetTile(line[i].x, line[i].z).MoveMod;
 	}

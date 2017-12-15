@@ -52,7 +52,10 @@ public:
 
 	// Pathfinding
 	std::vector<sf::Vector3i> Pathfind(ActorPtr& actor, sf::Vector3i destination);
-	double GetPathCost(std::vector<sf::Vector3i>& path);
+	double GetPathCost(ActorPtr& actor, std::vector<sf::Vector3i>& path);
+
+	// Returns the cost of moving to the speficied tile. Should only be used on valid tiles within 2 tiles of actor.
+	double GetMoveCost(ActorPtr& actor, sf::Vector3i destintation);
 	bool IsTileOccupied(sf::Vector3i tile);
 	bool IsTileOccupied(sf::Vector2i tile);
 	bool IsTileOpeque(sf::Vector3i tile);

@@ -24,7 +24,7 @@ public:
 	Tile GetTile(sf::Vector3i coords);
 	Tile GetTile(int x, int y);
 	Tile GetTile(int x, int y, int z);
-	float DistanceHeuristic(sf::Vector3i start, sf::Vector3i end);
+	double DistanceHeuristic(sf::Vector3i start, sf::Vector3i end, bool positiveOffset = false);
 
 	sf::Vector2f GetMapBounds();
 protected:

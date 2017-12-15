@@ -26,18 +26,10 @@ MoveCommand::MoveCommand(BattleScene& w, sf::Vector2i d)
 void MoveCommand::Execute(ActorPtr& actor){
 	std::vector<sf::Vector3i> path = battleScene->Pathfind(actor, destination);
 
-	
-	// pathfinding slowdown test
-	//std::vector<sf::Vector3i> path;
-
-	//for (int i = 0; i < 90; i++) {
-	//	path = battleScene->Pathfind(actor, destination);
-	//}
-	
-
 	// Don't do anything if the path is invalid.
 	if (path.size() > 0){
-		double moveMod = battleScene->GetMap()->GetTile(path[0]).MoveMod;
+		double moveMod = battleScene->GetMoveCost(actor, path[0]);
+
 		actor->Walk(path[0], moveMod);
 	}
 }
