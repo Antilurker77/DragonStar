@@ -160,7 +160,9 @@ sf::Vector3i Hex::PixelToHex(sf::Vector2f mousePos){
 }
 
 // Gets the coordinates of the tiles surrounding a given tile.
-std::vector<sf::Vector3i> Hex::GetHexNeighbors(sf::Vector3i center){
+std::vector<sf::Vector3i> Hex::GetHexNeighbors(sf::Vector3i center, int radius){
+	
+	/*
 	std::vector<sf::Vector3i> result;
 	result.push_back(sf::Vector3i(center.x + 1, center.y - 1, center.z));
 	result.push_back(sf::Vector3i(center.x + 1, center.y, center.z - 1));
@@ -168,13 +170,21 @@ std::vector<sf::Vector3i> Hex::GetHexNeighbors(sf::Vector3i center){
 	result.push_back(sf::Vector3i(center.x - 1, center.y + 1, center.z));
 	result.push_back(sf::Vector3i(center.x - 1, center.y, center.z + 1));
 	result.push_back(sf::Vector3i(center.x, center.y - 1, center.z + 1));
+	*/
+
+	auto pred = [&](sf::Vector3i& v) {
+		return v == center;
+	};
+
+	auto result = Hex::FilledHexagon(center, radius);
+	std::remove_if(result.begin(), result.end(), pred);
 
 	return result;
 }
 
 // Gets the coordinates of the tiles surrounding a given tile.
-std::vector<sf::Vector3i> Hex::GetHexNeighbors(sf::Vector2i center){
-	return Hex::GetHexNeighbors(sf::Vector3i(center.x, -center.x - center.y, center.y));
+std::vector<sf::Vector3i> Hex::GetHexNeighbors(sf::Vector2i center, int radius){
+	return Hex::GetHexNeighbors(sf::Vector3i(center.x, -center.x - center.y, center.y), radius);
 }
 
 int Hex::GetRoationAmount(sf::Vector3i center, sf::Vector3i cursor) {

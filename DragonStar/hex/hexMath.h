@@ -57,8 +57,8 @@ namespace Hex {
 	sf::Vector2f HexToPixel(sf::Vector2i hex);
 	sf::Vector3i PixelToHex(sf::Vector2f mousePos);
 
-	std::vector<sf::Vector3i> GetHexNeighbors(sf::Vector3i center);
-	std::vector<sf::Vector3i> GetHexNeighbors(sf::Vector2i center);
+	std::vector<sf::Vector3i> GetHexNeighbors(sf::Vector3i center, int radius = 1);
+	std::vector<sf::Vector3i> GetHexNeighbors(sf::Vector2i center, int radius = 1);
 
 	// Used for ability targeting. Determines how many times it needs to be rotated left.
 	// Cursor must be adjacent to center.
