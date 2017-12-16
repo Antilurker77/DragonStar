@@ -98,7 +98,7 @@ void Ability::UseAbility(sf::Vector3i cursor, std::vector<sf::Vector3i> targetAr
 					}
 					else {
 						consumeResources();
-						messageLog.AddMessage(user->GetName() + " begins casting " + name + ".");
+						outputCasting();
 						if (isGroundTargeted) {
 							user->StartCast(cursor, GetCastTime(true));
 						}
@@ -124,7 +124,7 @@ void Ability::UseAbility(sf::Vector3i cursor, std::vector<sf::Vector3i> targetAr
 				}
 				else {
 					consumeResources();
-					messageLog.AddMessage(user->GetName() + " begins casting " + name + ".");
+					outputCasting();
 					user->StartCast(cursor, GetCastTime(true));
 				}
 			}
@@ -273,6 +273,20 @@ void Ability::ResetCooldown() {
 
 std::string Ability::GetDescription() {
 	return "No description.";
+}
+
+void Ability::outputCasting() {
+	std::string msg;
+	if (user->IsPlayer()) {
+		msg += "#blue ";
+	}
+	else {
+		msg += "#red ";
+	}
+	msg += user->GetName();
+	msg += " #aaaaaa > #default Casting ";
+	msg += name;
+	messageLog.AddMessage(msg);
 }
 
 void Ability::setAttackDefault() {

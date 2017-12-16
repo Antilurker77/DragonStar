@@ -179,6 +179,9 @@ protected:
 	int calcCooldown = cooldown; // how much cooldown is actually applied when ability is used
 	int currentCooldown = 0;
 
+	// Displays the casting message in the message log.
+	void outputCasting();
+
 	// Sets default options for a weapon attack.
 	void setAttackDefault();
 

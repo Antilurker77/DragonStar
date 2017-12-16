@@ -18,5 +18,17 @@ WaitCommand::WaitCommand(int amount){
 
 void WaitCommand::Execute(ActorPtr& actor){
 	actor->Wait(timeToWait);
-	messageLog.AddMessage(actor->GetName() + " waited for " + std::to_string(timeToWait / 100) + "." + std::to_string(timeToWait % 100) + "s.");
+
+	// message log
+	std::string msg;
+	if (actor->IsPlayer()) {
+		msg += "#blue ";
+	}
+	else {
+		msg += "#red ";
+	}
+	msg += actor->GetName();
+	msg += " #aaaaaa > #default Waits ";
+	msg += std::to_string(timeToWait / 100) + "." + std::to_string(timeToWait % 100) + "s";
+	messageLog.AddMessage(msg);
 }

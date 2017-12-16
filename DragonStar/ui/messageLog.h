@@ -13,6 +13,8 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+#include "richText.h"
+
 class MessageLog {
 public:
 	MessageLog();
@@ -34,7 +36,7 @@ private:
 	sf::Font* font;
 	
 	std::deque<std::string> messages;
-	std::vector<sf::Text> texts;
+	std::vector<sfe::RichText> texts;
 
 	sf::RectangleShape background;
 };

@@ -339,10 +339,10 @@ void Aura::setAuraOptions() {
 	auraOptions.Elements = elements;
 	auraOptions.EventName = name;
 	if (isBuff) {
-		auraOptions.EventName += " buff";
+		auraOptions.EventName += " (Buff)";
 	}
 	else {
-		auraOptions.EventName += " debuff";
+		auraOptions.EventName += " (Debuff)";
 	}
 
 }

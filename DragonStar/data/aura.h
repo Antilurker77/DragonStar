@@ -176,7 +176,7 @@ protected:
 
 	bool canCrit = false;
 	double bonusCrit = 0.0;
-	double bonusCritDmg = 0.0;
+	double bonusCritDmg = 1.0; // multiplier on critical strikes
 
 	bool canDoubleStrike = false;
 	double bonusDoubleStrike = 0.0;

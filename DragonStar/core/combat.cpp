@@ -7,6 +7,7 @@
 #include "combat.h"
 
 #include "random.h"
+#include "../data/dataString.h"
 #include "../scene/battleScene.h"
 #include "../entity/actor.h"
 #include "../entity/statMath.h"
@@ -125,27 +126,88 @@ static void applyHealingTaken(double& value, ActorPtr& user, ActorPtr& target, E
 
 // Prints damage message.
 static void outputDamage(ActorPtr& user, ActorPtr& target, EventOptions eventOptions, EventResult eventResult) {
-	std::string output = user->GetName() + "'s " + eventOptions.EventName + " hit " + target->GetName() + " for ";
+	std::string output;
+	if (user->IsPlayer()) {
+		output += "#blue ";
+	}
+	else {
+		output += "#red ";
+	}
+	output += user->GetName();
+	output += " #aaaaaa > #default ";
+	output += eventOptions.EventName;
+	output += " #aaaaaa > ";
+	if (target->IsPlayer()) {
+		output += "#blue ";
+	}
+	else {
+		output += "#red ";
+	}
+	output += target->GetName();
+	output += " #aaaaaa > #damage ";
 	if (eventResult.DidCrit) {
-		output += "*" + std::to_string(eventResult.ResultValue) + "*";
+		output += "\\*" + std::to_string(eventResult.ResultValue) + "\\*";
 	}
 	else {
 		output += std::to_string(eventResult.ResultValue);
 	}
-	output += " damage.";
+	output += " #default " + DataString::ElementString(eventOptions.Elements, true);
+
 	messageLog.AddMessage(output);
 }
 
 // Prints Healing message.
 static void outputHealing(ActorPtr& user, ActorPtr& target, EventOptions eventOptions, EventResult eventResult) {
-	std::string output = user->GetName() + "'s " + eventOptions.EventName + " healed " + target->GetName() + " for ";
+	std::string output;
+	if (user->IsPlayer()) {
+		output += "#blue ";
+	}
+	else {
+		output += "#red ";
+	}
+	output += user->GetName();
+	output += " #aaaaaa > #default ";
+	output += eventOptions.EventName;
+	output += " #aaaaaa > ";
+	if (target->IsPlayer()) {
+		output += "#blue ";
+	}
+	else {
+		output += "#red ";
+	}
+	output += target->GetName();
+	output += " #aaaaaa > #heal ";
 	if (eventResult.DidCrit) {
-		output += "*" + std::to_string(eventResult.ResultValue) + "*";
+		output += "\\*" + std::to_string(eventResult.ResultValue) + "\\*";
 	}
 	else {
 		output += std::to_string(eventResult.ResultValue);
 	}
-	output += ".";
+	output += " #default " + DataString::ElementString(eventOptions.Elements, true);
+}
+
+// Prints miss message.
+static void outputMiss(ActorPtr& user, ActorPtr& target, EventOptions eventOptions, EventResult eventResult) {
+	std::string output;
+	if (user->IsPlayer()) {
+		output += "#blue ";
+	}
+	else {
+		output += "#red ";
+	}
+	output += user->GetName();
+	output += " #aaaaaa > #default ";
+	output += eventOptions.EventName;
+	output += " #aaaaaa > ";
+	if (target->IsPlayer()) {
+		output += "#blue ";
+	}
+	else {
+		output += "#red ";
+	}
+	output += target->GetName();
+	output += " #aaaaaa > Miss";
+
 	messageLog.AddMessage(output);
 }
 
@@ -249,8 +311,7 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 			eventResult.DidKill = false;
 			eventResult.ResultValue = 0;
 
-			std::string output = user->GetName() + "'s " + eventOptions.EventName + " missed.";
-			messageLog.AddMessage(output);
+			outputMiss(user, target, eventOptions, eventResult);
 
 			target->OnHit(target, eventOptions, eventResult, isOffHand);
 			target->OnAttacked(target, eventOptions, eventResult);

@@ -16,7 +16,7 @@ MessageLog::MessageLog() {
 	// text options
 	for (size_t i = 0; i < maxMessages; i++) {
 		texts[i].setCharacterSize(12);
-		texts[i].setOutlineThickness(1.f);
+		//texts[i].setOutlineThickness(1.f);
 	}
 
 	// background options
