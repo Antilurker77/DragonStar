@@ -849,8 +849,10 @@ unsigned int Enemy::GetLootPoints() {
 	return enemyInfo->GetLootPoints();
 }
 
-double Enemy::GetMoveSpeed() {
-	return 1.0;
+int Enemy::GetMoveSpeed() {
+	int moveSpeed = enemyInfo->GetBaseMoveSpeed();
+	double msMult = getStat(1.0, StatModType::MOVEMENT_SPEED, false, false);
+	return moveSpeed * (1.0 / msMult);
 }
 
 bool Enemy::CanFly() {

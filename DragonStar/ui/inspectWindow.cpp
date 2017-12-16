@@ -214,7 +214,7 @@ void InspectWindow::SetActor(ActorPtr& actor) {
 	wisText.setString("#aaaaaa WIS #default " + std::to_string(actor->GetWIS(false)));
 
 	vitText.setString("#aaaaaa VIT #default " + std::to_string(actor->GetVIT(false)));
-	msText.setString("#aaaaaa Movespeed #default ");
+	msText.setString("#aaaaaa Movement Speed #default " + convertToSec(actor->GetMoveSpeed()));
 	actionText.setString("#aaaaaa Action #default " + actor->GetActionName());
 	exhaustionText.setString("#aaaaaa Exhaustion #default " + convertToSec(actor->GetExhaustion()));
 

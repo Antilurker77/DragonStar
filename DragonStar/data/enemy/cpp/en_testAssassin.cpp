@@ -26,6 +26,7 @@ En_TestAssassin::En_TestAssassin() {
 	baseVIT = 80;
 	baseArmor = 25;
 
+	baseMoveSpeed = 30;
 	canFly = false;
 	canSwim = false;
 

@@ -69,6 +69,10 @@ int EnemyInfo::GetBaseArmor() {
 	return baseArmor;
 }
 
+int EnemyInfo::GetBaseMoveSpeed() {
+	return baseMoveSpeed;
+}
+
 bool EnemyInfo::CanFly() {
 	return canFly;
 }

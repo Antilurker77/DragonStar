@@ -359,8 +359,11 @@ public:
 	// valid adjacent tiles. Increases exhaustion.
 	void Walk(sf::Vector3i destination, double moveMod);
 
-	virtual double GetMoveSpeed() = 0;
+	// Returns the amount of time the actor takes to move one tile.
+	virtual int GetMoveSpeed() = 0;
+
 	virtual bool CanSwim() = 0;
+
 	virtual bool CanFly() = 0;
 
 	virtual CreatureType GetCreatureType() = 0;

@@ -625,7 +625,7 @@ bool Actor::AddAuraStack(ActorPtr& user, AuraID auraID) {
 }
 
 void Actor::Walk(sf::Vector3i destination, double moveMod){
-	int moveCost = 100 * moveMod * (1 / GetMoveSpeed());
+	int moveCost = GetMoveSpeed() * moveMod ;
 	MoveToHex(destination, 300);
 	exhaustion += moveCost;
 }

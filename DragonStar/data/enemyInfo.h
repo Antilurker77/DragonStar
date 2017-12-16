@@ -48,6 +48,7 @@ public:
 
 	int GetBaseArmor();
 
+	int GetBaseMoveSpeed();
 	bool CanFly();
 	bool CanSwim();
 
@@ -95,6 +96,7 @@ protected:
 
 	int baseArmor = 20;
 
+	int baseMoveSpeed = 35;
 	bool canFly = false;
 	bool canSwim = false;
 

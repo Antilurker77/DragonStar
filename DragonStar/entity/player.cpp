@@ -1225,8 +1225,10 @@ unsigned int Player::GetEXPToNextLevel() {
 }
 
 // Returns the player's movespeed.
-double Player::GetMoveSpeed(){
-	return 1.0;
+int Player::GetMoveSpeed(){
+	int moveSpeed = 50;
+	double msMult = getStat(1.0, StatModType::MOVEMENT_SPEED, false, false);
+	return moveSpeed * (1.0 / msMult);
 }
 
 // Returns true if the player can fly.

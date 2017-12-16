@@ -150,8 +150,7 @@ public:
 	// get to the next level.
 	unsigned int GetEXPToNextLevel();
 
-	// movement
-	double GetMoveSpeed();
+	int GetMoveSpeed();
 	bool CanFly();
 	bool CanSwim();
 

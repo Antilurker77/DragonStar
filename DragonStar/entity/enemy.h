@@ -92,7 +92,7 @@ public:
 	unsigned int GetGoldDrop();
 	unsigned int GetLootPoints();
 
-	double GetMoveSpeed();
+	int GetMoveSpeed();
 	bool CanFly();
 	bool CanSwim();
 
