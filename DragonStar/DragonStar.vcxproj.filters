@@ -348,6 +348,9 @@
     <ClCompile Include="data\map\cpp\mp_fieldSewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_sword1H.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -723,6 +726,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\map\header\mp_fieldSewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_sword1H.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

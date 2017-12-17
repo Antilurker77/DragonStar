@@ -17,16 +17,11 @@ Eq_IronSpear::Eq_IronSpear() {
 	equipType = EquipType::SPEAR;
 	equipmentID = EquipmentID::IRON_SPEAR;
 
-	equipPower = 35;
-	attackSpeed = 300;
+	equipPower = 48;
+	attackSpeed = 250;
 	attackRange = 1;
 	attributeMultiplier = 1.75;
 	attackElements = { Element::PHYSICAL };
 	blockChance = 0.0;
-	//statMods = {};
-
-	// on-hit damage test
-	statMods = {
-		StatMod(StatModType::ON_HIT_DAMAGE, 22.0, {Element::LIGHTNING}, {Category::ATTACK, Category::DIRECT})
-	};
+	statMods = {};
 }

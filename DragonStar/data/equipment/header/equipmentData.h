@@ -11,5 +11,6 @@
 #include "eq_ring.h"
 #include "eq_omegaRing.h"
 #include "eq_silkRobes.h"
+#include "eq_sword1H.h"
 
 #pragma once
