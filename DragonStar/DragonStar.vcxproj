@@ -148,6 +148,7 @@
     <ClCompile Include="data\equipment\cpp\eq_silkRobes.cpp" />
     <ClCompile Include="data\factory.cpp" />
     <ClCompile Include="data\formation.cpp" />
+    <ClCompile Include="data\formation\cpp\fa_commonT1.cpp" />
     <ClCompile Include="data\formation\cpp\fa_testFormations.cpp" />
     <ClCompile Include="data\dataString.cpp" />
     <ClCompile Include="data\item.cpp" />
@@ -259,6 +260,7 @@
     <ClInclude Include="data\equipment\header\eq_omegaRing.h" />
     <ClInclude Include="data\equipment\header\eq_silkRobes.h" />
     <ClInclude Include="data\formation.h" />
+    <ClInclude Include="data\formation\header\fa_commonT1.h" />
     <ClInclude Include="data\formation\header\fa_testFormations.h" />
     <ClInclude Include="data\formation\header\formationData.h" />
     <ClInclude Include="data\groundEffect.h" />

@@ -336,6 +336,9 @@
     <ClCompile Include="data\map\cpp\mp_fieldSmallIsland.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\formation\cpp\fa_commonT1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -699,6 +702,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\map\header\mp_fieldSmallIsland.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\formation\header\fa_commonT1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

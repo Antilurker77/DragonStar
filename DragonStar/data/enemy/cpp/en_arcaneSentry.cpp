@@ -49,7 +49,7 @@ En_ArcaneSentry::En_ArcaneSentry() {
 
 	statMods = {
 		StatMod(StatModType::RESISTANCE, 0.3, { Category::ANY }, { Element::ARCANE }),
-		StatMod(StatModType::MP_REGEN, 30.0)
+		StatMod(StatModType::MP_REGEN, 3.0)
 	};
 
 	abilities = {

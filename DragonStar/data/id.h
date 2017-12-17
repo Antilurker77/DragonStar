@@ -98,6 +98,7 @@ enum class FormationID {
 	// Common
 	TEST_FORMATION_A,
 	TEST_FORMATION_B,
+	SENTRY_AMBUSH,
 
 	// Unique
 	TEST_UNIQUE,

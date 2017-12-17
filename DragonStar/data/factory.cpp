@@ -94,6 +94,7 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 	// Common
 	case FormationID::TEST_FORMATION_A:					return FormationPtr(std::make_shared<Fa_TestFormationA>());
 	case FormationID::TEST_FORMATION_B:					return FormationPtr(std::make_shared<Fa_TestFormationB>());
+	case FormationID::SENTRY_AMBUSH:					return FormationPtr(std::make_shared<Fa_SentryAmbush>());
 
 	// Unique
 	case FormationID::TEST_UNIQUE:						return FormationPtr(std::make_shared<Fa_TestUnique>());

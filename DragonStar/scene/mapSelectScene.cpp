@@ -273,8 +273,8 @@ void MapSelectScene::buildMaps(size_t index, uint64_t seed) {
 	std::vector<MapNode> mapNodes;
 	std::mt19937_64 mt(seed);
 
-	std::vector<FormationWeight> commonFormations = Weight::GetCommonFaWeights(0);
-	std::vector<FormationWeight> uniqueFormations = Weight::GetUniqueFaWeights(0);
+	std::vector<FormationWeight> commonFormations = Weight::GetCommonFaWeights(domains[index].Tier);
+	std::vector<FormationWeight> uniqueFormations = Weight::GetUniqueFaWeights(domains[index].Tier);
 	double uniqueBLP = 0.1; // Base 10% unique spawn chance.
 
 	// remove uniques that have already spawned
