@@ -1066,6 +1066,7 @@ bool Player::Equip(std::vector<ItemPtr>& inventory, size_t index, size_t slot) {
 					// unequip item in off-hand slot if two-handed
 					if (twoHanded && equipment[1] != nullptr) {
 						inventory.push_back(equipment[1]);
+						equipment[1] = nullptr;
 						equipment[0] = std::move(inventory[index]);
 						std::swap(inventory[index], inventory.back());
 						inventory.pop_back();
@@ -1080,6 +1081,15 @@ bool Player::Equip(std::vector<ItemPtr>& inventory, size_t index, size_t slot) {
 							return false;
 						}
 					}
+					// if main-hand slot is empty put weapon in main hand slot
+					if (slot == 1 && equipment[0] == nullptr && eq->IsWeapon()) {
+						equipment[0] = std::move(inventory[index]);
+						std::swap(inventory[index], inventory.back());
+						inventory.pop_back();
+						setEquipmentTexture(0);
+						FullHeal();
+						return true;
+					}
 					equipment[slot] = std::move(inventory[index]);
 					std::swap(inventory[index], inventory.back());
 					inventory.pop_back();
@@ -1091,6 +1101,7 @@ bool Player::Equip(std::vector<ItemPtr>& inventory, size_t index, size_t slot) {
 					// unequip item in off-hand slot if two-handed
 					if (twoHanded && equipment[1] != nullptr) {
 						inventory.push_back(equipment[1]);
+						equipment[1] = nullptr;
 						inventory.push_back(equipment[0]);
 						equipment[0] = std::move(inventory[index]);
 						std::swap(inventory[index], inventory.back());
@@ -1360,6 +1371,13 @@ void Player::setEquipmentTexture(size_t slot) {
 		equipmentTextures[textureSlot] = assetManager.LoadTexture(race->GetFilepath() + "/" + file + "/" + equip->GetTextureFilepath());
 		equipmentTextures[textureSlot]->setSmooth(true);
 		equipmentSprites[textureSlot].setTexture(*equipmentTextures[textureSlot]);
+
+		// reverse texture for offhand slot
+		if (textureSlot == 7) {
+			auto size = equipmentTextures[textureSlot]->getSize();
+			sf::IntRect rect(size.x, 0, (int)size.x * -1, size.y);
+			equipmentSprites[textureSlot].setTextureRect(rect);
+		}
 	}
 	else if (textureSlot == 0 && equipment[4] == nullptr) {
 		if (isFemale) {
