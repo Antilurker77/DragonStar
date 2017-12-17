@@ -330,6 +330,9 @@
     <ClCompile Include="data\tileset\cpp\ts_field.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\enemy\cpp\en_arcaneSentry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -687,6 +690,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\tileset\header\ts_field.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\enemy\header\en_arcaneSentry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

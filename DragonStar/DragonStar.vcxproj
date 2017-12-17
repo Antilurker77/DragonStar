@@ -134,6 +134,7 @@
     <ClCompile Include="data\aura\cpp\au_venom.cpp" />
     <ClCompile Include="data\damageHeal.cpp" />
     <ClCompile Include="data\enemyInfo.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_arcaneSentry.cpp" />
     <ClCompile Include="data\enemy\cpp\en_targetDummy.cpp" />
     <ClCompile Include="data\enemy\cpp\en_testAssassin.cpp" />
     <ClCompile Include="data\enemy\cpp\en_testEnemy.cpp" />
@@ -244,6 +245,7 @@
     <ClInclude Include="data\aura\header\au_rendingSlash.h" />
     <ClInclude Include="data\aura\header\au_venom.h" />
     <ClInclude Include="data\damageHeal.h" />
+    <ClInclude Include="data\enemy\header\en_arcaneSentry.h" />
     <ClInclude Include="data\enemy\header\en_targetDummy.h" />
     <ClInclude Include="data\enemy\header\en_testAssassin.h" />
     <ClInclude Include="data\enemy\header\en_testMage.h" />
