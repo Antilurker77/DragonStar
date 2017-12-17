@@ -184,6 +184,8 @@ static void outputHealing(ActorPtr& user, ActorPtr& target, EventOptions eventOp
 		output += std::to_string(eventResult.ResultValue);
 	}
 	output += " #default " + DataString::ElementString(eventOptions.Elements, true);
+
+	messageLog.AddMessage(output);
 }
 
 // Prints miss message.
