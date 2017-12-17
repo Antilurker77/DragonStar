@@ -6,6 +6,9 @@
 
 #include "mapSelectScene.h"
 
+#include <iomanip>
+#include <sstream>
+
 #include "../core/assetManager.h"
 #include "../core/camera.h"
 #include "../core/settings.h"
@@ -29,6 +32,10 @@ MapSelectScene::MapSelectScene() {
 	shopButton.SetString("Shop", 18);
 	buttonSize = shopButton.GetSize();
 	shopButton.SetPosition(settings.ScreenWidth * 0.75, 8 + buttonSize.y / 2);
+
+	seedText.setFont(*assetManager.LoadFont(settings.Font));
+	seedText.setCharacterSize(16);
+	seedText.setPosition(4.f, settings.ScreenHeight - 20.f);
 
 }
 
@@ -150,6 +157,7 @@ void MapSelectScene::Render(sf::RenderTarget& window, float timeRatio) {
 		equipButton.Render(window);
 		abilityButton.Render(window);
 		shopButton.Render(window);
+		window.draw(seedText);
 	}
 	else if (displayEquipWindow) {
 		equipWindow.Render(window);
@@ -167,7 +175,11 @@ void MapSelectScene::SetClickBuffer(float seconds) {
 void MapSelectScene::SetSeed(uint64_t seed) {
 	masterSeed = seed;
 	// test
-	masterSeed = 0x00000000deadbeef;
+	//masterSeed = 0x00000000deadbeef;
+
+	std::stringstream ss;
+	ss << std::setfill('0') << std::setw(16) << std::hex << masterSeed;
+	seedText.setString("Seed: " + ss.str());
 
 	buildDomains();
 

@@ -100,6 +100,7 @@ private:
 	Button equipButton;
 	Button abilityButton;
 	Button shopButton;
+	sf::Text seedText;
 
 	EquipWindow equipWindow;
 	AbilityWindow abilityWindow;
