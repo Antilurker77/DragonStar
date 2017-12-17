@@ -13,7 +13,7 @@ AbilityScroll::AbilityScroll(AbilityID id) {
 	Factory factory;
 	AbilityPtr ability = factory.CreateAbility(id);
 
-	name = "Scroll: " + ability->GetName();
+	name = "Potion of " + ability->GetName();
 	iconFilepath = "potion.png";
 	abilityID = id;
 	abilityTypes = ability->GetAbilityTypes();
