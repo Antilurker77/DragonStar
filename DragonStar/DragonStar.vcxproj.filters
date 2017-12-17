@@ -333,6 +333,9 @@
     <ClCompile Include="data\enemy\cpp\en_arcaneSentry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\map\cpp\mp_fieldSmallIsland.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -693,6 +696,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\enemy\header\en_arcaneSentry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\map\header\mp_fieldSmallIsland.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

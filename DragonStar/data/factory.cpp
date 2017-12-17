@@ -132,6 +132,7 @@ MapPtr Factory::CreateMap(MapID id){
 	case MapID::TEST_MAP_XS:							return MapPtr(std::make_shared<Mp_TestMapXS>());
 	case MapID::TEST_ARENA:								return MapPtr(std::make_shared<Mp_TestArena>());
 	case MapID::TEST_ARENA_B:							return MapPtr(std::make_shared<Mp_TestArenaB>());
+	case MapID::FIELD_SMALL_ISLAND:						return MapPtr(std::make_shared<Mp_FieldSmallIsland>());
 
 	// Returns TEST map if ID is invalid.
 	default:											return MapPtr(std::make_shared<Mp_TestMap>());
