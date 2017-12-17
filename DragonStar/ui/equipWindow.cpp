@@ -6,6 +6,9 @@
 
 #include "equipWindow.h"
 
+#include <iomanip>
+#include <sstream>
+
 #include "../core/assetManager.h"
 #include "../core/settings.h"
 #include "../data/equipment.h"
@@ -469,18 +472,44 @@ void EquipWindow::setDisplayedItems(size_t filter) {
 }
 
 void EquipWindow::setStatTexts() {
+	// converts seconds into string
+	auto convertToSec = [](int i) {
+		std::string s;
+		if (i > 999) {
+			s = std::to_string(i / 100) + "s";
+		}
+		else {
+			// super hacky way to make sure it always shows two digits
+			std::string remainder = std::to_string(i % 100);
+			if (remainder.length() == 1) {
+				remainder = "0" + remainder;
+			}
+
+			s = std::to_string(i / 100) + "." + remainder + "s";
+		}
+
+		return s;
+	};
+
+	// rounds to decimal point
+	auto convertToDec = [](double d, int decimals) {
+		std::stringstream ss;
+		ss << std::fixed << std::setprecision(decimals) << d;
+		return ss.str();
+	};
+	
 	std::string s = "";
 
 	// HP
-	s = "#aaaaaa HP #default  " + std::to_string(players[displayedActor]->GetMaxHP());
+	s = "#aaaaaa HP #default  " + std::to_string(players[displayedActor]->GetMaxHP()) + " (+" + convertToDec(players[displayedActor]->GetHPRegen(), 1) + "/s)";
 	hpText.setString(s);
 
 	// MP
-	s = "#aaaaaa MP #default  " + std::to_string(players[displayedActor]->GetMaxMP());
+	s = "#aaaaaa MP #default  " + std::to_string(players[displayedActor]->GetMaxMP()) + " (+" + convertToDec(players[displayedActor]->GetMPRegen(), 1) + "/s)";
 	mpText.setString(s);
 
 	// SP
-	s = "#aaaaaa SP #default  " + std::to_string(players[displayedActor]->GetMaxSP());
+	s = "#aaaaaa SP #default  " + std::to_string(players[displayedActor]->GetMaxSP()) + " (+" + convertToDec(players[displayedActor]->GetSPRegen(), 1) + "/s)";
 	spText.setString(s);
 
 	// STR
