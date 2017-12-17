@@ -12,7 +12,8 @@
 
 // Tilesets
 enum class TilesetID {
-	TEST_TILESET
+	TEST_TILESET,
+	FIELD
 };
 
 // Maps
@@ -79,6 +80,8 @@ enum class EnemyID {
 	TEST_ENEMY,
 	TEST_HEALER,
 	TEST_MAGE,
+
+	ARCANE_SENTRY,
 	TARGET_DUMMY,
 
 	// Unique

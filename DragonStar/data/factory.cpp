@@ -163,6 +163,7 @@ RacePtr Factory::CreateRace(RaceID id){
 TilesetPtr Factory::CreateTileset(TilesetID id){
 	switch (id){
 	case TilesetID::TEST_TILESET:						return TilesetPtr(std::make_unique<Ts_TestTileset>());
+	case TilesetID::FIELD:								return TilesetPtr(std::make_unique<Ts_Field>());
 
 	// Returns TEST tileset if ID is invalid.
 	default:											return TilesetPtr(std::make_unique<Ts_TestTileset>());

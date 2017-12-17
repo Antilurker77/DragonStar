@@ -165,6 +165,7 @@
     <ClCompile Include="data\map\cpp\mp_testMap.cpp" />
     <ClCompile Include="data\map\cpp\mp_testMapXL.cpp" />
     <ClCompile Include="data\map\cpp\mp_testMapXS.cpp" />
+    <ClCompile Include="data\tileset\cpp\ts_field.cpp" />
     <ClCompile Include="data\tileset\cpp\ts_testTileset.cpp" />
     <ClCompile Include="data\weight.cpp" />
     <ClCompile Include="entity\actor.cpp" />
@@ -265,6 +266,7 @@
     <ClInclude Include="data\playerClass.h" />
     <ClInclude Include="data\playerClass\playerClassData.h" />
     <ClInclude Include="data\race\header\runetouched.h" />
+    <ClInclude Include="data\tileset\header\ts_field.h" />
     <ClInclude Include="data\weight.h" />
     <ClInclude Include="entity\actorFilter.h" />
     <ClInclude Include="entity\statMath.h" />
