@@ -14,13 +14,13 @@ Mp_FieldSmallIsland::Mp_FieldSmallIsland() {
 
 	std::vector<sf::Vector3i> shape;
 
-	shape = Hex::FilledHexagon(sf::Vector3i(0, 0, 0), 5);
+	shape = Hex::FilledHexagon(sf::Vector3i(0, 0, 0), 4);
 	addTiles(shape, 0);
 
 	shape = Hex::FilledHexagon(sf::Vector3i(0, 0, 0), 1);
 	addTiles(shape, 1);
 
-	shape = Hex::HexRing(sf::Vector3i(0, 0, 0), 6);
+	shape = Hex::HexRing(sf::Vector3i(0, 0, 0), 5);
 	addTiles(shape, 8);
 
 	buildVertexArray();

@@ -20,8 +20,8 @@ Fa_SentryAmbush::Fa_SentryAmbush() {
 		sf::Vector2i(1, 0)
 	};
 	enemies = {
-		{ EnemyID::ARCANE_SENTRY, 0,{ 0, -5 } },
-		{ EnemyID::ARCANE_SENTRY, 0,{ 5, 0 } },
-		{ EnemyID::ARCANE_SENTRY, 0,{ -5, 5 } }
+		{ EnemyID::ARCANE_SENTRY, 0,{ 0, -4 } },
+		{ EnemyID::ARCANE_SENTRY, 0,{ 4, 0 } },
+		{ EnemyID::ARCANE_SENTRY, 0,{ -4, 4 } }
 	};
 }

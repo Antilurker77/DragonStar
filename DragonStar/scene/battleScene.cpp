@@ -1320,7 +1320,7 @@ void BattleScene::calcVictory() {
 		}
 	}
 
-	EquipmentID id = EquipmentID::OMEGA_RING;
-	ItemPtr item = factory.CreateEquipment(id);
-	itemsAwarded.push_back(item);
+	//EquipmentID id = EquipmentID::OMEGA_RING;
+	//ItemPtr item = factory.CreateEquipment(id);
+	//itemsAwarded.push_back(item);
 }
