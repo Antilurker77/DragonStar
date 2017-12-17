@@ -8,7 +8,7 @@
 
 Eq_SilkRobes::Eq_SilkRobes() {
 	name = "Silk Robes";
-	iconFilepath = "armor.png";
+	iconFilepath = "body.png";
 	itemQuality = ItemQuality::COMMON;
 	weight = 4;
 	tier = 1;
