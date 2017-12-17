@@ -24,6 +24,7 @@ enum class MapID {
 	TEST_MAP_XS,
 	TEST_ARENA,
 	TEST_ARENA_B,
+	FIELD_SEWER,
 	FIELD_SMALL_ISLAND
 };
 
@@ -83,6 +84,7 @@ enum class EnemyID {
 	TEST_MAGE,
 
 	ARCANE_SENTRY,
+	GIANT_RAT,
 	TARGET_DUMMY,
 
 	// Unique
@@ -99,6 +101,7 @@ enum class FormationID {
 	TEST_FORMATION_A,
 	TEST_FORMATION_B,
 	SENTRY_AMBUSH,
+	SEWER_RATS,
 
 	// Unique
 	TEST_UNIQUE,
@@ -127,6 +130,7 @@ enum class RuneID {
 enum class AbilityType {
 	UNDEFINED = 0,
 	TECH,
+	UNARMED_SKILL,
 	SWORD_SKILL,
 	AXE_SKILL,
 	MACE_SKILL,

@@ -339,6 +339,15 @@
     <ClCompile Include="data\formation\cpp\fa_commonT1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\ability\cpp\abEn_bite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\enemy\cpp\ab_giantRat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\map\cpp\mp_fieldSewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -705,6 +714,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\formation\header\fa_commonT1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\abEn_bite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\enemy\header\en_giantRat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\map\header\mp_fieldSewer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,3 +14,8 @@ class Fa_SentryAmbush : public Formation {
 public:
 	Fa_SentryAmbush();
 };
+
+class Fa_SewerRats : public Formation {
+public:
+	Fa_SewerRats();
+};

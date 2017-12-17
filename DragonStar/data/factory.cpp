@@ -44,6 +44,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::WATER_BOLT:							return AbilityPtr(std::make_shared<Ab_WaterBolt>());
 	case AbilityID::RACIAL_COMMANDING_SHOUT:			return AbilityPtr(std::make_shared<Ab_CommandingShout>());
 	case AbilityID::RACIAL_DRAGON_BREATH:				return AbilityPtr(std::make_shared<Ab_DragonBreath>());
+	case AbilityID::EN_BITE:							return AbilityPtr(std::make_shared<AbEn_Bite>());
 
 	// Returns Attack ability if ID is invalid.
 	default:											return AbilityPtr(std::make_shared<Ab_Attack>());
@@ -79,6 +80,7 @@ EnemyInfoPtr Factory::CreateEnemyInfo(EnemyID id) {
 	case EnemyID::TEST_ENEMY:							return EnemyInfoPtr(std::make_shared<En_TestEnemy>());
 	case EnemyID::TEST_MAGE:							return EnemyInfoPtr(std::make_shared<En_TestMage>());
 	case EnemyID::ARCANE_SENTRY:						return EnemyInfoPtr(std::make_shared<En_ArcaneSentry>());
+	case EnemyID::GIANT_RAT:							return EnemyInfoPtr(std::make_shared<En_GiantRat>());
 	case EnemyID::TARGET_DUMMY:							return EnemyInfoPtr(std::make_shared<En_TargetDummy>());
 
 	// Unique
@@ -95,6 +97,7 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 	case FormationID::TEST_FORMATION_A:					return FormationPtr(std::make_shared<Fa_TestFormationA>());
 	case FormationID::TEST_FORMATION_B:					return FormationPtr(std::make_shared<Fa_TestFormationB>());
 	case FormationID::SENTRY_AMBUSH:					return FormationPtr(std::make_shared<Fa_SentryAmbush>());
+	case FormationID::SEWER_RATS:						return FormationPtr(std::make_shared<Fa_SewerRats>());
 
 	// Unique
 	case FormationID::TEST_UNIQUE:						return FormationPtr(std::make_shared<Fa_TestUnique>());
@@ -134,6 +137,7 @@ MapPtr Factory::CreateMap(MapID id){
 	case MapID::TEST_ARENA:								return MapPtr(std::make_shared<Mp_TestArena>());
 	case MapID::TEST_ARENA_B:							return MapPtr(std::make_shared<Mp_TestArenaB>());
 	case MapID::FIELD_SMALL_ISLAND:						return MapPtr(std::make_shared<Mp_FieldSmallIsland>());
+	case MapID::FIELD_SEWER:							return MapPtr(std::make_shared<Mp_FieldSewer>());
 
 	// Returns TEST map if ID is invalid.
 	default:											return MapPtr(std::make_shared<Mp_TestMap>());

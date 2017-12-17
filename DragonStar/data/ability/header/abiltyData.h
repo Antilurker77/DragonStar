@@ -27,5 +27,6 @@
 #include "ab_splash.h"
 #include "ab_venom.h"
 #include "ab_waterBolt.h"
+#include "abEn_bite.h"
 
 #pragma once
