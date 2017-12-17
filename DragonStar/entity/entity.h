@@ -23,7 +23,7 @@ public:
 	virtual void Draw(sf::RenderTarget& window, float timeRatio);
 
 	// Draws the entity at the specified position instead of it's own position.
-	virtual void Draw(sf::RenderTarget& window, sf::Vector2f pos);
+	virtual void Draw(sf::RenderTarget& window, sf::Vector2f pos, float scale = 1.f);
 
 	void Move(sf::Vector2f target);
 	void Move(sf::Vector2f target, float unitsPerSecond);

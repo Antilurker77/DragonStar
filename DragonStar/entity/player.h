@@ -26,7 +26,7 @@ public:
 
 	void Update(float secondsPerUpdate);
 	void Draw(sf::RenderTarget& window, float timeRatio);
-	void Draw(sf::RenderTarget& window, sf::Vector2f pos);
+	void Draw(sf::RenderTarget& window, sf::Vector2f pos, float scale = 1.f);
 
 	int GetMaxHP();
 	int GetMaxMP();

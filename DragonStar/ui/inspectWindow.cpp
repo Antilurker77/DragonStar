@@ -455,10 +455,10 @@ void InspectWindow::Render(sf::RenderTarget& window) {
 
 	// Actor Sprite
 	if (actor->IsPlayer()) {
-		actor->Draw(window, sf::Vector2f(pos.x + 3.f - 64.f, pos.y + 3.f - 32.f));
+		actor->Draw(window, sf::Vector2f(pos.x + 67.f - 64.f, pos.y + 67.f - 32.f), 2.f);
 	}
 	else {
-		actor->Draw(window, sf::Vector2f(pos.x + 19.f, pos.y + 19.f));
+		actor->Draw(window, sf::Vector2f(pos.x + 52.f, pos.y + 52.f), 2.f);
 	}
 
 	// Aura Tooltip

@@ -29,7 +29,7 @@ Player::Player(std::string n, RaceID raceID, PlayerClassID classID, bool female)
 	else {
 		texture = assetManager.LoadTexture(race->GetFilepath() + "/base_m.png");
 	}
-	texture->setSmooth(true);
+	texture->setSmooth(false);
 	sprite.setTexture(*texture);
 	sprite.setPosition(0, 0);
 	destination = { 0, 0 };
@@ -114,20 +114,25 @@ void Player::Draw(sf::RenderTarget& window, float timeRatio) {
 	}
 }
 
-void Player::Draw(sf::RenderTarget& window, sf::Vector2f pos) {
+void Player::Draw(sf::RenderTarget& window, sf::Vector2f pos, float scale) {
 	sf::Vector2f oldPos = sprite.getPosition();
+	auto oldScale = sprite.getScale();
 	sprite.setPosition(pos);
+	sprite.setScale(scale, scale);
 	if (IsOnScreen(window)) {
 		window.draw(sprite);
 		for (size_t i = 0; i < 8; i++) {
 			equipmentSprites[i].setPosition(pos);
+			equipmentSprites[i].setScale(scale, scale);
 			if (drawEquip(i)) {
 				window.draw(equipmentSprites[i]);
 			}
 			equipmentSprites[i].setPosition(oldPos);
+			equipmentSprites[i].setScale(oldScale);
 		}
 	}
 	sprite.setPosition(oldPos);
+	sprite.setScale(oldScale);
 }
 
 int Player::GetMaxHP() {
@@ -1369,7 +1374,7 @@ void Player::setEquipmentTexture(size_t slot) {
 	if (textureSlot < 8 && equipment[slot] != nullptr) {
 		Equipment* equip = (Equipment*)equipment[slot].get();
 		equipmentTextures[textureSlot] = assetManager.LoadTexture(race->GetFilepath() + "/" + file + "/" + equip->GetTextureFilepath());
-		equipmentTextures[textureSlot]->setSmooth(true);
+		equipmentTextures[textureSlot]->setSmooth(false);
 		equipmentSprites[textureSlot].setTexture(*equipmentTextures[textureSlot]);
 
 		// reverse texture for offhand slot
@@ -1386,7 +1391,7 @@ void Player::setEquipmentTexture(size_t slot) {
 		else {
 			equipmentTextures[0] = assetManager.LoadTexture(race->GetFilepath() + "/armor_m/linen.png");
 		}
-		equipmentTextures[0]->setSmooth(true);
+		equipmentTextures[0]->setSmooth(false);
 		equipmentSprites[0].setTexture(*equipmentTextures[0]);
 	}
 }

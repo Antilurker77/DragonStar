@@ -23,7 +23,7 @@ Enemy::Enemy(EnemyID enemyID, int level, sf::Vector3i spawnPosition) {
 	this->level = level;
 
 	this->texture = assetManager.LoadTexture("gfx/actor/enemy/" + enemyInfo->GetFilepath());
-	texture->setSmooth(true);
+	texture->setSmooth(false);
 	sprite.setTexture(*texture);
 	sprite.setPosition(0, 0);
 	destination = { 0, 0 };

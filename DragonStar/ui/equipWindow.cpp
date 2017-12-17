@@ -242,7 +242,7 @@ void EquipWindow::Render(sf::RenderTarget& window) {
 	window.draw(background);
 	closeButton.Render(window);
 
-	players[displayedActor]->Draw(window, sf::Vector2f(bgPos.x + 200, bgPos.y + 20));
+	players[displayedActor]->Draw(window, sf::Vector2f(bgPos.x + 264, bgPos.y + 84), 2.f);
 
 	for (auto b : actorButtons) {
 		b.Render(window);

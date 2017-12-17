@@ -82,13 +82,16 @@ void Entity::Draw(sf::RenderTarget& window, float timeRatio){
 	}
 }
 
-void Entity::Draw(sf::RenderTarget& window, sf::Vector2f pos) {
+void Entity::Draw(sf::RenderTarget& window, sf::Vector2f pos, float scale) {
 	sf::Vector2f oldPos = sprite.getPosition();
+	auto oldScale = sprite.getScale();
 	sprite.setPosition(pos);
+	sprite.setScale(scale, scale);
 	if (IsOnScreen(window)) {
 		window.draw(sprite);
 	}
 	sprite.setPosition(oldPos);
+	sprite.setScale(oldScale);
 }
 
 // Returns the sprite's pixel coordinates.
