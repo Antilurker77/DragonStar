@@ -4,9 +4,9 @@
 //
 // ==================================
 
-#include "../header/testTileset.h"
+#include "../header/ts_testTileset.h"
 
-TestTileset::TestTileset(){
+Ts_TestTileset::Ts_TestTileset(){
 	texture = assetManager.LoadTexture("gfx/dungeon/test_tileset.png");
 	texture->setSmooth(true);
 

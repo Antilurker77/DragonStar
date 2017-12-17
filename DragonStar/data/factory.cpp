@@ -162,10 +162,10 @@ RacePtr Factory::CreateRace(RaceID id){
 // Returns tileset data. Used by maps.
 TilesetPtr Factory::CreateTileset(TilesetID id){
 	switch (id){
-	case TilesetID::TEST_TILESET:						return TilesetPtr(std::make_unique<TestTileset>());
+	case TilesetID::TEST_TILESET:						return TilesetPtr(std::make_unique<Ts_TestTileset>());
 
 	// Returns TEST tileset if ID is invalid.
-	default:											return TilesetPtr(std::make_unique<TestTileset>());
+	default:											return TilesetPtr(std::make_unique<Ts_TestTileset>());
 	}
 
 }

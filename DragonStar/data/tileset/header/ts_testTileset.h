@@ -1,6 +1,6 @@
 // ==================================
 //
-// testTileset.h
+// ts_testTileset.h
 //
 // Data for Test Tileset tileset.
 //
@@ -10,7 +10,7 @@
 
 #include "../../tileset.h"
 
-class TestTileset : public Tileset {
+class Ts_TestTileset : public Tileset {
 public:
-	TestTileset();
+	Ts_TestTileset();
 };

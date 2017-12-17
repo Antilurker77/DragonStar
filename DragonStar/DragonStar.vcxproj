@@ -165,7 +165,7 @@
     <ClCompile Include="data\map\cpp\mp_testMap.cpp" />
     <ClCompile Include="data\map\cpp\mp_testMapXL.cpp" />
     <ClCompile Include="data\map\cpp\mp_testMapXS.cpp" />
-    <ClCompile Include="data\tileset\cpp\testTileset.cpp" />
+    <ClCompile Include="data\tileset\cpp\ts_testTileset.cpp" />
     <ClCompile Include="data\weight.cpp" />
     <ClCompile Include="entity\actor.cpp" />
     <ClCompile Include="core\assetManager.cpp" />
@@ -286,7 +286,7 @@
     <ClInclude Include="data\map\header\mp_testMap.h" />
     <ClInclude Include="data\map\header\mp_testMapXL.h" />
     <ClInclude Include="data\map\header\mp_testMapXS.h" />
-    <ClInclude Include="data\tileset\header\testTileset.h" />
+    <ClInclude Include="data\tileset\header\ts_testTileset.h" />
     <ClInclude Include="data\tileset\header\tilesetData.h" />
     <ClInclude Include="entity\actor.h" />
     <ClInclude Include="core\assetManager.h" />

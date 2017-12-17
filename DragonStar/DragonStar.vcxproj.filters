@@ -66,9 +66,6 @@
     <ClCompile Include="data\statMod.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data\tileset\cpp\testTileset.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="entity\enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -327,6 +324,9 @@
     <ClCompile Include="data\aura\cpp\au_rendingSlash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\tileset\cpp\ts_testTileset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -387,9 +387,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\map\header\mapData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="data\tileset\header\testTileset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\tileset\header\tilesetData.h">
@@ -681,6 +678,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\aura\header\au_rendingSlash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\tileset\header\ts_testTileset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
