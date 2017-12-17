@@ -1280,24 +1280,18 @@ void BattleScene::calcVictory() {
 
 	// Items
 	while (lootPoints > 0u) {
-		std::uniform_int_distribution<unsigned int> dist(0u, 99u);
-		if (dist(mt) < lootPoints) {
-			if (lootPoints < 100u) {
-				lootPoints = 0u;
-			}
-			else {
-				lootPoints -= 100u;
-			}
-
+		unsigned int lootRoll = Random::RandSizeT(mt, 0u, 99u);
+		if (lootRoll < lootPoints) {
 			// Generate the item.
-			if (dist(mt) >= 70u){
+			unsigned int kindRoll = Random::RandSizeT(mt, 0u, 99u);
+			if (kindRoll >= 70u){
 				AbilityID id = Weight::GetRandomAb(mt, tier);
 				ItemPtr item = factory.CreateAbilityScroll(id);
 				itemsAwarded.push_back(item);
 			}
 			else {
 				ItemQuality quality;
-				unsigned int qualRoll = dist(mt);
+				unsigned int qualRoll = Random::RandSizeT(mt, 0u, 99u);
 				if (qualRoll >= 90u) {
 					quality = ItemQuality::MYTHIC;
 				}
@@ -1317,6 +1311,12 @@ void BattleScene::calcVictory() {
 				eq->RollStatMods(quality, Random::RandSeed(mt));
 				itemsAwarded.push_back(item);
 			}
+		}
+		if (lootPoints < 100u) {
+			lootPoints = 0u;
+		}
+		else {
+			lootPoints -= 100u;
 		}
 	}
 
