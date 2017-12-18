@@ -157,6 +157,7 @@
     <ClCompile Include="data\item.cpp" />
     <ClCompile Include="data\map.cpp" />
     <ClCompile Include="data\map\cpp\mp_fieldSewer.cpp" />
+    <ClCompile Include="data\map\cpp\mp_fieldSewerIntersection.cpp" />
     <ClCompile Include="data\map\cpp\mp_fieldSmallIsland.cpp" />
     <ClCompile Include="data\map\cpp\mp_testArena.cpp" />
     <ClCompile Include="data\map\cpp\mp_testArenaB.cpp" />
@@ -274,6 +275,7 @@
     <ClInclude Include="data\dataString.h" />
     <ClInclude Include="data\item.h" />
     <ClInclude Include="data\map\header\mp_fieldSewer.h" />
+    <ClInclude Include="data\map\header\mp_fieldSewerIntersection.h" />
     <ClInclude Include="data\map\header\mp_fieldSmallIsland.h" />
     <ClInclude Include="data\map\header\mp_testArena.h" />
     <ClInclude Include="data\map\header\mp_testArenaB.h" />

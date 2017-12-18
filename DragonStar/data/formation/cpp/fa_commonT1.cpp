@@ -20,9 +20,9 @@ Fa_SentryAmbush::Fa_SentryAmbush() {
 		sf::Vector2i(1, 0)
 	};
 	enemies = {
-		{ EnemyID::ARCANE_SENTRY, 0,{ 0, -4 } },
-		{ EnemyID::ARCANE_SENTRY, 0,{ 4, 0 } },
-		{ EnemyID::ARCANE_SENTRY, 0,{ -4, 4 } }
+		{ EnemyID::ARCANE_SENTRY, 0, { 0, -4 } },
+		{ EnemyID::ARCANE_SENTRY, 0, { 4, 0 } },
+		{ EnemyID::ARCANE_SENTRY, 0, { -4, 4 } }
 	};
 }
 
@@ -40,12 +40,35 @@ Fa_SewerRats::Fa_SewerRats() {
 		sf::Vector2i(4, 3)
 	};
 	enemies = {
-		{ EnemyID::GIANT_RAT, 0,{ -4, 4 } },
-		{ EnemyID::GIANT_RAT, 0,{ -5, 5 } },
-		{ EnemyID::GIANT_RAT, 0,{ 5, -5 } },
-		{ EnemyID::GIANT_RAT, 0,{ 4, -5 } },
-		{ EnemyID::GIANT_RAT, 0,{ -3, -3 } },
-		{ EnemyID::GIANT_RAT, 0,{ -4, -3 } },
-		{ EnemyID::GIANT_RAT, 0,{ -3, -4 } }
+		{ EnemyID::GIANT_RAT, 0, { -4, 4 } },
+		{ EnemyID::GIANT_RAT, 0, { -5, 5 } },
+		{ EnemyID::GIANT_RAT, 0, { 5, -5 } },
+		{ EnemyID::GIANT_RAT, 0, { 4, -5 } },
+		{ EnemyID::GIANT_RAT, 0, { -3, -3 } },
+		{ EnemyID::GIANT_RAT, 0, { -4, -3 } },
+		{ EnemyID::GIANT_RAT, 0, { -3, -4 } }
+	};
+}
+
+Fa_SewerRatsIntersection::Fa_SewerRatsIntersection() {
+	name = "Sewer Rats";
+	isUnique = false;
+	isBoss = false;
+	mapID = MapID::FIELD_SEWER_INTERSECTION;
+	startingLocations = {
+		sf::Vector2i(0, 1),
+		sf::Vector2i(-1, 1),
+		sf::Vector2i(1, 0),
+		sf::Vector2i(-1, 2),
+		sf::Vector2i(1, 1),
+		sf::Vector2i(0, 2)
+	};
+	enemies = {
+		{ EnemyID::GIANT_RAT, 0, { 0, -3 } },
+		{ EnemyID::GIANT_RAT, 0, { -1, -2 } },
+		{ EnemyID::GIANT_RAT, 0, { 1, -3 } },
+		{ EnemyID::GIANT_RAT, 0, { -2, -1 } },
+		{ EnemyID::GIANT_RAT, 0, { 2, -3 } },
+		{ EnemyID::GIANT_RAT, 0, { 0, -2 } }
 	};
 }

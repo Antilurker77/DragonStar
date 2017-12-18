@@ -19,3 +19,8 @@ class Fa_SewerRats : public Formation {
 public:
 	Fa_SewerRats();
 };
+
+class Fa_SewerRatsIntersection : public Formation {
+public:
+	Fa_SewerRatsIntersection();
+};

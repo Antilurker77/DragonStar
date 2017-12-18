@@ -98,6 +98,7 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 	case FormationID::TEST_FORMATION_B:					return FormationPtr(std::make_shared<Fa_TestFormationB>());
 	case FormationID::SENTRY_AMBUSH:					return FormationPtr(std::make_shared<Fa_SentryAmbush>());
 	case FormationID::SEWER_RATS:						return FormationPtr(std::make_shared<Fa_SewerRats>());
+	case FormationID::SEWER_RATS_INTERSECTION:			return FormationPtr(std::make_shared<Fa_SewerRatsIntersection>());
 
 	// Unique
 	case FormationID::TEST_UNIQUE:						return FormationPtr(std::make_shared<Fa_TestUnique>());
@@ -139,6 +140,7 @@ MapPtr Factory::CreateMap(MapID id){
 	case MapID::TEST_ARENA_B:							return MapPtr(std::make_shared<Mp_TestArenaB>());
 	case MapID::FIELD_SMALL_ISLAND:						return MapPtr(std::make_shared<Mp_FieldSmallIsland>());
 	case MapID::FIELD_SEWER:							return MapPtr(std::make_shared<Mp_FieldSewer>());
+	case MapID::FIELD_SEWER_INTERSECTION:				return MapPtr(std::make_shared<Mp_FieldSewerIntersection>());
 
 	// Returns TEST map if ID is invalid.
 	default:											return MapPtr(std::make_shared<Mp_TestMap>());

@@ -13,7 +13,8 @@ std::vector<FormationWeight> Weight::GetCommonFaWeights(int tier) {
 	case 1:
 		return {
 			{ FormationID::SENTRY_AMBUSH, 1.0 },
-			{ FormationID::SEWER_RATS, 1.0 }
+			{ FormationID::SEWER_RATS, 0.5 },
+			{ FormationID::SEWER_RATS_INTERSECTION, 1.0 }
 		};
 	default:
 		return {
