@@ -45,7 +45,7 @@ En_GiantRat::En_GiantRat() {
 
 	baseGold = 12u;
 	baseEXP = 15u;
-	lootPoints = 30u;
+	lootPoints = 60u;
 
 	statMods = {
 		StatMod(StatModType::RESISTANCE, 0.1,{ Category::ANY },{ Element::POISON })

@@ -45,7 +45,7 @@ En_TestUnique::En_TestUnique() {
 
 	baseGold = 30u;
 	baseEXP = 400u;
-	lootPoints = 200u;
+	lootPoints = 400u;
 
 	statMods = { };
 	abilities = { AbilityID::POWER_STRIKE };

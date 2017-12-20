@@ -44,7 +44,7 @@ En_TargetDummy::En_TargetDummy() {
 
 	baseGold = 70u;
 	baseEXP = 100u;
-	lootPoints = 450u;
+	lootPoints = 650u;
 
 	abilities = { };
 	statMods = {

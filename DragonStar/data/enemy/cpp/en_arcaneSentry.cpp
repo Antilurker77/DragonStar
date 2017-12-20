@@ -45,7 +45,7 @@ En_ArcaneSentry::En_ArcaneSentry() {
 
 	baseGold = 20u;
 	baseEXP = 35u;
-	lootPoints = 75u;
+	lootPoints = 150u;
 
 	statMods = {
 		StatMod(StatModType::RESISTANCE, 0.3, { Category::ANY }, { Element::ARCANE }),
