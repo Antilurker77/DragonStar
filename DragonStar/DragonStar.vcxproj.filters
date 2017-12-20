@@ -264,9 +264,6 @@
     <ClCompile Include="ui\itemTooltip.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data\equipment\cpp\eq_silkRobes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ui\equipWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -352,6 +349,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="data\map\cpp\mp_fieldSewerIntersection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_lightBody.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_lightHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_lightHands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_lightFeet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -647,9 +656,6 @@
     <ClInclude Include="ui\itemTooltip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="data\equipment\header\eq_silkRobes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ui\equipWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -735,6 +741,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\map\header\mp_fieldSewerIntersection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_lightBody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_lightHead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_lightHands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_lightFeet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

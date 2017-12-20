@@ -1,8 +1,8 @@
 // ==================================
 //
-// eq_silkRobes.h
+// eq_lightBody.h
 //
-// Data for Silk Robes equipment.
+// Data for Light Body equipment.
 //
 // ==================================
 

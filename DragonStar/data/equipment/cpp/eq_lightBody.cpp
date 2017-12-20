@@ -1,10 +1,10 @@
 // ==================================
 //
-// eq_silkRobes.cpp
+// eq_lightBody.cpp
 //
 // ==================================
 
-#include "../header/eq_silkRobes.h"
+#include "../header/eq_lightBody.h"
 
 Eq_SilkRobes::Eq_SilkRobes() {
 	name = "Silk Robes";
@@ -17,7 +17,7 @@ Eq_SilkRobes::Eq_SilkRobes() {
 	equipType = EquipType::LIGHT_BODY;
 	equipmentID = EquipmentID::SILK_ROBES;
 
-	equipPower = 6;
+	equipPower = 9;
 	blockChance = 0.0;
 	statMods = {};
 }
