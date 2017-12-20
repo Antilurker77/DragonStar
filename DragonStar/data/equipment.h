@@ -96,8 +96,17 @@ protected:
 	// Generates stat mods for a spear.
 	void rollSpearStatMods(std::mt19937_64& mt);
 
+	// Generates stat mods for light head armor.
+	void rollLightHeadStatMods(std::mt19937_64& mt);
+
 	// Generates stat mods for light body armor.
 	void rollLightBodyArmorStatMods(std::mt19937_64& mt);
+
+	// Generates stat mods for light hands armor.
+	void rollLightHandsStatMods(std::mt19937_64& mt);
+
+	// Generates stat mods for light feet armor.
+	void rollLightFeetStatMods(std::mt19937_64& mt);
 
 	// Generates stat mods for a neck.
 	void rollNeckMods(std::mt19937_64& mt);
@@ -110,9 +119,4 @@ protected:
 	// Returns a random value for the given stat mod type.
 	double rollMod(StatModType smt, std::mt19937_64& mt);
 
-	// Rolls values for maximum HP.
-	int rollModMaxHP(std::mt19937_64& mt);
-
-	// Rolls values for an attribute.
-	int rollModAttribute(std::mt19937_64& mt);
 };

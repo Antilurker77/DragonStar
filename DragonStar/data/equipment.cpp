@@ -97,8 +97,17 @@ void Equipment::RollStatMods(ItemQuality quality, uint64_t seed) {
 	case EquipType::SPEAR:
 		rollSpearStatMods(mt);
 		break;
+	case EquipType::LIGHT_HEAD:
+		rollLightHeadStatMods(mt);
+		break;
 	case EquipType::LIGHT_BODY:
 		rollLightBodyArmorStatMods(mt);
+		break;
+	case EquipType::LIGHT_HANDS:
+		rollLightHandsStatMods(mt);
+		break;
+	case EquipType::LIGHT_FEET:
+		rollLightFeetStatMods(mt);
 		break;
 	case EquipType::NECK:
 		rollNeckMods(mt);
@@ -114,7 +123,7 @@ void Equipment::RollStatMods(ItemQuality quality, uint64_t seed) {
 int Equipment::howManyStatMods(std::mt19937_64& mt) {
 	switch (itemQuality) {
 	case ItemQuality::COMMON:
-		if (equipType == EquipType::RING || equipType == EquipType::NECK) {
+		if (equipType == EquipType::RING || equipType == EquipType::NECK || equipType == EquipType::OFF_HAND) {
 			return 1;
 		}
 		else {
@@ -292,6 +301,67 @@ void Equipment::rollSpearStatMods(std::mt19937_64& mt) {
 	//rollResistanceStatMods(mt);
 }
 
+void Equipment::rollLightHeadStatMods(std::mt19937_64& mt) {
+	int statModCount = howManyStatMods(mt);
+	std::vector<StatModType> selected;
+
+	std::vector<std::pair<StatModType, double>> possibleAffixes = {
+		{ StatModType::DEX, 0.5 },
+		{ StatModType::INT, 1.0 },
+		{ StatModType::WIS, 1.0 },
+		{ StatModType::ALL_ATTRIBUTES, 0.5 },
+		{ StatModType::HP, 1.0 },
+		{ StatModType::MP, 0.5 },
+		{ StatModType::SP, 0.5 },
+		{ StatModType::HP_REGEN, 0.33 },
+		{ StatModType::MP_REGEN, 0.34 },
+		{ StatModType::SP_REGEN, 0.33 },
+		{ StatModType::VIT, 1.0 },
+		{ StatModType::ARMOR, 1.0 },
+		{ StatModType::ARMOR_PEN, 1.0 },
+		{ StatModType::CRIT_DAMAGE, 1.0 },
+		{ StatModType::HIT_CHANCE, 1.0 },
+		{ StatModType::DODGE_CHANCE, 1.0 },
+		{ StatModType::MP_COST_REDUCTION, 0.5 },
+		{ StatModType::SP_COST_REDUCTION, 0.5 }
+	};
+
+	while (statModCount > 0) {
+		size_t modsAdded = selected.size();
+		size_t i = 0;
+
+		// Rare or better items guarenteed INT or WIS.
+		if (modsAdded == 0 && itemQuality >= ItemQuality::RARE) {
+			i = Random::RandSizeT(mt, 1, 2);
+		}
+		else {
+			bool searching = true;
+			while (searching) {
+				i = Random::RandSizeT(mt, 0, possibleAffixes.size() - 1 - modsAdded);
+				if (Random::RandDouble(mt, 0.0, 1.0) < possibleAffixes[i].second) {
+					searching = false;
+				}
+			};
+		}
+		selected.push_back(possibleAffixes[i].first);
+
+		std::swap(possibleAffixes[i], possibleAffixes[possibleAffixes.size() - 1 - modsAdded]);
+		statModCount--;
+	}
+
+	std::sort(selected.begin(), selected.end());
+
+	for (auto s : selected) {
+		double value = 0.0;
+		Element element = Element::NONE;
+		value = rollMod(s, mt);
+
+		statMods.push_back(StatMod(s, value, { Category::ANY }, { element }));
+	}
+
+	rollResistanceStatMods(mt);
+}
+
 void Equipment::rollLightBodyArmorStatMods(std::mt19937_64& mt) {
 	int statModCount = howManyStatMods(mt);
 	std::vector<StatModType> selected;
@@ -311,6 +381,146 @@ void Equipment::rollLightBodyArmorStatMods(std::mt19937_64& mt) {
 		{ StatModType::ARMOR, 1.0 },
 		{ StatModType::DODGE_CHANCE, 1.0 },
 		{ StatModType::COOLDOWN_REDUCTION, 1.0 }
+	};
+
+	while (statModCount > 0) {
+		size_t modsAdded = selected.size();
+		size_t i = 0;
+
+		// Rare or better items guarenteed INT or WIS.
+		if (modsAdded == 0 && itemQuality >= ItemQuality::RARE) {
+			i = Random::RandSizeT(mt, 1, 2);
+		}
+		else {
+			bool searching = true;
+			while (searching) {
+				i = Random::RandSizeT(mt, 0, possibleAffixes.size() - 1 - modsAdded);
+				if (Random::RandDouble(mt, 0.0, 1.0) < possibleAffixes[i].second) {
+					searching = false;
+				}
+			};
+		}
+		selected.push_back(possibleAffixes[i].first);
+
+		std::swap(possibleAffixes[i], possibleAffixes[possibleAffixes.size() - 1 - modsAdded]);
+		statModCount--;
+	}
+
+	std::sort(selected.begin(), selected.end());
+
+	for (auto s : selected) {
+		double value = 0.0;
+		Element element = Element::NONE;
+		value = rollMod(s, mt);
+
+		statMods.push_back(StatMod(s, value, { Category::ANY }, { element }));
+	}
+
+	rollResistanceStatMods(mt);
+}
+
+void Equipment::rollLightHandsStatMods(std::mt19937_64& mt) {
+	int statModCount = howManyStatMods(mt);
+	std::vector<StatModType> selected;
+
+	std::vector<std::pair<StatModType, double>> possibleAffixes = {
+		{ StatModType::DEX, 0.5 },
+		{ StatModType::INT, 1.0 },
+		{ StatModType::WIS, 1.0 },
+		{ StatModType::ALL_ATTRIBUTES, 0.5 },
+		{ StatModType::HP, 1.0 },
+		{ StatModType::MP, 0.5 },
+		{ StatModType::SP, 0.5 },
+		{ StatModType::VIT, 1.0 },
+		{ StatModType::HP_LEECH, 0.5 },
+		{ StatModType::MP_LEECH, 0.5 },
+		{ StatModType::ARMOR, 1.0 },
+		{ StatModType::DAMAGE, 1.0 },
+		{ StatModType::ARMOR_PEN, 1.0 },
+		{ StatModType::CRIT_CHANCE, 1.0 },
+		{ StatModType::HASTE, 1.0 },
+		{ StatModType::DOUBLE_STRIKE_CHANCE, 1.0 },
+		{ StatModType::ON_HIT_DAMAGE, 1.0 },
+		{ StatModType::HIT_CHANCE, 1.0 },
+	};
+
+	std::vector<Element> possibleElements = {
+		Element::PHYSICAL,
+		Element::ARCANE,
+		Element::FIRE,
+		Element::ICE,
+		Element::LIGHTNING,
+		Element::MIND,
+		Element::POISON,
+		Element::WATER,
+		Element::WIND,
+		Element::EARTH,
+		Element::LIGHT,
+		Element::DARK
+	};
+
+	while (statModCount > 0) {
+		size_t modsAdded = selected.size();
+		size_t i = 0;
+
+		// Rare or better items guarenteed INT or WIS.
+		if (modsAdded == 0 && itemQuality >= ItemQuality::RARE) {
+			i = Random::RandSizeT(mt, 1, 2);
+		}
+		else {
+			bool searching = true;
+			while (searching) {
+				i = Random::RandSizeT(mt, 0, possibleAffixes.size() - 1 - modsAdded);
+				if (Random::RandDouble(mt, 0.0, 1.0) < possibleAffixes[i].second) {
+					searching = false;
+				}
+			};
+		}
+		selected.push_back(possibleAffixes[i].first);
+
+		std::swap(possibleAffixes[i], possibleAffixes[possibleAffixes.size() - 1 - modsAdded]);
+		statModCount--;
+	}
+
+	std::sort(selected.begin(), selected.end());
+
+	for (auto s : selected) {
+		double value = 0.0;
+		Element element = Element::NONE;
+		if (s == StatModType::DAMAGE || s == StatModType::ON_HIT_DAMAGE) {
+			size_t choice = Random::RandSizeT(mt, 0, possibleElements.size() - 1);
+			element = possibleElements[choice];
+		}
+		value = rollMod(s, mt);
+
+		statMods.push_back(StatMod(s, value, { Category::ANY }, { element }));
+	}
+
+	rollResistanceStatMods(mt);
+}
+
+void Equipment::rollLightFeetStatMods(std::mt19937_64& mt) {
+	int statModCount = howManyStatMods(mt);
+	std::vector<StatModType> selected;
+
+	std::vector<std::pair<StatModType, double>> possibleAffixes = {
+		{ StatModType::DEX, 0.5 },
+		{ StatModType::INT, 1.0 },
+		{ StatModType::WIS, 1.0 },
+		{ StatModType::ALL_ATTRIBUTES, 0.5 },
+		{ StatModType::HP, 1.0 },
+		{ StatModType::MP, 0.5 },
+		{ StatModType::SP, 0.5 },
+		{ StatModType::HP_REGEN, 0.33 },
+		{ StatModType::MP_REGEN, 0.34 },
+		{ StatModType::SP_REGEN, 0.33 },
+		{ StatModType::VIT, 1.0 },
+		{ StatModType::ARMOR, 1.0 },
+		{ StatModType::HASTE, 1.0 },
+		{ StatModType::DODGE_CHANCE, 1.0 },
+		{ StatModType::MP_COST_REDUCTION, 0.5 },
+		{ StatModType::SP_COST_REDUCTION, 0.5 },
+		{ StatModType::MOVEMENT_SPEED, 1.0 },
 	};
 
 	while (statModCount > 0) {
@@ -576,7 +786,7 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 
 	ranges[EquipType::SHIELD] = ranges[EquipType::SWORD_1H];
 	ranges[EquipType::SHIELD][StatModType::VIT] = { 3, 4, 4, 8, 8, 12 };
-	ranges[EquipType::SHIELD][StatModType::ARMOR] = { 6, 14, 14, 25, 25, 38 };
+	ranges[EquipType::SHIELD][StatModType::ARMOR] = { 3, 4, 4, 5, 5, 7 };
 	ranges[EquipType::SHIELD][StatModType::COUNTER_CHANCE] = { 11, 14, 14, 17, 17, 20 };
 	ranges[EquipType::SHIELD][StatModType::BLOCK_CHANCE] = { 3, 4, 4, 5, 5, 6 };
 
@@ -613,6 +823,29 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::STAFF] = ranges[EquipType::SWORD_2H];
 	ranges[EquipType::BOW] = ranges[EquipType::SWORD_2H];
 
+	ranges[EquipType::HEAVY_HEAD][StatModType::HP] = { 20, 25, 25, 50, 50, 75 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::HP_REGEN] = { 32, 48, 48, 84, 84, 120 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::MP] = { 10, 12, 12, 25, 25, 38 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::MP_REGEN] = { 8, 12, 12, 21, 21, 30 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::SP] = { 2, 4, 4, 8, 8, 12 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::SP_REGEN] = { 4, 6, 6, 8, 8, 10 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::STR] = { 2, 2, 2, 4, 4, 6 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::DEX] = ranges[EquipType::HEAVY_HEAD][StatModType::STR];
+	ranges[EquipType::HEAVY_HEAD][StatModType::INT] = ranges[EquipType::HEAVY_HEAD][StatModType::STR];
+	ranges[EquipType::HEAVY_HEAD][StatModType::WIS] = ranges[EquipType::HEAVY_HEAD][StatModType::STR];
+	ranges[EquipType::HEAVY_HEAD][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 2, 2, 3 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::VIT] = { 2, 3, 3, 6, 6, 9 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::ARMOR] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::ARMOR_PEN] = { 4, 5, 5, 6, 6, 8 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::CRIT_DAMAGE] = { 20, 25, 25, 30, 30, 40 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::HIT_CHANCE] = { 5, 7, 7, 8, 10, 10 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::DODGE_CHANCE] = { 6, 8, 8, 10, 10, 12 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::MP_COST_REDUCTION] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::SP_COST_REDUCTION] = { 2, 3, 3, 4, 4, 5 };
+
+	ranges[EquipType::MED_HEAD] = ranges[EquipType::HEAVY_HEAD];
+	ranges[EquipType::LIGHT_HEAD] = ranges[EquipType::HEAVY_HEAD];
+
 	ranges[EquipType::HEAVY_BODY][StatModType::HP] = { 20, 30, 30, 60, 60, 90 };
 	ranges[EquipType::HEAVY_BODY][StatModType::HP_REGEN] = { 60, 92, 92, 120, 120, 152 };
 	ranges[EquipType::HEAVY_BODY][StatModType::MP] = { 10, 15, 15, 30, 30, 45 };
@@ -625,13 +858,58 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::HEAVY_BODY][StatModType::WIS] = ranges[EquipType::HEAVY_BODY][StatModType::STR];
 	ranges[EquipType::HEAVY_BODY][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 3, 3, 4 };
 	ranges[EquipType::HEAVY_BODY][StatModType::VIT] = { 4, 6, 6, 12, 12, 18 };
-	ranges[EquipType::HEAVY_BODY][StatModType::ARMOR] = { 3, 6, 6, 14, 14, 27, 27, 45 };
+	ranges[EquipType::HEAVY_BODY][StatModType::ARMOR] = { 3, 4, 4, 5, 5, 7 };
 	ranges[EquipType::HEAVY_BODY][StatModType::COUNTER_CHANCE] = { 11, 14, 14, 17, 17, 20 };
 	ranges[EquipType::HEAVY_BODY][StatModType::DODGE_CHANCE] = { 6, 8, 8, 10, 10, 12 };
 	ranges[EquipType::HEAVY_BODY][StatModType::COOLDOWN_REDUCTION] = { 6, 8, 8, 12, 12, 16 };
 
 	ranges[EquipType::MED_BODY] = ranges[EquipType::HEAVY_BODY];
 	ranges[EquipType::LIGHT_BODY] = ranges[EquipType::HEAVY_BODY];
+
+	ranges[EquipType::HEAVY_HANDS][StatModType::HP] = { 12, 15, 15, 30, 30, 45 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::MP] = { 6, 8, 8, 15, 15, 22 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::SP] = { 2, 4, 4, 7, 7, 10 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::STR] = { 2, 2, 2, 5, 5, 7 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::DEX] = ranges[EquipType::HEAVY_HANDS][StatModType::STR];
+	ranges[EquipType::HEAVY_HANDS][StatModType::INT] = ranges[EquipType::HEAVY_HANDS][StatModType::STR];
+	ranges[EquipType::HEAVY_HANDS][StatModType::WIS] = ranges[EquipType::HEAVY_HANDS][StatModType::STR];
+	ranges[EquipType::HEAVY_HANDS][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 3, 3, 4 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::VIT] = { 3, 4, 4, 8, 8, 12 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::HP_LEECH] = { 3, 4, 4, 5, 5, 6 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::MP_LEECH] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::ARMOR] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::DAMAGE] = { 4, 5, 5, 6, 6, 8 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::ARMOR_PEN] = { 4, 5, 5, 6, 6, 8 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::CRIT_CHANCE] = { 4, 5, 5, 7, 7, 9 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::HASTE] = { 3, 5, 5, 7, 7, 9 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::DOUBLE_STRIKE_CHANCE] = { 6, 8, 8, 10, 10, 12 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::ON_HIT_DAMAGE] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::HIT_CHANCE] = { 5, 7, 7, 8, 10, 10 };
+
+	ranges[EquipType::MED_HANDS] = ranges[EquipType::HEAVY_HANDS];
+	ranges[EquipType::LIGHT_HANDS] = ranges[EquipType::HEAVY_HANDS];
+
+	ranges[EquipType::HEAVY_FEET][StatModType::HP] = { 16, 20, 20, 40, 40, 60 };
+	ranges[EquipType::HEAVY_FEET][StatModType::HP_REGEN] = { 48, 64, 64, 100, 100, 136 };
+	ranges[EquipType::HEAVY_FEET][StatModType::MP] = { 8, 10, 10, 20, 20, 30 };
+	ranges[EquipType::HEAVY_FEET][StatModType::MP_REGEN] = { 12, 16, 16, 25, 25, 34 };
+	ranges[EquipType::HEAVY_FEET][StatModType::SP] = { 2, 4, 4, 8, 8, 12 };
+	ranges[EquipType::HEAVY_FEET][StatModType::SP_REGEN] = { 4, 6, 6, 8, 8, 10 };
+	ranges[EquipType::HEAVY_FEET][StatModType::STR] = { 2, 2, 2, 4, 4, 6 };
+	ranges[EquipType::HEAVY_FEET][StatModType::DEX] = ranges[EquipType::HEAVY_FEET][StatModType::STR];
+	ranges[EquipType::HEAVY_FEET][StatModType::INT] = ranges[EquipType::HEAVY_FEET][StatModType::STR];
+	ranges[EquipType::HEAVY_FEET][StatModType::WIS] = ranges[EquipType::HEAVY_FEET][StatModType::STR];
+	ranges[EquipType::HEAVY_FEET][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 2, 2, 3 };
+	ranges[EquipType::HEAVY_FEET][StatModType::VIT] = { 2, 3, 3, 6, 6, 9 };
+	ranges[EquipType::HEAVY_FEET][StatModType::ARMOR] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_FEET][StatModType::HASTE] = { 4, 6, 6, 8, 8, 10 };
+	ranges[EquipType::HEAVY_FEET][StatModType::DODGE_CHANCE] = { 10, 12, 12, 15, 15, 20 };
+	ranges[EquipType::HEAVY_FEET][StatModType::MP_COST_REDUCTION] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_FEET][StatModType::SP_COST_REDUCTION] = { 2, 3, 3, 4, 4, 5 };
+	ranges[EquipType::HEAVY_FEET][StatModType::MOVEMENT_SPEED] = { 15, 20, 20, 25, 25, 30 };
+
+	ranges[EquipType::MED_FEET] = ranges[EquipType::HEAVY_FEET];
+	ranges[EquipType::LIGHT_FEET] = ranges[EquipType::HEAVY_FEET];
 
 	ranges[EquipType::NECK][StatModType::HP] = { 16, 20, 20, 40, 40, 60 };
 	ranges[EquipType::NECK][StatModType::HP_REGEN] = { 32, 48, 48, 84, 84, 120 };
@@ -709,196 +987,4 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	}
 
 	return value;
-}
-
-int Equipment::rollModMaxHP(std::mt19937_64& mt) {
-	std::unordered_map<EquipType, std::vector<int>> ranges;
-	int min = 0;
-	int max = 0;
-
-	ranges[EquipType::SWORD_1H] = { 30, 45, 45, 100, 100, 160, 160, 250 };
-	ranges[EquipType::AXE_1H] = ranges[EquipType::SWORD_1H];
-	ranges[EquipType::MACE_1H] = ranges[EquipType::SWORD_1H];
-	ranges[EquipType::DAGGER] = ranges[EquipType::SWORD_1H];
-	ranges[EquipType::CLAW] = ranges[EquipType::SWORD_1H];
-	ranges[EquipType::WAND] = ranges[EquipType::SWORD_1H];
-	ranges[EquipType::SHIELD] = ranges[EquipType::SWORD_1H];
-	ranges[EquipType::OFF_HAND] = ranges[EquipType::SWORD_1H];
-	ranges[EquipType::SWORD_2H] = { 60, 90, 90, 200, 200, 320, 320, 500 };
-
-	return 0;
-}
-
-int Equipment::rollModAttribute(std::mt19937_64& mt) {
-	std::uniform_int_distribution<int> dist(0, 0);
-	switch (equipType) {
-	case EquipType::SWORD_1H:
-	case EquipType::AXE_1H:
-	case EquipType::MACE_1H:
-	case EquipType::DAGGER:
-	case EquipType::CLAW:
-	case EquipType::WAND:
-	case EquipType::SHIELD:
-	case EquipType::OFF_HAND:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(5, 10));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(10, 16));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(16, 25));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(25, 35));
-			break;
-		default:
-			break;
-		}
-		break;
-	case EquipType::SWORD_2H:
-	case EquipType::AXE_2H:
-	case EquipType::MACE_2H:
-	case EquipType::SPEAR:
-	case EquipType::BOW:
-	case EquipType::STAFF:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(10, 20));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(20, 32));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(32, 50));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(50, 70));
-			break;
-		default:
-			break;
-		}
-		break;
-	case EquipType::HEAVY_HEAD:
-	case EquipType::MED_HEAD:
-	case EquipType::LIGHT_HEAD:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(4, 6));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(6, 9));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(9, 14));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(14, 20));
-			break;
-		default:
-			break;
-		}
-		break;
-	case EquipType::HEAVY_BODY:
-	case EquipType::MED_BODY:
-	case EquipType::LIGHT_BODY:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(4, 9));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(9, 15));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(15, 22));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(22, 30));
-			break;
-		default:
-			break;
-		}
-		break;
-	case EquipType::HEAVY_HANDS:
-	case EquipType::MED_HANDS:
-	case EquipType::LIGHT_HANDS:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(5, 10));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(10, 16));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(16, 25));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(25, 35));
-			break;
-		default:
-			break;
-		}
-		break;
-	case EquipType::HEAVY_FEET:
-	case EquipType::MED_FEET:
-	case EquipType::LIGHT_FEET:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(4, 6));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(6, 10));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(10, 15));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(15, 21));
-			break;
-		default:
-			break;
-		}
-		break;
-	case EquipType::NECK:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(5, 10));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(10, 16));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(16, 25));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(25, 35));
-			break;
-		default:
-			break;
-		}
-		break;
-	case EquipType::RING:
-		switch (tier) {
-		case 1:
-			dist.param(std::uniform_int_distribution<int>::param_type(3, 5));
-			break;
-		case 2:
-			dist.param(std::uniform_int_distribution<int>::param_type(5, 8));
-			break;
-		case 3:
-			dist.param(std::uniform_int_distribution<int>::param_type(8, 12));
-			break;
-		case 4:
-			dist.param(std::uniform_int_distribution<int>::param_type(12, 16));
-			break;
-		default:
-			break;
-		}
-		break;
-	default:
-		break;
-	}
-
-	return dist(mt);
 }
