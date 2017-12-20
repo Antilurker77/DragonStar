@@ -135,7 +135,7 @@
     <ClCompile Include="data\aura\cpp\au_venom.cpp" />
     <ClCompile Include="data\damageHeal.cpp" />
     <ClCompile Include="data\enemyInfo.cpp" />
-    <ClCompile Include="data\enemy\cpp\ab_giantRat.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_giantRat.cpp" />
     <ClCompile Include="data\enemy\cpp\en_arcaneSentry.cpp" />
     <ClCompile Include="data\enemy\cpp\en_targetDummy.cpp" />
     <ClCompile Include="data\enemy\cpp\en_testAssassin.cpp" />

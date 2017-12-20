@@ -339,9 +339,6 @@
     <ClCompile Include="data\ability\cpp\abEn_bite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data\enemy\cpp\ab_giantRat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="data\map\cpp\mp_fieldSewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -361,6 +358,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="data\equipment\cpp\eq_lightFeet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\enemy\cpp\en_giantRat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
