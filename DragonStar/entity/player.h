@@ -177,22 +177,22 @@ private:
 	std::array<ItemPtr, 10> equipment;
 
 	// Equipment Sprites
-	// Slot 0: Body
-	// Slot 1: Necklace
-	// Slot 2: Hair
-	// Slot 3: Head
-	// Slot 4: Hands
-	// Slot 5: Feet
+	// Slot 0: Feet
+	// Slot 1: Body
+	// Slot 2: Necklace
+	// Slot 3: Hair
+	// Slot 4: Head
+	// Slot 5: Hands
 	// Slot 6: Main Hand
 	// Slot 7: Off-Hand
 	std::array<sf::Sprite, 8> equipmentSprites;
 
-	// Slot 0: Body
-	// Slot 1: Necklace
-	// Slot 2: Hair
-	// Slot 3: Head
-	// Slot 4: Hands
-	// Slot 5: Feet
+	// Slot 0: Feet
+	// Slot 1: Body
+	// Slot 2: Necklace
+	// Slot 3: Hair
+	// Slot 4: Head
+	// Slot 5: Hands
 	// Slot 6: Main Hand
 	// Slot 7: Off-Hand
 	std::array<sf::Texture*, 8> equipmentTextures;

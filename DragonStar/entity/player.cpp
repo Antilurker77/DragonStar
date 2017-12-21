@@ -46,21 +46,6 @@ Player::Player(std::string n, RaceID raceID, PlayerClassID classID, bool female)
 	// Default Linen Armor
 	setEquipmentTexture(4);
 
-	//// Hardcode Iron Spear
-	//equipment[0] = factory.CreateEquipment(EquipmentID::IRON_SPEAR);
-	//setEquipmentTexture(0);
-
-	//// Hardcode Silk Armor
-	//equipment[4] = factory.CreateEquipment(EquipmentID::SILK_ROBES);
-	//auto equip = (Equipment*)equipment[4].get();
-	//equip->RollStatMods(ItemQuality::MYTHIC, std::hash<std::string>{}(name));
-	//setEquipmentTexture(4);
-
-	//// Hardcode Iron Ring
-	//equipment[7] = factory.CreateEquipment(EquipmentID::IRON_RING);
-	//equip = (Equipment*)equipment[7].get();
-	//equip->RollStatMods(ItemQuality::MAGICAL, std::hash<std::string>{}(name));
-
 	hpCurrent = GetMaxHP();
 	mpCurrent = GetMaxMP();
 	spCurrent = GetMaxSP();
@@ -1346,11 +1331,11 @@ void Player::setEquipmentTexture(size_t slot) {
 		file = "weapon";
 		break;
 	case 2:
-		textureSlot = 3;
+		textureSlot = 4;
 		file = "head";
 		break;
 	case 4:
-		textureSlot = 0;
+		textureSlot = 1;
 		if (isFemale) {
 			file = "armor_f";
 		}
@@ -1359,11 +1344,11 @@ void Player::setEquipmentTexture(size_t slot) {
 		}
 		break;
 	case 5:
-		textureSlot = 4;
+		textureSlot = 5;
 		file = "hands";
 		break;
 	case 8:
-		textureSlot = 5;
+		textureSlot = 0;
 		file = "feet";
 		break;
 	default:
@@ -1384,42 +1369,50 @@ void Player::setEquipmentTexture(size_t slot) {
 			equipmentSprites[textureSlot].setTextureRect(rect);
 		}
 	}
-	else if (textureSlot == 0 && equipment[4] == nullptr) {
+	else if (textureSlot == 1 && equipment[4] == nullptr) {
 		if (isFemale) {
-			equipmentTextures[0] = assetManager.LoadTexture(race->GetFilepath() + "/armor_f/linen.png");
+			equipmentTextures[1] = assetManager.LoadTexture(race->GetFilepath() + "/armor_f/linen.png");
 		}
 		else {
-			equipmentTextures[0] = assetManager.LoadTexture(race->GetFilepath() + "/armor_m/linen.png");
+			equipmentTextures[1] = assetManager.LoadTexture(race->GetFilepath() + "/armor_m/linen.png");
 		}
-		equipmentTextures[0]->setSmooth(false);
-		equipmentSprites[0].setTexture(*equipmentTextures[0]);
+		equipmentTextures[1]->setSmooth(false);
+		equipmentSprites[1].setTexture(*equipmentTextures[1]);
 	}
 }
 
 bool Player::drawEquip(size_t index) {
 	size_t test = 0;
 	switch (index) {
+	// Feet
 	case 0:
+		test = 8;
+		break;
+	// Body
+	case 1:
 		test = 4;
 		break;
-	case 1:
-		test = 2;
-		break;
+	// Neck
 	case 2:
 		test = 3;
 		break;
+	// Hair
 	case 3:
 		test = 4;
 		break;
+	// Head
 	case 4:
+		test = 2;
+		break;
+	// Hands
+	case 5:
 		test = 5;
 		break;
-	case 5:
-		test = 8;
-		break;
+	// Main-Hand
 	case 6:
 		test = 0;
 		break;
+	// Off-Hand
 	case 7:
 		test = 1;
 		break;
