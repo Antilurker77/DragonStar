@@ -38,13 +38,13 @@ BattleScene::BattleScene() {
 
 	// Loads textures.
 	selectTileTexture = assetManager.LoadTexture("gfx/ui/tile/select_tile.png");
-	selectTileTexture->setSmooth(true);
+	//selectTileTexture->setSmooth(true);
 
 	currentActorTileTexture = assetManager.LoadTexture("gfx/ui/tile/current_actor_tile.png");
-	currentActorTileTexture->setSmooth(true);
+	//currentActorTileTexture->setSmooth(true);
 
 	abilityTargetTexture = assetManager.LoadTexture("gfx/ui/tile/ability_target.png");
-	abilityTargetTexture->setSmooth(true);
+	//abilityTargetTexture->setSmooth(true);
 
 	// Sprites.
 	selectTile.setTexture(*selectTileTexture);
@@ -340,6 +340,7 @@ void BattleScene::RenderWorld(sf::RenderWindow& window, float timeRatio) {
 		if (activeActor != nullptr) {
 			window.draw(currentActorTile);
 		}
+		hpBarManager.Render(window);
 	}
 	window.draw(abilityTargetVertexArray, abilityTargetTexture);
 }
@@ -956,6 +957,11 @@ void BattleScene::updateWorld(float secondsPerUpdate) {
 		}
 	}
 
+	// Update HP bars when actor is moving.
+	if (movingActor) {
+		hpBarManager.Update(actors);
+	}
+
 	if (!defeat) {
 		defeat = checkDefeat();
 	}
@@ -1064,6 +1070,9 @@ void BattleScene::updateWorld(float secondsPerUpdate) {
 			}
 			command = nullptr;
 		}
+
+		// Update HP bars after auras have finished calculating.
+		hpBarManager.Update(actors);
 	}
 }
 

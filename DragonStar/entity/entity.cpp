@@ -94,6 +94,10 @@ void Entity::Draw(sf::RenderTarget& window, sf::Vector2f pos, float scale) {
 	sprite.setScale(oldScale);
 }
 
+sf::Vector2f Entity::GetSize() {
+	return sf::Vector2f(sprite.getLocalBounds().width, sprite.getLocalBounds().height);
+}
+
 // Returns the sprite's pixel coordinates.
 sf::Vector2f Entity::GetPosition(){
 	return sprite.getPosition();

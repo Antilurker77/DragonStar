@@ -363,6 +363,9 @@
     <ClCompile Include="data\enemy\cpp\en_giantRat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ui\hpBarManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -753,6 +756,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\equipment\header\eq_lightFeet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\hpBarManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -193,13 +193,13 @@ int Actor::GetCurrentSP() {
 double Actor::GetAttributePercent(Attribute attribute) {
 	switch (attribute) {
 	case Attribute::HP:
-		return GetCurrentHP() / GetMaxHP();
+		return (double)GetCurrentHP() / (double)GetMaxHP();
 		break;
 	case Attribute::MP:
-		return GetCurrentMP() / GetMaxMP();
+		return (double)GetCurrentMP() / (double)GetMaxMP();
 		break;
 	case Attribute::SP:
-		return GetCurrentSP() / GetMaxSP();
+		return (double)GetCurrentSP() / (double)GetMaxSP();
 		break;
 	default:
 		return 0.0;

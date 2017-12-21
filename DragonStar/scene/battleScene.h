@@ -26,6 +26,7 @@ class Enemy;
 #include "../ui/abilityBar.h"
 #include "../ui/auraTooltip.h"
 #include "../ui/cursorActorHUD.h"
+#include "../ui/hpBarManager.h"
 #include "../ui/inspectWindow.h"
 #include "../ui/victoryWindow.h"
 
@@ -133,6 +134,7 @@ private:
 
 	AbilityBar abilityBar;
 	CursorActorHUD cursorActorHUD;
+	HPBarManager hpBarManager;
 	InspectWindow inspectWindow;
 	VictoryWindow victoryWindow;
 

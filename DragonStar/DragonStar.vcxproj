@@ -201,6 +201,7 @@
     <ClCompile Include="ui\cursorActorHUD.cpp" />
     <ClCompile Include="ui\equipWindow.cpp" />
     <ClCompile Include="ui\formationTooltip.cpp" />
+    <ClCompile Include="ui\hpBarManager.cpp" />
     <ClCompile Include="ui\inspectWindow.cpp" />
     <ClCompile Include="ui\itemTooltip.cpp" />
     <ClCompile Include="ui\messageLog.cpp" />
@@ -333,6 +334,7 @@
     <ClInclude Include="ui\cursorActorHUD.h" />
     <ClInclude Include="ui\equipWindow.h" />
     <ClInclude Include="ui\formationTooltip.h" />
+    <ClInclude Include="ui\hpBarManager.h" />
     <ClInclude Include="ui\inspectWindow.h" />
     <ClInclude Include="ui\itemTooltip.h" />
     <ClInclude Include="ui\messageLog.h" />

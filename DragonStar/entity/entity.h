@@ -33,6 +33,9 @@ public:
 	void MoveToHex(sf::Vector3i target);
 	void MoveToHex(sf::Vector3i target, float unitsPerSecond);
 
+	// Returns the size of the sprite.
+	sf::Vector2f GetSize();
+
 	sf::Vector2f GetPosition();
 	sf::Vector3i GetHexPosition();
 	bool IsMoving();
