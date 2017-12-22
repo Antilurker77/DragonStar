@@ -83,6 +83,31 @@ private:
 	sfe::RichText wisText;
 	sfe::RichText vitText;
 
+	sfe::RichText armorText;
+	sfe::RichText blockText;
+	sfe::RichText dodgeText;
+
+	sfe::RichText mainHandText;
+	sfe::RichText offHandText;
+	sfe::RichText hitText;
+	sfe::RichText attackSpeedText;
+
+	sfe::RichText critText;
+	sfe::RichText critDamageText;
+	sfe::RichText hasteText;
+	sfe::RichText doubleStrikeText;
+	sfe::RichText armorPenText;
+
+	sfe::RichText mpCostReductionText;
+	sfe::RichText spCostReductionText;
+	sfe::RichText cooldownReductionText;
+
+	sfe::RichText hpLeechText;
+	sfe::RichText mpLeechText;
+
+	sfe::RichText movementSpeedText;
+	sfe::RichText goldFindText;
+
 	// Data
 	std::vector<ActorPtr> players;
 	std::vector<ItemPtr>* inventory;

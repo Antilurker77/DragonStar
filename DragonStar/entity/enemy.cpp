@@ -214,6 +214,18 @@ double Enemy::GetSPRegen() {
 	return spRegen;
 }
 
+double Enemy::GetHPLeech(EventOptions eventOptions, bool consumeBuffs) {
+	double hpLeech = getStat(0.0, StatModType::HP_LEECH, eventOptions, false, consumeBuffs);
+
+	return hpLeech;
+}
+
+double Enemy::GetMPLeech(EventOptions eventOptions, bool consumeBuffs) {
+	double mpLeech = getStat(0.0, StatModType::MP_LEECH, eventOptions, false, consumeBuffs);
+
+	return mpLeech;
+}
+
 int Enemy::GetSTR(bool consumeBuffs) {
 	int str = enemyInfo->GetBaseSTR();
 	str = CalcExpStat(str, level);

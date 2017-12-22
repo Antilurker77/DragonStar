@@ -176,6 +176,17 @@ double Player::GetSPRegen() {
 	return spRegen;
 }
 
+double Player::GetHPLeech(EventOptions eventOptions, bool consumeBuffs) {
+	double hpLeech = getStat(0.0, StatModType::HP_LEECH, eventOptions, false, consumeBuffs);
+
+	return hpLeech;
+}
+
+double Player::GetMPLeech(EventOptions eventOptions, bool consumeBuffs) {
+	double mpLeech = getStat(0.0, StatModType::MP_LEECH, eventOptions, false, consumeBuffs);
+
+	return mpLeech;
+}
 
 int Player::GetSTR(bool consumeBuffs) {
 	int str = race->GetBaseSTR();

@@ -152,6 +152,82 @@ EquipWindow::EquipWindow() {
 	vitText.setFont(*font);
 	vitText.setCharacterSize(fontSize);
 	vitText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 390.f));
+
+	armorText.setFont(*font);
+	armorText.setCharacterSize(fontSize);
+	armorText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 430.f));
+
+	blockText.setFont(*font);
+	blockText.setCharacterSize(fontSize);
+	blockText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 450.f));
+
+	dodgeText.setFont(*font);
+	dodgeText.setCharacterSize(fontSize);
+	dodgeText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 470.f));
+
+	mainHandText.setFont(*font);
+	mainHandText.setCharacterSize(fontSize);
+	mainHandText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 510.f));
+
+	offHandText.setFont(*font);
+	offHandText.setCharacterSize(fontSize);
+	offHandText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 530.f));
+
+	hitText.setFont(*font);
+	hitText.setCharacterSize(fontSize);
+	hitText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 550.f));
+
+	attackSpeedText.setFont(*font);
+	attackSpeedText.setCharacterSize(fontSize);
+	attackSpeedText.setPosition(sf::Vector2f(bgPos.x + 260.f, bgPos.y + 570.f));
+
+	critText.setFont(*font);
+	critText.setCharacterSize(fontSize);
+	critText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 270.f));
+
+	critDamageText.setFont(*font);
+	critDamageText.setCharacterSize(fontSize);
+	critDamageText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 290.f));
+
+	hasteText.setFont(*font);
+	hasteText.setCharacterSize(fontSize);
+	hasteText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 310.f));
+
+	doubleStrikeText.setFont(*font);
+	doubleStrikeText.setCharacterSize(fontSize);
+	doubleStrikeText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 330.f));
+
+	armorPenText.setFont(*font);
+	armorPenText.setCharacterSize(fontSize);
+	armorPenText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 350.f));
+
+	mpCostReductionText.setFont(*font);
+	mpCostReductionText.setCharacterSize(fontSize);
+	mpCostReductionText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 390.f));
+
+	spCostReductionText.setFont(*font);
+	spCostReductionText.setCharacterSize(fontSize);
+	spCostReductionText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 410.f));
+
+	cooldownReductionText.setFont(*font);
+	cooldownReductionText.setCharacterSize(fontSize);
+	cooldownReductionText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 430.f));
+
+	hpLeechText.setFont(*font);
+	hpLeechText.setCharacterSize(fontSize);
+	hpLeechText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 470.f));
+
+	mpLeechText.setFont(*font);
+	mpLeechText.setCharacterSize(fontSize);
+	mpLeechText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 490.f));
+
+	movementSpeedText.setFont(*font);
+	movementSpeedText.setCharacterSize(fontSize);
+	movementSpeedText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 530.f));
+
+	goldFindText.setFont(*font);
+	goldFindText.setCharacterSize(fontSize);
+	goldFindText.setPosition(sf::Vector2f(bgPos.x + 10.f, bgPos.y + 550.f));
 }
 
 bool EquipWindow::Update(float secondsPerUpdate, sf::Vector2i mousePos, bool leftClick, bool rightClick) {
@@ -279,6 +355,31 @@ void EquipWindow::Render(sf::RenderTarget& window) {
 	window.draw(intText);
 	window.draw(wisText);
 	window.draw(vitText);
+
+	window.draw(armorText);
+	window.draw(blockText);
+	window.draw(dodgeText);
+
+	window.draw(mainHandText);
+	window.draw(offHandText);
+	window.draw(hitText);
+	window.draw(attackSpeedText);
+
+	window.draw(critText);
+	window.draw(critDamageText);
+	window.draw(hasteText);
+	window.draw(doubleStrikeText);
+	window.draw(armorPenText);
+
+	window.draw(mpCostReductionText);
+	window.draw(spCostReductionText);
+	window.draw(cooldownReductionText);
+
+	window.draw(hpLeechText);
+	window.draw(mpLeechText);
+
+	window.draw(movementSpeedText);
+	window.draw(goldFindText);
 
 	// Inventory and Item on Cursor
 	for (size_t i = 0; i < displayedItems.size(); i++) {
@@ -498,6 +599,11 @@ void EquipWindow::setStatTexts() {
 		return ss.str();
 	};
 	
+	// Generic EventOptions for polling stats.
+	EventOptions eventOptions;
+	eventOptions.Categories = { Category::ANY };
+	eventOptions.Elements = { Element::NONE };
+
 	std::string s = "";
 
 	// HP
@@ -531,4 +637,110 @@ void EquipWindow::setStatTexts() {
 	// VIT
 	s = "#aaaaaa VIT #default " + std::to_string(players[displayedActor]->GetVIT(false));
 	vitText.setString(s);
+
+	// Armor
+	s = "#aaaaaa Armor #default " + std::to_string((int)std::floor(players[displayedActor]->GetArmor(false)));
+	armorText.setString(s);
+	
+	// Dodge
+	double dodgeChance = players[displayedActor]->GetDodgeChance(eventOptions, false);
+	dodgeChance = std::round(dodgeChance * 100);
+	s = "#aaaaaa Evade Chance #default " + std::to_string((int)dodgeChance) + "%";
+	dodgeText.setString(s);
+
+	// Block
+	double blockChance = players[displayedActor]->GetBlockChance(eventOptions, false);
+	blockChance = std::round(blockChance * 100);
+	s = "#aaaaaa Block Chance #default " + std::to_string((int)blockChance) + "%";
+	blockText.setString(s);
+
+	// Main Hand Damage
+	s = "#aaaaaa Main Hand Damage #default " + std::to_string((int)players[displayedActor]->GetMainHandDamage(false));
+	mainHandText.setString(s);
+
+	// Off Hand Damage
+	s = "#aaaaaa Off-Hand Damage #default " + std::to_string((int)players[displayedActor]->GetOffHandDamage(false));
+	offHandText.setString(s);
+
+	// Hit Chance
+	double hitChance = players[displayedActor]->GetHitChance(eventOptions, false);
+	hitChance = std::round(hitChance * 100);
+	s = "#aaaaaa Hit Chance #default " + std::to_string((int)hitChance) + "%";
+	hitText.setString(s);
+
+	// Attack Speed
+	int attackSpeed = players[displayedActor]->GetAttackSpeed();
+	s = "#aaaaaa Attack Speed #default " + convertToSec(attackSpeed);
+	attackSpeedText.setString(s);
+
+	// Crit Chance
+	double critChance = players[displayedActor]->GetCritChance(eventOptions, false);
+	critChance = std::round(critChance * 100);
+	s = "#aaaaaa Critical Strike Chance #default " + std::to_string((int)critChance) + "%";
+	critText.setString(s);
+
+	// Crit Damage
+	double critDamage = players[displayedActor]->GetCritDamage(eventOptions, false);
+	critDamage = std::round(critDamage * 100);
+	s = "#aaaaaa Critical Strike Damage #default " + std::to_string((int)critDamage) + "%";
+	critDamageText.setString(s);
+
+	// Haste
+	double haste = players[displayedActor]->GetHaste(eventOptions, false);
+	haste = std::round((haste - 1.0) * 100);
+	s = "#aaaaaa Haste #default " + std::to_string((int)haste) + "%";
+	hasteText.setString(s);
+
+	// Double Strike Chance
+	double doubleStrikeChance = players[displayedActor]->GetDoubleStrikeChance(eventOptions, false);
+	doubleStrikeChance = std::round(doubleStrikeChance * 100);
+	s = "#aaaaaa Double Strike Chance #default " + std::to_string((int)doubleStrikeChance) + "%";
+	doubleStrikeText.setString(s);
+
+	// Armor Penetration
+	double armorPen = players[displayedActor]->GetArmorPen(eventOptions, false);
+	armorPen = std::round(armorPen * 100);
+	s = "#aaaaaa Armor Penetration #default " + std::to_string((int)armorPen) + "%";
+	armorPenText.setString(s);
+
+	// MP Cost Reduction
+	double mpCostReduction = players[displayedActor]->GetMPCostReduction(eventOptions, false);
+	mpCostReduction = std::round(mpCostReduction * 100);
+	s = "#aaaaaa MP Cost Reduction #default " + std::to_string((int)mpCostReduction) + "%";
+	mpCostReductionText.setString(s);
+
+	// SP Cost Reduction
+	double spCostReduction = players[displayedActor]->GetSPCostReduction(eventOptions, false);
+	spCostReduction = std::round(spCostReduction * 100);
+	s = "#aaaaaa SP Cost Reduction #default " + std::to_string((int)spCostReduction) + "%";
+	spCostReductionText.setString(s);
+
+	// Cooldown Reduction
+	double cooldownReduction = players[displayedActor]->GetCooldownReduction(eventOptions, false);
+	cooldownReduction = std::round(cooldownReduction * 100);
+	s = "#aaaaaa Cooldown Reduction #default " + std::to_string((int)cooldownReduction) + "%";
+	cooldownReductionText.setString(s);
+
+	// HP Leech
+	double hpLeech = players[displayedActor]->GetHPLeech(eventOptions, false);
+	hpLeech = std::round(hpLeech * 100);
+	s = "#aaaaaa Life Leech #default " + std::to_string((int)hpLeech) + "%";
+	hpLeechText.setString(s);
+
+	// MP Leech
+	double mpLeech = players[displayedActor]->GetMPLeech(eventOptions, false);
+	mpLeech = std::round(mpLeech * 100);
+	s = "#aaaaaa Mana Leech #default " + std::to_string((int)mpLeech) + "%";
+	mpLeechText.setString(s);
+
+	// Movement Speed
+	int movementSpeed = players[displayedActor]->GetMoveSpeed();
+	s = "#aaaaaa Movement Speed #default " + convertToSec(movementSpeed);
+	movementSpeedText.setString(s);
+
+	// Gold Find
+	double goldFind = players[displayedActor]->GetGoldFind(false);
+	goldFind = std::round(goldFind * 100);
+	s = "#aaaaaa Gold Find #default " + std::to_string((int)goldFind) + "%";
+	goldFindText.setString(s);
 }

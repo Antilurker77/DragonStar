@@ -90,6 +90,12 @@ public:
 	// Returns the actor's SP regeneration per second.
 	virtual double GetSPRegen() = 0;
 
+	// Returns the actor's life leech.
+	virtual double GetHPLeech(EventOptions eventOptions, bool consumeBuffs) = 0;
+
+	// Returns the actor's life leech.
+	virtual double GetMPLeech(EventOptions eventOptions, bool consumeBuffs) = 0;
+
 	// Returns the actor's strength.
 	virtual int GetSTR(bool consumeBuffs) = 0;
 

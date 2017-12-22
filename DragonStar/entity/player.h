@@ -36,6 +36,9 @@ public:
 	double GetMPRegen();
 	double GetSPRegen();
 
+	double GetHPLeech(EventOptions eventOptions, bool consumeBuffs);
+	double GetMPLeech(EventOptions eventOptions, bool consumeBuffs);
+
 	int GetSTR(bool consumeBuffs);
 	int GetDEX(bool consumeBuffs);
 	int GetINT(bool consumeBuffs);
