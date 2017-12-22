@@ -17,6 +17,8 @@
 #include "../entity/player.h"
 
 EquipWindow::EquipWindow() {
+	currentFilter = 0;
+	
 	// font
 	font = assetManager.LoadFont(settings.Font);
 	sf::Vector2f buttonSize;
@@ -415,6 +417,10 @@ void EquipWindow::Initialize(std::vector<ActorPtr>& p, std::vector<ItemPtr>& i) 
 	setEquippedIcons();
 	setDisplayedItems(0);
 	setStatTexts();
+}
+
+void EquipWindow::Refresh() {
+	setDisplayedItems(currentFilter);
 }
 
 void EquipWindow::setEquippedIcons() {

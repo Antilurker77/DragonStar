@@ -39,6 +39,9 @@ public:
 	// Sets the party and inventory reference.
 	void Initialize(std::vector<ActorPtr>& p, std::vector<ItemPtr>& i);
 
+	// Refreshes displayed items.
+	void Refresh();
+
 private:
 	// UI
 	sf::RectangleShape background;

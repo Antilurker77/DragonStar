@@ -121,11 +121,13 @@ GameState MapSelectScene::Update(float secondsPerUpdate) {
 	if (equipButton.Update(secondsPerUpdate, windowMousePos) && leftClick && displayWindow == false) {
 		displayWindow = true;
 		displayEquipWindow = true;
+		equipWindow.Refresh();
 	}
 
 	if (abilityButton.Update(secondsPerUpdate, windowMousePos) && leftClick && displayWindow == false) {
 		displayWindow = true;
 		displayAbilityWindow = true;
+		abilityWindow.Refresh();
 	}
 
 	if (shopButton.Update(secondsPerUpdate, windowMousePos) && leftClick && displayWindow == false) {

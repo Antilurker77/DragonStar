@@ -38,6 +38,9 @@ public:
 	// Sets the party and inventory reference.
 	void Initialize(std::vector<ActorPtr>& p, std::vector<ItemPtr>& i);
 
+	// Refreshes inventory icons.
+	void Refresh();
+
 private:
 
 	// UI

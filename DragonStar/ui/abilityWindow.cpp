@@ -258,6 +258,10 @@ void AbilityWindow::Initialize(std::vector<ActorPtr>& p, std::vector<ItemPtr>& i
 	setInventoryIcons();
 }
 
+void AbilityWindow::Refresh() {
+	setInventoryIcons();
+}
+
 void AbilityWindow::setEquippedAndKnownIcons() {
 	Player* p = (Player*)players[displayedActor].get();
 	std::vector<std::string> filepaths = p->GetAbilityIcons();
