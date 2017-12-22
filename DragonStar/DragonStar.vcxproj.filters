@@ -366,6 +366,15 @@
     <ClCompile Include="ui\hpBarManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_dragonfireBolt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_fireNova.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_fireball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -759,6 +768,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ui\hpBarManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_dragonfireBolt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_fireNova.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_fireball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

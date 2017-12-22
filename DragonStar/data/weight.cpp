@@ -306,10 +306,13 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 			weights.push_back({ AbilityID::MAGIC_MISSILE, 1.00 });
 			weights.push_back({ AbilityID::ARCANE_BLAST, 1.00 });
 			weights.push_back({ AbilityID::FLAME_BOLT, 1.00 });
+			weights.push_back({ AbilityID::DRAGONFIRE_BOLT, 1.00 });
+			weights.push_back({ AbilityID::FIRE_NOVA, 1.00 });
 			weights.push_back({ AbilityID::ICICLE, 1.00 });
 			weights.push_back({ AbilityID::SHOCK, 1.00 });
 			break;
 		case 2:
+			weights.push_back({ AbilityID::FIREBALL, 1.00 });
 			break;
 		case 3:
 			break;

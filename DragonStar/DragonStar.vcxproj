@@ -104,7 +104,10 @@
     <ClCompile Include="data\ability\cpp\ab_arcaneBlast.cpp" />
     <ClCompile Include="data\ability\cpp\ab_commandingShout.cpp" />
     <ClCompile Include="data\ability\cpp\ab_darkBolt.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_dragonfireBolt.cpp" />
     <ClCompile Include="data\ability\cpp\ab_elementalEnergy.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_fireball.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_fireNova.cpp" />
     <ClCompile Include="data\ability\cpp\ab_flameBolt.cpp" />
     <ClCompile Include="data\ability\cpp\ab_flameSlash.cpp" />
     <ClCompile Include="data\ability\cpp\ab_gale.cpp" />
@@ -226,7 +229,10 @@
     <ClInclude Include="data\ability\header\ab_arcaneBlast.h" />
     <ClInclude Include="data\ability\header\ab_commandingShout.h" />
     <ClInclude Include="data\ability\header\ab_darkBolt.h" />
+    <ClInclude Include="data\ability\header\ab_dragonfireBolt.h" />
     <ClInclude Include="data\ability\header\ab_elementalEnergy.h" />
+    <ClInclude Include="data\ability\header\ab_fireball.h" />
+    <ClInclude Include="data\ability\header\ab_fireNova.h" />
     <ClInclude Include="data\ability\header\ab_flameBolt.h" />
     <ClInclude Include="data\ability\header\ab_flameSlash.h" />
     <ClInclude Include="data\ability\header\ab_gale.h" />
