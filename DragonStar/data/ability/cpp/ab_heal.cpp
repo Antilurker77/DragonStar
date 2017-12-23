@@ -47,7 +47,7 @@ std::string Ab_Heal::GetDescription() {
 		healing = std::to_string(Combat::ScalingHealEstimate(user, 50.0, Attribute::HP, abilityOptions));
 	}
 
-	std::string desc = "Heal and ally with divine light, restoring #heal " + healing + " #default HP.";
+	std::string desc = "Heal an ally with divine light, restoring #heal " + healing + " #default HP.";
 
 	return desc;
 }
