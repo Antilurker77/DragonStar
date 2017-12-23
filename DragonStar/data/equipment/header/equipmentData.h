@@ -6,12 +6,15 @@
 //
 // ==================================
 
+#include "eq_axe1H.h"
+#include "eq_bow.h"
 #include "eq_dagger.h"
 #include "eq_ironSpear.h"
 #include "eq_lightBody.h"
 #include "eq_lightFeet.h"
 #include "eq_lightHands.h"
 #include "eq_lightHead.h"
+#include "eq_mace1H.h"
 #include "eq_neck.h"
 #include "eq_ring.h"
 #include "eq_omegaRing.h"

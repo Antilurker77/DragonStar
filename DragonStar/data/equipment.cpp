@@ -92,13 +92,25 @@ void Equipment::RollStatMods(ItemQuality quality, uint64_t seed) {
 
 	switch (equipType) {
 	case EquipType::SWORD_1H:
-		rollOneHandSwordStatMods(mt);
+	case EquipType::SWORD_2H:
+		rollSwordStatMods(mt);
+		break;
+	case EquipType::AXE_1H:
+	case EquipType::AXE_2H:
+		rollAxeStatMods(mt);
+		break;
+	case EquipType::MACE_1H:
+	case EquipType::MACE_2H:
+		rollMaceStatMods(mt);
 		break;
 	case EquipType::DAGGER:
 		rollDaggerStatMods(mt);
 		break;
 	case EquipType::SPEAR:
 		rollSpearStatMods(mt);
+		break;
+	case EquipType::BOW:
+		rollBowStatMods(mt);
 		break;
 	case EquipType::STAFF:
 		rollStaffStatMods(mt);
@@ -151,12 +163,12 @@ int Equipment::howManyStatMods(std::mt19937_64& mt) {
 	}
 }
 
-void Equipment::rollOneHandSwordStatMods(std::mt19937_64& mt) {
+void Equipment::rollSwordStatMods(std::mt19937_64& mt) {
 	int statModCount = howManyStatMods(mt);
 	std::vector<StatModType> selected;
 
 	std::vector<std::pair<StatModType, double>> possibleAffixes = {
-		{ StatModType::DEX, 1.0 },
+		{ StatModType::STR, 1.0 },
 		{ StatModType::ALL_ATTRIBUTES, 1.0 },
 		{ StatModType::HP, 1.0 },
 		{ StatModType::MP, 0.5 },
@@ -182,6 +194,160 @@ void Equipment::rollOneHandSwordStatMods(std::mt19937_64& mt) {
 		Element::WATER,
 		Element::WIND,
 		Element::EARTH
+	};
+
+	while (statModCount > 0) {
+		size_t modsAdded = selected.size();
+		size_t i = 0;
+
+		// Rare or better items guarenteed STR.
+		if (modsAdded == 0 && itemQuality >= ItemQuality::RARE) {
+			i = 0;
+		}
+		else {
+			bool searching = true;
+			while (searching) {
+				i = Random::RandSizeT(mt, 0, possibleAffixes.size() - 1 - modsAdded);
+				if (Random::RandDouble(mt, 0.0, 1.0) < possibleAffixes[i].second) {
+					searching = false;
+				}
+			};
+		}
+
+		selected.push_back(possibleAffixes[i].first);
+
+		std::swap(possibleAffixes[i], possibleAffixes[possibleAffixes.size() - 1 - modsAdded]);
+		statModCount--;
+	}
+
+	std::sort(selected.begin(), selected.end());
+
+	for (auto s : selected) {
+		double value = 0.0;
+		Element element = Element::NONE;
+		if (s == StatModType::DAMAGE || s == StatModType::ON_HIT_DAMAGE) {
+			std::uniform_int_distribution<size_t> dist(0, possibleElements.size() - 1);
+			element = possibleElements[dist(mt)];
+		}
+		value = rollMod(s, mt);
+
+		if (s == StatModType::ON_HIT_DAMAGE) {
+			statMods.push_back(StatMod(s, value, { element }, AbilityID::UNDEFINED));
+		}
+		else {
+			statMods.push_back(StatMod(s, value, { Category::ANY }, { element }));
+		}
+	}
+
+	//rollResistanceStatMods(mt);
+}
+
+void Equipment::rollAxeStatMods(std::mt19937_64& mt) {
+	int statModCount = howManyStatMods(mt);
+	std::vector<StatModType> selected;
+
+	std::vector<std::pair<StatModType, double>> possibleAffixes = {
+		{ StatModType::STR, 1.0 },
+		{ StatModType::ALL_ATTRIBUTES, 1.0 },
+		{ StatModType::HP, 1.0 },
+		{ StatModType::MP, 0.5 },
+		{ StatModType::SP, 0.5 },
+		{ StatModType::SP_REGEN, 1.0 },
+		{ StatModType::HP_LEECH, 0.5 },
+		{ StatModType::MP_LEECH, 0.5 },
+		{ StatModType::DAMAGE, 1.0 },
+		{ StatModType::ARMOR_PEN, 1.0 },
+		{ StatModType::CRIT_CHANCE, 1.0 },
+		{ StatModType::HASTE, 1.0 },
+		{ StatModType::DOUBLE_STRIKE_CHANCE, 1.0 },
+		{ StatModType::ON_HIT_DAMAGE, 1.0 },
+		{ StatModType::HIT_CHANCE, 1.0 },
+		{ StatModType::MP_COST_REDUCTION, 0.5 },
+		{ StatModType::SP_COST_REDUCTION, 0.5 },
+		{ StatModType::COOLDOWN_REDUCTION, 1.0 }
+	};
+
+	std::vector<Element> possibleElements = {
+		Element::PHYSICAL
+	};
+
+	while (statModCount > 0) {
+		size_t modsAdded = selected.size();
+		size_t i = 0;
+
+		// Rare or better items guarenteed STR.
+		if (modsAdded == 0 && itemQuality >= ItemQuality::RARE) {
+			i = 0;
+		}
+		else {
+			bool searching = true;
+			while (searching) {
+				i = Random::RandSizeT(mt, 0, possibleAffixes.size() - 1 - modsAdded);
+				if (Random::RandDouble(mt, 0.0, 1.0) < possibleAffixes[i].second) {
+					searching = false;
+				}
+			};
+		}
+
+		selected.push_back(possibleAffixes[i].first);
+
+		std::swap(possibleAffixes[i], possibleAffixes[possibleAffixes.size() - 1 - modsAdded]);
+		statModCount--;
+	}
+
+	std::sort(selected.begin(), selected.end());
+
+	for (auto s : selected) {
+		double value = 0.0;
+		Element element = Element::NONE;
+		if (s == StatModType::DAMAGE || s == StatModType::ON_HIT_DAMAGE) {
+			std::uniform_int_distribution<size_t> dist(0, possibleElements.size() - 1);
+			element = possibleElements[dist(mt)];
+		}
+		value = rollMod(s, mt);
+
+		if (s == StatModType::ON_HIT_DAMAGE) {
+			statMods.push_back(StatMod(s, value, { element }, AbilityID::UNDEFINED));
+		}
+		else {
+			statMods.push_back(StatMod(s, value, { Category::ANY }, { element }));
+		}
+	}
+
+	//rollResistanceStatMods(mt);
+}
+
+void Equipment::rollMaceStatMods(std::mt19937_64& mt) {
+	int statModCount = howManyStatMods(mt);
+	std::vector<StatModType> selected;
+
+	std::vector<std::pair<StatModType, double>> possibleAffixes = {
+		{ StatModType::STR, 1.0 },
+		{ StatModType::ALL_ATTRIBUTES, 1.0 },
+		{ StatModType::HP, 1.0 },
+		{ StatModType::MP, 0.5 },
+		{ StatModType::SP, 0.5 },
+		{ StatModType::SP_REGEN, 1.0 },
+		{ StatModType::HP_LEECH, 0.5 },
+		{ StatModType::MP_LEECH, 0.5 },
+		{ StatModType::DAMAGE, 1.0 },
+		{ StatModType::ARMOR_PEN, 1.0 },
+		{ StatModType::CRIT_CHANCE, 1.0 },
+		{ StatModType::HASTE, 1.0 },
+		{ StatModType::DOUBLE_STRIKE_CHANCE, 1.0 },
+		{ StatModType::ON_HIT_DAMAGE, 1.0 },
+		{ StatModType::HIT_CHANCE, 1.0 },
+		{ StatModType::MP_COST_REDUCTION, 0.5 },
+		{ StatModType::SP_COST_REDUCTION, 0.5 },
+		{ StatModType::COOLDOWN_REDUCTION, 1.0 }
+	};
+
+	std::vector<Element> possibleElements = {
+		Element::PHYSICAL,
+		Element::ICE,
+		Element::LIGHTNING,
+		Element::EARTH,
+		Element::LIGHT
 	};
 
 	while (statModCount > 0) {
@@ -336,6 +502,90 @@ void Equipment::rollSpearStatMods(std::mt19937_64& mt) {
 		Element::LIGHTNING,
 		Element::WATER,
 		Element::WIND
+	};
+
+	while (statModCount > 0) {
+		size_t modsAdded = selected.size();
+		size_t i = 0;
+
+		// Rare or better items guarenteed DEX.
+		if (modsAdded == 0 && itemQuality >= ItemQuality::RARE) {
+			i = 0;
+		}
+		else {
+			bool searching = true;
+			while (searching) {
+				i = Random::RandSizeT(mt, 0, possibleAffixes.size() - 1 - modsAdded);
+				if (Random::RandDouble(mt, 0.0, 1.0) < possibleAffixes[i].second) {
+					searching = false;
+				}
+			};
+		}
+
+		selected.push_back(possibleAffixes[i].first);
+
+		std::swap(possibleAffixes[i], possibleAffixes[possibleAffixes.size() - 1 - modsAdded]);
+		statModCount--;
+	}
+
+	std::sort(selected.begin(), selected.end());
+
+	for (auto s : selected) {
+		double value = 0.0;
+		Element element = Element::NONE;
+		if (s == StatModType::DAMAGE || s == StatModType::ON_HIT_DAMAGE) {
+			std::uniform_int_distribution<size_t> dist(0, possibleElements.size() - 1);
+			element = possibleElements[dist(mt)];
+		}
+		value = rollMod(s, mt);
+
+		if (s == StatModType::ON_HIT_DAMAGE) {
+			statMods.push_back(StatMod(s, value, { element }, AbilityID::UNDEFINED));
+		}
+		else {
+			statMods.push_back(StatMod(s, value, { Category::ANY }, { element }));
+		}
+	}
+
+	//rollResistanceStatMods(mt);
+}
+
+void Equipment::rollBowStatMods(std::mt19937_64& mt) {
+	int statModCount = howManyStatMods(mt);
+	std::vector<StatModType> selected;
+
+	std::vector<std::pair<StatModType, double>> possibleAffixes = {
+		{ StatModType::DEX, 1.0 },
+		{ StatModType::ALL_ATTRIBUTES, 1.0 },
+		{ StatModType::HP, 1.0 },
+		{ StatModType::MP, 0.5 },
+		{ StatModType::SP, 0.5 },
+		{ StatModType::SP_REGEN, 1.0 },
+		{ StatModType::HP_LEECH, 0.5 },
+		{ StatModType::MP_LEECH, 0.5 },
+		{ StatModType::DAMAGE, 1.0 },
+		{ StatModType::ARMOR_PEN, 1.0 },
+		{ StatModType::CRIT_CHANCE, 1.0 },
+		{ StatModType::HASTE, 1.0 },
+		{ StatModType::DOUBLE_STRIKE_CHANCE, 1.0 },
+		{ StatModType::ON_HIT_DAMAGE, 1.0 },
+		{ StatModType::HIT_CHANCE, 1.0 },
+		{ StatModType::MP_COST_REDUCTION, 0.5 },
+		{ StatModType::SP_COST_REDUCTION, 0.5 },
+		{ StatModType::COOLDOWN_REDUCTION, 1.0 }
+	};
+
+	std::vector<Element> possibleElements = {
+		Element::ARCANE,
+		Element::FIRE,
+		Element::ICE,
+		Element::LIGHTNING,
+		Element::POISON,
+		Element::WATER,
+		Element::WIND,
+		Element::EARTH,
+		Element::LIGHT,
+		Element::DARK
 	};
 
 	while (statModCount > 0) {

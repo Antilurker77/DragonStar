@@ -146,10 +146,13 @@
     <ClCompile Include="data\enemy\cpp\en_testMage.cpp" />
     <ClCompile Include="data\enemy\cpp\en_testUnique.cpp" />
     <ClCompile Include="data\equipment.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_axe1H.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_bow.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_dagger.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_lightFeet.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_lightHands.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_lightHead.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_mace1H.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_ring.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_ironSpear.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_neck.cpp" />
@@ -273,10 +276,13 @@
     <ClInclude Include="data\enemy\header\en_testUnique.h" />
     <ClInclude Include="data\equipment.h" />
     <ClInclude Include="data\equipment\header\equipmentData.h" />
+    <ClInclude Include="data\equipment\header\eq_axe1H.h" />
+    <ClInclude Include="data\equipment\header\eq_bow.h" />
     <ClInclude Include="data\equipment\header\eq_dagger.h" />
     <ClInclude Include="data\equipment\header\eq_lightFeet.h" />
     <ClInclude Include="data\equipment\header\eq_lightHands.h" />
     <ClInclude Include="data\equipment\header\eq_lightHead.h" />
+    <ClInclude Include="data\equipment\header\eq_mace1H.h" />
     <ClInclude Include="data\equipment\header\eq_ring.h" />
     <ClInclude Include="data\equipment\header\eq_ironSpear.h" />
     <ClInclude Include="data\equipment\header\eq_neck.h" />
