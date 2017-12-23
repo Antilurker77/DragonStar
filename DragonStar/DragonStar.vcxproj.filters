@@ -375,6 +375,12 @@
     <ClCompile Include="data\ability\cpp\ab_fireball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_dagger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_staff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -777,6 +783,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_fireball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_dagger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_staff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,6 +6,7 @@
 //
 // ==================================
 
+#include "eq_dagger.h"
 #include "eq_ironSpear.h"
 #include "eq_lightBody.h"
 #include "eq_lightFeet.h"
@@ -14,6 +15,7 @@
 #include "eq_neck.h"
 #include "eq_ring.h"
 #include "eq_omegaRing.h"
+#include "eq_staff.h"
 #include "eq_sword1H.h"
 
 #pragma once

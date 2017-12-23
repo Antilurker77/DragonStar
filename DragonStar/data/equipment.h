@@ -93,8 +93,14 @@ protected:
 	// Generates stat mods for a 1H sword.
 	void rollOneHandSwordStatMods(std::mt19937_64& mt);
 
+	// Generates stat mods for a dagger.
+	void rollDaggerStatMods(std::mt19937_64& mt);
+
 	// Generates stat mods for a spear.
 	void rollSpearStatMods(std::mt19937_64& mt);
+
+	// Generates stat mods for a staff.
+	void rollStaffStatMods(std::mt19937_64& mt);
 
 	// Generates stat mods for light head armor.
 	void rollLightHeadStatMods(std::mt19937_64& mt);
