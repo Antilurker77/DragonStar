@@ -390,6 +390,18 @@
     <ClCompile Include="data\equipment\cpp\eq_mace1H.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_heavyBody.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_heavyHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_heavyHands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_heavyFeet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -807,6 +819,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\equipment\header\eq_mace1H.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_heavyBody.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_heavyHead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_heavyHands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_heavyFeet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

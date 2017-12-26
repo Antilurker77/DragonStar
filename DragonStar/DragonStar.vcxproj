@@ -149,6 +149,10 @@
     <ClCompile Include="data\equipment\cpp\eq_axe1H.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_bow.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_dagger.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_heavyBody.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_heavyFeet.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_heavyHands.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_heavyHead.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_lightFeet.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_lightHands.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_lightHead.cpp" />
@@ -279,6 +283,10 @@
     <ClInclude Include="data\equipment\header\eq_axe1H.h" />
     <ClInclude Include="data\equipment\header\eq_bow.h" />
     <ClInclude Include="data\equipment\header\eq_dagger.h" />
+    <ClInclude Include="data\equipment\header\eq_heavyBody.h" />
+    <ClInclude Include="data\equipment\header\eq_heavyFeet.h" />
+    <ClInclude Include="data\equipment\header\eq_heavyHands.h" />
+    <ClInclude Include="data\equipment\header\eq_heavyHead.h" />
     <ClInclude Include="data\equipment\header\eq_lightFeet.h" />
     <ClInclude Include="data\equipment\header\eq_lightHands.h" />
     <ClInclude Include="data\equipment\header\eq_lightHead.h" />
