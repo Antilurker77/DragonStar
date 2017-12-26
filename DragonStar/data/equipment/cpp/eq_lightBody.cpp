@@ -17,7 +17,7 @@ Eq_SilkRobes::Eq_SilkRobes() {
 	equipType = EquipType::LIGHT_BODY;
 	equipmentID = EquipmentID::SILK_ROBES;
 
-	equipPower = 9;
+	equipPower = 8;
 	blockChance = 0.0;
 	statMods = {};
 }

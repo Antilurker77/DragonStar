@@ -17,7 +17,7 @@ Eq_IronArmor::Eq_IronArmor() {
 	equipType = EquipType::HEAVY_BODY;
 	equipmentID = EquipmentID::IRON_ARMOR;
 
-	equipPower = 27;
+	equipPower = 24;
 	blockChance = 0.0;
 	statMods = {};
 }
