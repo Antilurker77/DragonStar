@@ -626,8 +626,8 @@ void Equipment::rollResistanceStatMods(std::mt19937_64& mt) {
 		Element element = possibleResists[randElement];
 		std::swap(possibleResists[randElement], possibleResists[possibleResists.size() - 1 - i]); // swap position in list so that same element isn't choosen twice
 
-		int minResist = 15 + (tier * 5);
-		int maxResist = 20 + (tier * 5);
+		int minResist = 5 + (((tier - 1) / 2) * 5);
+		int maxResist = 10 + (((tier - 1) / 2) * 5);
 		double resist = (double)Random::RandInt(mt, minResist, maxResist) / 100.0;
 
 		statMods.push_back(StatMod(StatModType::RESISTANCE, resist, { Category::ANY }, { element }));
