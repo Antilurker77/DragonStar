@@ -86,48 +86,15 @@ protected:
 	// Determines how many affixes to roll given an item quality.
 	int howManyStatMods(std::mt19937_64& mt);
 
+	// Returns a vector of affix weights based on the given equip type.
+	std::vector<std::pair<StatModType, double>> getPossibleAffixes();
+
+	// Returns a vector of elements for Damage and OnHitDamage affixes.
+	std::vector<Element> getPossibleElements();
+
 	// Adds resistances to the item. Uncommon has a 50% of one
 	// resistance, rare has one, epic has two.
 	void rollResistanceStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a 1H sword.
-	void rollSwordStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a 1H sword.
-	void rollAxeStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a 1H sword.
-	void rollMaceStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a dagger.
-	void rollDaggerStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a spear.
-	void rollSpearStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a bow.
-	void rollBowStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a staff.
-	void rollStaffStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for light head armor.
-	void rollLightHeadStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for light body armor.
-	void rollLightBodyArmorStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for light hands armor.
-	void rollLightHandsStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for light feet armor.
-	void rollLightFeetStatMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a neck.
-	void rollNeckMods(std::mt19937_64& mt);
-
-	// Generates stat mods for a ring.
-	void rollRingMods(std::mt19937_64& mt);
 
 	// -----------------------
 
