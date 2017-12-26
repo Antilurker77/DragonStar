@@ -366,12 +366,83 @@ std::vector<std::pair<StatModType, double>> Equipment::getPossibleAffixes() {
 		};
 		break;
 	case EquipType::MED_HEAD:
+		possibleAffixes = {
+			{ StatModType::DEX, 1.0 },
+			{ StatModType::STR, 0.5 },
+			{ StatModType::ALL_ATTRIBUTES, 0.5 },
+			{ StatModType::HP, 1.0 },
+			{ StatModType::MP, 0.5 },
+			{ StatModType::SP, 0.5 },
+			{ StatModType::HP_REGEN, 0.33 },
+			{ StatModType::MP_REGEN, 0.34 },
+			{ StatModType::SP_REGEN, 0.33 },
+			{ StatModType::VIT, 1.0 },
+			{ StatModType::ARMOR, 1.0 },
+			{ StatModType::ARMOR_PEN, 1.0 },
+			{ StatModType::CRIT_DAMAGE, 1.0 },
+			{ StatModType::HIT_CHANCE, 1.0 },
+			{ StatModType::DODGE_CHANCE, 1.0 },
+			{ StatModType::MP_COST_REDUCTION, 0.5 },
+			{ StatModType::SP_COST_REDUCTION, 0.5 }
+		};
 		break;
 	case EquipType::MED_BODY:
+		possibleAffixes = {
+			{ StatModType::DEX, 1.0 },
+			{ StatModType::STR, 0.5 },
+			{ StatModType::ALL_ATTRIBUTES, 0.5 },
+			{ StatModType::HP, 1.0 },
+			{ StatModType::MP, 0.5 },
+			{ StatModType::SP, 0.5 },
+			{ StatModType::HP_REGEN, 0.33 },
+			{ StatModType::MP_REGEN, 0.34 },
+			{ StatModType::SP_REGEN, 0.33 },
+			{ StatModType::VIT, 1.0 },
+			{ StatModType::ARMOR, 1.0 },
+			{ StatModType::DODGE_CHANCE, 1.0 },
+			{ StatModType::COOLDOWN_REDUCTION, 1.0 }
+		};
 		break;
 	case EquipType::MED_HANDS:
+		possibleAffixes = {
+			{ StatModType::DEX, 1.0 },
+			{ StatModType::STR, 0.5 },
+			{ StatModType::ALL_ATTRIBUTES, 0.5 },
+			{ StatModType::HP, 1.0 },
+			{ StatModType::MP, 0.5 },
+			{ StatModType::SP, 0.5 },
+			{ StatModType::VIT, 1.0 },
+			{ StatModType::HP_LEECH, 0.5 },
+			{ StatModType::MP_LEECH, 0.5 },
+			{ StatModType::ARMOR, 1.0 },
+			{ StatModType::DAMAGE, 1.0 },
+			{ StatModType::ARMOR_PEN, 1.0 },
+			{ StatModType::CRIT_CHANCE, 1.0 },
+			{ StatModType::HASTE, 1.0 },
+			{ StatModType::DOUBLE_STRIKE_CHANCE, 1.0 },
+			{ StatModType::ON_HIT_DAMAGE, 1.0 },
+			{ StatModType::HIT_CHANCE, 1.0 },
+		};
 		break;
 	case EquipType::MED_FEET:
+		possibleAffixes = {
+			{ StatModType::DEX, 1.0 },
+			{ StatModType::STR, 0.5 },
+			{ StatModType::ALL_ATTRIBUTES, 0.5 },
+			{ StatModType::HP, 1.0 },
+			{ StatModType::MP, 0.5 },
+			{ StatModType::SP, 0.5 },
+			{ StatModType::HP_REGEN, 0.33 },
+			{ StatModType::MP_REGEN, 0.34 },
+			{ StatModType::SP_REGEN, 0.33 },
+			{ StatModType::VIT, 1.0 },
+			{ StatModType::ARMOR, 1.0 },
+			{ StatModType::HASTE, 1.0 },
+			{ StatModType::DODGE_CHANCE, 1.0 },
+			{ StatModType::MP_COST_REDUCTION, 0.5 },
+			{ StatModType::SP_COST_REDUCTION, 0.5 },
+			{ StatModType::MOVEMENT_SPEED, 1.0 },
+		};
 		break;
 	case EquipType::HEAVY_HEAD:
 		possibleAffixes = {

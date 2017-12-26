@@ -157,6 +157,10 @@
     <ClCompile Include="data\equipment\cpp\eq_lightHands.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_lightHead.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_mace1H.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_medBody.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_medFeet.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_medHands.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_medHead.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_ring.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_ironSpear.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_neck.cpp" />
@@ -291,6 +295,10 @@
     <ClInclude Include="data\equipment\header\eq_lightHands.h" />
     <ClInclude Include="data\equipment\header\eq_lightHead.h" />
     <ClInclude Include="data\equipment\header\eq_mace1H.h" />
+    <ClInclude Include="data\equipment\header\eq_medBody.h" />
+    <ClInclude Include="data\equipment\header\eq_medFeet.h" />
+    <ClInclude Include="data\equipment\header\eq_medHands.h" />
+    <ClInclude Include="data\equipment\header\eq_medHead.h" />
     <ClInclude Include="data\equipment\header\eq_ring.h" />
     <ClInclude Include="data\equipment\header\eq_ironSpear.h" />
     <ClInclude Include="data\equipment\header\eq_neck.h" />
