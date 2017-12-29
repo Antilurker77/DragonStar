@@ -782,17 +782,17 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	int max = 0;
 	double value = 0;
 
-	ranges[EquipType::SWORD_1H][StatModType::HP] = { 7, 10, 10, 20, 20, 30 };
+	ranges[EquipType::SWORD_1H][StatModType::HP] = { 14, 20, 20, 40, 40, 60 };
 	ranges[EquipType::SWORD_1H][StatModType::MP] = { 3, 5, 5, 10, 10, 15 };
 	ranges[EquipType::SWORD_1H][StatModType::SP] = { 3, 6, 6, 9, 9, 12 };
 	ranges[EquipType::SWORD_1H][StatModType::SP_REGEN] = { 6, 8, 8, 10, 10, 12 };
 	ranges[EquipType::SWORD_1H][StatModType::HP_LEECH] = { 3, 4, 4, 5, 5, 6 };
 	ranges[EquipType::SWORD_1H][StatModType::MP_LEECH] = { 2, 3, 3, 4, 4, 5 };
-	ranges[EquipType::SWORD_1H][StatModType::STR] = { 2, 3, 3, 5, 5, 8 };
+	ranges[EquipType::SWORD_1H][StatModType::STR] = { 3, 5, 5, 10, 10, 14 };
 	ranges[EquipType::SWORD_1H][StatModType::DEX] = ranges[EquipType::SWORD_1H][StatModType::STR];
 	ranges[EquipType::SWORD_1H][StatModType::INT] = ranges[EquipType::SWORD_1H][StatModType::STR];
 	ranges[EquipType::SWORD_1H][StatModType::WIS] = ranges[EquipType::SWORD_1H][StatModType::STR];
-	ranges[EquipType::SWORD_1H][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 2, 2, 3 };
+	ranges[EquipType::SWORD_1H][StatModType::ALL_ATTRIBUTES] = { 1, 3, 3, 5, 5, 7 };
 	ranges[EquipType::SWORD_1H][StatModType::DAMAGE] = { 4, 5, 5, 6, 6, 8 };
 	ranges[EquipType::SWORD_1H][StatModType::HEALING] = { 3, 4, 4, 5, 5, 6 };
 	ranges[EquipType::SWORD_1H][StatModType::ARMOR_PEN] = { 8, 10, 10, 12, 12, 15 };
@@ -821,17 +821,17 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::OFF_HAND][StatModType::VIT] = ranges[EquipType::SHIELD][StatModType::VIT];
 	ranges[EquipType::OFF_HAND][StatModType::CRIT_DAMAGE] = { 20, 25, 25, 30, 30, 40 };
 
-	ranges[EquipType::SWORD_2H][StatModType::HP] = { 14, 20, 20, 40, 40, 60 };
+	ranges[EquipType::SWORD_2H][StatModType::HP] = { 28, 40, 40, 80, 80, 120 };
 	ranges[EquipType::SWORD_2H][StatModType::MP] = { 6, 10, 10, 20, 20, 30 };
 	ranges[EquipType::SWORD_2H][StatModType::SP] = { 6, 12, 12, 18, 18, 24 };
 	ranges[EquipType::SWORD_2H][StatModType::SP_REGEN] = { 12, 16, 16, 20, 20, 24 };
 	ranges[EquipType::SWORD_2H][StatModType::HP_LEECH] = { 6, 8, 8, 10, 10, 12 };
 	ranges[EquipType::SWORD_2H][StatModType::MP_LEECH] = { 4, 6, 6, 8, 8, 10 };
-	ranges[EquipType::SWORD_2H][StatModType::STR] = { 4, 6, 6, 10, 10, 16 };
+	ranges[EquipType::SWORD_2H][StatModType::STR] = { 6, 10, 10, 20, 20, 28 };
 	ranges[EquipType::SWORD_2H][StatModType::DEX] = ranges[EquipType::SWORD_2H][StatModType::STR];
 	ranges[EquipType::SWORD_2H][StatModType::INT] = ranges[EquipType::SWORD_2H][StatModType::STR];
 	ranges[EquipType::SWORD_2H][StatModType::WIS] = ranges[EquipType::SWORD_2H][StatModType::STR];
-	ranges[EquipType::SWORD_2H][StatModType::ALL_ATTRIBUTES] = { 2, 3, 3, 4, 4, 6 };
+	ranges[EquipType::SWORD_2H][StatModType::ALL_ATTRIBUTES] = { 2, 6, 6, 10, 10, 14 };
 	ranges[EquipType::SWORD_2H][StatModType::DAMAGE] = { 8, 10, 10, 12, 12, 16 };
 	ranges[EquipType::SWORD_2H][StatModType::HEALING] = { 6, 8, 8, 10, 10, 12 };
 	ranges[EquipType::SWORD_2H][StatModType::ARMOR_PEN] = { 16, 20, 20, 24, 24, 30 };
@@ -850,17 +850,17 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::STAFF] = ranges[EquipType::SWORD_2H];
 	ranges[EquipType::BOW] = ranges[EquipType::SWORD_2H];
 
-	ranges[EquipType::HEAVY_HEAD][StatModType::HP] = { 20, 25, 25, 50, 50, 75 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::HP] = { 40, 50, 50, 100, 100, 150 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::HP_REGEN] = { 32, 48, 48, 84, 84, 120 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::MP] = { 10, 12, 12, 25, 25, 38 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::MP_REGEN] = { 8, 12, 12, 21, 21, 30 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::SP] = { 2, 4, 4, 8, 8, 12 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::SP_REGEN] = { 4, 6, 6, 8, 8, 10 };
-	ranges[EquipType::HEAVY_HEAD][StatModType::STR] = { 2, 2, 2, 4, 4, 6 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::STR] = { 2, 4, 4, 7, 7, 11 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::DEX] = ranges[EquipType::HEAVY_HEAD][StatModType::STR];
 	ranges[EquipType::HEAVY_HEAD][StatModType::INT] = ranges[EquipType::HEAVY_HEAD][StatModType::STR];
 	ranges[EquipType::HEAVY_HEAD][StatModType::WIS] = ranges[EquipType::HEAVY_HEAD][StatModType::STR];
-	ranges[EquipType::HEAVY_HEAD][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 2, 2, 3 };
+	ranges[EquipType::HEAVY_HEAD][StatModType::ALL_ATTRIBUTES] = { 1, 2, 2, 3, 3, 5 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::VIT] = { 2, 3, 3, 6, 6, 9 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::ARMOR] = { 2, 3, 3, 4, 4, 5 };
 	ranges[EquipType::HEAVY_HEAD][StatModType::ARMOR_PEN] = { 4, 5, 5, 6, 6, 8 };
@@ -873,17 +873,17 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::MED_HEAD] = ranges[EquipType::HEAVY_HEAD];
 	ranges[EquipType::LIGHT_HEAD] = ranges[EquipType::HEAVY_HEAD];
 
-	ranges[EquipType::HEAVY_BODY][StatModType::HP] = { 20, 30, 30, 60, 60, 90 };
+	ranges[EquipType::HEAVY_BODY][StatModType::HP] = { 40, 60, 60, 120, 120, 180 };
 	ranges[EquipType::HEAVY_BODY][StatModType::HP_REGEN] = { 60, 92, 92, 120, 120, 152 };
 	ranges[EquipType::HEAVY_BODY][StatModType::MP] = { 10, 15, 15, 30, 30, 45 };
 	ranges[EquipType::HEAVY_BODY][StatModType::MP_REGEN] = { 15, 23, 23, 30, 30, 38 };
 	ranges[EquipType::HEAVY_BODY][StatModType::SP] = { 2, 4, 4, 8, 8, 12 };
 	ranges[EquipType::HEAVY_BODY][StatModType::SP_REGEN] = { 6, 8, 8, 11, 11, 14 };
-	ranges[EquipType::HEAVY_BODY][StatModType::STR] = { 2, 2, 2, 5, 5, 7 };
+	ranges[EquipType::HEAVY_BODY][StatModType::STR] = { 3, 5, 5, 10, 10, 14 };
 	ranges[EquipType::HEAVY_BODY][StatModType::DEX] = ranges[EquipType::HEAVY_BODY][StatModType::STR];
 	ranges[EquipType::HEAVY_BODY][StatModType::INT] = ranges[EquipType::HEAVY_BODY][StatModType::STR];
 	ranges[EquipType::HEAVY_BODY][StatModType::WIS] = ranges[EquipType::HEAVY_BODY][StatModType::STR];
-	ranges[EquipType::HEAVY_BODY][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 3, 3, 4 };
+	ranges[EquipType::HEAVY_BODY][StatModType::ALL_ATTRIBUTES] = { 1, 3, 3, 5, 5, 7 };
 	ranges[EquipType::HEAVY_BODY][StatModType::VIT] = { 4, 6, 6, 12, 12, 18 };
 	ranges[EquipType::HEAVY_BODY][StatModType::ARMOR] = { 3, 4, 4, 5, 5, 7 };
 	ranges[EquipType::HEAVY_BODY][StatModType::COUNTER_CHANCE] = { 11, 14, 14, 17, 17, 20 };
@@ -893,14 +893,14 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::MED_BODY] = ranges[EquipType::HEAVY_BODY];
 	ranges[EquipType::LIGHT_BODY] = ranges[EquipType::HEAVY_BODY];
 
-	ranges[EquipType::HEAVY_HANDS][StatModType::HP] = { 12, 15, 15, 30, 30, 45 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::HP] = { 24, 30, 30, 60, 60, 90 };
 	ranges[EquipType::HEAVY_HANDS][StatModType::MP] = { 6, 8, 8, 15, 15, 22 };
 	ranges[EquipType::HEAVY_HANDS][StatModType::SP] = { 2, 4, 4, 7, 7, 10 };
-	ranges[EquipType::HEAVY_HANDS][StatModType::STR] = { 2, 2, 2, 5, 5, 7 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::STR] = { 2, 4, 4, 7, 7, 11 };
 	ranges[EquipType::HEAVY_HANDS][StatModType::DEX] = ranges[EquipType::HEAVY_HANDS][StatModType::STR];
 	ranges[EquipType::HEAVY_HANDS][StatModType::INT] = ranges[EquipType::HEAVY_HANDS][StatModType::STR];
 	ranges[EquipType::HEAVY_HANDS][StatModType::WIS] = ranges[EquipType::HEAVY_HANDS][StatModType::STR];
-	ranges[EquipType::HEAVY_HANDS][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 3, 3, 4 };
+	ranges[EquipType::HEAVY_HANDS][StatModType::ALL_ATTRIBUTES] = { 1, 2, 2, 3, 3, 5 };
 	ranges[EquipType::HEAVY_HANDS][StatModType::VIT] = { 3, 4, 4, 8, 8, 12 };
 	ranges[EquipType::HEAVY_HANDS][StatModType::HP_LEECH] = { 3, 4, 4, 5, 5, 6 };
 	ranges[EquipType::HEAVY_HANDS][StatModType::MP_LEECH] = { 2, 3, 3, 4, 4, 5 };
@@ -916,17 +916,17 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::MED_HANDS] = ranges[EquipType::HEAVY_HANDS];
 	ranges[EquipType::LIGHT_HANDS] = ranges[EquipType::HEAVY_HANDS];
 
-	ranges[EquipType::HEAVY_FEET][StatModType::HP] = { 16, 20, 20, 40, 40, 60 };
+	ranges[EquipType::HEAVY_FEET][StatModType::HP] = { 32, 40, 40, 80, 80, 120 };
 	ranges[EquipType::HEAVY_FEET][StatModType::HP_REGEN] = { 48, 64, 64, 100, 100, 136 };
 	ranges[EquipType::HEAVY_FEET][StatModType::MP] = { 8, 10, 10, 20, 20, 30 };
 	ranges[EquipType::HEAVY_FEET][StatModType::MP_REGEN] = { 12, 16, 16, 25, 25, 34 };
 	ranges[EquipType::HEAVY_FEET][StatModType::SP] = { 2, 4, 4, 8, 8, 12 };
 	ranges[EquipType::HEAVY_FEET][StatModType::SP_REGEN] = { 4, 6, 6, 8, 8, 10 };
-	ranges[EquipType::HEAVY_FEET][StatModType::STR] = { 2, 2, 2, 4, 4, 6 };
+	ranges[EquipType::HEAVY_FEET][StatModType::STR] = { 2, 4, 4, 7, 7, 11 };
 	ranges[EquipType::HEAVY_FEET][StatModType::DEX] = ranges[EquipType::HEAVY_FEET][StatModType::STR];
 	ranges[EquipType::HEAVY_FEET][StatModType::INT] = ranges[EquipType::HEAVY_FEET][StatModType::STR];
 	ranges[EquipType::HEAVY_FEET][StatModType::WIS] = ranges[EquipType::HEAVY_FEET][StatModType::STR];
-	ranges[EquipType::HEAVY_FEET][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 2, 2, 3 };
+	ranges[EquipType::HEAVY_FEET][StatModType::ALL_ATTRIBUTES] = { 1, 2, 2, 3, 3, 5 };
 	ranges[EquipType::HEAVY_FEET][StatModType::VIT] = { 2, 3, 3, 6, 6, 9 };
 	ranges[EquipType::HEAVY_FEET][StatModType::ARMOR] = { 2, 3, 3, 4, 4, 5 };
 	ranges[EquipType::HEAVY_FEET][StatModType::HASTE] = { 4, 6, 6, 8, 8, 10 };
@@ -938,17 +938,17 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::MED_FEET] = ranges[EquipType::HEAVY_FEET];
 	ranges[EquipType::LIGHT_FEET] = ranges[EquipType::HEAVY_FEET];
 
-	ranges[EquipType::NECK][StatModType::HP] = { 16, 20, 20, 40, 40, 60 };
+	ranges[EquipType::NECK][StatModType::HP] = { 32, 40, 40, 80, 80, 120 };
 	ranges[EquipType::NECK][StatModType::HP_REGEN] = { 32, 48, 48, 84, 84, 120 };
 	ranges[EquipType::NECK][StatModType::MP] = { 8, 10, 10, 20, 20, 30 };
 	ranges[EquipType::NECK][StatModType::MP_REGEN] = { 8, 12, 12, 21, 21, 30 };
 	ranges[EquipType::NECK][StatModType::SP] = { 2, 4, 4, 7, 7, 10 };
 	ranges[EquipType::NECK][StatModType::SP_REGEN] = { 4, 6, 6, 8, 8, 10 };
-	ranges[EquipType::NECK][StatModType::STR] = { 2, 2, 2, 4, 4, 6 };
+	ranges[EquipType::NECK][StatModType::STR] = { 2, 4, 4, 7, 7, 11 };
 	ranges[EquipType::NECK][StatModType::DEX] = ranges[EquipType::NECK][StatModType::STR];
 	ranges[EquipType::NECK][StatModType::INT] = ranges[EquipType::NECK][StatModType::STR];
 	ranges[EquipType::NECK][StatModType::WIS] = ranges[EquipType::NECK][StatModType::STR];
-	ranges[EquipType::NECK][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 2, 2, 4 };
+	ranges[EquipType::NECK][StatModType::ALL_ATTRIBUTES] = { 1, 3, 3, 4, 4, 6 };
 	ranges[EquipType::NECK][StatModType::DAMAGE] = { 3, 4, 4, 5, 5, 6 };
 	ranges[EquipType::NECK][StatModType::CRIT_CHANCE] = { 3, 4, 4, 5, 5, 6 };
 	ranges[EquipType::NECK][StatModType::HASTE] = { 3, 4, 4, 5, 5, 7 };
@@ -960,17 +960,17 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::NECK][StatModType::GOLD_FIND] = { 4, 7, 7, 10, 10, 12 };
 	ranges[EquipType::NECK][StatModType::EXP_BOOST] = { 5, 8, 8, 11, 11, 14 };
 
-	ranges[EquipType::RING][StatModType::HP] = { 7, 10, 10, 20, 20, 30 };
+	ranges[EquipType::RING][StatModType::HP] = { 14, 20, 20, 40, 40, 60 };
 	ranges[EquipType::RING][StatModType::HP_REGEN] = { 20, 40, 40, 56, 56, 68 };
 	ranges[EquipType::RING][StatModType::MP] = { 3, 5, 5, 10, 10, 15 };
 	ranges[EquipType::RING][StatModType::MP_REGEN] = { 5, 10, 10, 14, 14, 17 };
 	ranges[EquipType::RING][StatModType::SP] = { 2, 4, 4, 7, 7, 10 };
 	ranges[EquipType::RING][StatModType::SP_REGEN] = { 3, 4, 4, 5, 5, 6 };
-	ranges[EquipType::RING][StatModType::STR] = { 2, 2, 2, 4, 4, 6 };
+	ranges[EquipType::RING][StatModType::STR] = { 2, 3, 3, 5, 5, 7 };
 	ranges[EquipType::RING][StatModType::DEX] = ranges[EquipType::RING][StatModType::STR];
 	ranges[EquipType::RING][StatModType::INT] = ranges[EquipType::RING][StatModType::STR];
 	ranges[EquipType::RING][StatModType::WIS] = ranges[EquipType::RING][StatModType::STR];
-	ranges[EquipType::RING][StatModType::ALL_ATTRIBUTES] = { 1, 1, 1, 2, 2, 3 };
+	ranges[EquipType::RING][StatModType::ALL_ATTRIBUTES] = { 1, 2, 2, 3, 3, 4 };
 	ranges[EquipType::RING][StatModType::DAMAGE] = { 2, 3, 3, 4, 4, 5 };
 	ranges[EquipType::RING][StatModType::ARMOR_PEN] = { 1, 2, 2, 3, 3, 5 };
 	ranges[EquipType::RING][StatModType::CRIT_CHANCE] = { 2, 3, 3, 4, 4, 5};
