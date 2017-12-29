@@ -765,13 +765,16 @@ double Player::GetResistancePen(EventOptions eventOptions, bool consumeBuffs) {
 }
 
 double Player::GetCritChance(EventOptions eventOptions, bool consumeBuffs) {
-	double critChance = getStat(0.05, StatModType::CRIT_CHANCE, eventOptions, false, consumeBuffs);
+	double critChance = (double)GetDEX(consumeBuffs) / 1000.0;
+	critChance = getStat(critChance, StatModType::CRIT_CHANCE, eventOptions, false, consumeBuffs);
 
 	return critChance;
 }
 
 double Player::GetCritDamage(EventOptions eventOptions, bool consumeBuffs) {
-	double critDamage = getStat(1.5, StatModType::CRIT_DAMAGE, eventOptions, true, consumeBuffs);
+	double critDamage = (double)GetSTR(consumeBuffs) / 200.0;
+	critDamage += 1.25;
+	critDamage = getStat(critDamage, StatModType::CRIT_DAMAGE, eventOptions, true, consumeBuffs);
 
 	return critDamage;
 }
