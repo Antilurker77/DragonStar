@@ -23,14 +23,14 @@ Human::Human(){
 
 	baseEXPPerLevel = 300;
 
-	baseHP = 400;
+	baseHP = 700;
 	baseMP = 200;
 	baseSP = 100;
 
-	baseSTR = 30;
-	baseDEX = 30;
-	baseINT = 30;
-	baseWIS = 30;
+	baseSTR = 50;
+	baseDEX = 50;
+	baseINT = 50;
+	baseWIS = 50;
 
 	baseVIT = 100;
 
