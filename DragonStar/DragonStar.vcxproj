@@ -168,6 +168,7 @@
     <ClCompile Include="data\equipment\cpp\eq_lightBody.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_staff.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_sword1H.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_sword2H.cpp" />
     <ClCompile Include="data\factory.cpp" />
     <ClCompile Include="data\formation.cpp" />
     <ClCompile Include="data\formation\cpp\fa_commonT1.cpp" />
@@ -306,6 +307,7 @@
     <ClInclude Include="data\equipment\header\eq_lightBody.h" />
     <ClInclude Include="data\equipment\header\eq_staff.h" />
     <ClInclude Include="data\equipment\header\eq_sword1H.h" />
+    <ClInclude Include="data\equipment\header\eq_sword2H.h" />
     <ClInclude Include="data\formation.h" />
     <ClInclude Include="data\formation\header\fa_commonT1.h" />
     <ClInclude Include="data\formation\header\fa_testFormations.h" />

@@ -28,5 +28,6 @@
 #include "eq_omegaRing.h"
 #include "eq_staff.h"
 #include "eq_sword1H.h"
+#include "eq_sword2H.h"
 
 #pragma once
