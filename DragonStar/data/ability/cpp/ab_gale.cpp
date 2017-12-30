@@ -44,10 +44,10 @@ std::vector<sf::Vector3i> Ab_Gale::GetTargetArea(sf::Vector3i selectedTile) {
 }
 
 std::string Ab_Gale::GetDescription() {
-	std::string damage = "27";
+	std::string damage = "45";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 27.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 45.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Launch a slicing gale at the target,\ndealing #damage " + damage + " #default wind damage. Reduces the cast\ntime of Gale by 0.1s. Stacks up to 5\ntimes and lasts 5s.";
@@ -55,6 +55,6 @@ std::string Ab_Gale::GetDescription() {
 }
 
 void Ab_Gale::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	auto result = Combat::ScalingAttack(user, targets[0], 27.0, Attribute::INT, abilityOptions);
+	auto result = Combat::ScalingAttack(user, targets[0], 45.0, Attribute::INT, abilityOptions);
 	Combat::AddAuraStack(user, user, AuraID::GALE);
 }

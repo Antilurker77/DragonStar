@@ -46,17 +46,17 @@ Au_MendWounds::Au_MendWounds() {
 }
 
 std::string Au_MendWounds::GetDescription() {
-	std::string heal = "5";
+	std::string heal = "10";
 
 	if (user != nullptr) {
-		heal = std::to_string(Combat::ScalingHealEstimate(user, 5.0 * snapshotPower, Attribute::HP, auraOptions));
+		heal = std::to_string(Combat::ScalingHealEstimate(user, 10.0 * snapshotPower, Attribute::HP, auraOptions));
 	}
 
 	return "Heals #heal " + heal + " #default HP every 1s.";
 }
 
 void Au_MendWounds::OnTick() {
-	double heal = 5.0 * nextTickPower * snapshotPower;
+	double heal = 10.0 * nextTickPower * snapshotPower;
 	Combat::ScalingHeal(user, target, heal, Attribute::HP, auraOptions);
 }
 

@@ -52,10 +52,10 @@ std::vector<sf::Vector3i> Ab_HealingRain::GetTargetArea(sf::Vector3i selectedTil
 }
 
 std::string Ab_HealingRain::GetDescription() {
-	std::string heal = "5";
+	std::string heal = "8";
 
 	if (user != nullptr) {
-		heal = std::to_string(Combat::ScalingHealEstimate(user, 5.0, Attribute::HP, abilityOptions));
+		heal = std::to_string(Combat::ScalingHealEstimate(user, 8.0, Attribute::HP, abilityOptions));
 	}
 
 	std::string desc = "Call rain on a targeted area of radius 2, healing\n#heal " + heal + " #default HP every 1s for 20s.";

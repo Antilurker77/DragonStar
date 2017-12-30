@@ -48,10 +48,10 @@ std::vector<sf::Vector3i> Ab_FireNova::GetTargetArea(sf::Vector3i selectedTile) 
 }
 
 std::string Ab_FireNova::GetDescription() {
-	std::string damage = "20";
+	std::string damage = "33";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 20.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 33.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Erupt with fire, dealing #damage " + damage + " #default fire damage to adjacent\nenemies.";
@@ -60,6 +60,6 @@ std::string Ab_FireNova::GetDescription() {
 
 void Ab_FireNova::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	for (size_t i = 0; i < targets.size(); i++) {
-		Combat::ScalingAttack(user, targets[i], 20.0, Attribute::INT, abilityOptions);
+		Combat::ScalingAttack(user, targets[i], 33.0, Attribute::INT, abilityOptions);
 	}
 }

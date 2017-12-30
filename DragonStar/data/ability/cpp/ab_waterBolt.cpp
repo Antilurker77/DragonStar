@@ -44,10 +44,10 @@ std::vector<sf::Vector3i> Ab_WaterBolt::GetTargetArea(sf::Vector3i selectedTile)
 }
 
 std::string Ab_WaterBolt::GetDescription() {
-	std::string damage = "24";
+	std::string damage = "40";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 24.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 40.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Shoot a bolt of water at the target, dealing\n#damage " + damage + " #default water damage.";
@@ -55,5 +55,5 @@ std::string Ab_WaterBolt::GetDescription() {
 }
 
 void Ab_WaterBolt::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 24.0, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 40.0, Attribute::INT, abilityOptions);
 }

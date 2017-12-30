@@ -41,10 +41,10 @@ std::vector<sf::Vector3i> Ab_Heal::GetTargetArea(sf::Vector3i selectedTile) {
 }
 
 std::string Ab_Heal::GetDescription() {
-	std::string healing = "50";
+	std::string healing = "80";
 
 	if (user != nullptr) {
-		healing = std::to_string(Combat::ScalingHealEstimate(user, 50.0, Attribute::HP, abilityOptions));
+		healing = std::to_string(Combat::ScalingHealEstimate(user, 80.0, Attribute::HP, abilityOptions));
 	}
 
 	std::string desc = "Heal an ally with divine light, restoring #heal " + healing + " #default HP.";
@@ -53,5 +53,5 @@ std::string Ab_Heal::GetDescription() {
 }
 
 void Ab_Heal::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingHeal(user, targets[0], 50.0, Attribute::HP, abilityOptions);
+	Combat::ScalingHeal(user, targets[0], 80.0, Attribute::HP, abilityOptions);
 }

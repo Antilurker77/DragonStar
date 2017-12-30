@@ -62,10 +62,10 @@ std::vector<sf::Vector3i> Ab_PrismaticBolt::GetTargetArea(sf::Vector3i selectedT
 }
 
 std::string Ab_PrismaticBolt::GetDescription() {
-	std::string damage = "32";
+	std::string damage = "54";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 32.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 54.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Shoot a bolt of elemental energy at the target, dealing\n#damage " + damage +
@@ -74,7 +74,7 @@ std::string Ab_PrismaticBolt::GetDescription() {
 }
 
 void Ab_PrismaticBolt::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	auto result = Combat::ScalingAttack(user, targets[0], 32.0, Attribute::INT, abilityOptions);
+	auto result = Combat::ScalingAttack(user, targets[0], 54.0, Attribute::INT, abilityOptions);
 	if (result.DidHit) {
 		Combat::AddAuraStack(user, targets[0], AuraID::PRISMATIC_BOLT);
 	}

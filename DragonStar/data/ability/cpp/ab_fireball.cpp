@@ -54,12 +54,12 @@ std::vector<sf::Vector3i> Ab_Fireball::GetTargetArea(sf::Vector3i selectedTile) 
 }
 
 std::string Ab_Fireball::GetDescription() {
-	std::string damageCenter = "38";
-	std::string damageOutside = "19";
+	std::string damageCenter = "64";
+	std::string damageOutside = "32";
 
 	if (user != nullptr) {
-		damageCenter = std::to_string(Combat::ScalingAttackEstimate(user, 38.0, Attribute::INT, abilityOptions));
-		damageOutside = std::to_string(Combat::ScalingAttackEstimate(user, 19.0, Attribute::INT, abilityOptions));
+		damageCenter = std::to_string(Combat::ScalingAttackEstimate(user, 64.0, Attribute::INT, abilityOptions));
+		damageOutside = std::to_string(Combat::ScalingAttackEstimate(user, 32.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Hurl a massive ball of fire at the target location,\ndealing #damage " + damageCenter + " #default fire damage " +
@@ -71,10 +71,10 @@ std::string Ab_Fireball::GetDescription() {
 void Ab_Fireball::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	for (size_t i = 0; i < targets.size(); i++) {
 		if (targets[i]->GetHexPosition() == cursor) {
-			Combat::ScalingAttack(user, targets[i], 38.0, Attribute::INT, abilityOptions);
+			Combat::ScalingAttack(user, targets[i], 64.0, Attribute::INT, abilityOptions);
 		}
 		else {
-			Combat::ScalingAttack(user, targets[i], 19.0, Attribute::INT, abilityOptions);
+			Combat::ScalingAttack(user, targets[i], 32.0, Attribute::INT, abilityOptions);
 		}
 	}
 }

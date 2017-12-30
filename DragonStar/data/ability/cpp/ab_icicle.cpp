@@ -44,10 +44,10 @@ std::vector<sf::Vector3i> Ab_Icicle::GetTargetArea(sf::Vector3i selectedTile) {
 }
 
 std::string Ab_Icicle::GetDescription() {
-	std::string damage = "22";
+	std::string damage = "38";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 22.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 38.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Hurl an icicle at the target, dealing\n#damage " + damage + " #default ice damage and reducing the target's\nmovement speed by 20% for 5s.";
@@ -55,7 +55,7 @@ std::string Ab_Icicle::GetDescription() {
 }
 
 void Ab_Icicle::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	auto result = Combat::ScalingAttack(user, targets[0], 22.0, Attribute::INT, abilityOptions);
+	auto result = Combat::ScalingAttack(user, targets[0], 38.0, Attribute::INT, abilityOptions);
 	if (result.DidHit) {
 		Combat::AddAuraStack(user, targets[0], AuraID::ICICLE);
 	}

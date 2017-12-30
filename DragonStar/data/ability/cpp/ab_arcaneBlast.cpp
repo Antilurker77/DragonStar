@@ -46,10 +46,10 @@ std::vector<sf::Vector3i> Ab_ArcaneBlast::GetTargetArea(sf::Vector3i selectedTil
 }
 
 std::string Ab_ArcaneBlast::GetDescription() {
-	std::string damage = "54";
+	std::string damage = "90";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 54.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 90.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Blast the target with arcane energy, dealing\n#damage " + damage + " #default arcane damage.";
@@ -57,5 +57,5 @@ std::string Ab_ArcaneBlast::GetDescription() {
 }
 
 void Ab_ArcaneBlast::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 54.0, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 90.0, Attribute::INT, abilityOptions);
 }

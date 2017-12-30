@@ -45,10 +45,10 @@ std::vector<sf::Vector3i> Ab_DragonfireBolt::GetTargetArea(sf::Vector3i selected
 }
 
 std::string Ab_DragonfireBolt::GetDescription() {
-	std::string damage = "63";
+	std::string damage = "105";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 63.0, Attribute::INT, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 105.0, Attribute::INT, abilityOptions));
 	}
 
 	std::string desc = "Shoot a bolt of draconic flames at the target, dealing\n#damage " + damage + " #default fire damage.";
@@ -56,5 +56,5 @@ std::string Ab_DragonfireBolt::GetDescription() {
 }
 
 void Ab_DragonfireBolt::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::ScalingAttack(user, targets[0], 63.0, Attribute::INT, abilityOptions);
+	Combat::ScalingAttack(user, targets[0], 105.0, Attribute::INT, abilityOptions);
 }
