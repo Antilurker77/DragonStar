@@ -15,14 +15,14 @@ En_ArcaneSentry::En_ArcaneSentry() {
 
 	creatureType = CreatureType::CONSTRUCT;
 
-	baseHP = 1100;
+	baseHP = 1830;
 	baseMP = 250;
 	baseSP = 50;
 
-	baseSTR = 10;
-	baseDEX = 6;
-	baseINT = 25;
-	baseWIS = 15;
+	baseSTR = 20;
+	baseDEX = 10;
+	baseINT = 40;
+	baseWIS = 20;
 
 	baseVIT = 100;
 	baseArmor = 15;
@@ -35,7 +35,7 @@ En_ArcaneSentry::En_ArcaneSentry() {
 
 	attackType = EquipType::UNARMED_INT;
 	attackElement = { Element::ARCANE };
-	attackDamage = 15;
+	attackDamage = 25;
 	attackMod = 0.5;
 
 	offHandAttackType = EquipType::NONE;

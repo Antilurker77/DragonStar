@@ -14,14 +14,14 @@ En_TestEnemy::En_TestEnemy() {
 
 	creatureType = CreatureType::HUMANOID;
 
-	baseHP = 250;
+	baseHP = 1500;
 	baseMP = 30;
 	baseSP = 100;
 
-	baseSTR = 24;
-	baseDEX = 24;
-	baseINT = 24;
-	baseWIS = 24;
+	baseSTR = 40;
+	baseDEX = 40;
+	baseINT = 40;
+	baseWIS = 40;
 	baseVIT = 100;
 
 	baseArmor = 30;
@@ -34,8 +34,8 @@ En_TestEnemy::En_TestEnemy() {
 
 	attackType = EquipType::UNARMED_STR;
 	attackElement = { Element::PHYSICAL };
-	attackDamage = 0;
-	attackMod = 2.0;
+	attackDamage = 50;
+	attackMod = 1.0;
 
 	offHandAttackType = EquipType::NONE;
 	offHandAttackElement = { Element::NONE };

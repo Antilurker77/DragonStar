@@ -15,14 +15,14 @@ En_TestUnique::En_TestUnique() {
 	creatureType = CreatureType::HUMANOID;
 	isUnique = true;
 
-	baseHP = 390;
+	baseHP = 6500;
 	baseMP = 40;
 	baseSP = 130;
 
-	baseSTR = 28;
-	baseDEX = 15;
-	baseINT = 17;
-	baseWIS = 18;
+	baseSTR = 70;
+	baseDEX = 35;
+	baseINT = 41;
+	baseWIS = 45;
 
 	baseVIT = 100;
 	baseArmor = 40;
@@ -35,7 +35,7 @@ En_TestUnique::En_TestUnique() {
 
 	attackType = EquipType::SWORD_2H;
 	attackElement = { Element::PHYSICAL };
-	attackDamage = 40;
+	attackDamage = 100;
 	attackMod = 2.0;
 
 	offHandAttackType = EquipType::NONE;
@@ -43,7 +43,7 @@ En_TestUnique::En_TestUnique() {
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
-	baseGold = 30u;
+	baseGold = 75u;
 	baseEXP = 400u;
 	lootPoints = 400u;
 

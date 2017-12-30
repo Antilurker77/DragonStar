@@ -14,7 +14,7 @@ En_TargetDummy::En_TargetDummy() {
 
 	creatureType = CreatureType::CONSTRUCT;
 
-	baseHP = 5000;
+	baseHP = 7500;
 	baseMP = 250;
 	baseSP = 100;
 
@@ -34,7 +34,7 @@ En_TargetDummy::En_TargetDummy() {
 
 	attackType = EquipType::UNARMED_STR;
 	attackElement = { Element::PHYSICAL };
-	attackDamage = 30;
+	attackDamage = 50;
 	attackMod = 1.0;
 
 	offHandAttackType = EquipType::NONE;

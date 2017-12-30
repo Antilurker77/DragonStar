@@ -14,14 +14,14 @@ En_TestMage::En_TestMage() {
 
 	creatureType = CreatureType::HUMANOID;
 
-	baseHP = 135;
+	baseHP = 1155;
 	baseMP = 360;
 	baseSP = 80;
 
-	baseSTR = 18;
-	baseDEX = 22;
-	baseINT = 32;
-	baseWIS = 28;
+	baseSTR = 30;
+	baseDEX = 41;
+	baseINT = 53;
+	baseWIS = 48;
 
 	baseVIT = 100;
 	baseArmor = 15;
@@ -34,7 +34,7 @@ En_TestMage::En_TestMage() {
 
 	attackType = EquipType::STAFF;
 	attackElement = { Element::PHYSICAL };
-	attackDamage = 15;
+	attackDamage = 25;
 	attackMod = 0.75;
 
 	offHandAttackType = EquipType::NONE;

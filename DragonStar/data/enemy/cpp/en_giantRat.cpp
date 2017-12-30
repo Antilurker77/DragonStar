@@ -15,12 +15,12 @@ En_GiantRat::En_GiantRat() {
 
 	creatureType = CreatureType::BEAST;
 
-	baseHP = 600;
+	baseHP = 1000;
 	baseMP = 55;
 	baseSP = 100;
 
-	baseSTR = 18;
-	baseDEX = 18;
+	baseSTR = 30;
+	baseDEX = 30;
 	baseINT = 6;
 	baseWIS = 6;
 
@@ -35,7 +35,7 @@ En_GiantRat::En_GiantRat() {
 
 	attackType = EquipType::UNARMED_STR;
 	attackElement = { Element::PHYSICAL };
-	attackDamage = 24;
+	attackDamage = 40;
 	attackMod = 0.8;
 
 	offHandAttackType = EquipType::NONE;
