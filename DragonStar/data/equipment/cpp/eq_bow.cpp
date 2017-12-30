@@ -17,7 +17,7 @@ Eq_Longbow::Eq_Longbow() {
 	equipType = EquipType::BOW;
 	equipmentID = EquipmentID::LONGBOW;
 
-	equipPower = 33;
+	equipPower = 55;
 	attackSpeed = 240;
 	attackRange = 4;
 	attributeMultiplier = 1.1;

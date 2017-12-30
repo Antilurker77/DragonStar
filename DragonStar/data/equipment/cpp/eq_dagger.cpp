@@ -17,7 +17,7 @@ Eq_IronDagger::Eq_IronDagger() {
 	equipType = EquipType::DAGGER;
 	equipmentID = EquipmentID::IRON_DAGGER;
 
-	equipPower = 21;
+	equipPower = 35;
 	attackSpeed = 140;
 	attackRange = 1;
 	attributeMultiplier = 0.7;

@@ -17,7 +17,7 @@ Eq_IronMace::Eq_IronMace() {
 	equipType = EquipType::MACE_1H;
 	equipmentID = EquipmentID::IRON_MACE;
 
-	equipPower = 36;
+	equipPower = 60;
 	attackSpeed = 240;
 	attackRange = 1;
 	attributeMultiplier = 1.2;

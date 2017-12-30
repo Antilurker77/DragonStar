@@ -17,10 +17,10 @@ Eq_IronSpear::Eq_IronSpear() {
 	equipType = EquipType::SPEAR;
 	equipmentID = EquipmentID::IRON_SPEAR;
 
-	equipPower = 48;
+	equipPower = 80;
 	attackSpeed = 250;
 	attackRange = 1;
-	attributeMultiplier = 1.75;
+	attributeMultiplier = 1.6;
 	attackElements = { Element::PHYSICAL };
 	blockChance = 0.0;
 	statMods = {};

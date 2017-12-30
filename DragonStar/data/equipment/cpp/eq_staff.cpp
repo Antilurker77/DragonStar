@@ -17,7 +17,7 @@ Eq_WoodenStaff::Eq_WoodenStaff() {
 	equipType = EquipType::STAFF;
 	equipmentID = EquipmentID::WOODEN_STAFF;
 
-	equipPower = 24;
+	equipPower = 40;
 	attackSpeed = 260;
 	attackRange = 1;
 	attributeMultiplier = 0.8;

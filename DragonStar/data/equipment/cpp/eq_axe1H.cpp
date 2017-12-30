@@ -17,7 +17,7 @@ Eq_IronAxe::Eq_IronAxe() {
 	equipType = EquipType::AXE_1H;
 	equipmentID = EquipmentID::IRON_AXE;
 
-	equipPower = 33;
+	equipPower = 55;
 	attackSpeed = 220;
 	attackRange = 1;
 	attributeMultiplier = 1.10;

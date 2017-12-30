@@ -17,7 +17,7 @@ Eq_IronSword::Eq_IronSword() {
 	equipType = EquipType::SWORD_1H;
 	equipmentID = EquipmentID::IRON_SWORD;
 
-	equipPower = 30;
+	equipPower = 50;
 	attackSpeed = 200;
 	attackRange = 1;
 	attributeMultiplier = 1.00;
