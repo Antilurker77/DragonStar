@@ -20,6 +20,7 @@
 #include "eq_lightHands.h"
 #include "eq_lightHead.h"
 #include "eq_mace1H.h"
+#include "eq_mace2H.h"
 #include "eq_medBody.h"
 #include "eq_medFeet.h"
 #include "eq_medHands.h"
