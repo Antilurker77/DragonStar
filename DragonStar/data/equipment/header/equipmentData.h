@@ -28,6 +28,7 @@
 #include "eq_neck.h"
 #include "eq_ring.h"
 #include "eq_omegaRing.h"
+#include "eq_shield.h"
 #include "eq_staff.h"
 #include "eq_sword1H.h"
 #include "eq_sword2H.h"

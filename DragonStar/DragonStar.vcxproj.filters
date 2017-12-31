@@ -426,6 +426,9 @@
     <ClCompile Include="data\equipment\cpp\eq_wand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_shield.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -879,6 +882,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\equipment\header\eq_wand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_shield.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
