@@ -145,6 +145,7 @@ ItemPtr Factory::CreateEquipment(EquipmentID id) {
 	case EquipmentID::SILVER_NECKLACE:					return ItemPtr(std::make_shared<Eq_SilverNecklace>());
 	case EquipmentID::SILVER_RING:						return ItemPtr(std::make_shared<Eq_SilverRing>());
 	case EquipmentID::WOODEN_STAFF:						return ItemPtr(std::make_shared<Eq_WoodenStaff>());
+	case EquipmentID::WOODEN_WAND:						return ItemPtr(std::make_shared<Eq_WoodenWand>());
 
 	// Returns Silver Ring if ID is invalid.
 	default:											return ItemPtr(std::make_shared<Eq_SilverRing>());
