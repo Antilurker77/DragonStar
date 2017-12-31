@@ -258,6 +258,7 @@ std::vector<std::pair<StatModType, double>> Equipment::getPossibleAffixes() {
 	case EquipType::STAFF:
 		possibleAffixes = {
 			{ StatModType::INT, 1.0 },
+			{ StatModType::WIS, 1.0 },
 			{ StatModType::ALL_ATTRIBUTES, 1.0 },
 			{ StatModType::HP, 1.0 },
 			{ StatModType::MP, 1.0 },
