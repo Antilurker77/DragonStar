@@ -8,7 +8,7 @@
 
 Eq_IronShield::Eq_IronShield() {
 	name = "Iron Shield";
-	iconFilepath = "iron_shield.png";
+	iconFilepath = "shield.png";
 	itemQuality = ItemQuality::COMMON;
 	weight = 6;
 	tier = 1;
