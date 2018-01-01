@@ -37,6 +37,17 @@ MapSelectScene::MapSelectScene() {
 	seedText.setCharacterSize(16);
 	seedText.setPosition(4.f, settings.ScreenHeight - 20.f);
 
+	goldBackground.setFillColor(sf::Color(0, 0, 0, 255));
+	goldBackground.setOutlineThickness(1.f);
+	goldBackground.setOutlineColor(sf::Color(255, 255, 255, 255));
+
+	goldIcon.setTexture(*assetManager.LoadTexture("gfx/ui/icon/small_icon/gold.png"));
+	goldIcon.setPosition(settings.ScreenWidth - 40.f, 24.f);
+
+	goldText.setFont(*assetManager.LoadFont(settings.Font));
+	goldText.setCharacterSize(14);
+	
+	updateGoldDisplay();
 }
 
 void MapSelectScene::ReadInput(sf::RenderWindow& window) {
@@ -160,6 +171,10 @@ void MapSelectScene::Render(sf::RenderTarget& window, float timeRatio) {
 		abilityButton.Render(window);
 		shopButton.Render(window);
 		window.draw(seedText);
+
+		window.draw(goldBackground);
+		window.draw(goldIcon);
+		window.draw(goldText);
 	}
 	else if (displayEquipWindow) {
 		equipWindow.Render(window);
@@ -213,6 +228,8 @@ void MapSelectScene::CompleteMap(std::vector<ItemPtr> itemsAwarded, unsigned int
 	for (auto i : itemsAwarded) {
 		inventory.push_back(i);
 	}
+
+	updateGoldDisplay();
 
 	// add current map to cleared list
 	sf::Vector2i v = { currentDomain, currentMap };
@@ -710,4 +727,14 @@ bool MapSelectScene::isReachableMap(size_t domain, size_t index) {
 	}
 
 	return false;
+}
+
+void MapSelectScene::updateGoldDisplay() {
+	std::string goldStr = std::to_string(gold);
+	goldText.setString(goldStr);
+	sf::Vector2f textSize(goldText.getGlobalBounds().width, goldText.getGlobalBounds().height);
+	goldBackground.setSize(sf::Vector2f(textSize.x + 25.f, 20.f));
+	sf::Vector2f backgroundSize(goldBackground.getSize());
+	goldBackground.setPosition(settings.ScreenWidth - 22.f - backgroundSize.x, 22.f);
+	goldText.setPosition(settings.ScreenWidth - 43.f - textSize.x, 23.f);
 }

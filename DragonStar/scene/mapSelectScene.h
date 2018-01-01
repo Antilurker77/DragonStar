@@ -66,7 +66,7 @@ private:
 	// Data
 	std::vector<ActorPtr> party;
 	std::vector<ItemPtr> inventory;
-	unsigned int gold = 0;
+	unsigned int gold = 0u;
 	std::vector<sf::Vector2i> clearedMaps; // first is domain number, second is map number
 	std::vector<size_t> clearedDomains;
 	std::vector<FormationID> spawnedUniques;
@@ -101,6 +101,10 @@ private:
 	Button abilityButton;
 	Button shopButton;
 	sf::Text seedText;
+
+	sf::RectangleShape goldBackground;
+	sf::Sprite goldIcon;
+	sf::Text goldText;
 
 	EquipWindow equipWindow;
 	AbilityWindow abilityWindow;
@@ -142,4 +146,7 @@ private:
 
 	// Returns true if the map is a valid choice.
 	bool isReachableMap(size_t domain, size_t index);
+
+	// Updates the gold display.
+	void updateGoldDisplay();
 };
