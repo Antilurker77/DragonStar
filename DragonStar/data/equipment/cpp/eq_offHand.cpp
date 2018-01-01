@@ -7,7 +7,7 @@
 #include "../header/eq_offHand.h"
 
 Eq_PowerOrb::Eq_PowerOrb() {
-	name = "Iron Shield";
+	name = "Power Orb";
 	iconFilepath = "off_hand.png";
 	itemQuality = ItemQuality::COMMON;
 	weight = 1;
