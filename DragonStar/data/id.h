@@ -180,6 +180,7 @@ enum class EquipType {
 	WAND,
 	STAFF,
 	SHIELD,
+	BUCKLER,
 	OFF_HAND,
 	LIGHT_HEAD,
 	LIGHT_BODY,

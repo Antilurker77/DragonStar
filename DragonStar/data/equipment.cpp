@@ -294,6 +294,22 @@ std::vector<std::pair<StatModType, double>> Equipment::getPossibleAffixes() {
 			{ StatModType::COOLDOWN_REDUCTION, 1.0 }
 		};
 		break;
+	case EquipType::BUCKLER:
+		possibleAffixes = {
+			{ StatModType::INT, 1.0 },
+			{ StatModType::WIS, 1.0 },
+			{ StatModType::ALL_ATTRIBUTES, 0.5 },
+			{ StatModType::HP, 1.0 },
+			{ StatModType::MP, 1.0 },
+			//{ StatModType::SP, 0.5 },
+			{ StatModType::HP_REGEN, 1.0 },
+			{ StatModType::VIT, 1.0 },
+			{ StatModType::ARMOR, 1.0 },
+			{ StatModType::BLOCK_CHANCE, 1.0 },
+			//{ StatModType::SP_COST_REDUCTION, 1.0 },
+			{ StatModType::COOLDOWN_REDUCTION, 1.0 }
+		};
+		break;
 	case EquipType::OFF_HAND:
 		break;
 	case EquipType::LIGHT_HEAD:

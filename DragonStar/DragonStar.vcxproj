@@ -149,6 +149,7 @@
     <ClCompile Include="data\equipment\cpp\eq_axe1H.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_axe2H.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_bow.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_buckler.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_dagger.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_heavyBody.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_heavyFeet.cpp" />
@@ -292,6 +293,7 @@
     <ClInclude Include="data\equipment\header\eq_axe1H.h" />
     <ClInclude Include="data\equipment\header\eq_axe2H.h" />
     <ClInclude Include="data\equipment\header\eq_bow.h" />
+    <ClInclude Include="data\equipment\header\eq_buckler.h" />
     <ClInclude Include="data\equipment\header\eq_dagger.h" />
     <ClInclude Include="data\equipment\header\eq_heavyBody.h" />
     <ClInclude Include="data\equipment\header\eq_heavyFeet.h" />

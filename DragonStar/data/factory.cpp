@@ -122,6 +122,7 @@ ItemPtr Factory::CreateEquipment(EquipmentID id) {
 	case EquipmentID::GOLD_RING:						return ItemPtr(std::make_shared<Eq_GoldRing>());
 	case EquipmentID::IRON_ARMOR:						return ItemPtr(std::make_shared<Eq_IronArmor>());
 	case EquipmentID::IRON_AXE:							return ItemPtr(std::make_shared<Eq_IronAxe>());
+	case EquipmentID::IRON_BUCKLER:						return ItemPtr(std::make_shared<Eq_IronBuckler>());
 	case EquipmentID::IRON_DAGGER:						return ItemPtr(std::make_shared<Eq_IronDagger>());
 	case EquipmentID::IRON_GAUNTLETS:					return ItemPtr(std::make_shared<Eq_IronGauntlets>());
 	case EquipmentID::IRON_GREATAXE:					return ItemPtr(std::make_shared<Eq_IronGreataxe>());

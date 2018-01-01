@@ -9,6 +9,7 @@
 #include "eq_axe1H.h"
 #include "eq_axe2H.h"
 #include "eq_bow.h"
+#include "eq_buckler.h"
 #include "eq_dagger.h"
 #include "eq_heavyBody.h"
 #include "eq_heavyFeet.h"

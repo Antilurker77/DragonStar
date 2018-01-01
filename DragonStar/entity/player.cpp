@@ -919,7 +919,7 @@ double Player::GetBlockChance(EventOptions eventOptions, bool consumeBuffs) {
 	// Need a shield equipped to block things.
 	if (equipment[1] != nullptr) {
 		Equipment* equip = (Equipment*)equipment[1].get();
-		if (equip->GetEquipType() == EquipType::SHIELD) {
+		if (equip->GetEquipType() == EquipType::SHIELD || equip->GetEquipType() == EquipType::BUCKLER) {
 			blockChance = getStat(0.0, StatModType::BLOCK_CHANCE, eventOptions, false, consumeBuffs);
 			blockChance += equip->GetBlockChance();
 		}
