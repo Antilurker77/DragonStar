@@ -164,6 +164,7 @@
     <ClCompile Include="data\equipment\cpp\eq_medFeet.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_medHands.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_medHead.cpp" />
+    <ClCompile Include="data\equipment\cpp\eq_offHand.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_ring.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_ironSpear.cpp" />
     <ClCompile Include="data\equipment\cpp\eq_neck.cpp" />
@@ -308,6 +309,7 @@
     <ClInclude Include="data\equipment\header\eq_medFeet.h" />
     <ClInclude Include="data\equipment\header\eq_medHands.h" />
     <ClInclude Include="data\equipment\header\eq_medHead.h" />
+    <ClInclude Include="data\equipment\header\eq_offHand.h" />
     <ClInclude Include="data\equipment\header\eq_ring.h" />
     <ClInclude Include="data\equipment\header\eq_ironSpear.h" />
     <ClInclude Include="data\equipment\header\eq_neck.h" />

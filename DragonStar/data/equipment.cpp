@@ -311,6 +311,21 @@ std::vector<std::pair<StatModType, double>> Equipment::getPossibleAffixes() {
 		};
 		break;
 	case EquipType::OFF_HAND:
+		possibleAffixes = {
+			{ StatModType::INT, 1.0 },
+			{ StatModType::WIS, 1.0 },
+			{ StatModType::ALL_ATTRIBUTES, 0.5 },
+			{ StatModType::HP, 1.0 },
+			{ StatModType::MP, 1.0 },
+			{ StatModType::MP_REGEN, 1.0 },
+			{ StatModType::VIT, 1.0 },
+			{ StatModType::DAMAGE, 1.0 },
+			{ StatModType::CRIT_CHANCE, 1.0 },
+			{ StatModType::CRIT_DAMAGE, 1.0 },
+			{ StatModType::HASTE, 1.0 },
+			{ StatModType::MP_COST_REDUCTION, 1.0 },
+			{ StatModType::COOLDOWN_REDUCTION, 1.0 }
+		};
 		break;
 	case EquipType::LIGHT_HEAD:
 		possibleAffixes = {
@@ -842,12 +857,14 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::WAND] = ranges[EquipType::SWORD_1H];
 
 	ranges[EquipType::SHIELD] = ranges[EquipType::SWORD_1H];
+	ranges[EquipType::SHIELD][StatModType::HP_REGEN] = { 48, 68, 68, 100, 100, 136 };
 	ranges[EquipType::SHIELD][StatModType::VIT] = { 3, 4, 4, 8, 8, 12 };
 	ranges[EquipType::SHIELD][StatModType::ARMOR] = { 3, 4, 4, 5, 5, 7 };
 	ranges[EquipType::SHIELD][StatModType::COUNTER_CHANCE] = { 11, 14, 14, 17, 17, 20 };
 	ranges[EquipType::SHIELD][StatModType::BLOCK_CHANCE] = { 3, 4, 4, 5, 5, 6 };
 
 	ranges[EquipType::OFF_HAND] = ranges[EquipType::SWORD_1H];
+	ranges[EquipType::OFF_HAND][StatModType::MP_REGEN] = { 12, 17, 17, 25, 25, 34 };
 	ranges[EquipType::OFF_HAND][StatModType::VIT] = ranges[EquipType::SHIELD][StatModType::VIT];
 	ranges[EquipType::OFF_HAND][StatModType::CRIT_DAMAGE] = { 20, 25, 25, 30, 30, 40 };
 

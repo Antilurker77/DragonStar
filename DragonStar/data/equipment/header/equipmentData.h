@@ -27,6 +27,7 @@
 #include "eq_medHands.h"
 #include "eq_medHead.h"
 #include "eq_neck.h"
+#include "eq_offHand.h"
 #include "eq_ring.h"
 #include "eq_omegaRing.h"
 #include "eq_shield.h"
