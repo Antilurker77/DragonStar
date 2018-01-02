@@ -51,6 +51,9 @@ struct EventOptions {
 // Struct containing the results of a combat event.
 struct EventResult {
 	int ResultValue = 0;
+	int LifeLeeched = 0;
+	int ManaLeeched = 0;
+	int StaminaLeeched = 0;
 
 	bool DidEvent = false;
 	bool DidHit = false;

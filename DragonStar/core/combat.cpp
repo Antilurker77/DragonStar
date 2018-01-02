@@ -124,6 +124,21 @@ static void applyHealingTaken(double& value, ActorPtr& user, ActorPtr& target, E
 	value *= healingTaken;
 }
 
+// Applies leech effects.
+static void applyLeech(ActorPtr& user, EventOptions eventOptions, EventResult& eventResult) {
+	double lifeLeech = eventOptions.BonusLifeLeech + user->GetHPLeech(eventOptions, true);
+	double manaLeech = eventOptions.BonusManaLeech + user->GetMPLeech(eventOptions, true);
+	double staminaLeech = eventOptions.BonusStaminaLeech;
+
+	int hp = std::floor(eventResult.ResultValue * lifeLeech);
+	int mp = std::floor(eventResult.ResultValue * manaLeech);
+	int sp = std::floor(eventResult.ResultValue * staminaLeech);
+
+	eventResult.LifeLeeched = user->HealActor(hp, { Element::NONE }, Attribute::HP, false);
+	eventResult.ManaLeeched = user->HealActor(mp, { Element::NONE }, Attribute::MP, false);
+	eventResult.StaminaLeeched = user->HealActor(sp, { Element::NONE }, Attribute::SP, false);
+}
+
 // Prints damage message.
 static void outputDamage(ActorPtr& user, ActorPtr& target, EventOptions eventOptions, EventResult eventResult) {
 	std::string output;
@@ -152,6 +167,27 @@ static void outputDamage(ActorPtr& user, ActorPtr& target, EventOptions eventOpt
 		output += std::to_string(eventResult.ResultValue);
 	}
 	output += " #default " + DataString::ElementString(eventOptions.Elements, true);
+
+	if (eventResult.DidBlock) {
+		output += " (Blocked)";
+	}
+
+	if (eventResult.LifeLeeched > 0 || eventResult.ManaLeeched > 0 || eventResult.StaminaLeeched > 0) {
+		if (!eventResult.DidBlock) {
+			output += " ";
+		}
+		output += "(Leeched";
+		if (eventResult.LifeLeeched > 0) {
+			output += " #heal " + std::to_string(eventResult.LifeLeeched) + " HP";
+		}
+		if (eventResult.ManaLeeched > 0) {
+			output += " #spell " + std::to_string(eventResult.ManaLeeched) + " MP";
+		}
+		if (eventResult.StaminaLeeched > 0) {
+			output += " #skill " + std::to_string(eventResult.StaminaLeeched) + " SP";
+		}
+		output += "#default )";
+	}
 
 	messageLog.AddMessage(output);
 }
@@ -292,6 +328,9 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 			// Deals damage to the actor and records amount of damage dealt.
 			eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
 
+			// Apply leach effects after damage is dealt.
+			applyLeech(user, eventOptions, eventResult);
+
 			outputDamage(user, target, eventOptions, eventResult);
 
 			if (target->GetCurrentHP() == 0) {
@@ -387,6 +426,9 @@ EventResult Combat::ScalingAttack(ActorPtr& user, ActorPtr& target, double baseD
 	// Deals damage to the actor and records amount of damage dealt.
 	eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
 
+	// Apply leach effects after damage is dealt.
+	applyLeech(user, eventOptions, eventResult);
+
 	outputDamage(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
@@ -428,6 +470,9 @@ EventResult Combat::FixedAttack(ActorPtr& user, ActorPtr& target, double baseDam
 	// Deals damage to the actor and records amount of damage dealt.
 	eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
 
+	// Apply leach effects after damage is dealt.
+	applyLeech(user, eventOptions, eventResult);
+
 	outputDamage(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
@@ -452,6 +497,9 @@ EventResult Combat::AbsoluteAttack(ActorPtr& user, ActorPtr& target, double base
 
 	// Deals damage to the actor and records amount of damage dealt.
 	eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
+
+	// Apply leach effects after damage is dealt.
+	applyLeech(user, eventOptions, eventResult);
 
 	outputDamage(user, target, eventOptions, eventResult);
 
@@ -480,6 +528,9 @@ EventResult Combat::OnHit(ActorPtr& user, ActorPtr& target, double baseDamage, E
 
 	// Deals damage to the actor and records amount of damage dealt.
 	eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
+
+	// Apply leach effects after damage is dealt.
+	applyLeech(user, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 
