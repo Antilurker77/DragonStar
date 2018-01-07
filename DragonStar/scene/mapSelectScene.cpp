@@ -170,6 +170,9 @@ GameState MapSelectScene::Update(float secondsPerUpdate) {
 	if (displayShopWindow) {
 		displayShopWindow = shopWindow.Update(secondsPerUpdate, windowMousePos, leftClick, rightClick, scrollUp, scrollDown);
 		displayWindow = displayShopWindow;
+		if (!displayShopWindow) {
+			updateGoldDisplay();
+		}
 	}
 
 	return gameState;

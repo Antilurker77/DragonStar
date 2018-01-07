@@ -167,16 +167,25 @@ bool ShopWindow::Update(float secondsPerUpdate, sf::Vector2i mousePos, bool left
 	if (currentTab == ShopTab::CRAFTING) {				
 		if (!isDropdownOpen) {
 			if (craftItemsButton.Update(secondsPerUpdate, mousePos) && leftClick) {
-				craftItems();
+				if (*gold >= craftCost) {
+					craftItems();
+					*gold -= craftCost;
+					goldText.setString(std::to_string(*gold));
+				}
 			}
 
-			// item tooltips
+			// item tooltips and purchasing items
 			for (size_t i = 0; i < craftedBoxes.size(); i++) {
 				if (craftedItems[i] != nullptr && craftedBoxes[i].getGlobalBounds().contains(sf::Vector2f(mousePos.x, mousePos.y))) {
-					itemTooltip.SetItem(craftedItems[i]);
-					sf::Vector2f tooltipSize = itemTooltip.GetSize();
-					itemTooltip.SetPosition(mousePos.x, mousePos.y - tooltipSize.y);
-					displayTooltip = true;
+					if (rightClick){
+						purchaseItem(i);
+					}
+					else {
+						itemTooltip.SetItem(craftedItems[i]);
+						sf::Vector2f tooltipSize = itemTooltip.GetSize();
+						itemTooltip.SetPosition(mousePos.x, mousePos.y - tooltipSize.y);
+						displayTooltip = true;
+					}
 				}
 			}
 		}
@@ -394,5 +403,17 @@ void ShopWindow::updateAffixDropdown() {
 
 	for (auto a : affixes) {
 		affixDropdown.AddOption(DataString::StatModTypeString(a), a);
+	}
+}
+
+void ShopWindow::purchaseItem(size_t index) {
+	if (craftedItems[index] != nullptr) {
+		auto price = craftedItems[index]->GetPrice();
+		if (*gold >= price) {
+			*gold -= price;
+			inventory->push_back(craftedItems[index]);
+			craftedItems[index].reset();
+			goldText.setString(std::to_string(*gold));
+		}
 	}
 }

@@ -119,4 +119,7 @@ private:
 
 	// Updates the affix list based on the item selection.
 	void updateAffixDropdown();
+
+	// Attempts to purchase the selected item.
+	void purchaseItem(size_t index);
 };
