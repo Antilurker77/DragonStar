@@ -74,7 +74,7 @@ ShopWindow::ShopWindow() {
 	baseItemText.setFont(*font);
 	baseItemText.setCharacterSize(fontSize);
 	baseItemText.setString("#aaaaaa Base Item");
-	baseItemText.setPosition(bgPos.x + 250.f, bgPos.y + 100.f);
+	baseItemText.setPosition(bgPos.x + 200.f, bgPos.y + 100.f);
 
 	affixText.setFont(*font);
 	affixText.setCharacterSize(fontSize);
@@ -96,30 +96,47 @@ ShopWindow::ShopWindow() {
 		craftedBoxes[i].setSize(sf::Vector2f(32.f, 32.f));
 		
 		craftedIcons[i].setScale(2.f, 2.f);
+
+		craftedPriceText[i].setFont(*font);
+		craftedPriceText[i].setCharacterSize(fontSize);
+
+		craftedGoldSprite[i].setTexture(*assetManager.LoadTexture("gfx/ui/icon/small_icon/gold.png"));
 	}
 	craftedBoxes[0].setPosition(bgPos.x + 450.f, bgPos.y + 200.f);
 	craftedIcons[0].setPosition(bgPos.x + 450.f, bgPos.y + 200.f);
+	craftedPriceText[0].setPosition(bgPos.x + 463.f, bgPos.y + 234.f);
+	craftedGoldSprite[0].setPosition(bgPos.x + 445.f, bgPos.y + 235.f);
 
 	craftedBoxes[1].setPosition(bgPos.x + 600.f, bgPos.y + 200.f);
 	craftedIcons[1].setPosition(bgPos.x + 600.f, bgPos.y + 200.f);
+	craftedPriceText[1].setPosition(bgPos.x + 613.f, bgPos.y + 234.f);
+	craftedGoldSprite[1].setPosition(bgPos.x + 595.f, bgPos.y + 235.f);
 
 	craftedBoxes[2].setPosition(bgPos.x + 750.f, bgPos.y + 200.f);
 	craftedIcons[2].setPosition(bgPos.x + 750.f, bgPos.y + 200.f);
+	craftedPriceText[2].setPosition(bgPos.x + 763.f, bgPos.y + 234.f);
+	craftedGoldSprite[2].setPosition(bgPos.x + 745.f, bgPos.y + 235.f);
 
 	craftedBoxes[3].setPosition(bgPos.x + 450.f, bgPos.y + 350.f);
 	craftedIcons[3].setPosition(bgPos.x + 450.f, bgPos.y + 350.f);
+	craftedPriceText[3].setPosition(bgPos.x + 463.f, bgPos.y + 384.f);
+	craftedGoldSprite[3].setPosition(bgPos.x + 445.f, bgPos.y + 385.f);
 
 	craftedBoxes[4].setPosition(bgPos.x + 600.f, bgPos.y + 350.f);
 	craftedIcons[4].setPosition(bgPos.x + 600.f, bgPos.y + 350.f);
+	craftedPriceText[4].setPosition(bgPos.x + 613.f, bgPos.y + 384.f);
+	craftedGoldSprite[4].setPosition(bgPos.x + 595.f, bgPos.y + 385.f);
 
 	craftedBoxes[5].setPosition(bgPos.x + 750.f, bgPos.y + 350.f);
 	craftedIcons[5].setPosition(bgPos.x + 750.f, bgPos.y + 350.f);
+	craftedPriceText[5].setPosition(bgPos.x + 763.f, bgPos.y + 384.f);
+	craftedGoldSprite[5].setPosition(bgPos.x + 745.f, bgPos.y + 385.f);
 
 	tierDropdown.SetLength(30);
 	tierDropdown.SetPosition(bgPos.x + 100.f, bgPos.y + 120.f);
 
 	baseItemDropdown.SetLength(150);
-	baseItemDropdown.SetPosition(bgPos.x + 250.f, bgPos.y + 120.f);
+	baseItemDropdown.SetPosition(bgPos.x + 200.f, bgPos.y + 120.f);
 
 	affixDropdown.SetLength(200);
 	affixDropdown.SetPosition(bgPos.x + 100.f, bgPos.y + 270.f);
@@ -233,6 +250,8 @@ void ShopWindow::Render(sf::RenderTarget& window) {
 			window.draw(craftedBoxes[i]);
 			if (craftedItems[i] != nullptr) {
 				window.draw(craftedIcons[i]);
+				window.draw(craftedGoldSprite[i]);
+				window.draw(craftedPriceText[i]);
 			}
 		}
 	}
@@ -301,6 +320,7 @@ void ShopWindow::craftItems() {
 		}
 		craftedItems[i] = item;
 		craftedIcons[i].setTexture(*assetManager.LoadTexture("gfx/ui/icon/small_icon/" + item->GetIconFilepath()));
+		craftedPriceText[i].setString(std::to_string(item->GetPrice()));
 	}
 }
 

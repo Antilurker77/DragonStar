@@ -94,6 +94,8 @@ private:
 
 	std::array<sf::RectangleShape, 6> craftedBoxes;
 	std::array<sf::Sprite, 6> craftedIcons;
+	std::array<sf::Text, 6> craftedPriceText;
+	std::array<sf::Sprite, 6> craftedGoldSprite;
 
 	unsigned int selectedTier = 1u;
 	EquipmentID selecedID = EquipmentID::IRON_SWORD;
