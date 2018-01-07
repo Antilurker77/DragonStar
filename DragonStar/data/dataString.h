@@ -23,4 +23,6 @@ namespace DataString {
 	// Returns a string based on the given stat mod.
 	std::string StatModString(StatMod& statMod);
 
+	// Returns a string based on the given stat mod type.
+	std::string StatModTypeString(StatModType statModType);
 }

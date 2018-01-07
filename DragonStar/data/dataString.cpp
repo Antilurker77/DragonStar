@@ -165,3 +165,50 @@ std::string DataString::StatModString(StatMod& statMod) {
 
 	return s;
 }
+
+std::string DataString::StatModTypeString(StatModType statModType) {
+	switch (statModType) {
+	case StatModType::HP:						return "Maximum HP";
+	case StatModType::HP_REGEN:					return "HP per Sec";
+	case StatModType::HP_LEECH:					return "Life Leech";
+	case StatModType::MP:						return "Maximum MP";
+	case StatModType::MP_REGEN:					return "MP per Sec";
+	case StatModType::MP_LEECH:					return "Mana Leech";
+	case StatModType::SP:						return "Maximum SP";
+	case StatModType::SP_REGEN:					return "SP per Sec";
+	case StatModType::SP_LEECH:					return "Stamina Leech";
+	case StatModType::STR:						return "Strength";
+	case StatModType::DEX:						return "Dexterity";
+	case StatModType::INT:						return "Intelligence";
+	case StatModType::WIS:						return "Wisdom";
+	case StatModType::ALL_ATTRIBUTES:			return "All Attributes";
+	case StatModType::VIT:						return "Vitality";
+	case StatModType::ARMOR:					return "Armor";
+	case StatModType::DAMAGE:					return "Damage";
+	case StatModType::HEALING:					return "Healing";
+	case StatModType::ARMOR_PEN:				return "Armor Penetration";
+	case StatModType::CRIT_CHANCE:				return "Critical Strike Chance";
+	case StatModType::CRIT_DAMAGE:				return "Critical Strike Damage";
+	case StatModType::CRIT_CHANCE_PROTECTION:	return "Reduced Chance to be Critically Struck";
+	case StatModType::HASTE:					return "Haste";
+	case StatModType::DOUBLE_STRIKE_CHANCE:		return "Double Strike Chance";
+	case StatModType::COUNTER_CHANCE:			return "Counter Chance";
+	case StatModType::ON_HIT_DAMAGE:			return "Damage on Hit";
+	case StatModType::HIT_CHANCE:				return "Hit Chance";
+	case StatModType::DODGE_CHANCE:				return "Dodge Chance";
+	case StatModType::BLOCK_CHANCE:				return "Block Chance";
+	case StatModType::MP_COST_REDUCTION:		return "MP Cost Reduction";
+	case StatModType::SP_COST_REDUCTION:		return "SP Cost Reduction";
+	case StatModType::COOLDOWN_REDUCTION:		return "Cooldown Reduction";
+	case StatModType::STUN_RESISTANCE:			return "Stun Resistance";
+	case StatModType::DISARM_RESISTANCE:		return "Disarm Resistance";
+	case StatModType::SILENCE_RESISTANCE:		return "Silence Resistance";
+	case StatModType::KNOCKBACK_RESISTANCE:		return "Knockback Resistance";
+	case StatModType::SLOW_ROOT_RESISTANCE:		return "Snare Resistance";
+	case StatModType::DEATH_RESISTANCE:			return "Death Resistance";
+	case StatModType::MOVEMENT_SPEED:			return "Movement Speed";
+	case StatModType::GOLD_FIND:				return "Gold Find";
+	case StatModType::EXP_BOOST:				return "EXP Gained";
+	default:									return "Unknown";
+	}
+}

@@ -57,6 +57,8 @@ void MapSelectScene::ReadInput(sf::RenderWindow& window) {
 	windowMousePos = mouse.getPosition(window);
 	leftClick = false;
 	rightClick = false;
+	scrollUp = false;
+	scrollDown = false;
 
 	while (window.pollEvent(ev)) {
 		switch (ev.type) {
@@ -69,6 +71,14 @@ void MapSelectScene::ReadInput(sf::RenderWindow& window) {
 			}
 			if (ev.mouseButton.button == sf::Mouse::Right && clickBuffer == 0.f) {
 				rightClick = true;
+			}
+			break;
+		case sf::Event::MouseWheelScrolled:
+			if (ev.mouseWheelScroll.delta == 1) {
+				scrollUp = true;
+			}
+			if (ev.mouseWheelScroll.delta == -1) {
+				scrollDown = true;
 			}
 			break;
 		case sf::Event::KeyPressed:
@@ -142,7 +152,9 @@ GameState MapSelectScene::Update(float secondsPerUpdate) {
 	}
 
 	if (shopButton.Update(secondsPerUpdate, windowMousePos) && leftClick && displayWindow == false) {
-
+		displayWindow = true;
+		displayShopWindow = true;
+		shopWindow.Refresh(currentDomainStep + 1);
 	}
 
 	if (displayEquipWindow) {
@@ -153,6 +165,11 @@ GameState MapSelectScene::Update(float secondsPerUpdate) {
 	if (displayAbilityWindow) {
 		displayAbilityWindow = abilityWindow.Update(secondsPerUpdate, windowMousePos, leftClick, rightClick);
 		displayWindow = displayAbilityWindow;
+	}
+
+	if (displayShopWindow) {
+		displayShopWindow = shopWindow.Update(secondsPerUpdate, windowMousePos, leftClick, rightClick, scrollUp, scrollDown);
+		displayWindow = displayShopWindow;
 	}
 
 	return gameState;
@@ -181,6 +198,9 @@ void MapSelectScene::Render(sf::RenderTarget& window, float timeRatio) {
 	}
 	else if (displayAbilityWindow) {
 		abilityWindow.Render(window);
+	}
+	else if (displayShopWindow) {
+		shopWindow.Render(window);
 	}
 
 }
@@ -213,6 +233,7 @@ void MapSelectScene::SetParty(std::vector<ActorPtr>& actors) {
 
 	equipWindow.Initialize(party, inventory);
 	abilityWindow.Initialize(party, inventory);
+	shopWindow.Initialize(party, inventory, gold);
 }
 
 std::vector<ActorPtr> MapSelectScene::GetParty() {

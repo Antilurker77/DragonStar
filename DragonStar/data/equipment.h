@@ -65,6 +65,13 @@ public:
 	// Returns true if the item is two-handed.
 	bool IsTwoHanded();
 
+	// Returns true if a given stat mod type is present on the item.
+	bool HasStatModType(StatModType smt);
+
+	// Get a list of possible affixes than can be used for crafting. Generally,
+	// these are all stat mods except attributes.
+	std::vector<StatModType> GetPossibleCraftMods();
+
 	// Generates statMods for the item based on the given quality.
 	void RollStatMods(ItemQuality quality, uint64_t seed);
 

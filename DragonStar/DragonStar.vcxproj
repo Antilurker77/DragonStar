@@ -229,6 +229,7 @@
     <ClCompile Include="ui\itemTooltip.cpp" />
     <ClCompile Include="ui\messageLog.cpp" />
     <ClCompile Include="ui\richText.cpp" />
+    <ClCompile Include="ui\shopWindow.cpp" />
     <ClCompile Include="ui\victoryWindow.cpp" />
     <ClCompile Include="ui\window.cpp" />
   </ItemGroup>
@@ -378,6 +379,7 @@
     <ClInclude Include="ui\auraTooltip.h" />
     <ClInclude Include="ui\button.h" />
     <ClInclude Include="ui\cursorActorHUD.h" />
+    <ClInclude Include="ui\dropdown.h" />
     <ClInclude Include="ui\equipWindow.h" />
     <ClInclude Include="ui\formationTooltip.h" />
     <ClInclude Include="ui\hpBarManager.h" />
@@ -385,6 +387,7 @@
     <ClInclude Include="ui\itemTooltip.h" />
     <ClInclude Include="ui\messageLog.h" />
     <ClInclude Include="ui\richText.h" />
+    <ClInclude Include="ui\shopWindow.h" />
     <ClInclude Include="ui\victoryWindow.h" />
     <ClInclude Include="ui\window.h" />
   </ItemGroup>

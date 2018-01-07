@@ -27,6 +27,7 @@ class Camera;
 #include "../ui/button.h"
 #include "../ui/equipWindow.h"
 #include "../ui/formationTooltip.h"
+#include "../ui/shopWindow.h"
 
 typedef std::pair<size_t, size_t> Connection;
 
@@ -95,6 +96,8 @@ private:
 	sf::Vector2f worldMousePos;
 	bool leftClick;
 	bool rightClick;
+	bool scrollUp;
+	bool scrollDown;
 	float clickBuffer = 0.f; // Buffer for click input. Stops clicks from immediately firing off on scene change.
 
 	Button equipButton;
@@ -108,10 +111,12 @@ private:
 
 	EquipWindow equipWindow;
 	AbilityWindow abilityWindow;
+	ShopWindow shopWindow;
 
 	bool displayWindow = false;
 	bool displayEquipWindow = false;
 	bool displayAbilityWindow = false;
+	bool displayShopWindow = false;
 
 	bool displayMaps = false; // true when displaying domains
 

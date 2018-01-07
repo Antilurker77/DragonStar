@@ -85,6 +85,30 @@ bool Equipment::IsTwoHanded() {
 	return false;
 }
 
+bool Equipment::HasStatModType(StatModType smt) {
+	for (auto s : statMods) {
+		if (s.GetStatModType() == smt) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+std::vector<StatModType> Equipment::GetPossibleCraftMods() {
+	std::vector<StatModType> craftableAffixes;
+	auto possibleAffixes = getPossibleAffixes();
+
+	for (auto smt : possibleAffixes) {
+		if (smt.first != StatModType::STR && smt.first != StatModType::DEX &&
+			smt.first != StatModType::INT && smt.first != StatModType::WIS) {
+			craftableAffixes.push_back(smt.first);
+		}
+	}
+
+	return craftableAffixes;
+}
+
 void Equipment::RollStatMods(ItemQuality quality, uint64_t seed) {
 	itemQuality = quality;
 	statMods.clear();
@@ -690,6 +714,7 @@ std::vector<Element> Equipment::getPossibleElements() {
 		break;
 	case EquipType::WAND:
 	case EquipType::STAFF:
+	case EquipType::OFF_HAND:
 		possibleElements = {
 			Element::ARCANE,
 			Element::FIRE,

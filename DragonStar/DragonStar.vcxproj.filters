@@ -435,6 +435,9 @@
     <ClCompile Include="data\equipment\cpp\eq_offHand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ui\shopWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -897,6 +900,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\equipment\header\eq_offHand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\shopWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\dropdown.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

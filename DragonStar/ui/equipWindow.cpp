@@ -21,7 +21,6 @@ EquipWindow::EquipWindow() {
 	
 	// font
 	font = assetManager.LoadFont(settings.Font);
-	sf::Vector2f buttonSize;
 
 	// background
 	background.setFillColor(sf::Color(0, 0, 0, 255));
@@ -33,6 +32,7 @@ EquipWindow::EquipWindow() {
 	bgPos.y = background.getGlobalBounds().top;
 
 	// close button
+	sf::Vector2f buttonSize;
 	closeButton.SetString("X", 16);
 	buttonSize = closeButton.GetSize();
 	closeButton.SetPosition(bgPos.x + width + 2 - buttonSize.x / 2, bgPos.y + buttonSize.y / 2 + 2);
