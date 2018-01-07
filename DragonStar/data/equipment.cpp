@@ -10,8 +10,114 @@
 #include <unordered_map>
 
 unsigned int Equipment::GetPrice() {
-	// todo: price calculation
-	return 100u;
+	double value = 10 + (tier - 1);
+
+	if (IsWeapon()) {
+		if (IsTwoHanded()) {
+			value *= 3;
+		}
+		else {
+			value *= 1.5;
+		}
+	}
+
+	for (auto sm : statMods) {
+		double mult = 1.0;
+		switch (sm.GetStatModType()) {
+		case StatModType::HP:
+			mult = 0.1;
+			break;
+		case StatModType::HP_LEECH:
+			mult = 280.0;
+			break;
+		case StatModType::MP:
+			mult = 0.5;
+			break;
+		case StatModType::MP_REGEN:
+			mult = 3.0;
+			break;
+		case StatModType::MP_LEECH:
+			mult = 320.0;
+			break;
+		case StatModType::SP_REGEN:
+			mult = 6.0;
+			break;
+		case StatModType::ALL_ATTRIBUTES:
+			mult = 2.0;
+			break;
+		case StatModType::VIT:
+			mult = 1.4;
+			break;
+		case StatModType::ARMOR:
+			mult = 1.9;
+			break;
+		case StatModType::DAMAGE:
+			mult = 120.0;
+			break;
+		case StatModType::HEALING:
+			mult = 240.0;
+			break;
+		case StatModType::ARMOR_PEN:
+			mult = 100.0;
+			break;
+		case StatModType::CRIT_CHANCE:
+			mult = 100.0;
+			break;
+		case StatModType::CRIT_DAMAGE:
+			mult = 80.0;
+			break;
+		case StatModType::HASTE:
+			mult = 100.0;
+			break;
+		case StatModType::DOUBLE_STRIKE_CHANCE:
+			mult = 100.0;
+			break;
+		case StatModType::COUNTER_CHANCE:
+			mult = 66.7;
+			break;
+		case StatModType::ON_HIT_DAMAGE:
+			mult = 1.0;
+			break;
+		case StatModType::HIT_CHANCE:
+			mult = 75.0;
+			break;
+		case StatModType::BLOCK_CHANCE:
+			mult = 200.0;
+			break;
+		case StatModType::MP_COST_REDUCTION:
+			mult = 150.0;
+			break;
+		case StatModType::SP_COST_REDUCTION:
+			mult = 150.0;
+			break;
+		case StatModType::COOLDOWN_REDUCTION:
+			mult = 120.0;
+			break;
+		case StatModType::MOVEMENT_SPEED:
+			mult = 120.0;
+			break;
+		case StatModType::GOLD_FIND:
+			mult = 400.0;
+			break;
+		case StatModType::RESISTANCE:
+			mult = 0.0;
+			break;
+		default:
+			mult = 1.0;
+			break;
+		}
+
+		value += sm.GetValue() * mult;
+	}
+
+	if (itemQuality == ItemQuality::RARE) {
+		value *= 1.1;
+	}
+	else if (itemQuality == ItemQuality::MYTHIC) {
+		value *= 1.25;
+	}
+
+	return (unsigned int)std::round(value);
 }
 
 bool Equipment::IsEquipment() {
