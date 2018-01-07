@@ -887,6 +887,7 @@ double Equipment::rollMod(StatModType smt, std::mt19937_64& mt) {
 	ranges[EquipType::SHIELD][StatModType::ARMOR] = { 3, 4, 4, 5, 5, 7 };
 	ranges[EquipType::SHIELD][StatModType::COUNTER_CHANCE] = { 11, 14, 14, 17, 17, 20 };
 	ranges[EquipType::SHIELD][StatModType::BLOCK_CHANCE] = { 3, 4, 4, 5, 5, 6 };
+	ranges[EquipType::BUCKLER] = ranges[EquipType::SHIELD];
 
 	ranges[EquipType::OFF_HAND] = ranges[EquipType::SWORD_1H];
 	ranges[EquipType::OFF_HAND][StatModType::MP_REGEN] = { 12, 17, 17, 25, 25, 34 };

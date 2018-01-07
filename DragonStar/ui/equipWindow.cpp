@@ -494,6 +494,7 @@ void EquipWindow::setDisplayedItems(size_t filter) {
 		break;
 	case 8:
 		typesToShow.push_back(EquipType::SHIELD);
+		typesToShow.push_back(EquipType::BUCKLER);
 		break;
 	case 9:
 		typesToShow.push_back(EquipType::OFF_HAND);
