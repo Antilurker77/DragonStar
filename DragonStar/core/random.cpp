@@ -23,6 +23,13 @@ int Random::RandInt(std::mt19937_64& mt, int x, int y) {
 	return dist(mt);
 }
 
+size_t Random::RandSizeT(size_t x, size_t y) {
+	std::random_device rd;
+	std::mt19937 mt(rd());
+	std::uniform_int_distribution<size_t> dist(x, y);
+	return dist(mt);
+}
+
 size_t Random::RandSizeT(std::mt19937_64& mt, size_t x, size_t y) {
 	std::uniform_int_distribution<size_t> dist(x, y);
 	return dist(mt);

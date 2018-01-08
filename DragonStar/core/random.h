@@ -22,6 +22,9 @@ namespace Random {
 	int RandInt(std::mt19937_64& mt, int x, int y);
 
 	// Returns a random unsigned interger. Values are inclusive.
+	size_t RandSizeT(size_t x, size_t y);
+
+	// Returns a random unsigned interger. Values are inclusive.
 	size_t RandSizeT(std::mt19937_64& mt, size_t x, size_t y);
 
 	// Returns a random double. Values are inclusive.
