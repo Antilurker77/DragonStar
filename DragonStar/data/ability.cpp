@@ -45,6 +45,10 @@ bool Ability::IsUsable() {
 			return false;
 		}
 
+		if (!customUseConditon()) {
+			return false;
+		}
+
 		return true;
 	}
 }
@@ -77,20 +81,25 @@ std::vector<sf::Vector3i> Ability::GetTargetRange() {
 	return targetRange;
 }
 
+std::vector<sf::Vector3i> Ability::GetExtraArea(sf::Vector3i selectedTile) {
+	std::vector<sf::Vector3i> area = {};
+	return area;
+}
+
 void Ability::UseAbility(sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	if (user != nullptr && battleScene != nullptr) {
 		std::vector<ActorPtr> targets = battleScene->GetAbilityTargets(targetArea, isFriendlyAbility, user->IsPlayer());
 		calcCooldown = cooldown; // resets cooldown to the base amount, abilities can change calcCooldown in the execute step
 		if (requireTargetsInArea) {
 			if (targets.size() > 0) {
-				if (usage == UseType::INSTANT) {
+				if (usage == UseType::INSTANT && customExecuteCondition(targets, cursor, targetArea)) {
 					consumeResources();
 					execute(targets, cursor, targetArea);
 					exhaustUser();
 					doubleStrike(targets[0]);
 					putOnCooldown();
 				}
-				else if (usage == UseType::CAST) {
+				else if (usage == UseType::CAST && customExecuteCondition(targets, cursor, targetArea)) {
 					if (user->IsCastReady()) {
 						execute(targets, cursor, targetArea);
 						doubleStrike(targets[0]);
@@ -111,13 +120,13 @@ void Ability::UseAbility(sf::Vector3i cursor, std::vector<sf::Vector3i> targetAr
 		}
 		// Does not require targets.
 		else {
-			if (usage == UseType::INSTANT) {
+			if (usage == UseType::INSTANT && customExecuteCondition(targets, cursor, targetArea)) {
 				consumeResources();
 				execute(targets, cursor, targetArea);
 				exhaustUser();
 				putOnCooldown();
 			}
-			else if (usage == UseType::CAST) {
+			else if (usage == UseType::CAST && customExecuteCondition(targets, cursor, targetArea)) {
 				if (user->IsCastReady()) {
 					execute(targets, cursor, targetArea);
 					putOnCooldown();
@@ -406,6 +415,14 @@ void Ability::rotateArea(sf::Vector3i cursor, std::vector<sf::Vector3i>& area) {
 	if (battleScene != nullptr) {
 		area = battleScene->GetLineOfSight(user->GetHexPosition(), area, user->IsAlive(), areaIgnoreBodyBlock, areaIgnoreLineOfSight);
 	}
+}
+
+bool Ability::customUseConditon() {
+	return true;
+}
+
+bool Ability::customExecuteCondition(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
+	return true;
 }
 
 bool Ability::doubleStrike(ActorPtr& target) {

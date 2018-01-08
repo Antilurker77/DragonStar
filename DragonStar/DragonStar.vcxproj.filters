@@ -908,6 +908,9 @@
     <ClInclude Include="ui\dropdown.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="data\ability\header\ab_warpSlice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="gfx\dungeon\dungeon_test.png">

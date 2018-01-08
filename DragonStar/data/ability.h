@@ -44,6 +44,9 @@ public:
 	// Gets the targeting area of the ability.
 	virtual std::vector<sf::Vector3i> GetTargetArea(sf::Vector3i selectedTile) = 0;
 
+	// Gets the required free space for the ability.
+	virtual std::vector<sf::Vector3i> GetExtraArea(sf::Vector3i selectedTile);
+
 	// Executes the ability.
 	void UseAbility(sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea);
 
@@ -208,6 +211,12 @@ protected:
 
 	// Executes the ability.
 	virtual void execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) = 0;
+
+	// Special condition that must be met for ability to be usable.
+	virtual bool customUseConditon();
+
+	// Special condition that must be met on execution. Used for checking map tiles.
+	virtual bool customExecuteCondition(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea);
 
 	// Rolls a double strike.
 	bool doubleStrike(ActorPtr& target);
