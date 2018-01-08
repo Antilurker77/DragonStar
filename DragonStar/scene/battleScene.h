@@ -169,7 +169,7 @@ private:
 	GameState updateUI(float secondsPerUpdate);
 
 	// Builds the ability vertex array.
-	void buildAbilityVertexArray(std::vector<sf::Vector3i> range, std::vector<sf::Vector3i> area, bool isHelpfulAbility);
+	void buildAbilityVertexArray(std::vector<sf::Vector3i> range, std::vector<sf::Vector3i> area, std::vector<sf::Vector3i> extraArea, bool isHelpfulAbility);
 
 	// Resets the ability vertex array.
 	void resetAbilityVertexArray();

@@ -284,8 +284,9 @@ void BattleScene::ReadInput(sf::RenderWindow& window) {
 
 					if (targetRange.size() > 0) {
 						std::vector<sf::Vector3i> targetArea = activeActor->GetAbilityAreaOfEffect(abilityIndex, cursor);
+						std::vector<sf::Vector3i> extraArea = activeActor->GetAbilityExtraArea(abilityIndex, cursor);
 
-						buildAbilityVertexArray(targetRange, targetArea, activeActor->IsFriendlyAbility(abilityIndex));
+						buildAbilityVertexArray(targetRange, targetArea, extraArea, activeActor->IsFriendlyAbility(abilityIndex));
 					}
 				}
 				lastCursor = hex;
@@ -1151,7 +1152,7 @@ GameState BattleScene::updateUI(float secondsPerUpdate) {
 	return gameState;
 }
 
-void BattleScene::buildAbilityVertexArray(std::vector<sf::Vector3i> range, std::vector<sf::Vector3i> area, bool isHelpfulAbility) {
+void BattleScene::buildAbilityVertexArray(std::vector<sf::Vector3i> range, std::vector<sf::Vector3i> area, std::vector<sf::Vector3i> extraArea, bool isHelpfulAbility) {
 	// Remove tiles from range so that area and range
 	// aren't drawn on top of each other.
 	std::vector<sf::Vector3i> rangeToDraw = range;
@@ -1159,10 +1160,14 @@ void BattleScene::buildAbilityVertexArray(std::vector<sf::Vector3i> range, std::
 		sf::Vector3i test = area[i];
 		rangeToDraw.erase(std::remove(rangeToDraw.begin(), rangeToDraw.end(), area[i]), rangeToDraw.end());
 	}
+	for (size_t i = 0; i < extraArea.size(); i++) {
+		sf::Vector3i test = extraArea[i];
+		rangeToDraw.erase(std::remove(rangeToDraw.begin(), rangeToDraw.end(), extraArea[i]), rangeToDraw.end());
+	}
 
 	// Create the vertex array
 	abilityTargetVertexArray.setPrimitiveType(sf::Quads);
-	abilityTargetVertexArray.resize(rangeToDraw.size() * 4 + area.size() * 4);
+	abilityTargetVertexArray.resize(rangeToDraw.size() * 4 + area.size() * 4 + extraArea.size() * 4);
 
 	int hexWidth = 64;
 	int hexHeight = 56;
@@ -1170,7 +1175,7 @@ void BattleScene::buildAbilityVertexArray(std::vector<sf::Vector3i> range, std::
 	int tileSize = 64;
 
 	// Range
-	int i = 0;
+	size_t i = 0;
 
 	for (const auto &tile : rangeToDraw) {
 		int texX = 0;
@@ -1217,6 +1222,39 @@ void BattleScene::buildAbilityVertexArray(std::vector<sf::Vector3i> range, std::
 			texX = 0;
 			texY = tileSize;
 		}
+
+		sf::Vertex* quad = &abilityTargetVertexArray[i * 4];
+
+		int col = tile.x;
+		int row = tile.z;
+
+		int posX = col * (hexWidth * 3 / 4) - (hexWidth / 2) - (tileSize - hexWidth) / 2;
+		int posY = row * hexHeight + col * (hexHeight / 2) - (hexHeight / 2) - (tileSize - hexHeight) / 2;
+
+		// quad cords
+		// 0  1
+		// 3  2
+		quad[0].position = sf::Vector2f(posX, posY);
+		quad[1].position = sf::Vector2f(posX + tileSize, posY);
+		quad[2].position = sf::Vector2f(posX + tileSize, posY + tileSize);
+		quad[3].position = sf::Vector2f(posX, posY + tileSize);
+
+		// quad texture cords
+		// 0  1
+		// 3  2
+		quad[0].texCoords = sf::Vector2f(texX, texY);
+		quad[1].texCoords = sf::Vector2f(texX + tileSize, texY);
+		quad[2].texCoords = sf::Vector2f(texX + tileSize, texY + tileSize);
+		quad[3].texCoords = sf::Vector2f(texX, texY + tileSize);
+
+		i++;
+	}
+
+	// Extra Area
+
+	for (const auto &tile : extraArea) {
+		int texX = tileSize;
+		int texY = tileSize;
 
 		sf::Vertex* quad = &abilityTargetVertexArray[i * 4];
 

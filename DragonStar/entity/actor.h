@@ -126,6 +126,9 @@ public:
 	// Returns the area of effect of the ability with the specified index.
 	std::vector<sf::Vector3i> GetAbilityAreaOfEffect(size_t index, sf::Vector3i cursor);
 
+	// Returns the extra area of the ability with the specified index.
+	std::vector<sf::Vector3i> GetAbilityExtraArea(size_t index, sf::Vector3i cursor);
+
 	// Returns whether the ability at the selected index is currently available or not.
 	bool IsAbilityAvailable(size_t index);
 

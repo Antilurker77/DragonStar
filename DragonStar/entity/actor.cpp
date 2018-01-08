@@ -255,6 +255,17 @@ std::vector<sf::Vector3i> Actor::GetAbilityAreaOfEffect(size_t index, sf::Vector
 	return area;
 }
 
+std::vector<sf::Vector3i> Actor::GetAbilityExtraArea(size_t index, sf::Vector3i cursor) {
+	std::vector<sf::Vector3i> area = {};
+	try {
+		area = abilities.at(index)->GetExtraArea(cursor);
+	}
+	catch (std::out_of_range& e) {
+		// do nothing if exception is thrown
+	}
+	return area;
+}
+
 bool Actor::IsAbilityAvailable(size_t index) {
 	bool isAvailable = false;
 	try {
