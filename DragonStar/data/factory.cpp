@@ -44,6 +44,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::SHOCK:								return AbilityPtr(std::make_shared<Ab_Shock>());
 	case AbilityID::SPLASH:								return AbilityPtr(std::make_shared<Ab_Splash>());
 	case AbilityID::VENOM:								return AbilityPtr(std::make_shared<Ab_Venom>());
+	case AbilityID::WARP_SLICE:							return AbilityPtr(std::make_shared<Ab_WarpSlice>());
 	case AbilityID::WATER_BOLT:							return AbilityPtr(std::make_shared<Ab_WaterBolt>());
 	case AbilityID::RACIAL_COMMANDING_SHOUT:			return AbilityPtr(std::make_shared<Ab_CommandingShout>());
 	case AbilityID::RACIAL_DRAGON_BREATH:				return AbilityPtr(std::make_shared<Ab_DragonBreath>());

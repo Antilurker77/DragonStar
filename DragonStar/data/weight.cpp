@@ -218,6 +218,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 			weights.push_back({ AbilityID::FLAME_SLASH, 1.00 });
 			break;
 		case 2:
+			weights.push_back({ AbilityID::WARP_SLICE, 1.00 });
 			break;
 		case 3:
 			break;

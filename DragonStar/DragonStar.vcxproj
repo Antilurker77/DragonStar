@@ -124,6 +124,7 @@
     <ClCompile Include="data\ability\cpp\ab_shock.cpp" />
     <ClCompile Include="data\ability\cpp\ab_splash.cpp" />
     <ClCompile Include="data\ability\cpp\ab_venom.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_warpSlice.cpp" />
     <ClCompile Include="data\ability\cpp\ab_waterBolt.cpp" />
     <ClCompile Include="data\aura.cpp" />
     <ClCompile Include="data\aura\cpp\au_commandingShout.cpp" />

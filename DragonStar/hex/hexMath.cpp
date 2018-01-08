@@ -177,7 +177,7 @@ std::vector<sf::Vector3i> Hex::GetHexNeighbors(sf::Vector3i center, int radius){
 	};
 
 	auto result = Hex::FilledHexagon(center, radius);
-	std::remove_if(result.begin(), result.end(), pred);
+	result.erase(std::remove_if(result.begin(), result.end(), pred));
 
 	return result;
 }
