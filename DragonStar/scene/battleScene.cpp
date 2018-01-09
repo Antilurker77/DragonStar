@@ -21,8 +21,6 @@
 #include <unordered_map>
 
 BattleScene::BattleScene() {
-	Factory factory;
-
 	activeActor = nullptr;
 
 	playerGE = Entity(sf::Vector3i(0, 0, 0), "gfx/ui/tile/player_ge.png");
@@ -373,7 +371,6 @@ void BattleScene::RenderUI(sf::RenderWindow& window, float timeRatio) {
 }
 
 void BattleScene::Initialize(std::vector<ActorPtr>& players, MapNode mapNode) {
-	Factory factory;
 	groundEffects.clear();
 	actors.clear();
 	victory = false;
@@ -387,10 +384,10 @@ void BattleScene::Initialize(std::vector<ActorPtr>& players, MapNode mapNode) {
 	isBoss = mapNode.IsBoss;
 	isUnique = mapNode.IsUnique;
 
-	FormationPtr formation = factory.CreateFormation(mapNode.FormationID);
+	FormationPtr formation = Factory::CreateFormation(mapNode.FormationID);
 	formation->LevelFactor(mapNode.Level);
 
-	currentMap = factory.CreateMap(formation->GetMapID());
+	currentMap = Factory::CreateMap(formation->GetMapID());
 
 	auto playerStartingLocations = formation->GetStartingLocations();
 	for (size_t i = 0; i < players.size(); i++) {
@@ -418,8 +415,7 @@ MapPtr BattleScene::GetMap() {
 }
 
 void BattleScene::CreateGroundEffect(ActorPtr& user, AuraID auraID, sf::Vector3i location) {
-	Factory factory;
-	AuraPtr groundEffect = factory.CreateAura(auraID);
+	AuraPtr groundEffect = Factory::CreateAura(auraID);
 	groundEffect->InitializeGroundEffect(user, location);
 	groundEffects.push_back(groundEffect);
 }
@@ -1298,7 +1294,6 @@ bool BattleScene::checkDefeat() {
 
 void BattleScene::calcVictory() {
 	std::mt19937_64 mt(seed);
-	Factory factory;
 
 	unsigned int exp = 0u;
 	unsigned int gold = 0u;
@@ -1333,7 +1328,7 @@ void BattleScene::calcVictory() {
 			unsigned int kindRoll = Random::RandSizeT(mt, 0u, 99u);
 			if (kindRoll >= 70u){
 				AbilityID id = Weight::GetRandomAb(mt, tier);
-				ItemPtr item = factory.CreateAbilityScroll(id);
+				ItemPtr item = Factory::CreateAbilityScroll(id);
 				itemsAwarded.push_back(item);
 			}
 			else {
@@ -1353,7 +1348,7 @@ void BattleScene::calcVictory() {
 				}
 
 				EquipmentID id = Weight::GetRandomEq(mt, tier);
-				ItemPtr item = factory.CreateEquipment(id);
+				ItemPtr item = Factory::CreateEquipment(id);
 				Equipment* eq = (Equipment*)item.get();
 				eq->RollStatMods(quality, Random::RandSeed(mt));
 				itemsAwarded.push_back(item);

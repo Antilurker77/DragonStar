@@ -43,8 +43,7 @@ void FormationTooltip::Render(sf::RenderTarget& window) {
 
 void FormationTooltip::SetMapNode(MapNode& mapNode, bool domain) {
 	isDomain = domain;
-	Factory factory;
-	FormationPtr formation = factory.CreateFormation(mapNode.FormationID);
+	FormationPtr formation = Factory::CreateFormation(mapNode.FormationID);
 
 	// Name Text
 	if (isDomain) {
@@ -83,7 +82,7 @@ void FormationTooltip::SetMapNode(MapNode& mapNode, bool domain) {
 		std::string enemyText;
 		for (auto e : enemies) {
 			std::string s;
-			auto ePtr = factory.CreateEnemyInfo(std::get<0>(e));
+			auto ePtr = Factory::CreateEnemyInfo(std::get<0>(e));
 			if (ePtr->IsBoss()) {
 				s += "#relic ";
 			}

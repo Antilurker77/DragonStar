@@ -9,8 +9,7 @@
 #include "../../../hex/hexMath.h"
 
 Mp_FieldSmallIsland::Mp_FieldSmallIsland() {
-	Factory factory;
-	tileset = factory.CreateTileset(TilesetID::FIELD);
+	tileset = Factory::CreateTileset(TilesetID::FIELD);
 
 	std::vector<sf::Vector3i> shape;
 

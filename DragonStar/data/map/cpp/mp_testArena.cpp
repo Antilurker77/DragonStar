@@ -9,8 +9,7 @@
 #include "../../../hex/hexMath.h"
 
 Mp_TestArena::Mp_TestArena() {
-	Factory factory;
-	tileset = factory.CreateTileset(TilesetID::TEST_TILESET);
+	tileset = Factory::CreateTileset(TilesetID::TEST_TILESET);
 
 	std::vector<sf::Vector3i> shape;
 

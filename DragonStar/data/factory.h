@@ -33,9 +33,7 @@ typedef std::shared_ptr<PlayerClass> PlayerClassPtr;
 typedef std::shared_ptr<Race> RacePtr;
 typedef std::unique_ptr<Tileset> TilesetPtr;
 
-class Factory {
-public:
-	Factory();
+namespace Factory {
 
 	// Returns an Ability pointer based on ID.
 	AbilityPtr CreateAbility(AbilityID id);
@@ -67,7 +65,4 @@ public:
 	// Returns Tileset data based on ID.
 	TilesetPtr CreateTileset(TilesetID id);
 	
-
-private:
-
 };

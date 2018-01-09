@@ -480,10 +480,9 @@ void Actor::OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult ev
 		}
 
 		// Weapon effects.
-		Factory factory;
 		AuraID auraID = getWeaponOnHitAura(isOffHand);
 		if (auraID != AuraID::UNDEFINED) {
-			AuraPtr weaponAura = factory.CreateAura(auraID);
+			AuraPtr weaponAura = Factory::CreateAura(auraID);
 			weaponAura->InitializeAura(getPtr(), getPtr());
 			weaponAura->OnHit(targetHit, eventOptions, eventResult);
 		}
@@ -609,8 +608,7 @@ int Actor::HealActor(double healAmount, std::vector<Element> elements, Attribute
 }
 
 bool Actor::AddAuraStack(ActorPtr& user, AuraID auraID) {
-	Factory factory;
-	AuraPtr newAura = factory.CreateAura(auraID);
+	AuraPtr newAura = Factory::CreateAura(auraID);
 	newAura->InitializeAura(user, getPtr());
 
 	// dont add auras who's duration was reduced to 0

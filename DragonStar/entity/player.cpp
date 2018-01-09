@@ -16,11 +16,9 @@
 #include "../ui/messageLog.h"
 
 Player::Player(std::string n, RaceID raceID, PlayerClassID classID, bool female) {
-	Factory factory;
-
 	name = n;
-	race = factory.CreateRace(raceID);
-	playerClass = factory.CreatePlayerClass(classID);
+	race = Factory::CreateRace(raceID);
+	playerClass = Factory::CreatePlayerClass(classID);
 	isFemale = female;
 
 	if (isFemale) {
@@ -40,8 +38,8 @@ Player::Player(std::string n, RaceID raceID, PlayerClassID classID, bool female)
 	exp = 0;
 
 	abilities.resize(12);
-	abilities[0] = factory.CreateAbility(AbilityID::ATTACK); // 0 is always attack
-	abilities[11] = factory.CreateAbility(race->GetActiveID()); // last slot is racial ability by default
+	abilities[0] = Factory::CreateAbility(AbilityID::ATTACK); // 0 is always attack
+	abilities[11] = Factory::CreateAbility(race->GetActiveID()); // last slot is racial ability by default
 
 	// Default Linen Armor
 	setEquipmentTexture(4);
@@ -1190,8 +1188,7 @@ void Player::LearnAbility(std::vector<ItemPtr>& inventory, size_t index) {
 }
 
 void Player::EquipAbility(size_t index, size_t slot) {
-	Factory factory;
-	AbilityPtr eq = factory.CreateAbility(learnedAbilities[index]);
+	AbilityPtr eq = Factory::CreateAbility(learnedAbilities[index]);
 	AbilityPtr replaced = nullptr;
 	
 	try {

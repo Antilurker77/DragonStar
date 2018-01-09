@@ -137,8 +137,7 @@ bool AbilityWindow::Update(float secondsPerUpdate, sf::Vector2i mousePos, bool l
 					abilityCursorSprite.setPosition(mousePos.x - 16.f, mousePos.y - 16.f);
 				}
 				else {
-					Factory factory;
-					AbilityPtr a = factory.CreateAbility(learnedAbilities[i]);
+					AbilityPtr a = Factory::CreateAbility(learnedAbilities[i]);
 					a->SetUser(players[displayedActor]);
 					abilityTooltip.SetAbility(a);
 					sf::Vector2i tooltipSize = abilityTooltip.GetSize();
@@ -160,9 +159,8 @@ bool AbilityWindow::Update(float secondsPerUpdate, sf::Vector2i mousePos, bool l
 					setInventoryIcons();
 				}
 				else {
-					Factory factory;
 					auto s = (AbilityScroll*)inventory->at(displayedItems[i]).get();
-					AbilityPtr a = factory.CreateAbility(s->GetAbilityID());
+					AbilityPtr a = Factory::CreateAbility(s->GetAbilityID());
 					a->SetUser(players[displayedActor]);
 					abilityTooltip.SetAbility(a);
 
@@ -277,9 +275,8 @@ void AbilityWindow::setEquippedAndKnownIcons() {
 		}
 	}
 
-	Factory factory;
 	for (size_t i = 0; i < learnedAbilities.size(); i++) {
-		AbilityPtr a = factory.CreateAbility(learnedAbilities[i]);
+		AbilityPtr a = Factory::CreateAbility(learnedAbilities[i]);
 		learnedIcons[i].setTexture(*assetManager.LoadTexture("gfx/ui/icon/ability/" + a->GetIcon()));
 	}
 }

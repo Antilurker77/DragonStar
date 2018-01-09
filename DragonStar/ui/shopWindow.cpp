@@ -299,7 +299,6 @@ void ShopWindow::Refresh(unsigned int tier) {
 
 void ShopWindow::craftItems() {
 	craftedItems.fill(nullptr);
-	Factory factory;
 
 	for (size_t i = 0; i < craftedItems.size(); i++) {
 		ItemPtr item;
@@ -319,7 +318,7 @@ void ShopWindow::craftItems() {
 		}
 
 		while (generating) {
-			item = factory.CreateEquipment(selecedID);
+			item = Factory::CreateEquipment(selecedID);
 			Equipment* eq = (Equipment*)item.get();
 			eq->RollStatMods(rarity, Random::RandSeed());
 
@@ -396,8 +395,7 @@ void ShopWindow::updateBaseItemDropdown() {
 void ShopWindow::updateAffixDropdown() {
 	affixDropdown.ClearOptions();
 	
-	Factory factory;
-	ItemPtr testItem = factory.CreateEquipment(selecedID);
+	ItemPtr testItem = Factory::CreateEquipment(selecedID);
 	Equipment* eq = (Equipment*)testItem.get();
 	auto affixes = eq->GetPossibleCraftMods();
 

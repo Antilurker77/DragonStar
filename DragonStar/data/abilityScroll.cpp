@@ -10,8 +10,7 @@
 #include "factory.h"
 
 AbilityScroll::AbilityScroll(AbilityID id) {
-	Factory factory;
-	AbilityPtr ability = factory.CreateAbility(id);
+	AbilityPtr ability = Factory::CreateAbility(id);
 
 	name = "Potion of " + ability->GetName();
 	iconFilepath = "potion.png";

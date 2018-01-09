@@ -17,9 +17,6 @@
 #include "race/header/raceData.h"
 #include "tileset/header/tilesetData.h"
 
-Factory::Factory(){
-
-}
 
 AbilityPtr Factory::CreateAbility(AbilityID id) {
 	switch (id) {

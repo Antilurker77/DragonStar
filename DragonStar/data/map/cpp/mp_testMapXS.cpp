@@ -9,8 +9,7 @@
 #include "../../../hex/hexMath.h"
 
 Mp_TestMapXS::Mp_TestMapXS(){
-	Factory factory = Factory();
-	tileset = factory.CreateTileset(TilesetID::TEST_TILESET);
+	tileset = Factory::CreateTileset(TilesetID::TEST_TILESET);
 
 	std::vector<sf::Vector3i> shape;
 

@@ -18,8 +18,7 @@
 #include <limits>
 
 Enemy::Enemy(EnemyID enemyID, int level, sf::Vector3i spawnPosition) {
-	Factory factory;
-	this->enemyInfo = factory.CreateEnemyInfo(enemyID);
+	this->enemyInfo = Factory::CreateEnemyInfo(enemyID);
 	this->level = level;
 
 	this->texture = assetManager.LoadTexture("gfx/actor/enemy/" + enemyInfo->GetFilepath());
@@ -39,10 +38,10 @@ Enemy::Enemy(EnemyID enemyID, int level, sf::Vector3i spawnPosition) {
 	spCurrent = GetMaxSP();
 
 	// ability slot set-up
-	abilities.push_back(factory.CreateAbility(AbilityID::ATTACK)); // slot 0 is always attack
+	abilities.push_back(Factory::CreateAbility(AbilityID::ATTACK)); // slot 0 is always attack
 	std::vector<AbilityID> abilityIDs = enemyInfo->GetAbilities();
 	for (size_t i = 0; i < abilityIDs.size(); i++) {
-		abilities.push_back(factory.CreateAbility(abilityIDs[i]));
+		abilities.push_back(Factory::CreateAbility(abilityIDs[i]));
 	}
 }
 
