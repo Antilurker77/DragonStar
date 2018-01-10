@@ -12,11 +12,18 @@
 class Actor;
 class BattleScene;
 
-#include "id.h"
-#include "../core/combat.h"
+enum class AbilityID;
+enum class AbilityType;
+enum class Category;
+enum class Element;
+enum class EquipType;
+
+#include <memory>
+#include <vector>
 
 #include <SFML\System.hpp>
-#include <memory>
+
+#include "../core/combat.h"
 
 typedef std::shared_ptr<Actor> ActorPtr;
 
@@ -115,7 +122,7 @@ public:
 	virtual std::string GetDescription();
 
 protected:
-	AbilityID abilityID = AbilityID::UNDEFINED;
+	AbilityID abilityID{};
 	std::vector<AbilityType> abilityTypes;
 	unsigned int tier = 0;
 

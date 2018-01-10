@@ -10,8 +10,14 @@
 
 #pragma once
 
+enum class StatModType;
+enum class Category;
+enum class Element;
+enum class AbilityID;
+enum class AuraID;
+
 #include <vector>
-#include "id.h"
+
 #include "../core/combat.h"
 
 class StatMod{

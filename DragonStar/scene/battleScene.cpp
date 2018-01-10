@@ -16,6 +16,7 @@
 #include "../data/map.h"
 #include "../data/tile.h"
 #include "../data/weight.h"
+#include "../data/id/itemQuality.h"
 #include "../ui/messageLog.h"
 
 #include <unordered_map>

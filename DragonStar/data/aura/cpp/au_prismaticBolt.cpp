@@ -6,6 +6,13 @@
 
 #include "../header/au_prismaticBolt.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_PrismaticBolt::Au_PrismaticBolt() {
 	name = "Prismatic Bolt";
 	id = AuraID::PRISMATIC_BOLT;

@@ -6,6 +6,12 @@
 
 #include "../header/ab_warpSlice.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
 #include "../../../core/random.h"
 #include "../../../hex/hexMath.h"
 #include "../../../scene/battleScene.h"

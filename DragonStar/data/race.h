@@ -8,9 +8,10 @@
 
 #pragma once
 
+enum class AbilityID;
+
 #include <string>
 #include <vector>
-#include "id.h"
 #include "statMod.h"
 
 class Race {
@@ -47,7 +48,7 @@ protected:
 
 	std::string filepath = "gfx/actor/human";
 
-	AbilityID activeRacial = AbilityID::RACIAL_COMMANDING_SHOUT;
+	AbilityID activeRacial{};
 
 	std::string passiveRacial = "No Passive";
 	std::string passiveDesc = "This race has no passive ability.";

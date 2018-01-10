@@ -5,6 +5,14 @@
 // ==================================
 
 #include "equipment.h"
+
+#include "id/abilityID.h"
+#include "id/attribute.h"
+#include "id/category.h"
+#include "id/element.h"
+#include "id/equipType.h"
+#include "id/itemQuality.h"
+#include "id/statModType.h"
 #include "../core/random.h"
 
 #include <unordered_map>

@@ -6,6 +6,15 @@
 
 #include "../header/en_testEnemy.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/creatureType.h"
+#include "../../id/element.h"
+#include "../../id/enemyID.h"
+#include "../../id/equipType.h"
+#include "../../id/statModType.h"
+
 En_TestEnemy::En_TestEnemy() {
 	filepath = "common/test_enemy.png";
 

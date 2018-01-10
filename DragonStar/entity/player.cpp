@@ -12,6 +12,14 @@
 #include "../data/factory.h"
 #include "../data/playerClass.h"
 #include "../data/race.h"
+#include "../data/id/abilityID.h"
+#include "../data/id/auraID.h"
+#include "../data/id/attribute.h"
+#include "../data/id/category.h"
+#include "../data/id/creatureType.h"
+#include "../data/id/element.h"
+#include "../data/id/equipType.h"
+#include "../data/id/statModType.h"
 
 #include "../ui/messageLog.h"
 

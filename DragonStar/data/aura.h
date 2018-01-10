@@ -11,7 +11,8 @@
 
 class Actor;
 
-#include "id.h"
+enum class AuraID;
+
 #include "statMod.h"
 #include "../core/combat.h"
 
@@ -160,7 +161,7 @@ protected:
 
 	// values set by sub-classes
 	std::string name = "Unknown Aura";
-	AuraID id = AuraID::UNDEFINED;
+	AuraID id{};
 	std::string icon = "unknown.png";
 
 	std::vector<Category> categories;

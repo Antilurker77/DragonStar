@@ -9,9 +9,11 @@
 
 #pragma once
 
+enum class AbilityID;
+enum class AbilityType;
+
 #include <vector>
 
-#include "id.h"
 #include "item.h"
 
 class AbilityScroll : public Item {

@@ -6,6 +6,7 @@
 
 #include "../header/mp_testMap.h"
 
+#include "../../id/tilesetID.h"
 #include "../../../hex/hexMath.h"
 
 Mp_TestMap::Mp_TestMap(){

@@ -10,9 +10,12 @@
 
 #pragma once
 
+enum class AbilityID;
+enum class EquipmentID;
+enum class FormationID;
+
 #include <vector>
 
-#include "id.h"
 #include "../core/random.h"
 
 typedef std::pair<EquipmentID, double> EquipmentWeight;

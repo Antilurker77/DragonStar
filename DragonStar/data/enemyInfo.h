@@ -12,9 +12,13 @@
 class Actor;
 class BattleScene;
 
+enum class AbilityID;
+enum class CreatureType;
+enum class EquipType;
+enum class Element;
+
 #include <memory>
 
-#include "../data/id.h"
 #include "../data/statMod.h"
 #include "../entity/actorFilter.h"
 
@@ -80,7 +84,7 @@ protected:
 	std::string name = "Unknown Enemy";
 	std::string title = "";
 
-	CreatureType creatureType = CreatureType::NONE;
+	CreatureType creatureType{};
 	bool isUnique = false;
 	bool isBoss = false;
 
@@ -103,13 +107,13 @@ protected:
 	int attackSpeed = 195;
 	int attackRange = 1;
 	
-	EquipType attackType = EquipType::UNARMED_STR;
-	std::vector<Element> attackElement = { Element::PHYSICAL };
+	EquipType attackType{};
+	std::vector<Element> attackElement = {};
 	int attackDamage = 0;
 	double attackMod = 2.0;
 
-	EquipType offHandAttackType = EquipType::NONE;
-	std::vector<Element> offHandAttackElement = { Element::PHYSICAL };
+	EquipType offHandAttackType{};
+	std::vector<Element> offHandAttackElement = {};
 	int offHandAttackDamage = 0;
 	double offHandAttackMod = 1.0;
 

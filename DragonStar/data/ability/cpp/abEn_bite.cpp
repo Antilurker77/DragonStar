@@ -6,6 +6,11 @@
 
 #include "../header/abEn_bite.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+
 AbEn_Bite::AbEn_Bite() {
 	setAttackDefault();
 

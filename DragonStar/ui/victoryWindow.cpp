@@ -8,6 +8,7 @@
 
 #include "../core/assetManager.h"
 #include "../core/settings.h"
+#include "../data/id/itemQuality.h"
 #include "../entity/player.h"
 
 VictoryWindow::VictoryWindow() {

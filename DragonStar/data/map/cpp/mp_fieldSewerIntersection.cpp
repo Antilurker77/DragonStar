@@ -6,6 +6,7 @@
 
 #include "../header/mp_fieldSewerIntersection.h"
 
+#include "../../id/tilesetID.h"
 #include "../../../hex/hexMath.h"
 
 Mp_FieldSewerIntersection::Mp_FieldSewerIntersection() {

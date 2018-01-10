@@ -9,6 +9,12 @@
 #include "statMath.h"
 #include "../scene/battleScene.h"
 #include "../data/factory.h"
+#include "../data/id/abilityID.h"
+#include "../data/id/auraID.h"
+#include "../data/id/attribute.h"
+#include "../data/id/category.h"
+#include "../data/id/element.h"
+#include "../data/id/equipType.h"
 #include "../ui/messageLog.h"
 
 void Actor::SetWorld(BattleScene* w) {

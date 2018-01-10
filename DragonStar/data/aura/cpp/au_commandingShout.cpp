@@ -6,6 +6,13 @@
 
 #include "../header/au_commandingShout.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_CommandingShout::Au_CommandingShout() {
 	name = "Commanding Shout";
 	id = AuraID::COMMANDING_SHOUT;

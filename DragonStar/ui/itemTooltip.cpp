@@ -11,6 +11,7 @@
 #include "../data/dataString.h"
 #include "../data/item.h"
 #include "../data/equipment.h"
+#include "../data/id/itemQuality.h"
 
 ItemTooltip::ItemTooltip() {
 	// Background Initializtion

@@ -12,11 +12,13 @@
 class Ability;
 class BattleScene;
 
+enum class AbilityID;
+enum class CreatureType;
+
 #include "entity.h"
 #include "../data/ability.h"
 #include "../data/aura.h"
 #include "../data/factory.h"
-#include "../data/id.h"
 
 #include <memory>
 

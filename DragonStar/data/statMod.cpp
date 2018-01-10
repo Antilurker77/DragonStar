@@ -8,6 +8,12 @@
 
 #include <algorithm>
 
+#include "id/abilityID.h"
+#include "id/auraID.h"
+#include "id/category.h"
+#include "id/element.h"
+#include "id/statModType.h"
+
 StatMod::StatMod(StatModType statMod, double value) {
 	this->statModType = statMod;
 	this->value = value;

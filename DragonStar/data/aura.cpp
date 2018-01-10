@@ -6,6 +6,7 @@
 
 #include "aura.h"
 
+#include "id/abilityID.h"
 #include "../entity/actor.h"
 
 std::string Aura::GetName() {

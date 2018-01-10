@@ -13,6 +13,13 @@
 #include "../scene/battleScene.h"
 #include "../data/map.h"
 #include "../data/statMod.h"
+#include "../data/id/abilityID.h"
+#include "../data/id/auraID.h"
+#include "../data/id/attribute.h"
+#include "../data/id/category.h"
+#include "../data/id/element.h"
+#include "../data/id/equipType.h"
+#include "../data/id/statModType.h"
 #include "../ui/messageLog.h"
 
 #include <limits>

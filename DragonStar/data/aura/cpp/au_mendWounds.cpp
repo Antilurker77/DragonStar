@@ -5,7 +5,13 @@
 // ==================================
 
 #include "../header/au_mendWounds.h"
-#include "../../../ui/messageLog.h"
+
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
 
 Au_MendWounds::Au_MendWounds() {
 	name = "Mend Wounds";

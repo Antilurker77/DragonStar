@@ -6,6 +6,9 @@
 
 #include "../header/fa_commonT1.h"
 
+#include "../../id/enemyID.h"
+#include "../../id/mapID.h"
+
 Fa_SentryAmbush::Fa_SentryAmbush() {
 	name = "Sentry Ambush";
 	isUnique = false;

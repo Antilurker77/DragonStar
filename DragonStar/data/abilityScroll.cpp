@@ -8,6 +8,8 @@
 
 #include "ability.h"
 #include "factory.h"
+#include "id/abilityType.h"
+#include "id/itemQuality.h"
 
 AbilityScroll::AbilityScroll(AbilityID id) {
 	AbilityPtr ability = Factory::CreateAbility(id);

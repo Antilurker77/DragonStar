@@ -6,6 +6,15 @@
 
 #include "../header/eq_neck.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/equipmentID.h"
+#include "../../id/equipType.h"
+#include "../../id/itemQuality.h"
+#include "../../id/statModType.h"
+
 Eq_SilverNecklace::Eq_SilverNecklace() {
 	name = "Silver Necklace";
 	iconFilepath = "neck.png";

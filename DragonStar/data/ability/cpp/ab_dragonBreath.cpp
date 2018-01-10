@@ -6,6 +6,13 @@
 
 #include "../header/ab_dragonBreath.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/attribute.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../../hex/hexMath.h"
+
 Ab_DragonBreath::Ab_DragonBreath() {
 	setAttackDefault();
 

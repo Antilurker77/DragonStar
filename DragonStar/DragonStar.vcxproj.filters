@@ -75,9 +75,6 @@
     <ClCompile Include="entity\statMath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data\damageHeal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="data\ability.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -470,9 +467,6 @@
     <ClInclude Include="core\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="data\id.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="data\factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -516,9 +510,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="entity\statMath.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="data\damageHeal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability.h">
@@ -912,6 +903,57 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_warpSlice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\tilesetID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\mapID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\raceID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\playerClassID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\enemyID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\abilityType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\itemQuality.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\creatureType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\equipType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\equipmentID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\element.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\category.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\attribute.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\statModType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\abilityID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\auraID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\id\formationID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

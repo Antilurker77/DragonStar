@@ -6,6 +6,13 @@
 
 #include "../header/au_healingRain.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_HealingRain::Au_HealingRain() {
 	name = "Healing Rain";
 	id = AuraID::HEALING_RAIN;

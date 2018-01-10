@@ -12,14 +12,15 @@
 
 #pragma once
 
+enum class EnemyID;
+enum class MapID;
+
 #include <array>
 #include <string>
 #include <tuple>
 #include <vector>
 
 #include <SFML/System.hpp>
-
-#include "id.h"
 
 // Enemy ID, Bonus Levels Granted, Starting Location
 typedef std::tuple<EnemyID, int, sf::Vector2i> EnemySpawn;
@@ -51,7 +52,7 @@ protected:
 	std::string name = "Unknown Formation";
 	bool isUnique = false;
 	bool isBoss = false;
-	MapID mapID = MapID::TEST_ARENA;
+	MapID mapID{};
 	std::vector<sf::Vector2i> startingLocations;
 	std::vector<EnemySpawn> enemies;
 };

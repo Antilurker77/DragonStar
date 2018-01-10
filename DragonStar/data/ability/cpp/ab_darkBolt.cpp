@@ -5,7 +5,13 @@
 // ==================================
 
 #include "../header/ab_darkBolt.h"
-#include "../../../hex/hexMath.h"
+
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/attribute.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../../scene/battleScene.h"
 
 Ab_DarkBolt::Ab_DarkBolt() {
 	setHarmfulSpellDefault();

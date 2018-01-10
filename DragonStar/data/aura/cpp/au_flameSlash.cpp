@@ -6,6 +6,13 @@
 
 #include "../header/au_flameSlash.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_FlameSlash::Au_FlameSlash() {
 	name = "Flame Slash";
 	id = AuraID::FLAME_SLASH;

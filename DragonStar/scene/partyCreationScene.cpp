@@ -8,6 +8,8 @@
 
 #include "../core/random.h"
 #include "../core/settings.h"
+#include "../data/id/playerClassID.h"
+#include "../data/id/raceID.h"
 
 PartyCreationScene::PartyCreationScene() {
 

@@ -13,6 +13,9 @@
 class Actor;
 class Item;
 
+enum class EquipmentID;
+enum class StatModType;
+
 #include <array>
 #include <memory>
 #include <vector>
@@ -23,7 +26,6 @@ class Item;
 #include "dropdown.h"
 #include "itemTooltip.h"
 #include "richText.h"
-#include "../data/id.h"
 
 typedef std::shared_ptr<Actor> ActorPtr;
 typedef std::shared_ptr<Item> ItemPtr;
@@ -98,8 +100,8 @@ private:
 	std::array<sf::Sprite, 6> craftedGoldSprite;
 
 	unsigned int selectedTier = 1u;
-	EquipmentID selecedID = EquipmentID::IRON_SWORD;
-	StatModType selectedAffix = StatModType::HP;
+	EquipmentID selecedID{};
+	StatModType selectedAffix{};
 
 	// Abilities
 

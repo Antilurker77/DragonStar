@@ -9,6 +9,10 @@
 
 #pragma once
 
+enum class AuraID;
+enum class EquipType;
+enum class EquipmentID;
+
 #include "item.h"
 #include "statMod.h"
 
@@ -88,7 +92,7 @@ protected:
 	std::vector<Element> attackElements; // elements for weapon attacks
 	double blockChance = 0.0; // shield block chance
 	std::vector<StatMod> statMods;
-	AuraID onHitAura = AuraID::UNDEFINED; // special aura created to trigger on-hit events
+	AuraID onHitAura{}; // special aura created to trigger on-hit events
 
 	// Determines how many affixes to roll given an item quality.
 	int howManyStatMods(std::mt19937_64& mt);

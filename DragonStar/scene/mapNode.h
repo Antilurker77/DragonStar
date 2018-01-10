@@ -11,12 +11,12 @@
 
 #pragma once
 
+enum class FormationID;
+
 #include <random>
 #include <vector>
 
 #include <SFML/System.hpp>
-
-#include "../data/id.h"
 
 struct MapNode {
 	FormationID FormationID; // nyi

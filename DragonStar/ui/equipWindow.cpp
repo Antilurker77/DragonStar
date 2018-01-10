@@ -13,6 +13,10 @@
 #include "../core/settings.h"
 #include "../data/equipment.h"
 #include "../data/item.h"
+#include "../data/id/category.h"
+#include "../data/id/element.h"
+#include "../data/id/equipType.h"
+#include "../data/id/itemQuality.h"
 #include "../entity/actor.h"
 #include "../entity/player.h"
 

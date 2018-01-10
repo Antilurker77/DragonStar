@@ -8,6 +8,10 @@
 
 #include "random.h"
 #include "../data/dataString.h"
+#include "../data/id/attribute.h"
+#include "../data/id/category.h"
+#include "../data/id/element.h"
+#include "../data/id/equipType.h"
 #include "../scene/battleScene.h"
 #include "../entity/actor.h"
 #include "../entity/statMath.h"

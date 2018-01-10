@@ -6,6 +6,10 @@
 
 #include "playerClassData.h"
 
+#include "../id/abilityType.h"
+#include "../id/equipType.h"
+#include "../id/playerClassID.h"
+
 Pc_Adventurer::Pc_Adventurer() {
 	name = "Adventurer";
 	playerClassID = PlayerClassID::ADVENTURER;

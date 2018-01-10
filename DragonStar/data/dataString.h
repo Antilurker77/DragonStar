@@ -9,7 +9,9 @@
 
 #pragma once
 
-#include "id.h"
+enum class Element;
+enum class StatModType;
+
 #include "statMod.h"
 
 #include <string>

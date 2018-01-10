@@ -6,6 +6,15 @@
 
 #include "../header/eq_dagger.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/equipmentID.h"
+#include "../../id/equipType.h"
+#include "../../id/itemQuality.h"
+#include "../../id/statModType.h"
+
 Eq_IronDagger::Eq_IronDagger() {
 	name = "Iron Dagger";
 	iconFilepath = "dagger.png";

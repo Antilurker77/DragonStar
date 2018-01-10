@@ -6,6 +6,9 @@
 
 #include "playerClass.h"
 
+#include "id/abilityType.h"
+#include "id/equipType.h"
+
 std::string PlayerClass::GetName() {
 	return name;
 }

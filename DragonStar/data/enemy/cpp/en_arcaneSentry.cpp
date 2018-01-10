@@ -6,6 +6,14 @@
 
 #include "../header/en_arcaneSentry.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/creatureType.h"
+#include "../../id/element.h"
+#include "../../id/enemyID.h"
+#include "../../id/equipType.h"
+#include "../../id/statModType.h"
 #include "../../../core/random.h"
 
 En_ArcaneSentry::En_ArcaneSentry() {

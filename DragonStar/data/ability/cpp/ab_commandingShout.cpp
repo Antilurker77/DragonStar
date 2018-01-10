@@ -6,6 +6,11 @@
 
 #include "../header/ab_commandingShout.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
 #include "../../../scene/battleScene.h"
 
 Ab_CommandingShout::Ab_CommandingShout() {

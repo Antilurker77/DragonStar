@@ -6,6 +6,7 @@
 
 #include "../header/mp_testArenaB.h"
 
+#include "../../id/tilesetID.h"
 #include "../../../hex/hexMath.h"
 
 Mp_TestArenaB::Mp_TestArenaB() {

@@ -6,6 +6,9 @@
 
 #include "../header/fa_testFormations.h"
 
+#include "../../id/enemyID.h"
+#include "../../id/mapID.h"
+
 Fa_TestFormationA::Fa_TestFormationA() {
 	name = "Test Formation A";
 	isUnique = false;

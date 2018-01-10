@@ -6,6 +6,13 @@
 
 #include "../header/au_gale.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_Gale::Au_Gale() {
 	name = "Gale";
 	id = AuraID::GALE;

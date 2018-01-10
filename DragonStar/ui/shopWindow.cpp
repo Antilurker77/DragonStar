@@ -16,6 +16,8 @@
 #include "../data/equipment.h"
 #include "../data/factory.h"
 #include "../data/item.h"
+#include "../data/id/equipmentID.h"
+#include "../data/id/itemQuality.h"
 #include "../entity/actor.h"
 #include "../entity/player.h"
 

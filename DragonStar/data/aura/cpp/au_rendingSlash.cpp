@@ -6,6 +6,13 @@
 
 #include "../header/au_rendingSlash.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_RendingSlash::Au_RendingSlash() {
 	name = "Rending Slash";
 	id = AuraID::RENDING_SLASH;

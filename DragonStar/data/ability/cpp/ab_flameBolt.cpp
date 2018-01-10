@@ -6,6 +6,13 @@
 
 #include "../header/ab_flameBolt.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/attribute.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../../hex/hexMath.h"
+
 Ab_FlameBolt::Ab_FlameBolt() {
 	setHarmfulSpellDefault();
 

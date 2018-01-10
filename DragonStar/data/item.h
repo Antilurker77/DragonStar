@@ -9,10 +9,10 @@
 
 #pragma once
 
+enum class ItemQuality;
+
 #include <memory>
 #include <string>
-
-#include "id.h"
 
 class Item {
 public:
@@ -44,7 +44,7 @@ public:
 protected:
 	std::string name;
 	std::string iconFilepath;
-	ItemQuality itemQuality;
+	ItemQuality itemQuality{};
 	int weight;
 	unsigned int tier;
 };

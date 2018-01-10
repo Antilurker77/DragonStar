@@ -7,6 +7,7 @@
 #include "hpBarManager.h"
 
 #include "../core/assetManager.h"
+#include "../data/id/attribute.h"
 #include "../entity/actor.h"
 #include "../hex/hexMath.h"
 

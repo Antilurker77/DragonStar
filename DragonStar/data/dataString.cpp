@@ -10,6 +10,10 @@
 #include <iomanip>
 #include <sstream>
 
+#include "id/category.h"
+#include "id/element.h"
+#include "id/statModType.h"
+
 std::string DataString::ElementString(std::vector<Element>& elements, bool capitalize) {
 	std::unordered_map<Element, std::string> elementStrings;
 	std::string s = "";

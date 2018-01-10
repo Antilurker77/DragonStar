@@ -6,6 +6,10 @@
 
 #include "../header/ab_attack.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
 #include "../../../entity/actor.h"
 
 Ab_Attack::Ab_Attack() {

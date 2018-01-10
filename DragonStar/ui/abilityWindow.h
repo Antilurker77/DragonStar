@@ -12,6 +12,8 @@
 class Actor;
 class Item;
 
+enum class AbilityID;
+
 #include <array>
 #include <memory>
 #include <vector>
@@ -21,7 +23,6 @@ class Item;
 #include "abilityTooltip.h"
 #include "button.h"
 #include "itemTooltip.h"
-#include "../data/id.h"
 
 typedef std::shared_ptr<Actor> ActorPtr;
 typedef std::shared_ptr<Item> ItemPtr;

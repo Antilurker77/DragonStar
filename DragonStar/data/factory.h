@@ -19,7 +19,15 @@ class PlayerClass;
 class Race;
 class Tileset;
 
-#include "id.h"
+enum class AbilityID;
+enum class AuraID;
+enum class EnemyID;
+enum class FormationID;
+enum class EquipmentID;
+enum class MapID;
+enum class PlayerClassID;
+enum class RaceID;
+enum class TilesetID;
 
 #include <memory>
 

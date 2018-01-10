@@ -11,6 +11,7 @@
 #include "../data/ability.h"
 #include "../data/abilityScroll.h"
 #include "../data/item.h"
+#include "../data/id/itemQuality.h"
 #include "../entity/actor.h"
 #include "../entity/player.h"
 

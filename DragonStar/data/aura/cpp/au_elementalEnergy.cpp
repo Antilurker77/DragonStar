@@ -6,6 +6,13 @@
 
 #include "../header/au_elementalEnergy.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_ElementalEnergy::Au_ElementalEnergy() {
 	name = "Elemental Energy";
 	id = AuraID::ELEMENTAL_ENERGY;

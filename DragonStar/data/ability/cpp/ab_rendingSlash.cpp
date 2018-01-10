@@ -6,6 +6,13 @@
 
 #include "../header/ab_rendingSlash.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+
 Ab_RendingSlash::Ab_RendingSlash() {
 	setAttackDefault();
 

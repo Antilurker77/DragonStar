@@ -6,6 +6,7 @@
 
 #include "../header/mp_fieldSmallIsland.h"
 
+#include "../../id/tilesetID.h"
 #include "../../../hex/hexMath.h"
 
 Mp_FieldSmallIsland::Mp_FieldSmallIsland() {

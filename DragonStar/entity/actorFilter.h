@@ -13,8 +13,9 @@
 
 class Actor;
 
+enum class AuraID;
+
 #include "../scene/battleScene.h"
-#include "../data/id.h"
 
 #include <SFML\System.hpp>
 

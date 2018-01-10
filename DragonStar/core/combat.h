@@ -12,9 +12,15 @@
 class Actor;
 class BattleScene;
 
-#include "../data/id.h"
+enum class AbilityID;
+enum class AuraID;
+enum class Category;
+enum class Element;
+enum class Attribute;
+enum class EquipType;
 
 #include <memory>
+#include <vector>
 
 #include <SFML\System.hpp>
 
@@ -22,8 +28,8 @@ typedef std::shared_ptr<Actor> ActorPtr;
 
 // Struct that stores 
 struct EventOptions {
-	AbilityID AbilityID = AbilityID::UNDEFINED;
-	AuraID AuraID = AuraID::UNDEFINED;
+	AbilityID AbilityID{};
+	AuraID AuraID{};
 	std::vector<Category> Categories = {};
 	std::vector<Element> Elements = {};
 	std::vector<EquipType> AllowedWeaponTypes = {};

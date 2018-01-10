@@ -13,6 +13,7 @@
 #include "../core/camera.h"
 #include "../core/settings.h"
 #include "../core/random.h"
+#include "../data/id/formationID.h"
 
 MapSelectScene::MapSelectScene() {
 	// node select texture

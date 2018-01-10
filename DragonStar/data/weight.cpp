@@ -6,6 +6,9 @@
 
 #include "weight.h"
 
+#include "id/abilityID.h"
+#include "id/equipmentID.h"
+#include "id/formationID.h"
 #include "../core/random.h"
 
 std::vector<FormationWeight> Weight::GetCommonFaWeights(int tier) {

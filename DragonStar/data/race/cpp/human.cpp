@@ -6,6 +6,11 @@
 
 #include "../header/human.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Human::Human(){
 	name = "Human";
 

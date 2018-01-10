@@ -11,11 +11,12 @@
 
 class BattleScene;
 
+enum class EnemyID;
+
 #include "actor.h"
 #include "../command/command.h"
 #include "../data/enemyInfo.h"
 #include "../data/factory.h"
-#include "../data/id.h"
 
 class Enemy : public Actor {
 public:

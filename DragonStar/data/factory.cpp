@@ -17,6 +17,15 @@
 #include "race/header/raceData.h"
 #include "tileset/header/tilesetData.h"
 
+#include "id/abilityID.h"
+#include "id/auraID.h"
+#include "id/enemyID.h"
+#include "id/equipmentID.h"
+#include "id/formationID.h"
+#include "id/mapID.h"
+#include "id/playerClassID.h"
+#include "id/raceID.h"
+#include "id/tilesetID.h"
 
 AbilityPtr Factory::CreateAbility(AbilityID id) {
 	switch (id) {

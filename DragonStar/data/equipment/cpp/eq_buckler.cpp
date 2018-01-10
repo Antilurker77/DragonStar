@@ -6,6 +6,15 @@
 
 #include "../header/eq_buckler.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/equipmentID.h"
+#include "../../id/equipType.h"
+#include "../../id/itemQuality.h"
+#include "../../id/statModType.h"
+
 Eq_IronBuckler::Eq_IronBuckler() {
 	name = "Iron Buckler";
 	iconFilepath = "shield.png";

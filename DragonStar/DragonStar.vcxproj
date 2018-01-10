@@ -137,7 +137,6 @@
     <ClCompile Include="data\aura\cpp\au_prismaticBolt.cpp" />
     <ClCompile Include="data\aura\cpp\au_rendingSlash.cpp" />
     <ClCompile Include="data\aura\cpp\au_venom.cpp" />
-    <ClCompile Include="data\damageHeal.cpp" />
     <ClCompile Include="data\enemyInfo.cpp" />
     <ClCompile Include="data\enemy\cpp\en_giantRat.cpp" />
     <ClCompile Include="data\enemy\cpp\en_arcaneSentry.cpp" />
@@ -285,7 +284,6 @@
     <ClInclude Include="data\aura\header\au_prismaticBolt.h" />
     <ClInclude Include="data\aura\header\au_rendingSlash.h" />
     <ClInclude Include="data\aura\header\au_venom.h" />
-    <ClInclude Include="data\damageHeal.h" />
     <ClInclude Include="data\enemy\header\en_arcaneSentry.h" />
     <ClInclude Include="data\enemy\header\en_giantRat.h" />
     <ClInclude Include="data\enemy\header\en_targetDummy.h" />
@@ -329,6 +327,23 @@
     <ClInclude Include="data\formation\header\formationData.h" />
     <ClInclude Include="data\groundEffect.h" />
     <ClInclude Include="data\dataString.h" />
+    <ClInclude Include="data\id\abilityID.h" />
+    <ClInclude Include="data\id\abilityType.h" />
+    <ClInclude Include="data\id\attribute.h" />
+    <ClInclude Include="data\id\auraID.h" />
+    <ClInclude Include="data\id\category.h" />
+    <ClInclude Include="data\id\creatureType.h" />
+    <ClInclude Include="data\id\element.h" />
+    <ClInclude Include="data\id\enemyID.h" />
+    <ClInclude Include="data\id\equipmentID.h" />
+    <ClInclude Include="data\id\equipType.h" />
+    <ClInclude Include="data\id\formationID.h" />
+    <ClInclude Include="data\id\itemQuality.h" />
+    <ClInclude Include="data\id\mapID.h" />
+    <ClInclude Include="data\id\playerClassID.h" />
+    <ClInclude Include="data\id\raceID.h" />
+    <ClInclude Include="data\id\statModType.h" />
+    <ClInclude Include="data\id\tilesetID.h" />
     <ClInclude Include="data\item.h" />
     <ClInclude Include="data\map\header\mp_fieldSewer.h" />
     <ClInclude Include="data\map\header\mp_fieldSewerIntersection.h" />
@@ -346,7 +361,6 @@
     <ClInclude Include="data\enemy\header\enemyData.h" />
     <ClInclude Include="data\enemy\header\en_testEnemy.h" />
     <ClInclude Include="data\factory.h" />
-    <ClInclude Include="data\id.h" />
     <ClInclude Include="data\map.h" />
     <ClInclude Include="data\race.h" />
     <ClInclude Include="data\race\header\raceData.h" />

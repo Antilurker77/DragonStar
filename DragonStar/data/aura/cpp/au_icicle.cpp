@@ -6,6 +6,13 @@
 
 #include "../header/au_icicle.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Au_Icicle::Au_Icicle() {
 	name = "Icicle";
 	id = AuraID::ICICLE;

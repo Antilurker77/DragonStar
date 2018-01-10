@@ -8,6 +8,13 @@
 #include "../../../scene/battleScene.h"
 #include "../../../hex/hexMath.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/attribute.h"
+#include "../../id/auraID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+
 Ab_Splash::Ab_Splash() {
 	setHarmfulSpellDefault();
 

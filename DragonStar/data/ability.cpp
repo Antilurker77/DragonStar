@@ -6,6 +6,8 @@
 
 #include "ability.h"
 
+#include "id/attribute.h"
+#include "id/category.h"
 #include "../core/random.h"
 #include "../scene/battleScene.h"
 #include "../entity/actor.h"

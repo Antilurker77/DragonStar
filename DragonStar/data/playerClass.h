@@ -10,10 +10,12 @@
 
 #pragma once
 
+enum class AbilityType;
+enum class EquipType;
+enum class PlayerClassID;
+
 #include <string>
 #include <vector>
-
-#include "id.h"
 
 class PlayerClass {
 public:
@@ -35,7 +37,7 @@ public:
 
 protected:
 	std::string name = "Unknown Class";
-	PlayerClassID playerClassID = PlayerClassID::ADVENTURER;
+	PlayerClassID playerClassID{};
 
 	std::vector<EquipType> equippable;
 	std::vector<std::pair<AbilityType, unsigned int>> usable; // ability type and max tier

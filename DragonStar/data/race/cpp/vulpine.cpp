@@ -6,6 +6,11 @@
 
 #include "../header/vulpine.h"
 
+#include "../../id/abilityID.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../id/statModType.h"
+
 Vulpine::Vulpine(){
 	name = "Vulpine";
 

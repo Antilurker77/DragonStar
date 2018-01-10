@@ -9,7 +9,8 @@
 #include "../core/combat.h"
 #include "../core/settings.h"
 #include "../data/factory.h"
-#include "../data/id.h"
+#include "../data/id/category.h"
+#include "../data/id/element.h"
 #include "../entity/actor.h"
 
 InspectWindow::InspectWindow() {

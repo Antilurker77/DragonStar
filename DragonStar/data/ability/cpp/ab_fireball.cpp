@@ -5,6 +5,13 @@
 // ==================================
 
 #include "../header/ab_fireball.h"
+
+#include "../../id/abilityID.h"
+#include "../../id/abilityType.h"
+#include "../../id/attribute.h"
+#include "../../id/category.h"
+#include "../../id/element.h"
+#include "../../../hex/hexMath.h"
 #include "../../../entity/actor.h"
 #include "../../../hex/hexMath.h"
 #include "../../../scene/battleScene.h"
