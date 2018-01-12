@@ -123,6 +123,10 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 
 ItemPtr Factory::CreateEquipment(EquipmentID id) {
 	switch (id) {
+	case EquipmentID::CHARM_OF_DEXTERITY:				return ItemPtr(std::make_shared<Eq_CharmOfDexterity>());
+	case EquipmentID::CHARM_OF_INTELLIGENCE:			return ItemPtr(std::make_shared<Eq_CharmOfIntelligence>());
+	case EquipmentID::CHARM_OF_STRENGTH:				return ItemPtr(std::make_shared<Eq_CharmOfStrength>());
+	case EquipmentID::CHARM_OF_WISDOM:					return ItemPtr(std::make_shared<Eq_CharmOfWisdom>());
 	case EquipmentID::DRAGONITE_NECKLACE:				return ItemPtr(std::make_shared<Eq_DragoniteNecklace>());
 	case EquipmentID::DRAGONITE_RING:					return ItemPtr(std::make_shared<Eq_DragoniteRing>());
 	case EquipmentID::GOLD_NECKLACE:					return ItemPtr(std::make_shared<Eq_GoldNecklace>());

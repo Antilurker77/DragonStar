@@ -34,6 +34,7 @@
 #include "eq_staff.h"
 #include "eq_sword1H.h"
 #include "eq_sword2H.h"
+#include "eq_trinket.h"
 #include "eq_wand.h"
 
 #pragma once
