@@ -385,6 +385,9 @@ void BattleScene::Initialize(std::vector<ActorPtr>& players, MapNode mapNode) {
 	isBoss = mapNode.IsBoss;
 	isUnique = mapNode.IsUnique;
 
+	uniqueEquipmentToDrop = mapNode.UniqueEqDrops;
+	uniqueAbilitiesToDrop = mapNode.UniqueAbDrops;
+
 	FormationPtr formation = Factory::CreateFormation(mapNode.FormationID);
 	formation->LevelFactor(mapNode.Level);
 
@@ -1363,7 +1366,13 @@ void BattleScene::calcVictory() {
 		}
 	}
 
-	//EquipmentID id = EquipmentID::OMEGA_RING;
-	//ItemPtr item = factory.CreateEquipment(id);
-	//itemsAwarded.push_back(item);
+	for (auto id : uniqueEquipmentToDrop) {
+		ItemPtr eq = Factory::CreateEquipment(id);
+		itemsAwarded.push_back(eq);
+	}
+
+	for (auto id : uniqueAbilitiesToDrop) {
+		ItemPtr ab = Factory::CreateAbilityScroll(id);
+		itemsAwarded.push_back(ab);
+	}
 }

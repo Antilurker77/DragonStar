@@ -71,6 +71,8 @@ private:
 	std::vector<sf::Vector2i> clearedMaps; // first is domain number, second is map number
 	std::vector<size_t> clearedDomains;
 	std::vector<FormationID> spawnedUniques;
+	std::vector<EquipmentID> droppedUniqueEquipment;
+	std::vector<AbilityID> droppedUniqueAbilities;
 
 	uint64_t masterSeed = 0ull;
 

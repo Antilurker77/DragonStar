@@ -11,6 +11,8 @@
 
 #pragma once
 
+enum class AbilityID;
+enum class EquipmentID;
 enum class FormationID;
 
 #include <random>
@@ -19,7 +21,7 @@ enum class FormationID;
 #include <SFML/System.hpp>
 
 struct MapNode {
-	FormationID FormationID; // nyi
+	FormationID FormationID;
 	int Level = 0;
 	int Tier = 0;
 	uint64_t Seed = 0;
@@ -29,4 +31,6 @@ struct MapNode {
 	bool IsBoss = false;
 	std::vector<size_t> connectedNodes;
 	bool IsCleared = false;
+	std::vector<EquipmentID> UniqueEqDrops = {};
+	std::vector<AbilityID> UniqueAbDrops = {};
 };

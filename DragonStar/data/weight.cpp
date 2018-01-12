@@ -134,6 +134,43 @@ EquipmentID Weight::GetRandomEq(std::mt19937_64& mt, int tier) {
 	}
 }
 
+EquipmentID Weight::GetRandomUniqueEq(std::mt19937_64& mt, int tier, std::vector<EquipmentID>& existingUniques) {
+	std::vector<EquipmentWeight> weights;
+
+	switch (tier) {
+	case 1:
+		weights.push_back({ EquipmentID::CHARM_OF_STRENGTH, 1.00 });
+		weights.push_back({ EquipmentID::CHARM_OF_DEXTERITY, 1.00 });
+		weights.push_back({ EquipmentID::CHARM_OF_INTELLIGENCE, 1.00 });
+		weights.push_back({ EquipmentID::CHARM_OF_WISDOM, 1.00 });
+		break;
+	default:
+		break;
+	}
+
+	for (auto eu : existingUniques) {
+		for (size_t i = 0; i < weights.size(); i++) {
+			if (eu == weights[i].first) {
+				weights.erase(weights.begin() + i);
+				break;
+			}
+		}
+	}
+
+	if (!weights.empty()) {
+		while (true) {
+			size_t index = Random::RandSizeT(mt, 0u, weights.size() - 1u);
+			double roll = Random::RandDouble(mt, 0.0, 1.0);
+			if (roll <= weights[index].second) {
+				return weights[index].first;
+			}
+		}
+	}
+	else {
+		return EquipmentID::UNDEFINED;
+	}
+}
+
 AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	std::vector<AbilityWeight> weights;
 

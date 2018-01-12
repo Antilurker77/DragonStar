@@ -33,10 +33,13 @@ namespace Weight {
 	// Returns the RNG weights for boss formations.
 	std::vector<FormationWeight> GetBossFaWeights(int tier);
 
-	// Returns a random Equipment ID based on level.
+	// Returns a random Equipment ID based on tier.
 	EquipmentID GetRandomEq(std::mt19937_64& mt, int tier);
 
-	// Returns a random Ability ID based on level.
+	// Returns a random unique Equipment ID based on tier.
+	EquipmentID GetRandomUniqueEq(std::mt19937_64& mt, int tier, std::vector<EquipmentID>& existingUniques);
+
+	// Returns a random Ability ID based on tier.
 	AbilityID GetRandomAb(std::mt19937_64& mt, int tier);
 
 	// Returns a random Formation ID given a weight table.

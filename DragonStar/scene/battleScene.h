@@ -118,6 +118,8 @@ private:
 	unsigned int expAwarded = 0u;
 	unsigned int goldAwarded = 0u;
 	std::vector<ItemPtr> itemsAwarded = {};
+	std::vector<EquipmentID> uniqueEquipmentToDrop = {};
+	std::vector<AbilityID> uniqueAbilitiesToDrop = {};
 
 	// Input
 	sf::Vector2i windowMousePosition;

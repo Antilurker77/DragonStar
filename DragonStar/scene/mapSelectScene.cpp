@@ -351,6 +351,7 @@ void MapSelectScene::buildMaps(size_t index, uint64_t seed) {
 		size_t n = nodesPerStep[i];
 		for (int j = 0; j < n; j++) {
 			MapNode m;
+			bool dropUnique = false;
 
 			// determine formation ID
 
@@ -374,6 +375,28 @@ void MapSelectScene::buildMaps(size_t index, uint64_t seed) {
 			m.Location = { (int)i, (int)j };
 			m.NodesInStep = n;
 
+			// unique drops
+			if (m.IsUnique) {
+				dropUnique = true;
+			}
+			else if (Random::RandInt(mt, 1, 100) <= 25) {
+				dropUnique = true;
+			};
+
+			if (dropUnique) {
+				// determine if item or ability
+				if (Random::RandInt(mt, 1, 100) <= 90) {
+					EquipmentID uniqueEq = Weight::GetRandomUniqueEq(mt, m.Tier, droppedUniqueEquipment);
+					if ((unsigned int)uniqueEq != 0u) { // check for EquipmentID::UNDEFINED, casting so that EquipID doesn't need to be included
+						m.UniqueEqDrops.push_back(uniqueEq);
+						droppedUniqueEquipment.push_back(uniqueEq);
+					}
+				}
+				else {
+					// todo: unique abilities
+				}
+			}
+
 			// node connections
 			size_t nodeNumber = mapNodes.size();
 			m.connectedNodes = calcConnections(nodeNumber, nodesPerStep, i, j);
@@ -392,6 +415,20 @@ void MapSelectScene::buildMaps(size_t index, uint64_t seed) {
 	m.IsBoss = true;
 	m.Location = { (int)nodesPerStep.size() - 1, 0 };
 	m.NodesInStep = 1;
+
+	// Bosses drop a guaranteed unique.
+	// determine if item or ability
+	if (Random::RandInt(mt, 1, 100) <= 90) {
+		EquipmentID uniqueEq = Weight::GetRandomUniqueEq(mt, m.Tier, droppedUniqueEquipment);
+		if ((unsigned int)uniqueEq != 0u) { // check for EquipmentID::UNDEFINED, casting so that EquipID doesn't need to be included
+			m.UniqueEqDrops.push_back(uniqueEq);
+			droppedUniqueEquipment.push_back(uniqueEq);
+		}
+	}
+	else {
+		// todo: unique abilities
+	}
+
 	mapNodes.push_back(m);
 
 	maps.push_back(mapNodes);
