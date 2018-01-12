@@ -375,7 +375,7 @@ int Enemy::GetVIT(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(vitd, statMods, StatModType::VIT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::WIS_MULT, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::VIT_MULT, false);
 		}
 	}
 
