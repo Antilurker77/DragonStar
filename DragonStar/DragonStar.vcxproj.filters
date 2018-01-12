@@ -441,6 +441,9 @@
     <ClCompile Include="data\equipment\cpp\eq_trinket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_obliterate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -960,6 +963,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\equipment\header\eq_trinket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_obliterate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
