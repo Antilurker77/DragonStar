@@ -54,7 +54,10 @@ Au_ShadowEnergy::Au_ShadowEnergy() {
 }
 
 void Au_ShadowEnergy::OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult) {
-	Combat::ScalingAttack(user, targetHit, 20.0, Attribute::INT, auraOptions);
+	auto c = eventOptions.Categories;
+	if (std::find(c.begin(), c.end(), Category::ATTACK) != c.end() && std::find(c.begin(), c.end(), Category::DIRECT) != c.end()) {
+		Combat::ScalingAttack(user, targetHit, 20.0, Attribute::INT, auraOptions);
+	}
 }
 
 std::string Au_ShadowEnergy::GetDescription() {
