@@ -15,14 +15,14 @@ Fa_Fenrok::Fa_Fenrok() {
 	isBoss = false;
 	mapID = MapID::FIELD_FIELD;
 	startingLocations = {
-		sf::Vector2i(0, 2),
-		sf::Vector2i(-1, 3),
 		sf::Vector2i(1, 2),
 		sf::Vector2i(0, 3),
-		sf::Vector2i(-1, 4),
-		sf::Vector2i(1, 3)
+		sf::Vector2i(2, 2),
+		sf::Vector2i(1, 3),
+		sf::Vector2i(0, 4),
+		sf::Vector2i(2, 3)
 	};
 	enemies = {
-		{ EnemyID::FENROK, 0,{ 0, 0 } }
+		{ EnemyID::FENROK, 0,{ 1, -2 } }
 	};
 }
