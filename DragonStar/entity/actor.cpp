@@ -402,6 +402,16 @@ sf::Vector3i Actor::GetTargetCursor() {
 	}
 }
 
+bool Actor::HasAura(AuraID auraID) {
+	for (auto a : auras) {
+		if (a->GetAuraID() == auraID) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
 int Actor::GetAuraStackCount(AuraID auraID) {
 	for (auto aura : auras) {
 		if (aura->GetAuraID() == auraID) {

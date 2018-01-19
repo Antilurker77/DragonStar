@@ -165,6 +165,9 @@ public:
 	// Interrupts the actor's cast, if the cast can be interrupted.
 	void InterruptCast();
 
+	// Returns true if the user has at least one copy of the aura.
+	bool HasAura(AuraID auraID);
+
 	// Returns the number of stacks of the specified aura the actor has.
 	int GetAuraStackCount(AuraID auraID);
 
