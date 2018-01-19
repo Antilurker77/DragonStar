@@ -32,7 +32,8 @@ std::vector<FormationWeight> Weight::GetUniqueFaWeights(int tier) {
 	switch (tier) {
 	default:
 		return {
-			{ FormationID::TEST_UNIQUE, 1.0 }
+			{ FormationID::TEST_UNIQUE, 1.0 },
+			{ FormationID::FENROK, 1.0 }
 		};
 	}
 }

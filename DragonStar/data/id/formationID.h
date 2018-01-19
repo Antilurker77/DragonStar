@@ -20,6 +20,7 @@ enum class FormationID {
 
 	// Unique
 	TEST_UNIQUE,
+	FENROK,
 
 	// Boss
 	TEST_BOSS

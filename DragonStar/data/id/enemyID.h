@@ -22,7 +22,9 @@ enum class EnemyID {
 	TARGET_DUMMY,
 
 	// Unique
-	TEST_UNIQUE
+	TEST_UNIQUE,
+
+	FENROK
 
 	// Boss
 };

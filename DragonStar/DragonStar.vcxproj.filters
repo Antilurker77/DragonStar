@@ -459,6 +459,12 @@
     <ClCompile Include="data\map\cpp\mp_fieldField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\enemy\cpp\en_fenrok.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\formation\cpp\fa_uniqueT1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -996,6 +1002,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\map\header\mp_fieldField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\enemy\header\en_fenrok.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\formation\header\fa_uniqueT1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

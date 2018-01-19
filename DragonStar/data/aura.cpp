@@ -101,7 +101,7 @@ void Aura::InitializeAura(ActorPtr& user, ActorPtr& target) {
 	nextTick = timePerTick;
 	nextTickPower = 1.0;
 	stackCount = 1;
-
+	setAuraOptions();
 }
 
 void Aura::SetValues(std::vector<int> values) {

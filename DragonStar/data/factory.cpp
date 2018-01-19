@@ -100,6 +100,7 @@ EnemyInfoPtr Factory::CreateEnemyInfo(EnemyID id) {
 
 	// Unique
 	case EnemyID::TEST_UNIQUE:							return EnemyInfoPtr(std::make_shared<En_TestUnique>());
+	case EnemyID::FENROK:								return EnemyInfoPtr(std::make_shared<En_Fenrok>());
 
 	// Returns Test Enemy if ID is invalid.
 	default:											return EnemyInfoPtr(std::make_shared<En_TestEnemy>());
@@ -117,6 +118,7 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 
 	// Unique
 	case FormationID::TEST_UNIQUE:						return FormationPtr(std::make_shared<Fa_TestUnique>());
+	case FormationID::FENROK:							return FormationPtr(std::make_shared<Fa_Fenrok>());
 
 	// Boss
 	case FormationID::TEST_BOSS:						return FormationPtr(std::make_shared<Fa_TestBoss>());

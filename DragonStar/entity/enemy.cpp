@@ -67,6 +67,11 @@ CommandPtr Enemy::CalcAICommand(BattleScene& battleScene)
 		return CommandPtr(std::make_shared<WaitCommand>(50));
 	}
 
+	// self targeted abilities
+	if (idea.first == GetHexPosition()) {
+		return CommandPtr(std::make_shared<AbilityCommand>(idea.second, battleScene, idea.first));
+	}
+
 	// the enemy has an idea, path the enemy to the necessary location and use the action
 
 	std::vector<sf::Vector3i> tilesInRange = abilities[idea.second]->GetTargetRange();

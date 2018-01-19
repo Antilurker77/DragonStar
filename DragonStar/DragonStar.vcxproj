@@ -143,6 +143,7 @@
     <ClCompile Include="data\aura\cpp\au_terrifyingHowl.cpp" />
     <ClCompile Include="data\aura\cpp\au_venom.cpp" />
     <ClCompile Include="data\enemyInfo.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_fenrok.cpp" />
     <ClCompile Include="data\enemy\cpp\en_giantRat.cpp" />
     <ClCompile Include="data\enemy\cpp\en_arcaneSentry.cpp" />
     <ClCompile Include="data\enemy\cpp\en_targetDummy.cpp" />
@@ -186,6 +187,7 @@
     <ClCompile Include="data\formation\cpp\fa_commonT1.cpp" />
     <ClCompile Include="data\formation\cpp\fa_testFormations.cpp" />
     <ClCompile Include="data\dataString.cpp" />
+    <ClCompile Include="data\formation\cpp\fa_uniqueT1.cpp" />
     <ClCompile Include="data\item.cpp" />
     <ClCompile Include="data\map.cpp" />
     <ClCompile Include="data\map\cpp\mp_fieldField.cpp" />
@@ -297,6 +299,7 @@
     <ClInclude Include="data\aura\header\au_terrifyingHowl.h" />
     <ClInclude Include="data\aura\header\au_venom.h" />
     <ClInclude Include="data\enemy\header\en_arcaneSentry.h" />
+    <ClInclude Include="data\enemy\header\en_fenrok.h" />
     <ClInclude Include="data\enemy\header\en_giantRat.h" />
     <ClInclude Include="data\enemy\header\en_targetDummy.h" />
     <ClInclude Include="data\enemy\header\en_testAssassin.h" />
@@ -337,6 +340,7 @@
     <ClInclude Include="data\formation.h" />
     <ClInclude Include="data\formation\header\fa_commonT1.h" />
     <ClInclude Include="data\formation\header\fa_testFormations.h" />
+    <ClInclude Include="data\formation\header\fa_uniqueT1.h" />
     <ClInclude Include="data\formation\header\formationData.h" />
     <ClInclude Include="data\groundEffect.h" />
     <ClInclude Include="data\dataString.h" />
