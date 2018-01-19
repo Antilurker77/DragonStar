@@ -100,7 +100,7 @@
     <ClCompile Include="core\random.cpp" />
     <ClCompile Include="data\ability.cpp" />
     <ClCompile Include="data\abilityScroll.cpp" />
-    <ClCompile Include="data\ability\cpp\abEn_bite.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_bite.cpp" />
     <ClCompile Include="data\ability\cpp\ab_shadowEnergy.cpp" />
     <ClCompile Include="data\ability\cpp\ab_arcaneBlast.cpp" />
     <ClCompile Include="data\ability\cpp\ab_commandingShout.cpp" />
@@ -249,7 +249,7 @@
     <ClInclude Include="core\settings.h" />
     <ClInclude Include="data\ability.h" />
     <ClInclude Include="data\abilityScroll.h" />
-    <ClInclude Include="data\ability\header\abEn_bite.h" />
+    <ClInclude Include="data\ability\header\ab_bite.h" />
     <ClInclude Include="data\ability\header\ab_shadowEnergy.h" />
     <ClInclude Include="data\ability\header\abiltyData.h" />
     <ClInclude Include="data\ability\header\ab_arcaneBlast.h" />

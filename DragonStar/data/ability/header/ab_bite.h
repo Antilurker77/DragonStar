@@ -1,6 +1,6 @@
 // ==================================
 //
-// abEn_bite.h
+// ab_bite.h
 //
 // Data for Bite enemy ability.
 //
@@ -10,9 +10,9 @@
 
 #pragma once
 
-class AbEn_Bite : public Ability {
+class Ab_Bite : public Ability {
 public:
-	AbEn_Bite();
+	Ab_Bite();
 
 	std::vector<sf::Vector3i> GetTargetArea(sf::Vector3i selectedTile);
 	std::string GetDescription();

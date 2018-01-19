@@ -31,6 +31,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	switch (id) {
 	case AbilityID::ATTACK:								return AbilityPtr(std::make_shared<Ab_Attack>());
 	case AbilityID::ARCANE_BLAST:						return AbilityPtr(std::make_shared<Ab_ArcaneBlast>());
+	case AbilityID::BITE:								return AbilityPtr(std::make_shared<Ab_Bite>());
 	case AbilityID::DARK_BOLT:							return AbilityPtr(std::make_shared<Ab_DarkBolt>());
 	case AbilityID::DRAGONFIRE_BOLT:					return AbilityPtr(std::make_shared<Ab_DragonfireBolt>());
 	case AbilityID::ELEMENTAL_ENERGY:					return AbilityPtr(std::make_shared<Ab_ElementalEnergy>());
@@ -56,7 +57,6 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::WATER_BOLT:							return AbilityPtr(std::make_shared<Ab_WaterBolt>());
 	case AbilityID::RACIAL_COMMANDING_SHOUT:			return AbilityPtr(std::make_shared<Ab_CommandingShout>());
 	case AbilityID::RACIAL_DRAGON_BREATH:				return AbilityPtr(std::make_shared<Ab_DragonBreath>());
-	case AbilityID::EN_BITE:							return AbilityPtr(std::make_shared<AbEn_Bite>());
 
 	// Returns Attack ability if ID is invalid.
 	default:											return AbilityPtr(std::make_shared<Ab_Attack>());

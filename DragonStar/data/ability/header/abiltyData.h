@@ -8,6 +8,7 @@
 
 #include "ab_arcaneBlast.h"
 #include "ab_attack.h"
+#include "ab_bite.h"
 #include "ab_commandingShout.h"
 #include "ab_darkBolt.h"
 #include "ab_dragonBreath.h"
@@ -33,7 +34,6 @@
 #include "ab_venom.h"
 #include "ab_warpSlice.h"
 #include "ab_waterBolt.h"
-#include "abEn_bite.h"
 
 
 #pragma once

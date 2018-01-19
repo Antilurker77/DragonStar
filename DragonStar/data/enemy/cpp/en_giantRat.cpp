@@ -60,7 +60,7 @@ En_GiantRat::En_GiantRat() {
 	};
 
 	abilities = {
-		AbilityID::EN_BITE // 1
+		AbilityID::BITE // 1
 	};
 }
 
