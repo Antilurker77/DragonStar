@@ -444,6 +444,12 @@
     <ClCompile Include="data\ability\cpp\ab_obliterate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\aura\cpp\au_shadowEnergy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_shadowEnergy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -966,6 +972,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_obliterate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\aura\header\au_shadowEnergy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_shadowEnergy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
