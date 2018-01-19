@@ -9,6 +9,7 @@
 #pragma once
 
 #include "mp_basicDungeon.h"
+#include "mp_fieldField.h"
 #include "mp_fieldSmallIsland.h"
 #include "mp_fieldSewer.h"
 #include "mp_fieldSewerIntersection.h"

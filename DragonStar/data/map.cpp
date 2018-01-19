@@ -56,10 +56,13 @@ double Map::DistanceHeuristic(sf::Vector3i start, sf::Vector3i end, bool positiv
 	return distance;
 }
 
-// Adds the tiles to the map. Used for map construction.
+void Map::addTiles(sf::Vector3i tile, int tileType) {
+	tiles[tile] = tileType;
+}
+
 void Map::addTiles(std::vector<sf::Vector3i> shape, int tileType){
 	for (sf::Vector3i tile : shape){
-		tiles[sf::Vector3i(tile.x, tile.y, tile.z)] = tileType;
+		tiles[tile] = tileType;
 	}
 }
 

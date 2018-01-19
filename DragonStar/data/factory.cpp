@@ -180,6 +180,7 @@ MapPtr Factory::CreateMap(MapID id){
 	case MapID::TEST_MAP_XS:							return MapPtr(std::make_shared<Mp_TestMapXS>());
 	case MapID::TEST_ARENA:								return MapPtr(std::make_shared<Mp_TestArena>());
 	case MapID::TEST_ARENA_B:							return MapPtr(std::make_shared<Mp_TestArenaB>());
+	case MapID::FIELD_FIELD:							return MapPtr(std::make_shared<Mp_FieldField>());
 	case MapID::FIELD_SMALL_ISLAND:						return MapPtr(std::make_shared<Mp_FieldSmallIsland>());
 	case MapID::FIELD_SEWER:							return MapPtr(std::make_shared<Mp_FieldSewer>());
 	case MapID::FIELD_SEWER_INTERSECTION:				return MapPtr(std::make_shared<Mp_FieldSewerIntersection>());

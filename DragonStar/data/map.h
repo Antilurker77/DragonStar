@@ -32,6 +32,11 @@ protected:
 	std::unordered_map<sf::Vector3i, int> tiles;
 	sf::VertexArray tileVertex;
 
+	// Adds tiles to the map.
+	void addTiles(sf::Vector3i, int tileType);
+
+	// Adds tiles to the map.
 	void addTiles(std::vector<sf::Vector3i> shape, int tileType);
+
 	void buildVertexArray();
 };
