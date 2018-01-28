@@ -26,7 +26,7 @@ void FCTManager::Update(sf::Vector3i actorHexPos, float secondsPerUpdate) {
 		float prevY = 0.f;
 		for (size_t i = fcts.size(); i-- > 0;) { // stops underflow bug leading to access violation crash
 			float x = actorPos.x - (fcts[i].Background.getGlobalBounds().width / 2);
-			float y = actorPos.y - boxHeight - 5.f;
+			float y = actorPos.y - boxHeight + 2.f;
 
 			y -= fcts[i].Lifespan * velocity;
 			if (i != fcts.size() - 1) {

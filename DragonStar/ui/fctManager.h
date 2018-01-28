@@ -50,7 +50,7 @@ public:
 private:
 	std::vector<FCTUnit> fcts;
 
-	const float velocity = 20.f;
+	const float velocity = 10.f;
 	const float lifespan = 3.f;
 	const unsigned int fontSize = 14;
 	const float boxHeight = 18.f;
