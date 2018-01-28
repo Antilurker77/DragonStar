@@ -30,6 +30,18 @@ void Actor::ClearWorld() {
 	battleScene = nullptr;
 }
 
+void Actor::UpdateFCT(float secondsPerUpdate) {
+	fctManager.Update(GetHexPosition(), secondsPerUpdate);
+}
+
+void Actor::RenderFCT(sf::RenderTarget& window) {
+	fctManager.Render(window);
+}
+
+void Actor::ClearFCT() {
+	fctManager.Clear();
+}
+
 std::string Actor::GetName(){
 	return name;
 }
@@ -581,6 +593,8 @@ int Actor::DamageActor(double damage, std::vector<Element> elements, bool isCrit
 		hpCurrent -= damageDealt;
 	}
 
+	fctManager.AddDamageHealUnit(damageDealt, isCrit, elements, false, Attribute::HP);
+
 	return damageDealt;
 }
 
@@ -619,6 +633,8 @@ int Actor::HealActor(double healAmount, std::vector<Element> elements, Attribute
 		hpCurrent += amountHealed;
 		break;
 	}
+
+	fctManager.AddDamageHealUnit(amountHealed, isCrit, elements, true, whatToHeal);
 
 	return amountHealed;
 }

@@ -341,6 +341,9 @@ void BattleScene::RenderWorld(sf::RenderWindow& window, float timeRatio) {
 			window.draw(currentActorTile);
 		}
 		hpBarManager.Render(window);
+		for (size_t i = 0; i < actors.size(); i++) {
+			actors[i]->RenderFCT(window);
+		}
 	}
 	window.draw(abilityTargetVertexArray, abilityTargetTexture);
 }
@@ -396,6 +399,7 @@ void BattleScene::Initialize(std::vector<ActorPtr>& players, MapNode mapNode) {
 	auto playerStartingLocations = formation->GetStartingLocations();
 	for (size_t i = 0; i < players.size(); i++) {
 		players[i]->MoveToHex(playerStartingLocations[i]);
+		players[i]->ClearFCT();
 		actors.push_back(players[i]);
 	}
 
@@ -955,6 +959,13 @@ void BattleScene::updateWorld(float secondsPerUpdate) {
 		actors[i]->Update(secondsPerUpdate);
 		if (actors[i]->IsMoving()) {
 			movingActor = true;
+		}
+	}
+
+	// Update floating combat text as long as a window isn't open.
+	if (!isWindowOpen) {
+		for (size_t i = 0; i < actors.size(); i++) {
+			actors[i]->UpdateFCT(secondsPerUpdate);
 		}
 	}
 

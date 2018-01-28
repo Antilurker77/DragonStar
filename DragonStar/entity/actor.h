@@ -19,6 +19,7 @@ enum class CreatureType;
 #include "../data/ability.h"
 #include "../data/aura.h"
 #include "../data/factory.h"
+#include "../ui/fctManager.h"
 
 #include <memory>
 
@@ -30,6 +31,15 @@ public:
 	// Clears the world reference.
 	void ClearWorld();
 	
+	// Updates the FCT Manager.
+	void UpdateFCT(float secondsPerUpdate);
+
+	// Renders floating combat text.
+	void RenderFCT(sf::RenderTarget& window);
+
+	// Removes all floating combat text.
+	void ClearFCT();
+
 	// Returns the actor's name.
 	std::string GetName();
 	
@@ -399,6 +409,8 @@ public:
 protected:
 	BattleScene* battleScene = nullptr;
 	
+	FCTManager fctManager;
+
 	std::string name;
 
 	// stats
