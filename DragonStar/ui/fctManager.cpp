@@ -103,7 +103,23 @@ void FCTManager::AddDamageHealUnit(int value, bool isCrit, std::vector<Element> 
 
 void FCTManager::AddAuraUnit(std::string name, bool isBuff, bool isExpired) {
 	FCTUnit unit;
-	std::string s = "Test";
+	std::string s;
+
+	if (isBuff) {
+		s += "#blue ";
+	}
+	else {
+		s += "#red ";
+	}
+
+	if (isExpired) {
+		s += "-";
+	}
+	else {
+		s += "+";
+	}
+
+	s += name;
 
 	// Unit initilization.
 	unit.Text.setFont(*assetManager.LoadFont(settings.Font));

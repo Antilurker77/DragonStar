@@ -544,7 +544,15 @@ void Actor::OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult ev
 void Actor::RemoveExpiredAuras() {
 	if (auras.size() > 0) {
 		const auto pred = [](const AuraPtr& a) { return a->IsExpired(); };
-		auras.erase(std::remove_if(auras.begin(), auras.end(), pred), auras.end());
+
+		auto removed = std::remove_if(auras.begin(), auras.end(), pred);
+		for (auto i = removed; i != auras.end(); i++) {			
+			if ((*i) != nullptr) {
+				fctManager.AddAuraUnit((*i)->GetName(), (*i)->IsBuff(), true);
+			}
+		}
+
+		auras.erase(removed, auras.end());
 	}
 }
 
@@ -652,15 +660,18 @@ bool Actor::AddAuraStack(ActorPtr& user, AuraID auraID) {
 		if (newAura->GetAuraID() == auras[i]->GetAuraID()) {
 			if (newAura->IsUnique()) {
 				auras[i]->AddStack(user);
+				fctManager.AddAuraUnit(newAura->GetName(), newAura->IsBuff(), false);
 				return true;
 			}
 			else if (newAura->IsUniquePerActor() && auras[i]->GetUser() == user) {
 				auras[i]->AddStack(user);
+				fctManager.AddAuraUnit(newAura->GetName(), newAura->IsBuff(), false);
 				return true;
 			}
 		}
 	}
 
+	fctManager.AddAuraUnit(newAura->GetName(), newAura->IsBuff(), false);
 	auras.push_back(newAura);
 	return true;
 }
