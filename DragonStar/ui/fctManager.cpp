@@ -27,6 +27,7 @@ void FCTManager::Update(sf::Vector3i actorHexPos, float secondsPerUpdate) {
 		for (size_t i = fcts.size(); i-- > 0;) { // stops underflow bug leading to access violation crash
 			float x = actorPos.x - (fcts[i].Background.getGlobalBounds().width / 2);
 			float y = actorPos.y - boxHeight + 2.f;
+			float textWidth = fcts[i].Text.getGlobalBounds().width;
 
 			y -= fcts[i].Lifespan * velocity;
 			if (i != fcts.size() - 1) {
@@ -36,7 +37,10 @@ void FCTManager::Update(sf::Vector3i actorHexPos, float secondsPerUpdate) {
 
 			fcts[i].Background.setPosition(x, y);
 			fcts[i].Text.setPosition(x + 1.f, y);
-			// todo: element icons
+			
+			for (size_t j = 0; j < fcts[i].Icons.size(); j++) {
+				fcts[i].Icons[j].setPosition(x + 2.f + textWidth + (j * 17.f), y + 1.f);
+			}
 
 			fcts[i].Lifespan += secondsPerUpdate;
 		}
@@ -54,6 +58,9 @@ void FCTManager::Render(sf::RenderTarget& window) {
 	for (auto unit : fcts) {
 		window.draw(unit.Background);
 		window.draw(unit.Text);
+		for (auto s : unit.Icons) {
+			window.draw(s);
+		}
 	}
 }
 
@@ -90,13 +97,70 @@ void FCTManager::AddDamageHealUnit(int value, bool isCrit, std::vector<Element> 
 		s += std::to_string(value);
 	}
 
+	for (auto e : elements) {
+		sf::Sprite icon;
+		std::string filepath = "gfx/ui/icon/small_icon/";
+		switch (e) {
+		case Element::PHYSICAL:
+			filepath += "physical.png";
+			break;
+		case Element::ARCANE:
+			filepath += "arcane.png";
+			break;
+		case Element::FIRE:
+			filepath += "fire.png";
+			break;
+		case Element::ICE:
+			filepath += "ice.png";
+			break;
+		case Element::LIGHTNING:
+			filepath += "lightning.png";
+			break;
+		case Element::POISON:
+			filepath += "poison.png";
+			break;
+		case Element::WATER:
+			filepath += "water.png";
+			break;
+		case Element::WIND:
+			filepath += "wind.png";
+			break;
+		case Element::EARTH:
+			filepath += "earth.png";
+			break;
+		case Element::MIND:
+			filepath += "mind.png";
+			break;
+		case Element::LIGHT:
+			filepath += "light.png";
+			break;
+		case Element::DARK:
+			filepath += "dark.png";
+			break;
+		case Element::ASTRAL:
+			filepath += "astral.png";
+			break;
+		case Element::DIVINE_HEAL:
+			filepath += "divine.png";
+			break;
+		case Element::NATURE_HEAL:
+			filepath += "nature.png";
+			break;
+		default:
+			break;
+		}
+
+		icon.setTexture(*assetManager.LoadTexture(filepath));
+		unit.Icons.push_back(icon);
+	}
+
 	// Unit initilization.
 	unit.Text.setFont(*assetManager.LoadFont(settings.Font));
 	unit.Text.setCharacterSize(fontSize);
 	unit.Text.setString(s);
 
 	unit.Background.setFillColor(sf::Color(0, 0, 0, 192));
-	unit.Background.setSize(sf::Vector2f(unit.Text.getGlobalBounds().width + 3.f, boxHeight));
+	unit.Background.setSize(sf::Vector2f(unit.Text.getGlobalBounds().width + (unit.Icons.size() * 17.f) + 3.f, boxHeight));
 
 	fcts.push_back(unit);
 }
