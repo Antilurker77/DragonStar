@@ -14,7 +14,7 @@ class Au_ShadowEnergy : public Aura {
 public:
 	Au_ShadowEnergy();
 
-	void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult);
+	void OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
 
 	std::string GetDescription();
 };

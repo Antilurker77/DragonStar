@@ -53,9 +53,9 @@ Au_ShadowEnergy::Au_ShadowEnergy() {
 	removeAllStacksOnExpiration = false; // Determines whether all stacks or 1 stack are removed when aura expires
 }
 
-void Au_ShadowEnergy::OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult) {
+void Au_ShadowEnergy::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
 	auto c = eventOptions.Categories;
-	if (std::find(c.begin(), c.end(), Category::ATTACK) != c.end() && std::find(c.begin(), c.end(), Category::DIRECT) != c.end()) {
+	if (std::find(c.begin(), c.end(), Category::DIRECT) != c.end()) {
 		Combat::ScalingAttack(user, targetHit, 20.0, Attribute::INT, auraOptions);
 	}
 }

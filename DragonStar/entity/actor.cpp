@@ -512,12 +512,12 @@ void Actor::OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult ev
 		if (auraID != AuraID::UNDEFINED) {
 			AuraPtr weaponAura = Factory::CreateAura(auraID);
 			weaponAura->InitializeAura(getPtr(), getPtr());
-			weaponAura->OnHit(targetHit, eventOptions, eventResult);
+			weaponAura->OnHit(targetHit, eventOptions, eventResult, isOffHand);
 		}
 	}
 
 	for (auto au : auras) {
-		au->OnHit(targetHit, eventOptions, eventResult);
+		au->OnHit(targetHit, eventOptions, eventResult, isOffHand);
 	}
 }
 

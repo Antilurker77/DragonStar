@@ -43,6 +43,17 @@ public:
 
 	int GetArmor(bool consumeBuffs);
 
+	void OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions);
+	void OnPostCalc(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage);
+	void OnPreCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions);
+	void OnPostCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& damage);
+	void OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	void OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult);
+	void OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
+	void OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult);
+	void OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
+
 	bool IsDualWielding();
 	int GetAttackSpeed();
 	int GetAttackRange(bool consumeBuffs);

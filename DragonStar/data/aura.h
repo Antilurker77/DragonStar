@@ -119,8 +119,11 @@ public:
 	// Called when the user heals after combat calcs but right before healing.
 	virtual void OnPostCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& heal);
 
+	// Called when the user deals damage with a weapon attack.
+	virtual void OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+
 	// Called when the user deals damage.
-	virtual void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
 
 	// Called when the user heals someone.
 	virtual void OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult);
@@ -130,6 +133,9 @@ public:
 
 	// Called when the user is healed.
 	virtual void OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult);
+
+	// Called when the user is killed.
+	virtual void OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
 
 	// Called when the next tick is ready.
 	virtual void OnTick();

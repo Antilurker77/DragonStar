@@ -141,6 +141,46 @@ std::vector<AbilityID> EnemyInfo::GetAbilities() {
 	return abilities;
 }
 
+void EnemyInfo::OnPreCalc(ActorPtr& user, ActorPtr& targetHit, EventOptions& eventOptions) {
+
+}
+
+void EnemyInfo::OnPostCalc(ActorPtr& user, ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
+
+}
+
+void EnemyInfo::OnPreCalcHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions& eventOptions) {
+
+}
+
+void EnemyInfo::OnPostCalcHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
+
+}
+
+void EnemyInfo::OnAttack(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+
+}
+
+void EnemyInfo::OnHit(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+
+}
+
+void EnemyInfo::OnHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
+void EnemyInfo::OnAttacked(ActorPtr& user, ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
+void EnemyInfo::OnHealed(ActorPtr& user, ActorPtr& healer, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
+void EnemyInfo::OnDeath(ActorPtr& user, ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
 std::pair<sf::Vector3i, size_t> EnemyInfo::ExecuteAI(ActorPtr& user, BattleScene& battleScene) {
 	return std::pair<sf::Vector3i, size_t>(sf::Vector3i(-1, -1, -1), 50);
 }

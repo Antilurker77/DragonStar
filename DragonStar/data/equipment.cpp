@@ -311,6 +311,47 @@ void Equipment::RollStatMods(ItemQuality quality, uint64_t seed) {
 	}
 }
 
+void Equipment::OnPreCalc(ActorPtr& user, ActorPtr& targetHit, EventOptions& eventOptions) {
+
+}
+
+void Equipment::OnPostCalc(ActorPtr& user, ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
+
+}
+
+void Equipment::OnPreCalcHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions& eventOptions) {
+
+}
+
+void Equipment::OnPostCalcHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
+
+}
+
+void Equipment::OnAttack(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+
+}
+
+void Equipment::OnHit(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+
+}
+
+void Equipment::OnHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
+void Equipment::OnAttacked(ActorPtr& user, ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
+void Equipment::OnHealed(ActorPtr& user, ActorPtr& healer, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
+void Equipment::OnDeath(ActorPtr& user, ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
+
+}
+
+
 int Equipment::howManyStatMods(std::mt19937_64& mt) {
 	switch (itemQuality) {
 	case ItemQuality::COMMON:

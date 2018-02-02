@@ -418,6 +418,101 @@ int Enemy::GetArmor(bool consumeBuffs) {
 	return armor;
 }
 
+void Enemy::OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions) {
+	for (auto au : auras) {
+		au->OnPreCalc(targetHit, eventOptions);
+	}
+
+	enemyInfo->OnPreCalc(getPtr(), targetHit, eventOptions);
+}
+
+void Enemy::OnPostCalc(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
+	for (auto au : auras) {
+		au->OnPostCalc(targetHit, eventOptions, eventResult, damage);
+	}
+
+	enemyInfo->OnPostCalc(getPtr(), targetHit, eventOptions, eventResult, damage);
+}
+
+void Enemy::OnPreCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions) {
+	for (auto au : auras) {
+		au->OnPreCalcHeal(targetHealed, eventOptions);
+	}
+
+	enemyInfo->OnPreCalcHeal(getPtr(), targetHealed, eventOptions);
+}
+
+void Enemy::OnPostCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& heal) {
+	for (auto au : auras) {
+		au->OnPostCalcHeal(targetHealed, eventOptions, eventResult, heal);
+	}
+
+	enemyInfo->OnPostCalcHeal(getPtr(), targetHealed, eventOptions, eventResult, heal);
+}
+
+void Enemy::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+	EventOptions eventOptionsLocal;
+	eventOptionsLocal.AbilityID = AbilityID::UNDEFINED;
+	eventOptionsLocal.AuraID = AuraID::UNDEFINED;
+	eventOptionsLocal.Categories = { Category::DAMAGING };
+	eventOptionsLocal.TriggerOnHit = false;
+
+	for (auto au : auras) {
+		au->OnAttack(targetHit, eventOptions, eventResult, isOffHand);
+	}
+
+	enemyInfo->OnAttack(getPtr(), targetHit, eventOptions, eventResult, isOffHand);
+
+	std::vector<StatMod> statMods;
+	statMods = GetOnHitDamage(eventOptions, true, isOffHand);
+
+	for (auto sm : statMods) {
+		eventOptionsLocal.Elements = sm.GetOnHitElements();
+		EventResult eventResultLocal = Combat::OnHit(getPtr(), targetHit, sm.GetValue(), eventOptionsLocal);
+		eventResult.OnAttackValue += eventResultLocal.ResultValue;
+	}
+}
+
+void Enemy::OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+	for (auto au : auras) {
+		au->OnHit(targetHit, eventOptions, eventResult, isOffHand);
+	}
+
+	enemyInfo->OnHit(getPtr(), targetHit, eventOptions, eventResult, isOffHand);
+}
+
+void Enemy::OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult) {
+	for (auto au : auras) {
+		au->OnHeal(targetHealed, eventOptions, eventResult);
+	}
+
+	enemyInfo->OnHeal(getPtr(), targetHealed, eventOptions, eventResult);
+}
+
+void Enemy::OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
+	for (auto au : auras) {
+		au->OnAttacked(attacker, eventOptions, eventResult);
+	}
+
+	enemyInfo->OnAttacked(getPtr(), attacker, eventOptions, eventResult);
+}
+
+void Enemy::OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult) {
+	for (auto au : auras) {
+		au->OnHealed(healer, eventOptions, eventResult);
+	}
+
+	enemyInfo->OnHealed(getPtr(), healer, eventOptions, eventResult);
+}
+
+void Enemy::OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
+	for (auto au : auras) {
+		au->OnDeath(attacker, eventOptions, eventResult);
+	}
+
+	enemyInfo->OnDeath(getPtr(), attacker, eventOptions, eventResult);
+}
+
 bool Enemy::IsDualWielding() {
 	if (enemyInfo->GetOffHandAttackType() == EquipType::NONE) {
 		return false;

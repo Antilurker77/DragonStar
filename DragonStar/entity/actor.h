@@ -188,28 +188,34 @@ public:
 	std::vector<AuraPtr> GetDebuffAuras();
 
 	// Triggers events that are used before combat calculations.
-	void OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions);
+	virtual void OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions) = 0;
 
 	// Triggers events that are used after combat calculations but before damage is dealt.
-	void OnPostCalc(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage);
+	virtual void OnPostCalc(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& damage) = 0;
 
 	// Triggers events that are used before healing combat calculations.
-	void OnPreCalcHeal(ActorPtr& targetHit, EventOptions& eventOptions);
+	virtual void OnPreCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions) = 0;
 
 	// Triggers events that are used after healing combat calculations but before healing is dealt.
-	void OnPostCalcHeal(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& heal);
+	virtual void OnPostCalcHeal(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& heal) = 0;
 
-	// Triggers events that happen when the actor hits something. Also triggers on-hit stat mods.
-	void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	// Triggers events that happen when the actor hits something with a weapon. Triggers on-hit stat mods.
+	virtual void OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) = 0;
+
+	// Triggers events that happen when the actor hits something.
+	virtual void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) = 0;
 
 	// Triggers events that happen when the actor heals something. Also triggers on-heal stat mods.
-	void OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult) = 0;
 
 	// Triggers events that happen when the actor takes damage.
-	void OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) = 0;
 
 	// Triggers events that happen when the actor is healed.
-	void OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult) = 0;
+
+	// Triggers events that happen when the actor dies.
+	virtual void OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) = 0;
 
 	// Removes expired auras from the actor.
 	void RemoveExpiredAuras();

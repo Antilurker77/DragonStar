@@ -261,7 +261,11 @@ void Aura::OnPostCalcHeal(ActorPtr & targetHealed, EventOptions & eventOptions, 
 
 }
 
-void Aura::OnHit(ActorPtr & targetHit, EventOptions eventOptions, EventResult eventResult){
+void Aura::OnAttack(ActorPtr & targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+
+}
+
+void Aura::OnHit(ActorPtr & targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand){
 
 }
 
@@ -274,6 +278,10 @@ void Aura::OnAttacked(ActorPtr & attacker, EventOptions eventOptions, EventResul
 }
 
 void Aura::OnHealed(ActorPtr & healer, EventOptions eventOptions, EventResult eventResult){
+
+}
+
+void Aura::OnDeath(ActorPtr & attacker, EventOptions eventOptions, EventResult eventResult) {
 
 }
 
