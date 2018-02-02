@@ -44,6 +44,9 @@ namespace ActorFilter {
 	// Filters actors who's attribute percent is greater than or equal to a given value.
 	std::vector<ActorPtr> AttributeGreaterThan(std::vector<ActorPtr>& actors, Attribute attribute, double percent);
 
+	// Sorts actors by armor (greatest in front). Can return all actors or the X lowest.
+	std::vector<ActorPtr> SortByArmor(std::vector<ActorPtr>& actors, size_t maxNumOfActors = 1);
+
 	// Returns actors that have the specified aura.
 	std::vector<ActorPtr> HasAura(std::vector<ActorPtr>& actors, AuraID auraID, int stackCount = 1);
 

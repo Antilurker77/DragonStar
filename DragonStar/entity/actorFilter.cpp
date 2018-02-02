@@ -100,6 +100,20 @@ std::vector<ActorPtr> ActorFilter::AttributeGreaterThan(std::vector<ActorPtr>& a
 	return results;
 }
 
+std::vector<ActorPtr> ActorFilter::SortByArmor(std::vector<ActorPtr>& actors, size_t maxNumOfActors) {
+	std::vector<ActorPtr> results = actors;
+	maxNumOfActors = std::min(maxNumOfActors, actors.size());
+
+	auto armorSort = [](ActorPtr& x, ActorPtr& y) {
+		return x->GetArmor(false) > y->GetArmor(false);
+	};
+
+	std::sort(results.begin(), results.end(), armorSort);
+	results.resize(maxNumOfActors);
+
+	return results;
+}
+
 std::vector<ActorPtr> ActorFilter::HasAura(std::vector<ActorPtr>& actors, AuraID auraID, int stackCount) {
 	std::vector<ActorPtr> results;
 
