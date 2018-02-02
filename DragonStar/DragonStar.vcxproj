@@ -123,6 +123,7 @@
     <ClCompile Include="data\ability\cpp\ab_heal.cpp" />
     <ClCompile Include="data\ability\cpp\ab_magicMissile.cpp" />
     <ClCompile Include="data\ability\cpp\ab_rendingSlash.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_shadowStalk.cpp" />
     <ClCompile Include="data\ability\cpp\ab_shock.cpp" />
     <ClCompile Include="data\ability\cpp\ab_splash.cpp" />
     <ClCompile Include="data\ability\cpp\ab_terrifyingHowl.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="data\ability\header\ab_heal.h" />
     <ClInclude Include="data\ability\header\ab_magicMissile.h" />
     <ClInclude Include="data\ability\header\ab_rendingSlash.h" />
+    <ClInclude Include="data\ability\header\ab_shadowStalk.h" />
     <ClInclude Include="data\ability\header\ab_shock.h" />
     <ClInclude Include="data\ability\header\ab_splash.h" />
     <ClInclude Include="data\ability\header\ab_terrifyingHowl.h" />

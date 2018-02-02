@@ -29,6 +29,7 @@
 #include "ab_prismaticBolt.h"
 #include "ab_rendingSlash.h"
 #include "ab_shadowEnergy.h"
+#include "ab_shadowStalk.h"
 #include "ab_shock.h"
 #include "ab_splash.h"
 #include "ab_terrifyingHowl.h"
