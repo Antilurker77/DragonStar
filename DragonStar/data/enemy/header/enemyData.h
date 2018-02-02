@@ -11,6 +11,7 @@
 #include "en_arcaneSentry.h"
 #include "en_fenrok.h"
 #include "en_giantRat.h"
+#include "en_shadowStalker.h"
 #include "en_targetDummy.h"
 #include "en_testAssassin.h"
 #include "en_testEnemy.h"

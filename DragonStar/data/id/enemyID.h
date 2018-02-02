@@ -19,6 +19,7 @@ enum class EnemyID {
 
 	ARCANE_SENTRY,
 	GIANT_RAT,
+	SHADOW_STALKER,
 	TARGET_DUMMY,
 
 	// Unique
