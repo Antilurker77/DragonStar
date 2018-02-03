@@ -39,7 +39,7 @@ void FCTManager::Update(sf::Vector3i actorHexPos, float secondsPerUpdate) {
 			fcts[i].Text.setPosition(x + 1.f, y);
 			
 			for (size_t j = 0; j < fcts[i].Icons.size(); j++) {
-				fcts[i].Icons[j].setPosition(x + 2.f + textWidth + (j * 17.f), y + 1.f);
+				fcts[i].Icons[j].setPosition(x + 3.f + textWidth + (j * 17.f), y + 1.f);
 			}
 
 			fcts[i].Lifespan += secondsPerUpdate;
