@@ -15,9 +15,12 @@ std::vector<FormationWeight> Weight::GetCommonFaWeights(int tier) {
 	switch (tier) {
 	case 1:
 		return {
+			{ FormationID::FLAMEBLADES_STALKERS_FIELD, 0.75 },
+			{ FormationID::LESSER_FLAMEBLADES_FIELD, 1.0 },
 			{ FormationID::SENTRY_AMBUSH, 1.0 },
 			{ FormationID::SEWER_RATS, 0.5 },
-			{ FormationID::SEWER_RATS_INTERSECTION, 1.0 }
+			{ FormationID::SEWER_RATS_INTERSECTION, 1.0 },
+			{ FormationID::SHADOW_STALKERS_FIELD, 1.0 }
 		};
 	default:
 		return {

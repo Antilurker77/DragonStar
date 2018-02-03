@@ -10,6 +10,16 @@
 
 #include "../../formation.h"
 
+class Fa_FlamebladesStalkersField : public Formation {
+public:
+	Fa_FlamebladesStalkersField();
+};
+
+class Fa_LesserFlamebladesField : public Formation {
+public:
+	Fa_LesserFlamebladesField();
+};
+
 class Fa_SentryAmbush : public Formation {
 public:
 	Fa_SentryAmbush();
@@ -23,4 +33,9 @@ public:
 class Fa_SewerRatsIntersection : public Formation {
 public:
 	Fa_SewerRatsIntersection();
+};
+
+class Fa_ShadowStalkersField : public Formation {
+public:
+	Fa_ShadowStalkersField();
 };

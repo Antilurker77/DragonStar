@@ -115,9 +115,12 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 	// Common
 	case FormationID::TEST_FORMATION_A:					return FormationPtr(std::make_shared<Fa_TestFormationA>());
 	case FormationID::TEST_FORMATION_B:					return FormationPtr(std::make_shared<Fa_TestFormationB>());
+	case FormationID::FLAMEBLADES_STALKERS_FIELD:		return FormationPtr(std::make_shared<Fa_FlamebladesStalkersField>());
+	case FormationID::LESSER_FLAMEBLADES_FIELD:			return FormationPtr(std::make_shared<Fa_LesserFlamebladesField>());
 	case FormationID::SENTRY_AMBUSH:					return FormationPtr(std::make_shared<Fa_SentryAmbush>());
 	case FormationID::SEWER_RATS:						return FormationPtr(std::make_shared<Fa_SewerRats>());
 	case FormationID::SEWER_RATS_INTERSECTION:			return FormationPtr(std::make_shared<Fa_SewerRatsIntersection>());
+	case FormationID::SHADOW_STALKERS_FIELD:			return FormationPtr(std::make_shared<Fa_ShadowStalkersField>());
 
 	// Unique
 	case FormationID::TEST_UNIQUE:						return FormationPtr(std::make_shared<Fa_TestUnique>());
