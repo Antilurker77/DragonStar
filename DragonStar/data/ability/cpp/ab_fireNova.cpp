@@ -42,6 +42,8 @@ Ab_FireNova::Ab_FireNova() {
 	mpCost = 25;
 	cooldown = 1000;
 
+	targetOutsideCursor = true;
+
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 

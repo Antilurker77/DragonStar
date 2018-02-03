@@ -75,7 +75,7 @@ Idea En_ShadowStalker::ExecuteAI(ActorPtr& user, BattleScene& world) {
 	if (!players.empty()) {
 		// Shadow Stalk
 		if (user->IsAbilityAvailable(1)) {
-			players = ActorFilter::Reachable(players, user, world, 5, false, false);
+			players = ActorFilter::Reachable(players, user, world, 5, false, true);
 
 			ActorVector teleportTargets;
 			for (auto p : players) {

@@ -36,18 +36,20 @@ Ab_ShadowStalk::Ab_ShadowStalk() {
 	};
 
 	elements = {
-		Element::ARCANE
+		Element::DARK
 	};
 
 	mpCost = 40;
 	spCost = 60;
 	cooldown = 1500;
 	range = 5;
+	aiSearchRange = range;
 	useAttackRange = false;
 
 	usage = UseType::INSTANT;
 
 	requireTargetsInArea = true;
+	ignoreBodyBlock = true;
 }
 
 std::vector<sf::Vector3i> Ab_ShadowStalk::GetTargetArea(sf::Vector3i selectedTile) {

@@ -48,6 +48,7 @@ Ab_WarpSlice::Ab_WarpSlice() {
 	usage = UseType::INSTANT;
 
 	requireTargetsInArea = true;
+	ignoreBodyBlock = true;
 }
 
 std::vector<sf::Vector3i> Ab_WarpSlice::GetTargetArea(sf::Vector3i selectedTile) {
