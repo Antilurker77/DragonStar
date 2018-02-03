@@ -37,7 +37,7 @@ Ab_FireNova::Ab_FireNova() {
 	elements = { Element::FIRE };
 
 	castTime = 100;
-	range = 0;
+	range = 1;
 	aiSearchRange = 1;
 	mpCost = 25;
 	cooldown = 1000;

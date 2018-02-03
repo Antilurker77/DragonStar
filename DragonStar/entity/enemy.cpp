@@ -87,16 +87,6 @@ CommandPtr Enemy::CalcAICommand(BattleScene& battleScene)
 		}
 	}
 	else {
-		// for abilities that have a range of 0 (ex. Fire Nova)
-		if (tilesInRange.empty()) {
-			std::vector<sf::Vector3i> aoe = abilities[idea.second]->GetTargetArea(GetHexPosition());
-			if (std::find(aoe.begin(), aoe.end(), idea.first) != aoe.end()) {
-				aiTime = aiClock.restart();
-				//messageLog.AddMessage(name + " LV" + std::to_string(level) + " " + std::to_string(aiTime.asSeconds() * 1000.f) + "ms");
-				return CommandPtr(std::make_shared<AbilityCommand>(idea.second, battleScene, GetHexPosition()));
-			}
-		}
-		
 		for (auto tile : tilesInRange) {
 			std::vector<sf::Vector3i> aoe = abilities[idea.second]->GetTargetArea(tile);
 			if (std::find(aoe.begin(), aoe.end(), idea.first) != aoe.end()) {
@@ -130,7 +120,7 @@ CommandPtr Enemy::CalcAICommand(BattleScene& battleScene)
 				if (ignoreLineOfSight == true || battleScene.InLineOfSight(tile, idea.first, false, ignoreBodyBlock)) {
 					if (abilities[idea.second]->CanTargetOutsideCursor() == true) {
 						this->MoveToHex(tile);
-						tilesInRange = abilities[idea.second]->GetTargetRange();
+						tilesInRange = abilities[idea.second]->GetTargetRange();					
 						for (auto tile2 : tilesInRange) {
 							std::vector<sf::Vector3i> aoe = abilities[idea.second]->GetTargetArea(tile2);
 							if (std::find(aoe.begin(), aoe.end(), idea.first) != aoe.end()) {
