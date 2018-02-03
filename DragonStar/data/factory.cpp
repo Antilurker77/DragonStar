@@ -97,6 +97,8 @@ EnemyInfoPtr Factory::CreateEnemyInfo(EnemyID id) {
 	case EnemyID::TEST_MAGE:							return EnemyInfoPtr(std::make_shared<En_TestMage>());
 	case EnemyID::ARCANE_SENTRY:						return EnemyInfoPtr(std::make_shared<En_ArcaneSentry>());
 	case EnemyID::GIANT_RAT:							return EnemyInfoPtr(std::make_shared<En_GiantRat>());
+	case EnemyID::LESSER_FLAMEBLADE:					return EnemyInfoPtr(std::make_shared<En_LesserFlameblade>());
+	case EnemyID::SHADOW_STALKER:						return EnemyInfoPtr(std::make_shared<En_ShadowStalker>());
 	case EnemyID::TARGET_DUMMY:							return EnemyInfoPtr(std::make_shared<En_TargetDummy>());
 
 	// Unique
