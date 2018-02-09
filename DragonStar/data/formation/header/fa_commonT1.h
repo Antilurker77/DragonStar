@@ -30,6 +30,16 @@ public:
 	Fa_SewerRats();
 };
 
+class Fa_SewerRatsSlimes : public Formation {
+public:
+	Fa_SewerRatsSlimes();
+};
+
+class Fa_SewerSlimes : public Formation {
+public:
+	Fa_SewerSlimes();
+};
+
 class Fa_SewerRatsIntersection : public Formation {
 public:
 	Fa_SewerRatsIntersection();

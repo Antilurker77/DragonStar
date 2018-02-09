@@ -94,6 +94,49 @@ Fa_SewerRats::Fa_SewerRats() {
 	};
 }
 
+Fa_SewerRatsSlimes::Fa_SewerRatsSlimes() {
+	name = "Oozing Sewer Rats";
+	isUnique = false;
+	isBoss = false;
+	mapID = MapID::FIELD_SEWER_INTERSECTION;
+	startingLocations = {
+		sf::Vector2i(0, 1),
+		sf::Vector2i(-1, 1),
+		sf::Vector2i(1, 0),
+		sf::Vector2i(-1, 2),
+		sf::Vector2i(1, 1),
+		sf::Vector2i(0, 2)
+	};
+	enemies = {
+		{ EnemyID::GIANT_RAT, 0, { 0, -2 } },
+		{ EnemyID::GIANT_RAT, 0, { -2, -1 } },
+		{ EnemyID::GIANT_RAT, 0, { 2, -3 } },
+		{ EnemyID::SLIME, 0, { -1, -2 } },
+		{ EnemyID::SLIME, 0, { 1, -3 } }
+	};
+}
+
+Fa_SewerSlimes::Fa_SewerSlimes() {
+	name = "Sewer Slimes";
+	isUnique = false;
+	isBoss = false;
+	mapID = MapID::FIELD_SEWER_INTERSECTION;
+	startingLocations = {
+		sf::Vector2i(0, 1),
+		sf::Vector2i(-1, 1),
+		sf::Vector2i(1, 0),
+		sf::Vector2i(-1, 2),
+		sf::Vector2i(1, 1),
+		sf::Vector2i(0, 2)
+	};
+	enemies = {
+		{ EnemyID::SLIME, 0,{ -2, -1 } },
+		{ EnemyID::SLIME, 0, { 2, -3 } },
+		{ EnemyID::SLIME, 0, { -1, -2 } },
+		{ EnemyID::SLIME, 0, { 1, -3 } }
+	};
+}
+
 Fa_SewerRatsIntersection::Fa_SewerRatsIntersection() {
 	name = "Sewer Rats";
 	isUnique = false;
