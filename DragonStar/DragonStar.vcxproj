@@ -141,6 +141,7 @@
     <ClCompile Include="data\aura\cpp\au_prismaticBolt.cpp" />
     <ClCompile Include="data\aura\cpp\au_rendingSlash.cpp" />
     <ClCompile Include="data\aura\cpp\au_shadowEnergy.cpp" />
+    <ClCompile Include="data\aura\cpp\au_slimeTouch.cpp" />
     <ClCompile Include="data\aura\cpp\au_terrifyingHowl.cpp" />
     <ClCompile Include="data\aura\cpp\au_venom.cpp" />
     <ClCompile Include="data\enemyInfo.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="data\enemy\cpp\en_arcaneSentry.cpp" />
     <ClCompile Include="data\enemy\cpp\en_lesserFlameblade.cpp" />
     <ClCompile Include="data\enemy\cpp\en_shadowStalker.cpp" />
+    <ClCompile Include="data\enemy\cpp\en_slime.cpp" />
     <ClCompile Include="data\enemy\cpp\en_targetDummy.cpp" />
     <ClCompile Include="data\enemy\cpp\en_testAssassin.cpp" />
     <ClCompile Include="data\enemy\cpp\en_testEnemy.cpp" />
@@ -301,6 +303,7 @@
     <ClInclude Include="data\aura\header\au_prismaticBolt.h" />
     <ClInclude Include="data\aura\header\au_rendingSlash.h" />
     <ClInclude Include="data\aura\header\au_shadowEnergy.h" />
+    <ClInclude Include="data\aura\header\au_slimeTouch.h" />
     <ClInclude Include="data\aura\header\au_terrifyingHowl.h" />
     <ClInclude Include="data\aura\header\au_venom.h" />
     <ClInclude Include="data\enemy\header\en_arcaneSentry.h" />
@@ -308,6 +311,7 @@
     <ClInclude Include="data\enemy\header\en_giantRat.h" />
     <ClInclude Include="data\enemy\header\en_lesserFlameblade.h" />
     <ClInclude Include="data\enemy\header\en_shadowStalker.h" />
+    <ClInclude Include="data\enemy\header\en_slime.h" />
     <ClInclude Include="data\enemy\header\en_targetDummy.h" />
     <ClInclude Include="data\enemy\header\en_testAssassin.h" />
     <ClInclude Include="data\enemy\header\en_testMage.h" />

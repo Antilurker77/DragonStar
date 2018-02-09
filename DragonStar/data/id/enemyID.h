@@ -21,6 +21,7 @@ enum class EnemyID {
 	GIANT_RAT,
 	LESSER_FLAMEBLADE,
 	SHADOW_STALKER,
+	SLIME,
 	TARGET_DUMMY,
 
 	// Unique

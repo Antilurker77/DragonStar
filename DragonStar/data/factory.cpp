@@ -81,6 +81,7 @@ AuraPtr Factory::CreateAura(AuraID id) {
 	case AuraID::PRISMATIC_BOLT:						return AuraPtr(std::make_shared<Au_PrismaticBolt>());
 	case AuraID::RENDING_SLASH:							return AuraPtr(std::make_shared<Au_RendingSlash>());
 	case AuraID::SHADOW_ENERGY:							return AuraPtr(std::make_shared<Au_ShadowEnergy>());
+	case AuraID::SLIME_TOUCH:							return AuraPtr(std::make_shared<Au_SlimeTouch>());
 	case AuraID::TERRIFYING_HOWL:						return AuraPtr(std::make_shared<Au_TerrifyingHowl>());
 	case AuraID::VENOM:									return AuraPtr(std::make_shared<Au_Venom>());
 
@@ -99,6 +100,7 @@ EnemyInfoPtr Factory::CreateEnemyInfo(EnemyID id) {
 	case EnemyID::GIANT_RAT:							return EnemyInfoPtr(std::make_shared<En_GiantRat>());
 	case EnemyID::LESSER_FLAMEBLADE:					return EnemyInfoPtr(std::make_shared<En_LesserFlameblade>());
 	case EnemyID::SHADOW_STALKER:						return EnemyInfoPtr(std::make_shared<En_ShadowStalker>());
+	case EnemyID::SLIME:								return EnemyInfoPtr(std::make_shared<En_Slime>());
 	case EnemyID::TARGET_DUMMY:							return EnemyInfoPtr(std::make_shared<En_TargetDummy>());
 
 	// Unique

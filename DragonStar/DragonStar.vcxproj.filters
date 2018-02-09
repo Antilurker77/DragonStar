@@ -477,6 +477,12 @@
     <ClCompile Include="data\enemy\cpp\en_lesserFlameblade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\aura\cpp\au_slimeTouch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\enemy\cpp\en_slime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -1032,6 +1038,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\enemy\header\en_lesserFlameblade.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\aura\header\au_slimeTouch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\enemy\header\en_slime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
