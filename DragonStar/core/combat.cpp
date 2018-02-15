@@ -343,7 +343,7 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 
 			outputDamage(user, target, eventOptions, eventResult);
 
-			if (target->GetCurrentHP() == 0) {
+			if (target->GetCurrentHP() == 0 && eventResult.ResultValue > 0) {
 				eventResult.DidKill = true;
 				target->OnDeath(user, eventOptions, eventResult);
 			}
@@ -444,7 +444,7 @@ EventResult Combat::ScalingAttack(ActorPtr& user, ActorPtr& target, double baseD
 	outputDamage(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
-	if (eventResult.DidKill) {
+	if (eventResult.DidKill && eventResult.ResultValue > 0) {
 		target->OnDeath(user, eventOptions, eventResult);
 	}
 
@@ -491,7 +491,7 @@ EventResult Combat::FixedAttack(ActorPtr& user, ActorPtr& target, double baseDam
 	outputDamage(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
-	if (eventResult.DidKill) {
+	if (eventResult.DidKill && eventResult.ResultValue > 0) {
 		target->OnDeath(user, eventOptions, eventResult);
 	}
 
@@ -522,7 +522,7 @@ EventResult Combat::AbsoluteAttack(ActorPtr& user, ActorPtr& target, double base
 	outputDamage(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
-	if (eventResult.DidKill) {
+	if (eventResult.DidKill && eventResult.ResultValue > 0) {
 		target->OnDeath(user, eventOptions, eventResult);
 	}
 
@@ -583,7 +583,7 @@ EventResult Combat::OnHeal(ActorPtr& user, ActorPtr& target, double healAmount, 
 	eventResult.ResultValue = target->HealActor(heal, eventOptions.Elements, Attribute::HP, eventResult.DidCrit);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
-	if (eventResult.DidKill) {
+	if (eventResult.DidKill && eventResult.ResultValue > 0) {
 		target->OnDeath(user, eventOptions, eventResult);
 	}
 
@@ -631,7 +631,7 @@ EventResult Combat::ScalingHeal(ActorPtr& user, ActorPtr& target, double healAmo
 	outputHealing(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
-	if (eventResult.DidKill) {
+	if (eventResult.DidKill && eventResult.ResultValue > 0) {
 		target->OnDeath(user, eventOptions, eventResult);
 	}
 
@@ -676,7 +676,7 @@ EventResult Combat::FixedHeal(ActorPtr& user, ActorPtr& target, double healAmoun
 	outputHealing(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
-	if (eventResult.DidKill) {
+	if (eventResult.DidKill && eventResult.ResultValue > 0) {
 		target->OnDeath(user, eventOptions, eventResult);
 	}
 	eventResult.DidEvent = true;
@@ -705,7 +705,7 @@ EventResult Combat::AbsoluteHeal(ActorPtr& user, ActorPtr& target, double healAm
 	outputHealing(user, target, eventOptions, eventResult);
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
-	if (eventResult.DidKill) {
+	if (eventResult.DidKill && eventResult.ResultValue > 0) {
 		target->OnDeath(user, eventOptions, eventResult);
 	}
 
