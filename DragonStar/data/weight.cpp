@@ -278,6 +278,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 		case 1:
 			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
 			weights.push_back({ AbilityID::RENDING_SLASH, 1.00 });
+			weights.push_back({ AbilityID::CHOPPER, 1.00 });
 			break;
 		case 2:
 			break;
