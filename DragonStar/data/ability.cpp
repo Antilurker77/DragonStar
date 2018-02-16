@@ -430,7 +430,7 @@ bool Ability::customExecuteCondition(std::vector<ActorPtr>& targets, sf::Vector3
 bool Ability::doubleStrike(ActorPtr& target) {
 	if (canDoubleStrike) {
 		EventResult eventResult;
-		double doubleStrikeChance = bonusDoubleStrike;
+		double doubleStrikeChance = bonusDoubleStrike + user->GetDoubleStrikeChance(abilityOptions, true);
 		eventResult.DidDoubleStrike = doubleStrikeChance > 0.0 && doubleStrikeChance >= Random::RandDouble(0.0, 1.0);
 
 		// Double strikes can't trigger additional double strikes.
@@ -441,7 +441,7 @@ bool Ability::doubleStrike(ActorPtr& target) {
 			dsEventOptions.CanCrit = true;
 			dsEventOptions.CanDodge = true;
 			dsEventOptions.CanDoubleStrike = false;
-			dsEventOptions.EventName = "double strike";
+			dsEventOptions.EventName = "Double Strike";
 
 			const double doubleStrikeDamage = 1.0;
 
