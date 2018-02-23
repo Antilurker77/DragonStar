@@ -1,10 +1,10 @@
 // ==================================
 //
-// eq_ironSpear.cpp
+// eq_spear.cpp
 //
 // ==================================
 
-#include "../header/eq_ironSpear.h"
+#include "../header/eq_spear.h"
 
 #include "../../id/abilityID.h"
 #include "../../id/auraID.h"

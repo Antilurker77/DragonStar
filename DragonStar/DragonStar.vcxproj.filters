@@ -144,12 +144,6 @@
     <ClCompile Include="data\equipment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="data\equipment\cpp\eq_omegaRing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="data\equipment\cpp\eq_ironSpear.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ui\abilityBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -486,6 +480,9 @@
     <ClCompile Include="data\ability\cpp\ab_chopper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\equipment\cpp\eq_spear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -639,12 +636,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\equipment\header\equipmentData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="data\equipment\header\eq_omegaRing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="data\equipment\header\eq_ironSpear.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ui\abilityBar.h">
@@ -1050,6 +1041,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_chopper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\equipment\header\eq_spear.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

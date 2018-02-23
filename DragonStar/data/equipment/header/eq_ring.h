@@ -24,3 +24,8 @@ class Eq_DragoniteRing : public Equipment {
 public:
 	Eq_DragoniteRing();
 };
+
+class Eq_OmegaRing : public Equipment {
+public:
+	Eq_OmegaRing();
+};

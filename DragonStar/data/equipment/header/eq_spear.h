@@ -1,8 +1,8 @@
 // ==================================
 //
-// eq_omegaRing.h
+// eq_spear.h
 //
-// Data for Omega Ring equipment.
+// Data for spear equipment.
 //
 // ==================================
 
@@ -10,7 +10,7 @@
 
 #include "../../equipment.h"
 
-class Eq_OmegaRing : public Equipment {
+class Eq_IronSpear : public Equipment {
 public:
-	Eq_OmegaRing();
+	Eq_IronSpear();
 };
