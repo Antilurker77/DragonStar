@@ -66,6 +66,28 @@ Eq_DragoniteRing::Eq_DragoniteRing() {
 	statMods = {};
 }
 
+Eq_RingOfVitality::Eq_RingOfVitality() {
+	name = "Ring of Vitality";
+	iconFilepath = "ring.png";
+	itemQuality = ItemQuality::UNIQUE;
+	weight = 1;
+	tier = 1;
+
+	textureFilepath = "ring_of_vitality.png";
+	equipType = EquipType::RING;
+	equipmentID = EquipmentID::RING_OF_VITALITY;
+
+	equipPower = 0;
+	blockChance = 0.0;
+	attackSpeed = 0.0;
+	statMods = {
+		StatMod(StatModType::HP, 45.0),
+		StatMod(StatModType::HP_REGEN, 5.0),
+		StatMod(StatModType::VIT, 20.0),
+		StatMod(StatModType::RESISTANCE, 0.05, { Category::ANY }, { Element::PHYSICAL })
+	};
+}
+
 Eq_OmegaRing::Eq_OmegaRing() {
 	name = "Omega Ring";
 	iconFilepath = "ring.png";

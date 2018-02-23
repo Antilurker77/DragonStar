@@ -300,6 +300,7 @@ enum class EquipmentID {
 	DRAGONITE_RING,
 
 	// Unique Ring
+	RING_OF_VITALITY,
 	OMEGA_RING,
 
 	// Trinket

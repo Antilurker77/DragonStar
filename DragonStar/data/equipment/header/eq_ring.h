@@ -25,6 +25,11 @@ public:
 	Eq_DragoniteRing();
 };
 
+class Eq_RingOfVitality : public Equipment {
+public:
+	Eq_RingOfVitality();
+};
+
 class Eq_OmegaRing : public Equipment {
 public:
 	Eq_OmegaRing();
