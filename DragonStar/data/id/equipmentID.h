@@ -293,6 +293,7 @@ enum class EquipmentID {
 	DRAGONITE_NECKLACE,
 
 	// Unique Necklace
+	AMULET_OF_DIVINE_LIGHT,
 
 	// Generic Ring
 	SILVER_RING,

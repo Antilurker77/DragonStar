@@ -24,3 +24,8 @@ class Eq_DragoniteNecklace : public Equipment {
 public:
 	Eq_DragoniteNecklace();
 };
+
+class Eq_AmuletOfDivineLight : public Equipment {
+public:
+	Eq_AmuletOfDivineLight();
+};
