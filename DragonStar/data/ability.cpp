@@ -250,13 +250,25 @@ int Ability::GetCastTime(bool consumeBuffs) {
 }
 
 int Ability::GetMPCost() {
-	// todo: resource cost reduction
-	return mpCost;
+	double mp = mpCost;
+
+	if (user != nullptr) {
+		mp *= 1.0 - user->GetMPCostReduction(abilityOptions, false);
+		mp = std::max(0.0, std::ceil(mp));
+	}
+
+	return (int)mp;
 }
 
 int Ability::GetSPCost() {
-	// todo: resource cost reduction
-	return spCost;
+	double sp = spCost;
+
+	if (user != nullptr) {
+		sp *= 1.0 - user->GetSPCostReduction(abilityOptions, false);
+		sp = std::max(0.0, std::ceil(sp));
+	}
+
+	return (int)sp;
 }
 
 int Ability::GetCooldown() {
@@ -369,10 +381,28 @@ void Ability::setAbilityOptions() {
 }
 
 void Ability::consumeResources() {
-	// todo: get resource cost reduction
-	user->SpendResource(Attribute::HP, hpCost);
-	user->SpendResource(Attribute::MP, mpCost);
-	user->SpendResource(Attribute::SP, spCost);
+	double hp = hpCost;
+	double mp = mpCost;
+	double sp = spCost;
+
+	// Don't consume cost reduction buffs if cost
+	// is already 0.
+	if (hp > 0.0) {
+		hp *= 1.0 - user->GetHPCostReduction(abilityOptions, true);
+		hp = std::max(0.0, std::ceil(hp));
+	}
+	if (mp > 0.0) {
+		mp *= 1.0 - user->GetMPCostReduction(abilityOptions, true);
+		mp = std::max(0.0, std::ceil(mp));
+	}
+	if (sp > 0.0) {
+		sp *= 1.0 - user->GetSPCostReduction(abilityOptions, true);
+		sp = std::max(0.0, std::ceil(sp));
+	}
+	
+	user->SpendResource(Attribute::HP, (int)hp);
+	user->SpendResource(Attribute::MP, (int)mp);
+	user->SpendResource(Attribute::SP, (int)sp);
 }
 
 void Ability::exhaustUser() {
