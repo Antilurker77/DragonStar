@@ -56,8 +56,10 @@ std::string Ab_MendWounds::GetDescription() {
 		hotHeal = std::to_string(Combat::ScalingHealEstimate(user, 10.0, Attribute::HP, abilityOptions));
 	}
 
-	std::string desc = "Heal an ally with natural energies, restoring #heal " + mainHeal + " #default HP\nplus an additional #heal "
+	std::string desc = "Heal an ally with natural energies, restoring #heal " + mainHeal + " #default HP plus an additional #heal "
 		+ hotHeal + " #default HP every 1s for 4s.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

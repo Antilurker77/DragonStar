@@ -62,7 +62,9 @@ std::string Ab_FireNova::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 33.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Erupt with fire, dealing #damage " + damage + " #default fire damage to adjacent\nenemies.";
+	std::string desc = "Erupt with fire, dealing #damage " + damage + " #default fire damage to adjacent enemies.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

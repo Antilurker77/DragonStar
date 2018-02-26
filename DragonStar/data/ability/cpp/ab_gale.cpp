@@ -58,7 +58,9 @@ std::string Ab_Gale::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 45.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Launch a slicing gale at the target,\ndealing #damage " + damage + " #default wind damage. Reduces the cast\ntime of Gale by 0.1s. Stacks up to 5\ntimes and lasts 5s.";
+	std::string desc = "Launch a slicing gale at the target, dealing #damage " + damage + " #default wind damage. Reduces the cast time of Gale by 0.1s. Stacks up to 5 times and lasts 5s.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

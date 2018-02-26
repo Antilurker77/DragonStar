@@ -58,7 +58,9 @@ std::string Ab_DragonfireBolt::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 105.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Shoot a bolt of draconic flames at the target, dealing\n#damage " + damage + " #default fire damage.";
+	std::string desc = "Shoot a bolt of draconic flames at the target, dealing #damage " + damage + " #default fire damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

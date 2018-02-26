@@ -60,7 +60,9 @@ std::string Ab_Chopper::GetDescription() {
 		damage = std::to_string(Combat::WeaponAttackEstimate(user, 1.75, false, abilityOptions));
 	}
 
-	std::string desc = "Strike the enemy with your axe, dealing\n#damage " + damage + " #default weapon damage. Chopper has a 50%\nincreased chance to double strike.";
+	std::string desc = "Strike the enemy with your axe, dealing #damage " + damage + " #default weapon damage. Chopper has a 50% increased chance to double strike.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	desc += "\n\nRequires axe.";
 
 	return desc;

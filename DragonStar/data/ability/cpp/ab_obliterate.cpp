@@ -58,7 +58,9 @@ std::string Ab_Obliterate::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 190.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Gather an immense amount of dark energy and fire it at\nthe target, dealing #damage " + damage + " #default dark damage.";
+	std::string desc = "Gather an immense amount of dark energy and fire it at the target, dealing #damage " + damage + " #default dark damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

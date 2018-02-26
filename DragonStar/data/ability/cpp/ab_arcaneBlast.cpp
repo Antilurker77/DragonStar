@@ -58,7 +58,9 @@ std::string Ab_ArcaneBlast::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 90.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Blast the target with arcane energy, dealing\n#damage " + damage + " #default arcane damage.";
+	std::string desc = "Blast the target with arcane energy, dealing #damage " + damage + " #default arcane damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

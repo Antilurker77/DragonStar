@@ -60,7 +60,8 @@ std::string Ab_Venom::GetDescription() {
 	}
 
 	std::string desc = "Lob a ball of venom at the target, dealing #damage " + mainDamage +
-		" #default poison\ndamage and an additional #damage " + dotDamage + " #default poison damage every 1s\nfor 16s.";
+		" #default poison damage and an additional #damage " + dotDamage + " #default poison damage every 1s for 16s.";
+	desc = WordWrap::WrapString(desc, 42);
 
 	return desc;
 }

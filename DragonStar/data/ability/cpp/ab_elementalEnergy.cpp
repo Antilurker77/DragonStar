@@ -71,6 +71,8 @@ std::vector<sf::Vector3i> Ab_ElementalEnergy::GetTargetArea(sf::Vector3i selecte
 
 std::string Ab_ElementalEnergy::GetDescription() {
 	std::string desc = "Increases elemental damage dealt by 15% for 20s.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

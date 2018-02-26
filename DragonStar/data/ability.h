@@ -24,6 +24,7 @@ enum class EquipType;
 #include <SFML\System.hpp>
 
 #include "../core/combat.h"
+#include "../core/wordWrap.h"
 
 typedef std::shared_ptr<Actor> ActorPtr;
 

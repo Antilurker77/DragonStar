@@ -76,7 +76,8 @@ std::string Ab_DragonBreath::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 45.0, Attribute::NONE, abilityOptions));
 	}
 
-	std::string desc = "Breathe fire, dealing #damage " + damage + " #default fire damage to all enemies\nin a cone of length 2 in front of you.";
+	std::string desc = "Breathe fire, dealing #damage " + damage + " #default fire damage to all enemies in a cone of length 2 in front of you.";
+	desc = WordWrap::WrapString(desc, 42);
 
 	return desc;
 }

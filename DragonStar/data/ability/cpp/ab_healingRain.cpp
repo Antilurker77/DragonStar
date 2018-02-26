@@ -66,7 +66,8 @@ std::string Ab_HealingRain::GetDescription() {
 		heal = std::to_string(Combat::ScalingHealEstimate(user, 8.0, Attribute::HP, abilityOptions));
 	}
 
-	std::string desc = "Call rain on a targeted area of radius 2, healing\n#heal " + heal + " #default HP every 1s for 20s.";
+	std::string desc = "Call rain on a targeted area of radius 2, healing #heal " + heal + " #default HP every 1s for 20s.";
+	desc = WordWrap::WrapString(desc, 42);
 
 	return desc;
 }

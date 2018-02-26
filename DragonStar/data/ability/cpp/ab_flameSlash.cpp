@@ -64,7 +64,9 @@ std::string Ab_FlameSlash::GetDescription() {
 		damage = std::to_string(Combat::WeaponAttackEstimate(user, 1.7, false, abilityOptions));
 	}
 
-	std::string desc = "Coat your sword in flames and slash the target,\ndealing #damage " + damage + " #default fire damage and increasing the damage\nof your next fire ability by 10%. Lasts 8s.";
+	std::string desc = "Coat your sword in flames and slash the target, dealing #damage " + damage + " #default fire damage and increasing the damage of your next fire ability by 10%. Lasts 8s.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	desc += "\n\nRequires sword.";
 
 	return desc;

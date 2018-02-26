@@ -69,8 +69,9 @@ std::string Ab_Fireball::GetDescription() {
 		damageOutside = std::to_string(Combat::ScalingAttackEstimate(user, 32.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Hurl a massive ball of fire at the target location,\ndealing #damage " + damageCenter + " #default fire damage " +
-		"to the enemy at the center and\n#damage " + damageOutside + " #default fire damage to the rest.";
+	std::string desc = "Hurl a massive ball of fire at the target location, dealing #damage " + damageCenter + " #default fire damage " +
+		"to the enemy at the center and #damage " + damageOutside + " #default fire damage to the rest.";
+	desc = WordWrap::WrapString(desc, 42);
 
 	return desc;
 }

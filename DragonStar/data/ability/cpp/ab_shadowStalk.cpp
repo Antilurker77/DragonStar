@@ -74,7 +74,8 @@ std::string Ab_ShadowStalk::GetDescription() {
 		damage = std::to_string(Combat::WeaponAttackEstimate(user, 1.8, false, abilityOptions));
 	}
 
-	std::string desc = "Teleport to a random tile adjacent to the\ntarget, then deal #damage " + damage + " #default dark damage.";
+	std::string desc = "Teleport to a random tile adjacent to the target, then deal #damage " + damage + " #default dark damage.";
+	desc = WordWrap::WrapString(desc, 42);
 
 	return desc;
 }

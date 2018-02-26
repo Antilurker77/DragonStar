@@ -67,7 +67,9 @@ std::string Ab_RendingSlash::GetDescription() {
 		dotDamage = std::to_string(Combat::WeaponAttackEstimate(user, 0.15, false, abilityOptions));
 	}
 
-	std::string desc = "Slash the target, dealing #damage " + damage + " #default weapon damage plus\n#damage " + dotDamage + " #default physical damage every 1s for 10s.";
+	std::string desc = "Slash the target, dealing #damage " + damage + " #default weapon damage plus #damage " + dotDamage + " #default physical damage every 1s for 10s.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	desc += "\n\nRequires sword, axe, or dagger.";
 
 	return desc;

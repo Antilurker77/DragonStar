@@ -57,7 +57,9 @@ std::string Ab_FlameBolt::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 55.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Shoot a bolt of fire at the target, dealing\n#damage " + damage + " #default fire damage.";
+	std::string desc = "Shoot a bolt of fire at the target, dealing #damage " + damage + " #default fire damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

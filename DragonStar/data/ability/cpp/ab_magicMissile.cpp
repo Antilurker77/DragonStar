@@ -58,7 +58,9 @@ std::string Ab_MagicMissile::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 50.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Shoot a missile of arcane energy at the target,\ndealing #damage " + damage + " #default arcane damage.";
+	std::string desc = "Shoot a missile of arcane energy at the target, dealing #damage " + damage + " #default arcane damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

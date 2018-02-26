@@ -79,7 +79,9 @@ std::string Ab_WarpSlice::GetDescription() {
 		damage = std::to_string(Combat::WeaponAttackEstimate(user, 1.5, false, abilityOptions));
 	}
 
-	std::string desc = "Teleport to a random tile adjacent to the\ntarget, then deal #damage " + damage + " #default arcane damage.";
+	std::string desc = "Teleport to a random tile adjacent to the target, then deal #damage " + damage + " #default arcane damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	desc += "\n\nRequires sword.";
 
 	return desc;

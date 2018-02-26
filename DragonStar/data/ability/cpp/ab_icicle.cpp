@@ -57,7 +57,9 @@ std::string Ab_Icicle::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 38.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Hurl an icicle at the target, dealing\n#damage " + damage + " #default ice damage and reducing the target's\nmovement speed by 20% for 5s.";
+	std::string desc = "Hurl an icicle at the target, dealing #damage " + damage + " #default ice damage and reducing the target's movement speed by 20% for 5s.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

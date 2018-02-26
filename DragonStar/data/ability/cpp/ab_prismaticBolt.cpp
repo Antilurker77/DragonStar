@@ -75,8 +75,10 @@ std::string Ab_PrismaticBolt::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 54.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Shoot a bolt of elemental energy at the target, dealing\n#damage " + damage +
-		" #default elemental damage and increasing the amount of\nelemental damage the target takes by 5% for 8s.";
+	std::string desc = "Shoot a bolt of elemental energy at the target, dealing #damage " + damage +
+		" #default elemental damage and increasing the amount of elemental damage the target takes by 5% for 8s.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

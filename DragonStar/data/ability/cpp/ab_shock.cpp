@@ -57,7 +57,9 @@ std::string Ab_Shock::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 38.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Electrocute the target, dealing #damage " + damage + " #default lightning\ndamage.";
+	std::string desc = "Electrocute the target, dealing #damage " + damage + " #default lightning damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

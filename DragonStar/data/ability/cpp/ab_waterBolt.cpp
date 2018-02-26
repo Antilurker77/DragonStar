@@ -57,7 +57,9 @@ std::string Ab_WaterBolt::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 40.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Shoot a bolt of water at the target, dealing\n#damage " + damage + " #default water damage.";
+	std::string desc = "Shoot a bolt of water at the target, dealing #damage " + damage + " #default water damage.";
+	desc = WordWrap::WrapString(desc, 42);
+
 	return desc;
 }
 

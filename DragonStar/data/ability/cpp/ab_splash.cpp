@@ -65,7 +65,8 @@ std::string Ab_Splash::GetDescription() {
 		damage = std::to_string(Combat::ScalingAttackEstimate(user, 30.0, Attribute::INT, abilityOptions));
 	}
 
-	std::string desc = "Splash water on to a targeted area of radius 1,\ndealing #damage " + damage + " #default water damage.";
+	std::string desc = "Splash water on to a targeted area of radius 1, dealing #damage " + damage + " #default water damage.";
+	desc = WordWrap::WrapString(desc, 42);
 
 	return desc;
 }
