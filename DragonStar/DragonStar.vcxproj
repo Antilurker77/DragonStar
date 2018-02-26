@@ -98,6 +98,7 @@
     <ClCompile Include="core\camera.cpp" />
     <ClCompile Include="core\combat.cpp" />
     <ClCompile Include="core\random.cpp" />
+    <ClCompile Include="core\wordWrap.cpp" />
     <ClCompile Include="data\ability.cpp" />
     <ClCompile Include="data\abilityScroll.cpp" />
     <ClCompile Include="data\ability\cpp\ab_bite.cpp" />
@@ -258,6 +259,7 @@
     <ClInclude Include="core\gameState.h" />
     <ClInclude Include="core\random.h" />
     <ClInclude Include="core\settings.h" />
+    <ClInclude Include="core\wordWrap.h" />
     <ClInclude Include="data\ability.h" />
     <ClInclude Include="data\abilityScroll.h" />
     <ClInclude Include="data\ability\header\ab_bite.h" />
