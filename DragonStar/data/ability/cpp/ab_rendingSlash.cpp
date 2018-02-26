@@ -12,6 +12,7 @@
 #include "../../id/auraID.h"
 #include "../../id/category.h"
 #include "../../id/element.h"
+#include "../../id/equipType.h"
 
 Ab_RendingSlash::Ab_RendingSlash() {
 	setAttackDefault();
@@ -33,6 +34,15 @@ Ab_RendingSlash::Ab_RendingSlash() {
 		Category::DAMAGING,
 		Category::SINGLE_TARGET,
 		Category::DIRECT
+	};
+
+	usableWeapons = {
+		EquipType::SWORD_1H,
+		EquipType::SWORD_2H,
+		EquipType::AXE_1H,
+		EquipType::AXE_2H,
+		EquipType::DAGGER,
+		EquipType::CLAW
 	};
 
 	spCost = 25;
@@ -58,6 +68,7 @@ std::string Ab_RendingSlash::GetDescription() {
 	}
 
 	std::string desc = "Slash the target, dealing #damage " + damage + " #default weapon damage plus\n#damage " + dotDamage + " #default physical damage every 1s for 10s.";
+	desc += "\n\nRequires sword, axe, or dagger.";
 
 	return desc;
 }

@@ -12,6 +12,7 @@
 #include "../../id/auraID.h"
 #include "../../id/category.h"
 #include "../../id/element.h"
+#include "../../id/equipType.h"
 
 Ab_Chopper::Ab_Chopper() {
 	setAttackDefault();
@@ -30,6 +31,11 @@ Ab_Chopper::Ab_Chopper() {
 		Category::DAMAGING,
 		Category::SINGLE_TARGET,
 		Category::DIRECT
+	};
+
+	usableWeapons = {
+		EquipType::AXE_1H,
+		EquipType::AXE_2H
 	};
 
 	spCost = 35;
@@ -55,6 +61,7 @@ std::string Ab_Chopper::GetDescription() {
 	}
 
 	std::string desc = "Strike the enemy with your axe, dealing\n#damage " + damage + " #default weapon damage. Chopper has a 50%\nincreased chance to double strike.";
+	desc += "\n\nRequires axe.";
 
 	return desc;
 }

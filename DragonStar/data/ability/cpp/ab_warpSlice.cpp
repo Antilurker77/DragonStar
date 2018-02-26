@@ -12,6 +12,7 @@
 #include "../../id/auraID.h"
 #include "../../id/category.h"
 #include "../../id/element.h"
+#include "../../id/equipType.h"
 #include "../../../core/random.h"
 #include "../../../hex/hexMath.h"
 #include "../../../scene/battleScene.h"
@@ -37,6 +38,11 @@ Ab_WarpSlice::Ab_WarpSlice() {
 
 	elements = {
 		Element::ARCANE
+	};
+
+	usableWeapons = {
+		EquipType::SWORD_1H,
+		EquipType::SWORD_2H
 	};
 
 	mpCost = 40;
@@ -74,6 +80,7 @@ std::string Ab_WarpSlice::GetDescription() {
 	}
 
 	std::string desc = "Teleport to a random tile adjacent to the\ntarget, then deal #damage " + damage + " #default arcane damage.";
+	desc += "\n\nRequires sword.";
 
 	return desc;
 }

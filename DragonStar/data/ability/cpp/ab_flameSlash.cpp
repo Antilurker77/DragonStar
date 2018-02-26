@@ -12,6 +12,7 @@
 #include "../../id/auraID.h"
 #include "../../id/category.h"
 #include "../../id/element.h"
+#include "../../id/equipType.h"
 #include "../../../hex/hexMath.h"
 
 Ab_FlameSlash::Ab_FlameSlash() {
@@ -37,6 +38,11 @@ Ab_FlameSlash::Ab_FlameSlash() {
 		Element::FIRE
 	};
 
+	usableWeapons = {
+		EquipType::SWORD_1H,
+		EquipType::SWORD_2H
+	};
+
 	mpCost = 10;
 	spCost = 20;
 	cooldown = 600;
@@ -59,6 +65,7 @@ std::string Ab_FlameSlash::GetDescription() {
 	}
 
 	std::string desc = "Coat your sword in flames and slash the target,\ndealing #damage " + damage + " #default fire damage and increasing the damage\nof your next fire ability by 10%. Lasts 8s.";
+	desc += "\n\nRequires sword.";
 
 	return desc;
 }
