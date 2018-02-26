@@ -47,6 +47,10 @@ bool Ability::IsUsable() {
 			return false;
 		}
 
+		if (!hasRightWeapons()) {
+			return false;
+		}
+
 		if (!customUseConditon()) {
 			return false;
 		}
@@ -187,6 +191,10 @@ int Ability::GetRange() {
 	}
 
 	return result;
+}
+
+bool Ability::IsAttack() {
+	return std::find(categories.begin(), categories.end(), Category::ATTACK) != categories.end();
 }
 
 bool Ability::IsSpell() {
@@ -447,6 +455,22 @@ void Ability::rotateArea(sf::Vector3i cursor, std::vector<sf::Vector3i>& area) {
 	if (battleScene != nullptr) {
 		area = battleScene->GetLineOfSight(user->GetHexPosition(), area, user->IsAlive(), areaIgnoreBodyBlock, areaIgnoreLineOfSight);
 	}
+}
+
+bool Ability::hasRightWeapons() {
+	// Enemies bypass weapon requirements.
+	if (IsAttack() && user != nullptr && user->IsPlayer() && !usableWeapons.empty()) {
+		if (std::find(usableWeapons.begin(), usableWeapons.end(), user->GetMainHandEquipType()) != usableWeapons.end()) {
+			return true;
+		}
+		else if (std::find(usableWeapons.begin(), usableWeapons.end(), user->GetOffHandEquipType()) != usableWeapons.end()) {
+			return true;
+		}
+
+		return false;
+	}
+
+	return true;
 }
 
 bool Ability::customUseConditon() {

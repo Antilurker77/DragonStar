@@ -562,8 +562,12 @@ double Enemy::GetMainHandDamage(bool consumeBuffs) {
 	return damage;
 }
 
+EquipType Enemy::GetMainHandEquipType() {
+	return enemyInfo->GetAttackType();
+}
+
 std::vector<Category> Enemy::GetMainHandCategories() {
-	std::vector<Category> categories = {Category::ATTACK, Category::SINGLE_TARGET, Category::DAMAGING};
+	std::vector<Category> categories = {};
 	EquipType equipType = enemyInfo->GetAttackType();
 	switch (equipType) {
 	case EquipType::UNARMED_STR:
@@ -639,8 +643,12 @@ double Enemy::GetOffHandDamage(bool consumeBuffs) {
 	return damage;
 }
 
+EquipType Enemy::GetOffHandEquipType() {
+	return enemyInfo->GetOffHandAttackType();
+}
+
 std::vector<Category> Enemy::GetOffHandCategories() {
-	std::vector<Category> categories = { Category::ATTACK, Category::SINGLE_TARGET, Category::DAMAGING };
+	std::vector<Category> categories = {};
 	EquipType equipType = enemyInfo->GetOffHandAttackType();
 	switch (equipType) {
 	case EquipType::UNARMED_STR:

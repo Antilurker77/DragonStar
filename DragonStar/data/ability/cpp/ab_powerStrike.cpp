@@ -12,6 +12,7 @@
 #include "../../id/auraID.h"
 #include "../../id/category.h"
 #include "../../id/element.h"
+#include "../../id/equipType.h"
 
 Ab_PowerStrike::Ab_PowerStrike() {
 	setAttackDefault();
@@ -37,6 +38,18 @@ Ab_PowerStrike::Ab_PowerStrike() {
 		Category::DIRECT
 	};
 
+	usableWeapons = {
+		EquipType::SWORD_1H,
+		EquipType::SWORD_2H,
+		EquipType::AXE_1H,
+		EquipType::AXE_2H,
+		EquipType::MACE_1H,
+		EquipType::MACE_2H,
+		EquipType::DAGGER,
+		EquipType::CLAW,
+		EquipType::SPEAR
+	};
+
 	spCost = 20;
 	cooldown = 800;
 
@@ -58,6 +71,7 @@ std::string Ab_PowerStrike::GetDescription() {
 	}
 
 	std::string desc = "Deal a powerful strike against the target,\ndealing #damage " + damage + " #default weapon damage.";
+	desc += "\n\nRequires melee weapon (except staff).";
 
 	return desc;
 }

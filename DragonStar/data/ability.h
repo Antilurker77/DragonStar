@@ -75,6 +75,9 @@ public:
 	// Returns the range of this ability.
 	int GetRange();
 
+	// Returns whether the ability is an attack or not.
+	bool IsAttack();
+
 	// Returns whether the ability is a spell or not.
 	bool IsSpell();
 
@@ -218,6 +221,9 @@ protected:
 
 	// Executes the ability.
 	virtual void execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) = 0;
+
+	// Checks if user has proper weapons. Enemies ignore this check.
+	bool hasRightWeapons();
 
 	// Special condition that must be met for ability to be usable.
 	virtual bool customUseConditon();

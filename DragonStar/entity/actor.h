@@ -235,6 +235,9 @@ public:
 	// Returns the actor's main hand weapon damage.
 	virtual double GetMainHandDamage(bool consumeBuffs) = 0;
 
+	// Returns the equip type for the actor's main hand.
+	virtual EquipType GetMainHandEquipType() = 0;
+
 	// Returns the categories of the actor's main hand weapon.
 	virtual std::vector<Category> GetMainHandCategories() = 0;
 
@@ -243,6 +246,9 @@ public:
 
 	// Returns the actor's off-hand weapon damage.
 	virtual double GetOffHandDamage(bool consumeBuffs) = 0;
+
+	// Returns the equip type for the actor's off-hand.
+	virtual EquipType GetOffHandEquipType() = 0;
 
 	// Returns the categories of the actor's off-hand weapon.
 	virtual std::vector<Category> GetOffHandCategories() = 0;

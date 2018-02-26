@@ -62,9 +62,11 @@ public:
 	int GetAttackSpeed();
 	int GetAttackRange(bool consumeBuffs);
 	double GetMainHandDamage(bool consumeBuffs);
+	EquipType GetMainHandEquipType();
 	std::vector<Category> GetMainHandCategories();
 	std::vector<Element> GetMainHandElements();
 	double GetOffHandDamage(bool consumeBuffs);
+	EquipType GetOffHandEquipType();
 	std::vector<Category> GetOffHandCategories();
 	std::vector<Element> GetOffHandElements();
 

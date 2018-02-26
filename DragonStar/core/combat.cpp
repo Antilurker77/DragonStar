@@ -273,10 +273,10 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 
 			// Actual damage calculation.
 
-			// If the skill requires a certain weapon type and the proper weapon is in the off-hand, flip main hand / off-hand attacks.
-			if (eventOptions.AllowedWeaponTypes.size() > 0 && std::find(eventOptions.AllowedWeaponTypes.begin(), eventOptions.AllowedWeaponTypes.end(), EquipType::UNARMED_STR) == eventOptions.AllowedWeaponTypes.end()) {
-				isOffHand = !isOffHand;
-			}
+			// If the skill requires a certain weapon type and the proper weapon is in the off-hand, flip main hand / off-hand attacks. BUGGY
+			//if (eventOptions.AllowedWeaponTypes.size() > 0 && std::find(eventOptions.AllowedWeaponTypes.begin(), eventOptions.AllowedWeaponTypes.end(), user->GetMainHandEquipType()) == eventOptions.AllowedWeaponTypes.end()) {
+			//	isOffHand = !isOffHand;
+			//}
 
 			// Get weapon damage.
 			if (!isOffHand) {
@@ -728,13 +728,12 @@ void Combat::CreateGroundEffect(ActorPtr& user, BattleScene* battleScene, AuraID
 int Combat::WeaponAttackEstimate(ActorPtr& user, double multiplier, bool isOffHand, EventOptions eventOptions) {
 	double damage = 0;
 
-	// If the skill requires a certain weapon type and the proper weapon is in the off-hand, flip main hand / off-hand attacks.
-	if (eventOptions.AllowedWeaponTypes.size() > 0 && std::find(eventOptions.AllowedWeaponTypes.begin(), eventOptions.AllowedWeaponTypes.end(), EquipType::UNARMED_STR) == eventOptions.AllowedWeaponTypes.end()) {
-		isOffHand = !isOffHand;
-	}
+	// If the skill requires a certain weapon type and the proper weapon is in the off-hand, flip main hand / off-hand attacks. BUGGY
+	//if (eventOptions.AllowedWeaponTypes.size() > 0 && std::find(eventOptions.AllowedWeaponTypes.begin(), eventOptions.AllowedWeaponTypes.end(), user->GetMainHandEquipType()) == eventOptions.AllowedWeaponTypes.end()) {
+	//	isOffHand = !isOffHand;
+	//}
 
 	// Get weapon damage.
-	// todo: offhand damage
 	if (!isOffHand) {
 		damage = user->GetMainHandDamage(false);
 

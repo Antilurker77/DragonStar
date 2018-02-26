@@ -713,6 +713,16 @@ double Player::GetMainHandDamage(bool consumeBuffs) {
 	return damage;
 }
 
+EquipType Player::GetMainHandEquipType() {
+	if (equipment[0] != nullptr) {
+		auto eq = (Equipment*)equipment[0].get();
+		return eq->GetEquipType();
+	}
+	else {
+		return EquipType::UNARMED_STR;
+	}
+}
+
 std::vector<Category> Player::GetMainHandCategories() {
 	std::vector<Category> categories = { Category::UNARMED };
 
@@ -822,6 +832,16 @@ double Player::GetOffHandDamage(bool consumeBuffs) {
 	}
 
 	return damage;
+}
+
+EquipType Player::GetOffHandEquipType() {
+	if (equipment[1] != nullptr) {
+		auto eq = (Equipment*)equipment[1].get();
+		return eq->GetEquipType();
+	}
+	else {
+		return EquipType::NONE;
+	}
 }
 
 std::vector<Category> Player::GetOffHandCategories() {

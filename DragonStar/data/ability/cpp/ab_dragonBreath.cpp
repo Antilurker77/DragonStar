@@ -26,7 +26,7 @@ Ab_DragonBreath::Ab_DragonBreath() {
 	tier = 1;
 
 	categories = {
-		Category::ATTACK,
+		Category::SKILL,
 		Category::DAMAGING,
 		Category::AREA_OF_EFFECT,
 		Category::DIRECT
