@@ -486,6 +486,9 @@
     <ClCompile Include="core\wordWrap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_powerShot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -1050,6 +1053,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="core\wordWrap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_powerShot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

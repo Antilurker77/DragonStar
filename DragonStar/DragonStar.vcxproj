@@ -103,6 +103,7 @@
     <ClCompile Include="data\abilityScroll.cpp" />
     <ClCompile Include="data\ability\cpp\ab_bite.cpp" />
     <ClCompile Include="data\ability\cpp\ab_chopper.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_powerShot.cpp" />
     <ClCompile Include="data\ability\cpp\ab_shadowEnergy.cpp" />
     <ClCompile Include="data\ability\cpp\ab_arcaneBlast.cpp" />
     <ClCompile Include="data\ability\cpp\ab_commandingShout.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="data\abilityScroll.h" />
     <ClInclude Include="data\ability\header\ab_bite.h" />
     <ClInclude Include="data\ability\header\ab_chopper.h" />
+    <ClInclude Include="data\ability\header\ab_powerShot.h" />
     <ClInclude Include="data\ability\header\ab_shadowEnergy.h" />
     <ClInclude Include="data\ability\header\abiltyData.h" />
     <ClInclude Include="data\ability\header\ab_arcaneBlast.h" />

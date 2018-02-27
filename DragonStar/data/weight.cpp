@@ -339,7 +339,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 6:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 }); //todo: power shot
+			weights.push_back({ AbilityID::POWER_SHOT, 1.00 });
 			break;
 		case 2:
 			break;
