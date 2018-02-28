@@ -28,6 +28,7 @@
 #include "ab_obliterate.h"
 #include "ab_powerShot.h"
 #include "ab_powerStrike.h"
+#include "ab_psionicMissile.h"
 #include "ab_prismaticBolt.h"
 #include "ab_rendingSlash.h"
 #include "ab_shadowEnergy.h"
