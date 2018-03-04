@@ -172,6 +172,10 @@ std::vector<StatMod> Equipment::GetStatMods() {
 	return statMods;
 }
 
+std::vector<std::string> Equipment::GetExtraAffixStrings() {
+	return extraAffixes;
+}
+
 AuraID Equipment::GetOnHitAura() {
 	return onHitAura;
 }

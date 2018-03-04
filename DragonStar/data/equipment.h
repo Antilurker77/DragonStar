@@ -57,6 +57,9 @@ public:
 	// Returns the stat mods of the item.
 	std::vector<StatMod> GetStatMods();
 
+	// Returns extra affix text.
+	std::vector<std::string> GetExtraAffixStrings();
+
 	// Returns the aura used for on-hit events.
 	AuraID GetOnHitAura();
 
@@ -103,6 +106,8 @@ protected:
 	std::vector<Element> attackElements; // elements for weapon attacks
 	double blockChance = 0.0; // shield block chance
 	std::vector<StatMod> statMods;
+	std::vector<std::string> extraAffixes;
+
 	AuraID onHitAura{}; // special aura created to trigger on-hit events
 
 	// Determines how many affixes to roll given an item quality.

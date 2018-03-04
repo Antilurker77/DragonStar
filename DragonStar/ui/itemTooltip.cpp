@@ -117,6 +117,10 @@ void ItemTooltip::SetItem(ItemPtr& item) {
 		for (auto m : sm) {
 			affixString += "#66ff66 " + DataString::StatModString(m) + "\n";
 		}
+		auto em = eq->GetExtraAffixStrings();
+		for (auto m : em) {
+			affixString += "#66ff66 >" + m + "\n";
+		}
 	}
 
 	// todo: better scroll implimentation
