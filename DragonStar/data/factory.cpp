@@ -211,8 +211,18 @@ MapPtr Factory::CreateMap(MapID id){
 
 PlayerClassPtr Factory::CreatePlayerClass(PlayerClassID id) {
 	switch (id) {
+	case PlayerClassID::ADVENTURER:						return PlayerClassPtr(std::make_shared<Pc_Adventurer>());
 	case PlayerClassID::BLADEMASTER:					return PlayerClassPtr(std::make_shared<Pc_Blademaster>());
+	case PlayerClassID::BERSERKER:						return PlayerClassPtr(std::make_shared<Pc_Berserker>());
+	case PlayerClassID::GUARDIAN:						return PlayerClassPtr(std::make_shared<Pc_Guardian>());
+	case PlayerClassID::ASSASSIN:						return PlayerClassPtr(std::make_shared<Pc_Assassin>());
 	case PlayerClassID::STORMSINGER:					return PlayerClassPtr(std::make_shared<Pc_Stormsinger>());
+	case PlayerClassID::RANGER:							return PlayerClassPtr(std::make_shared<Pc_Ranger>());
+	case PlayerClassID::WIZARD:							return PlayerClassPtr(std::make_shared<Pc_Wizard>());
+	case PlayerClassID::SHAMAN:							return PlayerClassPtr(std::make_shared<Pc_Shaman>());
+	case PlayerClassID::ACOLYTE:						return PlayerClassPtr(std::make_shared<Pc_Acolyte>());
+	case PlayerClassID::PRIEST:							return PlayerClassPtr(std::make_shared<Pc_Priest>());
+	case PlayerClassID::DRUID:							return PlayerClassPtr(std::make_shared<Pc_Druid>());
 
 	// Return Adventurer player class if ID is invalid.
 	default:											return PlayerClassPtr(std::make_shared<Pc_Adventurer>());
