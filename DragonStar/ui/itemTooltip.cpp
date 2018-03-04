@@ -8,6 +8,7 @@
 
 #include "../core/assetManager.h"
 #include "../core/settings.h"
+#include "../core/wordWrap.h"
 #include "../data/dataString.h"
 #include "../data/item.h"
 #include "../data/equipment.h"
@@ -115,11 +116,11 @@ void ItemTooltip::SetItem(ItemPtr& item) {
 		}
 		auto sm = eq->GetStatMods();
 		for (auto m : sm) {
-			affixString += "#66ff66 " + DataString::StatModString(m) + "\n";
+			affixString += "#66ff66 " + WordWrap::WrapString(DataString::StatModString(m), 30) + "\n";
 		}
 		auto em = eq->GetExtraAffixStrings();
 		for (auto m : em) {
-			affixString += "#66ff66 >" + m + "\n";
+			affixString += "#66ff66 >" + WordWrap::WrapString(m, 30) + "\n";
 		}
 	}
 
