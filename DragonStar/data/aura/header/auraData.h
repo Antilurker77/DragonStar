@@ -6,6 +6,7 @@
 //
 // ==================================
 
+#include "au_bandOfTwinDisciplines.h"
 #include "au_commandingShout.h"
 #include "au_elementalEnergy.h"
 #include "au_flameSlash.h"

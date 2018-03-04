@@ -172,7 +172,7 @@ std::vector<StatMod> Equipment::GetStatMods() {
 	return statMods;
 }
 
-std::vector<std::string> Equipment::GetExtraAffixStrings() {
+std::vector<std::string> Equipment::GetExtraAffixStrings() {	
 	return extraAffixes;
 }
 

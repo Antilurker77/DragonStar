@@ -15,6 +15,7 @@ enum class AuraID;
 
 #include "statMod.h"
 #include "../core/combat.h"
+#include "../core/wordWrap.h"
 
 #include <SFML\System.hpp>
 

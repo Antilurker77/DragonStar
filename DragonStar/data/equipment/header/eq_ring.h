@@ -25,6 +25,12 @@ public:
 	Eq_DragoniteRing();
 };
 
+class Eq_BandOfTwinDisciplines : public Equipment {
+public:
+	Eq_BandOfTwinDisciplines();
+	void OnHit(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+};
+
 class Eq_RingOfVitality : public Equipment {
 public:
 	Eq_RingOfVitality();

@@ -74,6 +74,7 @@ ItemPtr Factory::CreateAbilityScroll(AbilityID id) {
 
 AuraPtr Factory::CreateAura(AuraID id) {
 	switch (id) {
+	case AuraID::BAND_OF_TWIN_DISCIPLINES:				return AuraPtr(std::make_shared<Au_BandOfTwinDisciplines>());
 	case AuraID::COMMANDING_SHOUT:						return AuraPtr(std::make_shared<Au_CommandingShout>());
 	case AuraID::ELEMENTAL_ENERGY:						return AuraPtr(std::make_shared<Au_ElementalEnergy>());
 	case AuraID::FLAME_SLASH:							return AuraPtr(std::make_shared<Au_FlameSlash>());
@@ -144,6 +145,7 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 ItemPtr Factory::CreateEquipment(EquipmentID id) {
 	switch (id) {
 	case EquipmentID::AMULET_OF_DIVINE_LIGHT:			return ItemPtr(std::make_shared<Eq_AmuletOfDivineLight>());
+	case EquipmentID::BAND_OF_TWIN_DISCIPLINES:			return ItemPtr(std::make_shared<Eq_BandOfTwinDisciplines>());
 	case EquipmentID::CHARM_OF_DEXTERITY:				return ItemPtr(std::make_shared<Eq_CharmOfDexterity>());
 	case EquipmentID::CHARM_OF_INTELLIGENCE:			return ItemPtr(std::make_shared<Eq_CharmOfIntelligence>());
 	case EquipmentID::CHARM_OF_STRENGTH:				return ItemPtr(std::make_shared<Eq_CharmOfStrength>());

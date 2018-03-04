@@ -15,6 +15,8 @@
 #include "../../id/itemQuality.h"
 #include "../../id/statModType.h"
 
+// --------------------------------------------------------------------
+
 Eq_SilverRing::Eq_SilverRing() {
 	name = "Silver Ring";
 	iconFilepath = "ring.png";
@@ -31,6 +33,8 @@ Eq_SilverRing::Eq_SilverRing() {
 	attackSpeed = 0.0;
 	statMods = { };
 }
+
+// --------------------------------------------------------------------
 
 Eq_GoldRing::Eq_GoldRing() {
 	name = "Gold Ring";
@@ -49,6 +53,8 @@ Eq_GoldRing::Eq_GoldRing() {
 	statMods = {};
 }
 
+// --------------------------------------------------------------------
+
 Eq_DragoniteRing::Eq_DragoniteRing() {
 	name = "Dragonite Ring";
 	iconFilepath = "ring.png";
@@ -65,6 +71,47 @@ Eq_DragoniteRing::Eq_DragoniteRing() {
 	attackSpeed = 0.0;
 	statMods = {};
 }
+
+// --------------------------------------------------------------------
+
+Eq_BandOfTwinDisciplines::Eq_BandOfTwinDisciplines() {
+	name = "Band of Twin Disciplines";
+	iconFilepath = "ring.png";
+	itemQuality = ItemQuality::UNIQUE;
+	weight = 1;
+	tier = 1;
+
+	textureFilepath = "band_of_twin_disciplines.png";
+	equipType = EquipType::RING;
+	equipmentID = EquipmentID::BAND_OF_TWIN_DISCIPLINES;
+
+	equipPower = 0;
+	blockChance = 0.0;
+	attackSpeed = 0.0;
+	statMods = {
+		StatMod(StatModType::MP, 5.0),
+		StatMod(StatModType::INT, 3.0),
+		StatMod(StatModType::DAMAGE, 0.04, { Category::ANY }, { Element::LIGHT, Element::DARK }),
+		StatMod(StatModType::HASTE, 0.03),
+		StatMod(StatModType::RESISTANCE, 0.07, { Category::ANY }, { Element::LIGHT, Element::DARK })
+	};
+	extraAffixes = {
+		"Casting a Light or Dark spell increases the damage of your next Mind spell by 10%. Stacks up to 5 times and lasts 15s."
+	};
+}
+
+void Eq_BandOfTwinDisciplines::OnHit(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+	auto cat = eventOptions.Categories;
+	auto ele = eventOptions.Elements;
+	
+	if (std::find(cat.begin(), cat.end(), Category::SPELL) != cat.end()) {
+		if (std::find(ele.begin(), ele.end(), Element::LIGHT) != ele.end() || std::find(ele.begin(), ele.end(), Element::DARK) != ele.end()) {
+			Combat::AddAuraStack(user, user, AuraID::BAND_OF_TWIN_DISCIPLINES);
+		}
+	}
+}
+
+// --------------------------------------------------------------------
 
 Eq_RingOfVitality::Eq_RingOfVitality() {
 	name = "Ring of Vitality";
@@ -87,6 +134,8 @@ Eq_RingOfVitality::Eq_RingOfVitality() {
 		StatMod(StatModType::RESISTANCE, 0.05, { Category::ANY }, { Element::PHYSICAL })
 	};
 }
+
+// --------------------------------------------------------------------
 
 Eq_OmegaRing::Eq_OmegaRing() {
 	name = "Omega Ring";
