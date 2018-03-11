@@ -495,6 +495,9 @@
     <ClCompile Include="data\aura\cpp\au_bandOfTwinDisciplines.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_lightBolt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -1068,6 +1071,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\aura\header\au_bandOfTwinDisciplines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_lightBolt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

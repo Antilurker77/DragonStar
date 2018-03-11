@@ -44,6 +44,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::HEAL:								return AbilityPtr(std::make_shared<Ab_Heal>());
 	case AbilityID::HEALING_RAIN:						return AbilityPtr(std::make_shared<Ab_HealingRain>());
 	case AbilityID::ICICLE:								return AbilityPtr(std::make_shared<Ab_Icicle>());
+	case AbilityID::LIGHT_BOLT:							return AbilityPtr(std::make_shared<Ab_LightBolt>());
 	case AbilityID::MAGIC_MISSILE:						return AbilityPtr(std::make_shared<Ab_MagicMissile>());
 	case AbilityID::MEND_WOUNDS:						return AbilityPtr(std::make_shared<Ab_MendWounds>());
 	case AbilityID::OBLITERATE:							return AbilityPtr(std::make_shared<Ab_Obliterate>());

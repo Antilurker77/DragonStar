@@ -23,6 +23,7 @@
 #include "ab_heal.h"
 #include "ab_healingRain.h"
 #include "ab_icicle.h"
+#include "ab_lightBolt.h"
 #include "ab_magicMissile.h"
 #include "ab_mendWounds.h"
 #include "ab_obliterate.h"
