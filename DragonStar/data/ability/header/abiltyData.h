@@ -9,6 +9,7 @@
 #include "ab_arcaneBlast.h"
 #include "ab_attack.h"
 #include "ab_bite.h"
+#include "ab_boulder.h"
 #include "ab_chopper.h"
 #include "ab_commandingShout.h"
 #include "ab_darkBolt.h"

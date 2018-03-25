@@ -102,6 +102,7 @@
     <ClCompile Include="data\ability.cpp" />
     <ClCompile Include="data\abilityScroll.cpp" />
     <ClCompile Include="data\ability\cpp\ab_bite.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_boulder.cpp" />
     <ClCompile Include="data\ability\cpp\ab_chopper.cpp" />
     <ClCompile Include="data\ability\cpp\ab_lightBolt.cpp" />
     <ClCompile Include="data\ability\cpp\ab_powerShot.cpp" />
@@ -267,6 +268,7 @@
     <ClInclude Include="data\ability.h" />
     <ClInclude Include="data\abilityScroll.h" />
     <ClInclude Include="data\ability\header\ab_bite.h" />
+    <ClInclude Include="data\ability\header\ab_boulder.h" />
     <ClInclude Include="data\ability\header\ab_chopper.h" />
     <ClInclude Include="data\ability\header\ab_lightBolt.h" />
     <ClInclude Include="data\ability\header\ab_powerShot.h" />
