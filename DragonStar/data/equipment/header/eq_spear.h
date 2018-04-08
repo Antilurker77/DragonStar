@@ -14,3 +14,8 @@ class Eq_IronSpear : public Equipment {
 public:
 	Eq_IronSpear();
 };
+
+class Eq_CloudLance : public Equipment {
+public:
+	Eq_CloudLance();
+};

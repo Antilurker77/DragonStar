@@ -34,3 +34,33 @@ Eq_IronSpear::Eq_IronSpear() {
 	blockChance = 0.0;
 	statMods = {};
 }
+
+// --------------------------------------------------------------------
+
+Eq_CloudLance::Eq_CloudLance() {
+	name = "Cloud Lance";
+	iconFilepath = "spear.png";
+	itemQuality = ItemQuality::UNIQUE;
+	weight = 10;
+	tier = 1;
+
+	textureFilepath = "iron_spear.png";
+	equipType = EquipType::SPEAR;
+	equipmentID = EquipmentID::CLOUD_LANCE;
+
+	equipPower = 80;
+	attackSpeed = 250;
+	attackRange = 1;
+	attributeMultiplier = 1.6;
+	attackElements = { Element::PHYSICAL };
+	blockChance = 0.0;
+	statMods = {
+		StatMod(StatModType::DEX, 9.0),
+		StatMod(StatModType::DAMAGE, 0.1, { Category::ANY }, { Element::WIND }),
+		StatMod(StatModType::HASTE, 0.08),
+		StatMod(StatModType::ARMOR_PEN, 0.15),
+		StatMod(StatModType::ON_HIT_DAMAGE, 12.0, { Element::WIND }, { Category::ANY }),
+		StatMod(StatModType::MOVEMENT_SPEED, 0.1),
+		StatMod(StatModType::RESISTANCE, 0.1, { Category::ANY }, { Element::WIND })
+	};
+}

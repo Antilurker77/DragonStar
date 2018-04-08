@@ -95,6 +95,7 @@ enum class EquipmentID {
 	DRAGONITE_SPEAR,
 
 	// Unique Spear
+	CLOUD_LANCE,
 
 	// Generic Longbow
 	LONGBOW,
