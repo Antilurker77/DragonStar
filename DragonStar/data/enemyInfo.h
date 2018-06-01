@@ -76,16 +76,16 @@ public:
 	std::vector<StatMod> GetStatMods();
 	std::vector<AbilityID> GetAbilities();
 
-	virtual void OnPreCalc(ActorPtr& user, ActorPtr& targetHit, EventOptions& eventOptions);
-	virtual void OnPostCalc(ActorPtr& user, ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage);
-	virtual void OnPreCalcHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions& eventOptions);
-	virtual void OnPostCalcHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& damage);
-	virtual void OnAttack(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
-	virtual void OnHit(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
-	virtual void OnHeal(ActorPtr& user, ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult);
-	virtual void OnAttacked(ActorPtr& user, ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
-	virtual void OnHealed(ActorPtr& user, ActorPtr& healer, EventOptions eventOptions, EventResult eventResult);
-	virtual void OnDeath(ActorPtr& user, ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnPreCalc(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions& eventOptions);
+	virtual void OnPostCalc(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, double& damage);
+	virtual void OnPreCalcHeal(ActorPtr& user, ActorPtr& targetHealed, BattleScene* battleScene, EventOptions& eventOptions);
+	virtual void OnPostCalcHeal(ActorPtr& user, ActorPtr& targetHealed, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, double& damage);
+	virtual void OnAttack(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	virtual void OnHit(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	virtual void OnHeal(ActorPtr& user, ActorPtr& targetHealed, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnAttacked(ActorPtr& user, ActorPtr& attacker, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnHealed(ActorPtr& user, ActorPtr& healer, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnDeath(ActorPtr& user, ActorPtr& attacker, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
 
 	virtual Idea ExecuteAI(ActorPtr& user, BattleScene& battleScene);
 

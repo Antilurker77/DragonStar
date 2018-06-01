@@ -463,52 +463,52 @@ int Player::GetArmor(bool consumeBuffs) {
 
 void Player::OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions) {
 	for (auto au : auras) {
-		au->OnPreCalc(targetHit, eventOptions);
+		au->OnPreCalc(targetHit, battleScene, eventOptions);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnPreCalc(getPtr(), targetHit, eventOptions);
+			eq->OnPreCalc(getPtr(), targetHit, battleScene, eventOptions);
 		}
 	}
 }
 
 void Player::OnPostCalc(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
 	for (auto au : auras) {
-		au->OnPostCalc(targetHit, eventOptions, eventResult, damage);
+		au->OnPostCalc(targetHit, battleScene, eventOptions, eventResult, damage);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnPostCalc(getPtr(), targetHit, eventOptions, eventResult, damage);
+			eq->OnPostCalc(getPtr(), targetHit, battleScene, eventOptions, eventResult, damage);
 		}
 	}
 }
 
 void Player::OnPreCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions) {
 	for (auto au : auras) {
-		au->OnPreCalcHeal(targetHealed, eventOptions);
+		au->OnPreCalcHeal(targetHealed, battleScene, eventOptions);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnPreCalcHeal(getPtr(), targetHealed, eventOptions);
+			eq->OnPreCalcHeal(getPtr(), targetHealed, battleScene, eventOptions);
 		}
 	}
 }
 
 void Player::OnPostCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
 	for (auto au : auras) {
-		au->OnPostCalcHeal(targetHealed, eventOptions, eventResult, damage);
+		au->OnPostCalcHeal(targetHealed, battleScene, eventOptions, eventResult, damage);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnPostCalcHeal(getPtr(), targetHealed, eventOptions, eventResult, damage);
+			eq->OnPostCalcHeal(getPtr(), targetHealed, battleScene, eventOptions, eventResult, damage);
 		}
 	}
 }
@@ -521,7 +521,7 @@ void Player::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResul
 	eventOptionsLocal.TriggerOnHit = false;
 	
 	for (auto au : auras) {
-		au->OnAttack(targetHit, eventOptions, eventResult, isOffHand);
+		au->OnAttack(targetHit, battleScene, eventOptions, eventResult, isOffHand);
 	}
 
 	// Off-Hand
@@ -529,7 +529,7 @@ void Player::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResul
 		if (equipment[1] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[1].get();
 			if (eq->IsWeapon()) {
-				eq->OnAttack(getPtr(), targetHit, eventOptions, eventResult, true);
+				eq->OnAttack(getPtr(), targetHit, battleScene, eventOptions, eventResult, true);
 			}
 		}
 	}
@@ -537,7 +537,7 @@ void Player::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResul
 	else {
 		if (equipment[0] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[0].get();
-			eq->OnAttack(getPtr(), targetHit, eventOptions, eventResult, false);
+			eq->OnAttack(getPtr(), targetHit, battleScene, eventOptions, eventResult, false);
 		}
 	}
 
@@ -545,7 +545,7 @@ void Player::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResul
 	for (size_t i = 2; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnAttack(getPtr(), targetHit, eventOptions, eventResult, isOffHand);
+			eq->OnAttack(getPtr(), targetHit, battleScene, eventOptions, eventResult, isOffHand);
 		}
 	}
 
@@ -561,65 +561,65 @@ void Player::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResul
 
 void Player::OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
 	for (auto au : auras) {
-		au->OnHit(targetHit, eventOptions, eventResult, isOffHand);
+		au->OnHit(targetHit, battleScene, eventOptions, eventResult, isOffHand);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnHit(getPtr(), targetHit, eventOptions, eventResult, isOffHand);
+			eq->OnHit(getPtr(), targetHit, battleScene, eventOptions, eventResult, isOffHand);
 		}
 	}
 }
 
 void Player::OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult) {
 	for (auto au : auras) {
-		au->OnHeal(targetHealed, eventOptions, eventResult);
+		au->OnHeal(targetHealed, battleScene, eventOptions, eventResult);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnHeal(getPtr(), targetHealed, eventOptions, eventResult);
+			eq->OnHeal(getPtr(), targetHealed, battleScene, eventOptions, eventResult);
 		}
 	}
 }
 
 void Player::OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
 	for (auto au : auras) {
-		au->OnAttacked(attacker, eventOptions, eventResult);
+		au->OnAttacked(attacker, battleScene, eventOptions, eventResult);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnAttacked(getPtr(), attacker, eventOptions, eventResult);
+			eq->OnAttacked(getPtr(), attacker, battleScene, eventOptions, eventResult);
 		}
 	}
 }
 
 void Player::OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult) {
 	for (auto au : auras) {
-		au->OnHealed(healer, eventOptions, eventResult);
+		au->OnHealed(healer, battleScene, eventOptions, eventResult);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnHealed(getPtr(), healer, eventOptions, eventResult);
+			eq->OnHealed(getPtr(), healer, battleScene, eventOptions, eventResult);
 		}
 	}
 }
 
 void Player::OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
 	for (auto au : auras) {
-		au->OnDeath(attacker, eventOptions, eventResult);
+		au->OnDeath(attacker, battleScene, eventOptions, eventResult);
 	}
 
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* eq = (Equipment*)equipment[i].get();
-			eq->OnDeath(getPtr(), attacker, eventOptions, eventResult);
+			eq->OnDeath(getPtr(), attacker, battleScene, eventOptions, eventResult);
 		}
 	}
 }

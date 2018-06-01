@@ -100,7 +100,7 @@ Eq_BandOfTwinDisciplines::Eq_BandOfTwinDisciplines() {
 	};
 }
 
-void Eq_BandOfTwinDisciplines::OnHit(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+void Eq_BandOfTwinDisciplines::OnHit(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
 	auto cat = eventOptions.Categories;
 	auto ele = eventOptions.Elements;
 	

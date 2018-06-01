@@ -245,43 +245,43 @@ void Aura::OnApplication() {
 
 }
 
-void Aura::OnPreCalc(ActorPtr & targetHit, EventOptions & eventOptions) {
+void Aura::OnPreCalc(ActorPtr & targetHit, BattleScene* battleScene, EventOptions & eventOptions) {
 
 }
 
-void Aura::OnPostCalc(ActorPtr & targetHit, EventOptions & eventOptions, EventResult& eventResult, double& damage) {
+void Aura::OnPostCalc(ActorPtr & targetHit, BattleScene* battleScene, EventOptions & eventOptions, EventResult& eventResult, double& damage) {
 
 }
 
-void Aura::OnPreCalcHeal(ActorPtr & targetHealed, EventOptions & eventOptions) {
+void Aura::OnPreCalcHeal(ActorPtr & targetHealed, BattleScene* battleScene, EventOptions & eventOptions) {
 
 }
 
-void Aura::OnPostCalcHeal(ActorPtr & targetHealed, EventOptions & eventOptions, EventResult& eventResult, double& heal) {
+void Aura::OnPostCalcHeal(ActorPtr & targetHealed, BattleScene* battleScene, EventOptions & eventOptions, EventResult& eventResult, double& heal) {
 
 }
 
-void Aura::OnAttack(ActorPtr & targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
+void Aura::OnAttack(ActorPtr & targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
 
 }
 
-void Aura::OnHit(ActorPtr & targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand){
+void Aura::OnHit(ActorPtr & targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand){
 
 }
 
-void Aura::OnHeal(ActorPtr & targetHealed, EventOptions eventOptions, EventResult eventResult){
+void Aura::OnHeal(ActorPtr & targetHealed, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult){
 
 }
 
-void Aura::OnAttacked(ActorPtr & attacker, EventOptions eventOptions, EventResult eventResult){
+void Aura::OnAttacked(ActorPtr & attacker, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult){
 
 }
 
-void Aura::OnHealed(ActorPtr & healer, EventOptions eventOptions, EventResult eventResult){
+void Aura::OnHealed(ActorPtr & healer, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult){
 
 }
 
-void Aura::OnDeath(ActorPtr & attacker, EventOptions eventOptions, EventResult eventResult) {
+void Aura::OnDeath(ActorPtr & attacker, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult) {
 
 }
 

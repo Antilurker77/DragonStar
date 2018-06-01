@@ -10,6 +10,7 @@
 #pragma once
 
 class Actor;
+class Battlescene;
 
 enum class AuraID;
 
@@ -109,34 +110,34 @@ public:
 	virtual void OnApplication();
 
 	// Called when the user attacks, but before things such as crit or hit rolls.
-	virtual void OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions);
+	virtual void OnPreCalc(ActorPtr& targetHit, BattleScene* battleScene, EventOptions& eventOptions);
 
 	// Called when the user attacks after combat calcs but right before damage.
-	virtual void OnPostCalc(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage);
+	virtual void OnPostCalc(ActorPtr& targetHit, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, double& damage);
 
 	// Called when the user heals, but before things such as crit rolls.
-	virtual void OnPreCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions);
+	virtual void OnPreCalcHeal(ActorPtr& targetHealed, BattleScene* battleScene, EventOptions& eventOptions);
 
 	// Called when the user heals after combat calcs but right before healing.
-	virtual void OnPostCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& heal);
+	virtual void OnPostCalcHeal(ActorPtr& targetHealed, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, double& heal);
 
 	// Called when the user deals damage with a weapon attack.
-	virtual void OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	virtual void OnAttack(ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
 
 	// Called when the user deals damage.
-	virtual void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	virtual void OnHit(ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
 
 	// Called when the user heals someone.
-	virtual void OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnHeal(ActorPtr& targetHealed, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
 
 	// Called when the user is hit.
-	virtual void OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnAttacked(ActorPtr& attacker, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
 
 	// Called when the user is healed.
-	virtual void OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnHealed(ActorPtr& healer, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
 
 	// Called when the user is killed.
-	virtual void OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult);
+	virtual void OnDeath(ActorPtr& attacker, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult);
 
 	// Called when the next tick is ready.
 	virtual void OnTick();

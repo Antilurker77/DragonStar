@@ -16,5 +16,5 @@ public:
 
 	Idea ExecuteAI(ActorPtr& user, BattleScene& world);
 
-	void OnAttack(ActorPtr& user, ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	void OnAttack(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
 };
