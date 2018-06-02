@@ -14,6 +14,7 @@ class BattleScene;
 
 enum class AbilityID;
 enum class CreatureType;
+enum class EventType;
 
 #include "entity.h"
 #include "../data/ability.h"
@@ -187,35 +188,8 @@ public:
 	// Returns all the debuffs the given actor has. Does not return hidden auras.
 	std::vector<AuraPtr> GetDebuffAuras();
 
-	// Triggers events that are used before combat calculations.
-	virtual void OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions) = 0;
-
-	// Triggers events that are used after combat calculations but before damage is dealt.
-	virtual void OnPostCalc(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& damage) = 0;
-
-	// Triggers events that are used before healing combat calculations.
-	virtual void OnPreCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions) = 0;
-
-	// Triggers events that are used after healing combat calculations but before healing is dealt.
-	virtual void OnPostCalcHeal(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& heal) = 0;
-
-	// Triggers events that happen when the actor hits something with a weapon. Triggers on-hit stat mods.
-	virtual void OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) = 0;
-
-	// Triggers events that happen when the actor hits something.
-	virtual void OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) = 0;
-
-	// Triggers events that happen when the actor heals something. Also triggers on-heal stat mods.
-	virtual void OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult) = 0;
-
-	// Triggers events that happen when the actor takes damage.
-	virtual void OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) = 0;
-
-	// Triggers events that happen when the actor is healed.
-	virtual void OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult) = 0;
-
-	// Triggers events that happen when the actor dies.
-	virtual void OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) = 0;
+	// Triggers all combat proc events of the specified type.
+	virtual void OnEvent(EventType eventType, ActorPtr& target, EventOptions& eventOptions, EventResult& eventResult, bool isOffHand, double& amount) = 0;
 
 	// Removes expired auras from the actor.
 	void RemoveExpiredAuras();

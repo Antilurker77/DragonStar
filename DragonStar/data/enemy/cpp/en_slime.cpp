@@ -83,8 +83,11 @@ Idea En_Slime::ExecuteAI(ActorPtr& user, BattleScene& world) {
 	return idea;
 }
 
-void En_Slime::OnAttack(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
-	if (eventResult.DidHit) {
-		Combat::AddAuraStack(user, targetHit, AuraID::SLIME_TOUCH);
+void En_Slime::OnEvent(EventType eventType, ActorPtr& user, ActorPtr& target, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, bool isOffHand, double& amount) {
+	// OnAttack
+	if (eventType == EventType::Attack) {
+		if (eventResult.DidHit) {
+			Combat::AddAuraStack(user, target, AuraID::SLIME_TOUCH);
+		}
 	}
 }

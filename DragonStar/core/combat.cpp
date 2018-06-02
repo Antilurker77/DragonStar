@@ -12,6 +12,7 @@
 #include "../data/id/category.h"
 #include "../data/id/element.h"
 #include "../data/id/equipType.h"
+#include "../data/id/eventType.h"
 #include "../scene/battleScene.h"
 #include "../entity/actor.h"
 #include "../entity/statMath.h"
@@ -264,7 +265,7 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 	double damage = 0;
 
 	if (!isOffHand || isOffHand && user->IsDualWielding()) {
-		user->OnPreCalc(target, eventOptions);
+		user->OnEvent(EventType::PreCalc, target, eventOptions, eventResult, isOffHand, damage);
 		eventResult.DidHit = rollHit(user, target, eventOptions);
 
 		if (eventResult.DidHit) {
@@ -333,7 +334,7 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 			applyResistance(damage, user, target, eventOptions);
 			applyDamageTaken(damage, user, target, eventOptions);
 
-			user->OnPostCalc(target, eventOptions, eventResult, damage);
+			user->OnEvent(EventType::PostCalc, target, eventOptions, eventResult, isOffHand, damage);
 
 			// Deals damage to the actor and records amount of damage dealt.
 			eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
@@ -345,12 +346,12 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 
 			if (target->GetCurrentHP() == 0 && eventResult.ResultValue > 0) {
 				eventResult.DidKill = true;
-				target->OnDeath(user, eventOptions, eventResult);
+				target->OnEvent(EventType::Death, user, eventOptions, eventResult, isOffHand, damage);
 			}
 
-			user->OnAttack(target, eventOptions, eventResult, isOffHand);
-			user->OnHit(target, eventOptions, eventResult, isOffHand);
-			target->OnAttacked(user, eventOptions, eventResult);
+			user->OnEvent(EventType::Attack, target, eventOptions, eventResult, isOffHand, damage);
+			user->OnEvent(EventType::Hit, target, eventOptions, eventResult, isOffHand, damage);
+			target->OnEvent(EventType::Attacked, user, eventOptions, eventResult, isOffHand, damage);
 
 			eventResult.DidEvent = true;
 
@@ -366,8 +367,8 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 
 			outputMiss(user, target, eventOptions, eventResult);
 
-			target->OnHit(target, eventOptions, eventResult, isOffHand);
-			target->OnAttacked(target, eventOptions, eventResult);
+			user->OnEvent(EventType::Hit, target, eventOptions, eventResult, isOffHand, damage);
+			target->OnEvent(EventType::Attacked, user, eventOptions, eventResult, isOffHand, damage);
 		}
 
 		// todo: counter roll
@@ -387,8 +388,9 @@ EventResult Combat::WeaponAttack(ActorPtr& user, ActorPtr& target, double multip
 
 EventResult Combat::ScalingAttack(ActorPtr& user, ActorPtr& target, double baseDamage, Attribute attribute, EventOptions eventOptions) {
 	EventResult eventResult;
+	double damage = baseDamage;
 
-	user->OnPreCalc(target, eventOptions);
+	user->OnEvent(EventType::PreCalc, target, eventOptions, eventResult, false, damage);
 
 	// cannot miss, be blocked, or double strike
 	eventResult.DidEvent = false;
@@ -396,7 +398,6 @@ EventResult Combat::ScalingAttack(ActorPtr& user, ActorPtr& target, double baseD
 	eventResult.DidBlock = false;
 	eventResult.DidDoubleStrike = false;
 
-	double damage = baseDamage;
 	double scaleFactor = baseDamage / 50.0;
 	double attributeValue = 0;
 
@@ -433,7 +434,7 @@ EventResult Combat::ScalingAttack(ActorPtr& user, ActorPtr& target, double baseD
 	applyResistance(damage, user, target, eventOptions);
 	applyDamageTaken(damage, user, target, eventOptions);
 
-	user->OnPostCalc(target, eventOptions, eventResult, damage);
+	user->OnEvent(EventType::PostCalc, target, eventOptions, eventResult, false, damage);
 
 	// Deals damage to the actor and records amount of damage dealt.
 	eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
@@ -445,27 +446,26 @@ EventResult Combat::ScalingAttack(ActorPtr& user, ActorPtr& target, double baseD
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill && eventResult.ResultValue > 0) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, damage);
 	}
 
-	user->OnHit(target, eventOptions, eventResult, false);
-	target->OnAttacked(user, eventOptions, eventResult);
+	user->OnEvent(EventType::Hit, target, eventOptions, eventResult, false, damage);
+	target->OnEvent(EventType::Attacked, user, eventOptions, eventResult, false, damage);
 
 	return eventResult;
 }
 
 EventResult Combat::FixedAttack(ActorPtr& user, ActorPtr& target, double baseDamage, EventOptions eventOptions) {
 	EventResult eventResult;
+	double damage = baseDamage;
 
-	user->OnPreCalc(target, eventOptions);
+	user->OnEvent(EventType::PreCalc, target, eventOptions, eventResult, false, damage);
 
 	// cannot miss, be blocked, or double strike
 	eventResult.DidEvent = false;
 	eventResult.DidHit = true;
 	eventResult.DidBlock = false;
 	eventResult.DidDoubleStrike = false;
-
-	double damage = baseDamage;
 
 	// Crit roll.
 	eventResult.DidCrit = rollCrit(user, target, eventOptions);
@@ -480,7 +480,7 @@ EventResult Combat::FixedAttack(ActorPtr& user, ActorPtr& target, double baseDam
 	applyResistance(damage, user, target, eventOptions);
 	applyDamageTaken(damage, user, target, eventOptions);
 
-	user->OnPostCalc(target, eventOptions, eventResult, damage);
+	user->OnEvent(EventType::PostCalc, target, eventOptions, eventResult, false, damage);
 
 	// Deals damage to the actor and records amount of damage dealt.
 	eventResult.ResultValue = target->DamageActor(damage, eventOptions.Elements, eventResult.DidCrit);
@@ -492,11 +492,11 @@ EventResult Combat::FixedAttack(ActorPtr& user, ActorPtr& target, double baseDam
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill && eventResult.ResultValue > 0) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, damage);
 	}
 
-	user->OnHit(target, eventOptions, eventResult, false);
-	target->OnAttacked(user, eventOptions, eventResult);
+	user->OnEvent(EventType::Hit, target, eventOptions, eventResult, false, damage);
+	target->OnEvent(EventType::Attack, user, eventOptions, eventResult, false, damage);
 
 	return eventResult;
 }
@@ -523,7 +523,7 @@ EventResult Combat::AbsoluteAttack(ActorPtr& user, ActorPtr& target, double base
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill && eventResult.ResultValue > 0) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, damage);
 	}
 
 	return eventResult;
@@ -555,7 +555,7 @@ EventResult Combat::OnHit(ActorPtr& user, ActorPtr& target, double baseDamage, E
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, damage);
 	}
 
 	return eventResult;
@@ -584,7 +584,7 @@ EventResult Combat::OnHeal(ActorPtr& user, ActorPtr& target, double healAmount, 
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill && eventResult.ResultValue > 0) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, heal);
 	}
 
 	return eventResult;
@@ -592,8 +592,9 @@ EventResult Combat::OnHeal(ActorPtr& user, ActorPtr& target, double healAmount, 
 
 EventResult Combat::ScalingHeal(ActorPtr& user, ActorPtr& target, double healAmount, Attribute attribute, EventOptions eventOptions) {
 	EventResult eventResult;
+	double heal = healAmount;
 
-	user->OnPreCalcHeal(target, eventOptions);
+	user->OnEvent(EventType::PreCalcHeal, target, eventOptions, eventResult, false, heal);
 
 	// cannot miss, be blocked, or double strike
 	eventResult.DidEvent = false;
@@ -601,7 +602,6 @@ EventResult Combat::ScalingHeal(ActorPtr& user, ActorPtr& target, double healAmo
 	eventResult.DidBlock = false;
 	eventResult.DidDoubleStrike = false;
 
-	double heal = healAmount;
 	double scaleFactor = healAmount / 50.0;
 	double attributeValue = user->GetWIS(true);
 
@@ -623,7 +623,7 @@ EventResult Combat::ScalingHeal(ActorPtr& user, ActorPtr& target, double healAmo
 	applyHealingTaken(heal, user, target, eventOptions);
 	applyResistance(heal, user, target, eventOptions);
 
-	user->OnPostCalcHeal(target, eventOptions, eventResult, heal);
+	user->OnEvent(EventType::PostCalcHeal, target, eventOptions, eventResult, false, heal);
 
 	// Heals actor and records amount healed.
 	eventResult.ResultValue = target->HealActor(heal, eventOptions.Elements, attribute, eventResult.DidCrit);
@@ -632,29 +632,28 @@ EventResult Combat::ScalingHeal(ActorPtr& user, ActorPtr& target, double healAmo
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill && eventResult.ResultValue > 0) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, heal);
 	}
 
 	eventResult.DidEvent = true;
 
-	user->OnHeal(target, eventOptions, eventResult);
-	target->OnHealed(target, eventOptions, eventResult);
+	user->OnEvent(EventType::Heal, target, eventOptions, eventResult, false, heal);
+	target->OnEvent(EventType::Healed, user, eventOptions, eventResult, false, heal);
 
 	return eventResult;
 }
 
 EventResult Combat::FixedHeal(ActorPtr& user, ActorPtr& target, double healAmount, Attribute attribute, EventOptions eventOptions) {
 	EventResult eventResult;
+	double heal = healAmount;
 
-	user->OnPreCalcHeal(target, eventOptions);
+	user->OnEvent(EventType::PreCalcHeal, target, eventOptions, eventResult, false, heal);
 
 	// cannot miss, be blocked, or double strike
 	eventResult.DidEvent = false;
 	eventResult.DidHit = true;
 	eventResult.DidBlock = false;
 	eventResult.DidDoubleStrike = false;
-
-	double heal = healAmount;
 
 	eventResult.DidCrit = rollCrit(user, target, eventOptions);
 
@@ -668,7 +667,7 @@ EventResult Combat::FixedHeal(ActorPtr& user, ActorPtr& target, double healAmoun
 	applyHealingTaken(heal, user, target, eventOptions);
 	applyResistance(heal, user, target, eventOptions);
 
-	user->OnPostCalcHeal(target, eventOptions, eventResult, heal);
+	user->OnEvent(EventType::PostCalcHeal, target, eventOptions, eventResult, false, heal);
 
 	// Heals actor and records amount healed.
 	eventResult.ResultValue = target->HealActor(heal, eventOptions.Elements, attribute, eventResult.DidCrit);
@@ -677,12 +676,12 @@ EventResult Combat::FixedHeal(ActorPtr& user, ActorPtr& target, double healAmoun
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill && eventResult.ResultValue > 0) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, heal);
 	}
 	eventResult.DidEvent = true;
 
-	user->OnHeal(target, eventOptions, eventResult);
-	target->OnHealed(target, eventOptions, eventResult);
+	user->OnEvent(EventType::Heal, target, eventOptions, eventResult, false, heal);
+	target->OnEvent(EventType::Healed, user, eventOptions, eventResult, false, heal);
 
 	return eventResult;
 }
@@ -706,7 +705,7 @@ EventResult Combat::AbsoluteHeal(ActorPtr& user, ActorPtr& target, double healAm
 
 	eventResult.DidKill = target->GetCurrentHP() == 0;
 	if (eventResult.DidKill && eventResult.ResultValue > 0) {
-		target->OnDeath(user, eventOptions, eventResult);
+		target->OnEvent(EventType::Death, user, eventOptions, eventResult, false, heal);
 	}
 
 	eventResult.DidEvent = true;

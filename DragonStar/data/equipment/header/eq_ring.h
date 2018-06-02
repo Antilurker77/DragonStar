@@ -28,7 +28,7 @@ public:
 class Eq_BandOfTwinDisciplines : public Equipment {
 public:
 	Eq_BandOfTwinDisciplines();
-	void OnHit(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand);
+	void OnEvent(EventType eventType, ActorPtr& user, ActorPtr& target, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, bool isOffHand, double& amount);
 };
 
 class Eq_RingOfVitality : public Equipment {

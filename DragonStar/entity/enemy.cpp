@@ -418,99 +418,36 @@ int Enemy::GetArmor(bool consumeBuffs) {
 	return armor;
 }
 
-void Enemy::OnPreCalc(ActorPtr& targetHit, EventOptions& eventOptions) {
-	for (auto au : auras) {
-		au->OnPreCalc(targetHit, battleScene, eventOptions);
+void Enemy::OnEvent(EventType eventType, ActorPtr& target, EventOptions& eventOptions, EventResult& eventResult, bool isOffHand, double& amount) {
+	if (eventType == EventType::Attack) {
+		EventOptions eventOptionsLocal;
+		eventOptionsLocal.AbilityID = AbilityID::UNDEFINED;
+		eventOptionsLocal.AuraID = AuraID::UNDEFINED;
+		eventOptionsLocal.Categories = { Category::DAMAGING };
+		eventOptionsLocal.TriggerOnHit = false;
+
+		for (auto au : auras) {
+			au->OnEvent(eventType, target, battleScene, eventOptions, eventResult, isOffHand, amount);
+		}
+
+		enemyInfo->OnEvent(eventType, getPtr(), target, battleScene, eventOptions, eventResult, isOffHand, amount);
+
+		std::vector<StatMod> statMods;
+		statMods = GetOnHitDamage(eventOptions, true, isOffHand);
+
+		for (auto sm : statMods) {
+			eventOptionsLocal.Elements = sm.GetOnHitElements();
+			EventResult eventResultLocal = Combat::OnHit(getPtr(), target, sm.GetValue(), eventOptionsLocal);
+			eventResult.OnAttackValue += eventResultLocal.ResultValue;
+		}
 	}
+	else {
+		for (auto au : auras) {
+			au->OnEvent(eventType, target, battleScene, eventOptions, eventResult, isOffHand, amount);
+		}
 
-	enemyInfo->OnPreCalc(getPtr(), targetHit, battleScene, eventOptions);
-}
-
-void Enemy::OnPostCalc(ActorPtr& targetHit, EventOptions& eventOptions, EventResult& eventResult, double& damage) {
-	for (auto au : auras) {
-		au->OnPostCalc(targetHit, battleScene, eventOptions, eventResult, damage);
+		enemyInfo->OnEvent(eventType, getPtr(), target, battleScene, eventOptions, eventResult, isOffHand, amount);
 	}
-
-	enemyInfo->OnPostCalc(getPtr(), targetHit, battleScene, eventOptions, eventResult, damage);
-}
-
-void Enemy::OnPreCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions) {
-	for (auto au : auras) {
-		au->OnPreCalcHeal(targetHealed, battleScene, eventOptions);
-	}
-
-	enemyInfo->OnPreCalcHeal(getPtr(), targetHealed, battleScene, eventOptions);
-}
-
-void Enemy::OnPostCalcHeal(ActorPtr& targetHealed, EventOptions& eventOptions, EventResult& eventResult, double& heal) {
-	for (auto au : auras) {
-		au->OnPostCalcHeal(targetHealed, battleScene, eventOptions, eventResult, heal);
-	}
-
-	enemyInfo->OnPostCalcHeal(getPtr(), targetHealed, battleScene, eventOptions, eventResult, heal);
-}
-
-void Enemy::OnAttack(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
-	EventOptions eventOptionsLocal;
-	eventOptionsLocal.AbilityID = AbilityID::UNDEFINED;
-	eventOptionsLocal.AuraID = AuraID::UNDEFINED;
-	eventOptionsLocal.Categories = { Category::DAMAGING };
-	eventOptionsLocal.TriggerOnHit = false;
-
-	for (auto au : auras) {
-		au->OnAttack(targetHit, battleScene, eventOptions, eventResult, isOffHand);
-	}
-
-	enemyInfo->OnAttack(getPtr(), targetHit, battleScene, eventOptions, eventResult, isOffHand);
-
-	std::vector<StatMod> statMods;
-	statMods = GetOnHitDamage(eventOptions, true, isOffHand);
-
-	for (auto sm : statMods) {
-		eventOptionsLocal.Elements = sm.GetOnHitElements();
-		EventResult eventResultLocal = Combat::OnHit(getPtr(), targetHit, sm.GetValue(), eventOptionsLocal);
-		eventResult.OnAttackValue += eventResultLocal.ResultValue;
-	}
-}
-
-void Enemy::OnHit(ActorPtr& targetHit, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
-	for (auto au : auras) {
-		au->OnHit(targetHit, battleScene, eventOptions, eventResult, isOffHand);
-	}
-
-	enemyInfo->OnHit(getPtr(), targetHit, battleScene, eventOptions, eventResult, isOffHand);
-}
-
-void Enemy::OnHeal(ActorPtr& targetHealed, EventOptions eventOptions, EventResult eventResult) {
-	for (auto au : auras) {
-		au->OnHeal(targetHealed, battleScene, eventOptions, eventResult);
-	}
-
-	enemyInfo->OnHeal(getPtr(), targetHealed, battleScene, eventOptions, eventResult);
-}
-
-void Enemy::OnAttacked(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
-	for (auto au : auras) {
-		au->OnAttacked(attacker, battleScene, eventOptions, eventResult);
-	}
-
-	enemyInfo->OnAttacked(getPtr(), attacker, battleScene, eventOptions, eventResult);
-}
-
-void Enemy::OnHealed(ActorPtr& healer, EventOptions eventOptions, EventResult eventResult) {
-	for (auto au : auras) {
-		au->OnHealed(healer, battleScene, eventOptions, eventResult);
-	}
-
-	enemyInfo->OnHealed(getPtr(), healer, battleScene, eventOptions, eventResult);
-}
-
-void Enemy::OnDeath(ActorPtr& attacker, EventOptions eventOptions, EventResult eventResult) {
-	for (auto au : auras) {
-		au->OnDeath(attacker, battleScene, eventOptions, eventResult);
-	}
-
-	enemyInfo->OnDeath(getPtr(), attacker, battleScene, eventOptions, eventResult);
 }
 
 bool Enemy::IsDualWielding() {

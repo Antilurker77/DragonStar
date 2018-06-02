@@ -1082,6 +1082,9 @@
     <ClInclude Include="data\ability\header\ab_boulder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="data\id\eventType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="gfx\dungeon\dungeon_test.png">

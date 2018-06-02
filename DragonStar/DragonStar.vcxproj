@@ -377,6 +377,7 @@
     <ClInclude Include="data\id\enemyID.h" />
     <ClInclude Include="data\id\equipmentID.h" />
     <ClInclude Include="data\id\equipType.h" />
+    <ClInclude Include="data\id\eventType.h" />
     <ClInclude Include="data\id\formationID.h" />
     <ClInclude Include="data\id\itemQuality.h" />
     <ClInclude Include="data\id\mapID.h" />

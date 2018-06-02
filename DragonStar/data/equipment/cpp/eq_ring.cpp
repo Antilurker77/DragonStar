@@ -100,13 +100,15 @@ Eq_BandOfTwinDisciplines::Eq_BandOfTwinDisciplines() {
 	};
 }
 
-void Eq_BandOfTwinDisciplines::OnHit(ActorPtr& user, ActorPtr& targetHit, BattleScene* battleScene, EventOptions eventOptions, EventResult eventResult, bool isOffHand) {
-	auto cat = eventOptions.Categories;
-	auto ele = eventOptions.Elements;
-	
-	if (std::find(cat.begin(), cat.end(), Category::SPELL) != cat.end()) {
-		if (std::find(ele.begin(), ele.end(), Element::LIGHT) != ele.end() || std::find(ele.begin(), ele.end(), Element::DARK) != ele.end()) {
-			Combat::AddAuraStack(user, user, AuraID::BAND_OF_TWIN_DISCIPLINES);
+void Eq_BandOfTwinDisciplines::OnEvent(EventType eventType, ActorPtr& user, ActorPtr& target, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, bool isOffHand, double& amount) {
+	if (eventType == EventType::Hit) {
+		auto cat = eventOptions.Categories;
+		auto ele = eventOptions.Elements;
+
+		if (std::find(cat.begin(), cat.end(), Category::SPELL) != cat.end()) {
+			if (std::find(ele.begin(), ele.end(), Element::LIGHT) != ele.end() || std::find(ele.begin(), ele.end(), Element::DARK) != ele.end()) {
+				Combat::AddAuraStack(user, user, AuraID::BAND_OF_TWIN_DISCIPLINES);
+			}
 		}
 	}
 }
