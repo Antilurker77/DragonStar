@@ -29,41 +29,41 @@
 
 AbilityPtr Factory::CreateAbility(AbilityID id) {
 	switch (id) {
-	case AbilityID::ATTACK:								return AbilityPtr(std::make_shared<Ab_Attack>());
-	case AbilityID::ARCANE_BLAST:						return AbilityPtr(std::make_shared<Ab_ArcaneBlast>());
-	case AbilityID::BITE:								return AbilityPtr(std::make_shared<Ab_Bite>());
-	case AbilityID::BOULDER:							return AbilityPtr(std::make_shared<Ab_Boulder>());
-	case AbilityID::CHOPPER:							return AbilityPtr(std::make_shared<Ab_Chopper>());
-	case AbilityID::DARK_BOLT:							return AbilityPtr(std::make_shared<Ab_DarkBolt>());
-	case AbilityID::DRAGONFIRE_BOLT:					return AbilityPtr(std::make_shared<Ab_DragonfireBolt>());
-	case AbilityID::ELEMENTAL_ENERGY:					return AbilityPtr(std::make_shared<Ab_ElementalEnergy>());
-	case AbilityID::FIREBALL:							return AbilityPtr(std::make_shared<Ab_Fireball>());
-	case AbilityID::FIRE_NOVA:							return AbilityPtr(std::make_shared<Ab_FireNova>());
-	case AbilityID::FLAME_BOLT:							return AbilityPtr(std::make_shared<Ab_FlameBolt>());
-	case AbilityID::FLAME_SLASH:						return AbilityPtr(std::make_shared<Ab_FlameSlash>());
-	case AbilityID::GALE:								return AbilityPtr(std::make_shared<Ab_Gale>());
-	case AbilityID::HEAL:								return AbilityPtr(std::make_shared<Ab_Heal>());
-	case AbilityID::HEALING_RAIN:						return AbilityPtr(std::make_shared<Ab_HealingRain>());
-	case AbilityID::ICICLE:								return AbilityPtr(std::make_shared<Ab_Icicle>());
-	case AbilityID::LIGHT_BOLT:							return AbilityPtr(std::make_shared<Ab_LightBolt>());
-	case AbilityID::MAGIC_MISSILE:						return AbilityPtr(std::make_shared<Ab_MagicMissile>());
-	case AbilityID::MEND_WOUNDS:						return AbilityPtr(std::make_shared<Ab_MendWounds>());
-	case AbilityID::OBLITERATE:							return AbilityPtr(std::make_shared<Ab_Obliterate>());
-	case AbilityID::POWER_SHOT:							return AbilityPtr(std::make_shared<Ab_PowerShot>());
-	case AbilityID::POWER_STRIKE:						return AbilityPtr(std::make_shared<Ab_PowerStrike>());
-	case AbilityID::PRISMATIC_BOLT:						return AbilityPtr(std::make_shared<Ab_PrismaticBolt>());
-	case AbilityID::PSIONIC_MISSILE:					return AbilityPtr(std::make_shared<Ab_PsionicMissile>());
-	case AbilityID::RENDING_SLASH:						return AbilityPtr(std::make_shared<Ab_RendingSlash>());
-	case AbilityID::SHADOW_ENERGY:						return AbilityPtr(std::make_shared<Ab_ShadowEnergy>());
-	case AbilityID::SHADOW_STALK:						return AbilityPtr(std::make_shared<Ab_ShadowStalk>());
-	case AbilityID::SHOCK:								return AbilityPtr(std::make_shared<Ab_Shock>());
-	case AbilityID::SPLASH:								return AbilityPtr(std::make_shared<Ab_Splash>());
-	case AbilityID::TERRIFYING_HOWL:					return AbilityPtr(std::make_shared<Ab_TerrifyingHowl>());
-	case AbilityID::VENOM:								return AbilityPtr(std::make_shared<Ab_Venom>());
-	case AbilityID::WARP_SLICE:							return AbilityPtr(std::make_shared<Ab_WarpSlice>());
-	case AbilityID::WATER_BOLT:							return AbilityPtr(std::make_shared<Ab_WaterBolt>());
-	case AbilityID::RACIAL_COMMANDING_SHOUT:			return AbilityPtr(std::make_shared<Ab_CommandingShout>());
-	case AbilityID::RACIAL_DRAGON_BREATH:				return AbilityPtr(std::make_shared<Ab_DragonBreath>());
+	case AbilityID::Attack:								return AbilityPtr(std::make_shared<Ab_Attack>());
+	case AbilityID::ArcaneBlast:						return AbilityPtr(std::make_shared<Ab_ArcaneBlast>());
+	case AbilityID::Bite:								return AbilityPtr(std::make_shared<Ab_Bite>());
+	case AbilityID::Boulder:							return AbilityPtr(std::make_shared<Ab_Boulder>());
+	case AbilityID::Chopper:							return AbilityPtr(std::make_shared<Ab_Chopper>());
+	case AbilityID::DarkBolt:							return AbilityPtr(std::make_shared<Ab_DarkBolt>());
+	case AbilityID::DragonfireBolt:					return AbilityPtr(std::make_shared<Ab_DragonfireBolt>());
+	case AbilityID::ElementalEnergy:					return AbilityPtr(std::make_shared<Ab_ElementalEnergy>());
+	case AbilityID::Fireball:							return AbilityPtr(std::make_shared<Ab_Fireball>());
+	case AbilityID::FireNova:							return AbilityPtr(std::make_shared<Ab_FireNova>());
+	case AbilityID::FlameBolt:							return AbilityPtr(std::make_shared<Ab_FlameBolt>());
+	case AbilityID::FlameSlash:						return AbilityPtr(std::make_shared<Ab_FlameSlash>());
+	case AbilityID::Gale:								return AbilityPtr(std::make_shared<Ab_Gale>());
+	case AbilityID::Heal:								return AbilityPtr(std::make_shared<Ab_Heal>());
+	case AbilityID::HealingRain:						return AbilityPtr(std::make_shared<Ab_HealingRain>());
+	case AbilityID::Icicle:								return AbilityPtr(std::make_shared<Ab_Icicle>());
+	case AbilityID::LightBolt:							return AbilityPtr(std::make_shared<Ab_LightBolt>());
+	case AbilityID::MagicMissile:						return AbilityPtr(std::make_shared<Ab_MagicMissile>());
+	case AbilityID::MendWounds:						return AbilityPtr(std::make_shared<Ab_MendWounds>());
+	case AbilityID::Obliterate:							return AbilityPtr(std::make_shared<Ab_Obliterate>());
+	case AbilityID::PowerShot:							return AbilityPtr(std::make_shared<Ab_PowerShot>());
+	case AbilityID::PowerStrike:						return AbilityPtr(std::make_shared<Ab_PowerStrike>());
+	case AbilityID::PrismaticBolt:						return AbilityPtr(std::make_shared<Ab_PrismaticBolt>());
+	case AbilityID::PsionicMissile:					return AbilityPtr(std::make_shared<Ab_PsionicMissile>());
+	case AbilityID::RendingSlash:						return AbilityPtr(std::make_shared<Ab_RendingSlash>());
+	case AbilityID::ShadowEnergy:						return AbilityPtr(std::make_shared<Ab_ShadowEnergy>());
+	case AbilityID::ShadowStalk:						return AbilityPtr(std::make_shared<Ab_ShadowStalk>());
+	case AbilityID::Shock:								return AbilityPtr(std::make_shared<Ab_Shock>());
+	case AbilityID::Splash:								return AbilityPtr(std::make_shared<Ab_Splash>());
+	case AbilityID::TerrifyingHowl:					return AbilityPtr(std::make_shared<Ab_TerrifyingHowl>());
+	case AbilityID::Venom:								return AbilityPtr(std::make_shared<Ab_Venom>());
+	case AbilityID::WarpSlice:							return AbilityPtr(std::make_shared<Ab_WarpSlice>());
+	case AbilityID::WaterBolt:							return AbilityPtr(std::make_shared<Ab_WaterBolt>());
+	case AbilityID::RacialCommandingShout:			return AbilityPtr(std::make_shared<Ab_CommandingShout>());
+	case AbilityID::RacialDragonBreath:				return AbilityPtr(std::make_shared<Ab_DragonBreath>());
 
 	// Returns Attack ability if ID is invalid.
 	default:											return AbilityPtr(std::make_shared<Ab_Attack>());
@@ -76,20 +76,20 @@ ItemPtr Factory::CreateAbilityScroll(AbilityID id) {
 
 AuraPtr Factory::CreateAura(AuraID id) {
 	switch (id) {
-	case AuraID::BAND_OF_TWIN_DISCIPLINES:				return AuraPtr(std::make_shared<Au_BandOfTwinDisciplines>());
-	case AuraID::COMMANDING_SHOUT:						return AuraPtr(std::make_shared<Au_CommandingShout>());
-	case AuraID::ELEMENTAL_ENERGY:						return AuraPtr(std::make_shared<Au_ElementalEnergy>());
-	case AuraID::FLAME_SLASH:							return AuraPtr(std::make_shared<Au_FlameSlash>());
-	case AuraID::GALE:									return AuraPtr(std::make_shared<Au_Gale>());
-	case AuraID::HEALING_RAIN:							return AuraPtr(std::make_shared<Au_HealingRain>());
-	case AuraID::ICICLE:								return AuraPtr(std::make_shared<Au_Icicle>());
-	case AuraID::MEND_WOUNDS:							return AuraPtr(std::make_shared<Au_MendWounds>());
-	case AuraID::PRISMATIC_BOLT:						return AuraPtr(std::make_shared<Au_PrismaticBolt>());
-	case AuraID::RENDING_SLASH:							return AuraPtr(std::make_shared<Au_RendingSlash>());
-	case AuraID::SHADOW_ENERGY:							return AuraPtr(std::make_shared<Au_ShadowEnergy>());
-	case AuraID::SLIME_TOUCH:							return AuraPtr(std::make_shared<Au_SlimeTouch>());
-	case AuraID::TERRIFYING_HOWL:						return AuraPtr(std::make_shared<Au_TerrifyingHowl>());
-	case AuraID::VENOM:									return AuraPtr(std::make_shared<Au_Venom>());
+	case AuraID::BandOfTwinDisciplines:				return AuraPtr(std::make_shared<Au_BandOfTwinDisciplines>());
+	case AuraID::CommandingShout:						return AuraPtr(std::make_shared<Au_CommandingShout>());
+	case AuraID::ElementalEnergy:						return AuraPtr(std::make_shared<Au_ElementalEnergy>());
+	case AuraID::FlameSlash:							return AuraPtr(std::make_shared<Au_FlameSlash>());
+	case AuraID::Gale:									return AuraPtr(std::make_shared<Au_Gale>());
+	case AuraID::HealingRain:							return AuraPtr(std::make_shared<Au_HealingRain>());
+	case AuraID::Icicle:								return AuraPtr(std::make_shared<Au_Icicle>());
+	case AuraID::MendWounds:							return AuraPtr(std::make_shared<Au_MendWounds>());
+	case AuraID::PrismaticBolt:						return AuraPtr(std::make_shared<Au_PrismaticBolt>());
+	case AuraID::RendingSlash:							return AuraPtr(std::make_shared<Au_RendingSlash>());
+	case AuraID::ShadowEnergy:							return AuraPtr(std::make_shared<Au_ShadowEnergy>());
+	case AuraID::SlimeTouch:							return AuraPtr(std::make_shared<Au_SlimeTouch>());
+	case AuraID::TerrifyingHowl:						return AuraPtr(std::make_shared<Au_TerrifyingHowl>());
+	case AuraID::Venom:									return AuraPtr(std::make_shared<Au_Venom>());
 
 	// Returns Venom if ID is invalid.
 	default:											return AuraPtr(std::make_shared<Au_Venom>());
@@ -99,19 +99,19 @@ AuraPtr Factory::CreateAura(AuraID id) {
 EnemyInfoPtr Factory::CreateEnemyInfo(EnemyID id) {
 	switch (id) {
 	// Common
-	case EnemyID::TEST_ASSASSIN:						return EnemyInfoPtr(std::make_shared<En_TestAssassin>());
-	case EnemyID::TEST_ENEMY:							return EnemyInfoPtr(std::make_shared<En_TestEnemy>());
-	case EnemyID::TEST_MAGE:							return EnemyInfoPtr(std::make_shared<En_TestMage>());
-	case EnemyID::ARCANE_SENTRY:						return EnemyInfoPtr(std::make_shared<En_ArcaneSentry>());
-	case EnemyID::GIANT_RAT:							return EnemyInfoPtr(std::make_shared<En_GiantRat>());
-	case EnemyID::LESSER_FLAMEBLADE:					return EnemyInfoPtr(std::make_shared<En_LesserFlameblade>());
-	case EnemyID::SHADOW_STALKER:						return EnemyInfoPtr(std::make_shared<En_ShadowStalker>());
-	case EnemyID::SLIME:								return EnemyInfoPtr(std::make_shared<En_Slime>());
-	case EnemyID::TARGET_DUMMY:							return EnemyInfoPtr(std::make_shared<En_TargetDummy>());
+	case EnemyID::TestAssassin:						return EnemyInfoPtr(std::make_shared<En_TestAssassin>());
+	case EnemyID::TestEnemy:							return EnemyInfoPtr(std::make_shared<En_TestEnemy>());
+	case EnemyID::TestMage:							return EnemyInfoPtr(std::make_shared<En_TestMage>());
+	case EnemyID::ArcaneSentry:						return EnemyInfoPtr(std::make_shared<En_ArcaneSentry>());
+	case EnemyID::GiantRat:							return EnemyInfoPtr(std::make_shared<En_GiantRat>());
+	case EnemyID::LesserFlameblade:					return EnemyInfoPtr(std::make_shared<En_LesserFlameblade>());
+	case EnemyID::ShadowStalker:						return EnemyInfoPtr(std::make_shared<En_ShadowStalker>());
+	case EnemyID::Slime:								return EnemyInfoPtr(std::make_shared<En_Slime>());
+	case EnemyID::TargetDummy:							return EnemyInfoPtr(std::make_shared<En_TargetDummy>());
 
 	// Unique
-	case EnemyID::TEST_UNIQUE:							return EnemyInfoPtr(std::make_shared<En_TestUnique>());
-	case EnemyID::FENROK:								return EnemyInfoPtr(std::make_shared<En_Fenrok>());
+	case EnemyID::TestUnique:							return EnemyInfoPtr(std::make_shared<En_TestUnique>());
+	case EnemyID::Fenrok:								return EnemyInfoPtr(std::make_shared<En_Fenrok>());
 
 	// Returns Test Enemy if ID is invalid.
 	default:											return EnemyInfoPtr(std::make_shared<En_TestEnemy>());
@@ -121,23 +121,23 @@ EnemyInfoPtr Factory::CreateEnemyInfo(EnemyID id) {
 FormationPtr Factory::CreateFormation(FormationID id) {
 	switch (id) {
 	// Common
-	case FormationID::TEST_FORMATION_A:					return FormationPtr(std::make_shared<Fa_TestFormationA>());
-	case FormationID::TEST_FORMATION_B:					return FormationPtr(std::make_shared<Fa_TestFormationB>());
-	case FormationID::FLAMEBLADES_STALKERS_FIELD:		return FormationPtr(std::make_shared<Fa_FlamebladesStalkersField>());
-	case FormationID::LESSER_FLAMEBLADES_FIELD:			return FormationPtr(std::make_shared<Fa_LesserFlamebladesField>());
-	case FormationID::SENTRY_AMBUSH:					return FormationPtr(std::make_shared<Fa_SentryAmbush>());
-	case FormationID::SEWER_RATS:						return FormationPtr(std::make_shared<Fa_SewerRats>());
-	case FormationID::SEWER_RATS_SLIMES:				return FormationPtr(std::make_shared<Fa_SewerRatsSlimes>());
-	case FormationID::SEWER_SLIMES:						return FormationPtr(std::make_shared<Fa_SewerSlimes>());
-	case FormationID::SEWER_RATS_INTERSECTION:			return FormationPtr(std::make_shared<Fa_SewerRatsIntersection>());
-	case FormationID::SHADOW_STALKERS_FIELD:			return FormationPtr(std::make_shared<Fa_ShadowStalkersField>());
+	case FormationID::TestFormationA:					return FormationPtr(std::make_shared<Fa_TestFormationA>());
+	case FormationID::TestFormationB:					return FormationPtr(std::make_shared<Fa_TestFormationB>());
+	case FormationID::FlamebladesStalkersField:		return FormationPtr(std::make_shared<Fa_FlamebladesStalkersField>());
+	case FormationID::LesserFlamebladesField:			return FormationPtr(std::make_shared<Fa_LesserFlamebladesField>());
+	case FormationID::SentryAmbush:					return FormationPtr(std::make_shared<Fa_SentryAmbush>());
+	case FormationID::SewerRats:						return FormationPtr(std::make_shared<Fa_SewerRats>());
+	case FormationID::SewerRatsSlimes:				return FormationPtr(std::make_shared<Fa_SewerRatsSlimes>());
+	case FormationID::SewerSlimes:						return FormationPtr(std::make_shared<Fa_SewerSlimes>());
+	case FormationID::SewerRatsIntersection:			return FormationPtr(std::make_shared<Fa_SewerRatsIntersection>());
+	case FormationID::ShadowStalkersField:			return FormationPtr(std::make_shared<Fa_ShadowStalkersField>());
 
 	// Unique
-	case FormationID::TEST_UNIQUE:						return FormationPtr(std::make_shared<Fa_TestUnique>());
-	case FormationID::FENROK:							return FormationPtr(std::make_shared<Fa_Fenrok>());
+	case FormationID::TestUnique:						return FormationPtr(std::make_shared<Fa_TestUnique>());
+	case FormationID::Fenrok:							return FormationPtr(std::make_shared<Fa_Fenrok>());
 
 	// Boss
-	case FormationID::TEST_BOSS:						return FormationPtr(std::make_shared<Fa_TestBoss>());
+	case FormationID::TestBoss:						return FormationPtr(std::make_shared<Fa_TestBoss>());
 
 	// Returns Test Boss formation if ID is invalid.
 	default:											return FormationPtr(std::make_shared<Fa_TestBoss>());
@@ -146,47 +146,47 @@ FormationPtr Factory::CreateFormation(FormationID id) {
 
 ItemPtr Factory::CreateEquipment(EquipmentID id) {
 	switch (id) {
-	case EquipmentID::AMULET_OF_DIVINE_LIGHT:			return ItemPtr(std::make_shared<Eq_AmuletOfDivineLight>());
-	case EquipmentID::BAND_OF_TWIN_DISCIPLINES:			return ItemPtr(std::make_shared<Eq_BandOfTwinDisciplines>());
-	case EquipmentID::CHARM_OF_DEXTERITY:				return ItemPtr(std::make_shared<Eq_CharmOfDexterity>());
-	case EquipmentID::CHARM_OF_INTELLIGENCE:			return ItemPtr(std::make_shared<Eq_CharmOfIntelligence>());
-	case EquipmentID::CHARM_OF_STRENGTH:				return ItemPtr(std::make_shared<Eq_CharmOfStrength>());
-	case EquipmentID::CHARM_OF_WISDOM:					return ItemPtr(std::make_shared<Eq_CharmOfWisdom>());
-	case EquipmentID::CLOUD_LANCE:						return ItemPtr(std::make_shared<Eq_CloudLance>());
-	case EquipmentID::DRAGONITE_NECKLACE:				return ItemPtr(std::make_shared<Eq_DragoniteNecklace>());
-	case EquipmentID::DRAGONITE_RING:					return ItemPtr(std::make_shared<Eq_DragoniteRing>());
-	case EquipmentID::GOLD_NECKLACE:					return ItemPtr(std::make_shared<Eq_GoldNecklace>());
-	case EquipmentID::GOLD_RING:						return ItemPtr(std::make_shared<Eq_GoldRing>());
-	case EquipmentID::IRON_ARMOR:						return ItemPtr(std::make_shared<Eq_IronArmor>());
-	case EquipmentID::IRON_AXE:							return ItemPtr(std::make_shared<Eq_IronAxe>());
-	case EquipmentID::IRON_BUCKLER:						return ItemPtr(std::make_shared<Eq_IronBuckler>());
-	case EquipmentID::IRON_DAGGER:						return ItemPtr(std::make_shared<Eq_IronDagger>());
-	case EquipmentID::IRON_GAUNTLETS:					return ItemPtr(std::make_shared<Eq_IronGauntlets>());
-	case EquipmentID::IRON_GREATAXE:					return ItemPtr(std::make_shared<Eq_IronGreataxe>());
-	case EquipmentID::IRON_GREATMACE:					return ItemPtr(std::make_shared<Eq_IronGreatmace>());
-	case EquipmentID::IRON_GREATSWORD:					return ItemPtr(std::make_shared<Eq_IronGreatsword>());
-	case EquipmentID::IRON_GREAVES:						return ItemPtr(std::make_shared<Eq_IronGreaves>());
-	case EquipmentID::IRON_HELM:						return ItemPtr(std::make_shared<Eq_IronHelm>());
-	case EquipmentID::IRON_MACE:						return ItemPtr(std::make_shared<Eq_IronMace>());
-	case EquipmentID::IRON_SHIELD:						return ItemPtr(std::make_shared<Eq_IronShield>());
-	case EquipmentID::IRON_SPEAR:						return ItemPtr(std::make_shared<Eq_IronSpear>());
-	case EquipmentID::IRON_SWORD:						return ItemPtr(std::make_shared<Eq_IronSword>());
-	case EquipmentID::LEATHER_ARMOR:					return ItemPtr(std::make_shared<Eq_LeatherArmor>());
-	case EquipmentID::LEATHER_BOOTS:					return ItemPtr(std::make_shared<Eq_LeatherBoots>());
-	case EquipmentID::LEATHER_GLOVES:					return ItemPtr(std::make_shared<Eq_LeatherGloves>());
-	case EquipmentID::LEATHER_HELMET:					return ItemPtr(std::make_shared<Eq_LeatherHelmet>());
-	case EquipmentID::LONGBOW:							return ItemPtr(std::make_shared<Eq_Longbow>());
-	case EquipmentID::OMEGA_RING:						return ItemPtr(std::make_shared<Eq_OmegaRing>());
-	case EquipmentID::POWER_ORB:						return ItemPtr(std::make_shared<Eq_PowerOrb>());
-	case EquipmentID::RING_OF_VITALITY:					return ItemPtr(std::make_shared<Eq_RingOfVitality>());
-	case EquipmentID::SILK_GLOVES:						return ItemPtr(std::make_shared<Eq_SilkGloves>());
-	case EquipmentID::SILK_HAT:							return ItemPtr(std::make_shared<Eq_SilkHat>());
-	case EquipmentID::SILK_ROBES:						return ItemPtr(std::make_shared<Eq_SilkRobes>());
-	case EquipmentID::SILK_SHOES:						return ItemPtr(std::make_shared<Eq_SilkShoes>());
-	case EquipmentID::SILVER_NECKLACE:					return ItemPtr(std::make_shared<Eq_SilverNecklace>());
-	case EquipmentID::SILVER_RING:						return ItemPtr(std::make_shared<Eq_SilverRing>());
-	case EquipmentID::WOODEN_STAFF:						return ItemPtr(std::make_shared<Eq_WoodenStaff>());
-	case EquipmentID::WOODEN_WAND:						return ItemPtr(std::make_shared<Eq_WoodenWand>());
+	case EquipmentID::AmuletOfDivineLight:			return ItemPtr(std::make_shared<Eq_AmuletOfDivineLight>());
+	case EquipmentID::BandOfTwinDisciplines:			return ItemPtr(std::make_shared<Eq_BandOfTwinDisciplines>());
+	case EquipmentID::CharmOfDexterity:				return ItemPtr(std::make_shared<Eq_CharmOfDexterity>());
+	case EquipmentID::CharmOfIntelligence:			return ItemPtr(std::make_shared<Eq_CharmOfIntelligence>());
+	case EquipmentID::CharmOfStrength:				return ItemPtr(std::make_shared<Eq_CharmOfStrength>());
+	case EquipmentID::CharmOfWisdom:					return ItemPtr(std::make_shared<Eq_CharmOfWisdom>());
+	case EquipmentID::CloudLance:						return ItemPtr(std::make_shared<Eq_CloudLance>());
+	case EquipmentID::DragoniteNecklace:				return ItemPtr(std::make_shared<Eq_DragoniteNecklace>());
+	case EquipmentID::DragoniteRing:					return ItemPtr(std::make_shared<Eq_DragoniteRing>());
+	case EquipmentID::GoldNecklace:					return ItemPtr(std::make_shared<Eq_GoldNecklace>());
+	case EquipmentID::GoldRing:						return ItemPtr(std::make_shared<Eq_GoldRing>());
+	case EquipmentID::IronArmor:						return ItemPtr(std::make_shared<Eq_IronArmor>());
+	case EquipmentID::IronAxe:							return ItemPtr(std::make_shared<Eq_IronAxe>());
+	case EquipmentID::IronBuckler:						return ItemPtr(std::make_shared<Eq_IronBuckler>());
+	case EquipmentID::IronDagger:						return ItemPtr(std::make_shared<Eq_IronDagger>());
+	case EquipmentID::IronGauntlets:					return ItemPtr(std::make_shared<Eq_IronGauntlets>());
+	case EquipmentID::IronGreataxe:					return ItemPtr(std::make_shared<Eq_IronGreataxe>());
+	case EquipmentID::IronGreatmace:					return ItemPtr(std::make_shared<Eq_IronGreatmace>());
+	case EquipmentID::IronGreatsword:					return ItemPtr(std::make_shared<Eq_IronGreatsword>());
+	case EquipmentID::IronGreaves:						return ItemPtr(std::make_shared<Eq_IronGreaves>());
+	case EquipmentID::IronHelm:						return ItemPtr(std::make_shared<Eq_IronHelm>());
+	case EquipmentID::IronMace:						return ItemPtr(std::make_shared<Eq_IronMace>());
+	case EquipmentID::IronShield:						return ItemPtr(std::make_shared<Eq_IronShield>());
+	case EquipmentID::IronSpear:						return ItemPtr(std::make_shared<Eq_IronSpear>());
+	case EquipmentID::IronSword:						return ItemPtr(std::make_shared<Eq_IronSword>());
+	case EquipmentID::LeatherArmor:					return ItemPtr(std::make_shared<Eq_LeatherArmor>());
+	case EquipmentID::LeatherBoots:					return ItemPtr(std::make_shared<Eq_LeatherBoots>());
+	case EquipmentID::LeatherGloves:					return ItemPtr(std::make_shared<Eq_LeatherGloves>());
+	case EquipmentID::LeatherHelmet:					return ItemPtr(std::make_shared<Eq_LeatherHelmet>());
+	case EquipmentID::Longbow:							return ItemPtr(std::make_shared<Eq_Longbow>());
+	case EquipmentID::OmegaRing:						return ItemPtr(std::make_shared<Eq_OmegaRing>());
+	case EquipmentID::PowerOrb:						return ItemPtr(std::make_shared<Eq_PowerOrb>());
+	case EquipmentID::RingOfVitality:					return ItemPtr(std::make_shared<Eq_RingOfVitality>());
+	case EquipmentID::SilkGloves:						return ItemPtr(std::make_shared<Eq_SilkGloves>());
+	case EquipmentID::SilkHat:							return ItemPtr(std::make_shared<Eq_SilkHat>());
+	case EquipmentID::SilkRobes:						return ItemPtr(std::make_shared<Eq_SilkRobes>());
+	case EquipmentID::SilkShoes:						return ItemPtr(std::make_shared<Eq_SilkShoes>());
+	case EquipmentID::SilverNecklace:					return ItemPtr(std::make_shared<Eq_SilverNecklace>());
+	case EquipmentID::SilverRing:						return ItemPtr(std::make_shared<Eq_SilverRing>());
+	case EquipmentID::WoodenStaff:						return ItemPtr(std::make_shared<Eq_WoodenStaff>());
+	case EquipmentID::WoodenWand:						return ItemPtr(std::make_shared<Eq_WoodenWand>());
 
 	// Returns Silver Ring if ID is invalid.
 	default:											return ItemPtr(std::make_shared<Eq_SilverRing>());
@@ -196,16 +196,16 @@ ItemPtr Factory::CreateEquipment(EquipmentID id) {
 // Returns map data, including tiles and tileset properties.
 MapPtr Factory::CreateMap(MapID id){
 	switch (id){
-	case MapID::BASIC_DUNGEON:							return MapPtr(std::make_shared<Mp_BasicDungeon>());
-	case MapID::TEST_MAP:								return MapPtr(std::make_shared<Mp_TestMap>());
-	case MapID::TEST_MAP_XL:							return MapPtr(std::make_shared<Mp_TestMapXL>());
-	case MapID::TEST_MAP_XS:							return MapPtr(std::make_shared<Mp_TestMapXS>());
-	case MapID::TEST_ARENA:								return MapPtr(std::make_shared<Mp_TestArena>());
-	case MapID::TEST_ARENA_B:							return MapPtr(std::make_shared<Mp_TestArenaB>());
-	case MapID::FIELD_FIELD:							return MapPtr(std::make_shared<Mp_FieldField>());
-	case MapID::FIELD_SMALL_ISLAND:						return MapPtr(std::make_shared<Mp_FieldSmallIsland>());
-	case MapID::FIELD_SEWER:							return MapPtr(std::make_shared<Mp_FieldSewer>());
-	case MapID::FIELD_SEWER_INTERSECTION:				return MapPtr(std::make_shared<Mp_FieldSewerIntersection>());
+	case MapID::BasicDungeon:							return MapPtr(std::make_shared<Mp_BasicDungeon>());
+	case MapID::TestMap:								return MapPtr(std::make_shared<Mp_TestMap>());
+	case MapID::TestMapXL:							return MapPtr(std::make_shared<Mp_TestMapXL>());
+	case MapID::TestMapXS:							return MapPtr(std::make_shared<Mp_TestMapXS>());
+	case MapID::TestArena:								return MapPtr(std::make_shared<Mp_TestArena>());
+	case MapID::TestArenaB:							return MapPtr(std::make_shared<Mp_TestArenaB>());
+	case MapID::FieldField:							return MapPtr(std::make_shared<Mp_FieldField>());
+	case MapID::FieldSmallIsland:						return MapPtr(std::make_shared<Mp_FieldSmallIsland>());
+	case MapID::FieldSewer:							return MapPtr(std::make_shared<Mp_FieldSewer>());
+	case MapID::FieldSewerIntersection:				return MapPtr(std::make_shared<Mp_FieldSewerIntersection>());
 
 	// Returns TEST map if ID is invalid.
 	default:											return MapPtr(std::make_shared<Mp_TestMap>());
@@ -214,18 +214,18 @@ MapPtr Factory::CreateMap(MapID id){
 
 PlayerClassPtr Factory::CreatePlayerClass(PlayerClassID id) {
 	switch (id) {
-	case PlayerClassID::ADVENTURER:						return PlayerClassPtr(std::make_shared<Pc_Adventurer>());
-	case PlayerClassID::BLADEMASTER:					return PlayerClassPtr(std::make_shared<Pc_Blademaster>());
-	case PlayerClassID::BERSERKER:						return PlayerClassPtr(std::make_shared<Pc_Berserker>());
-	case PlayerClassID::GUARDIAN:						return PlayerClassPtr(std::make_shared<Pc_Guardian>());
-	case PlayerClassID::ASSASSIN:						return PlayerClassPtr(std::make_shared<Pc_Assassin>());
-	case PlayerClassID::STORMSINGER:					return PlayerClassPtr(std::make_shared<Pc_Stormsinger>());
-	case PlayerClassID::RANGER:							return PlayerClassPtr(std::make_shared<Pc_Ranger>());
-	case PlayerClassID::WIZARD:							return PlayerClassPtr(std::make_shared<Pc_Wizard>());
-	case PlayerClassID::SHAMAN:							return PlayerClassPtr(std::make_shared<Pc_Shaman>());
-	case PlayerClassID::ACOLYTE:						return PlayerClassPtr(std::make_shared<Pc_Acolyte>());
-	case PlayerClassID::PRIEST:							return PlayerClassPtr(std::make_shared<Pc_Priest>());
-	case PlayerClassID::DRUID:							return PlayerClassPtr(std::make_shared<Pc_Druid>());
+	case PlayerClassID::Adventurer:						return PlayerClassPtr(std::make_shared<Pc_Adventurer>());
+	case PlayerClassID::Blademaster:					return PlayerClassPtr(std::make_shared<Pc_Blademaster>());
+	case PlayerClassID::Berserker:						return PlayerClassPtr(std::make_shared<Pc_Berserker>());
+	case PlayerClassID::Guardian:						return PlayerClassPtr(std::make_shared<Pc_Guardian>());
+	case PlayerClassID::Assassin:						return PlayerClassPtr(std::make_shared<Pc_Assassin>());
+	case PlayerClassID::Stormsinger:					return PlayerClassPtr(std::make_shared<Pc_Stormsinger>());
+	case PlayerClassID::Ranger:							return PlayerClassPtr(std::make_shared<Pc_Ranger>());
+	case PlayerClassID::Wizard:							return PlayerClassPtr(std::make_shared<Pc_Wizard>());
+	case PlayerClassID::Shaman:							return PlayerClassPtr(std::make_shared<Pc_Shaman>());
+	case PlayerClassID::Acolyte:						return PlayerClassPtr(std::make_shared<Pc_Acolyte>());
+	case PlayerClassID::Priest:							return PlayerClassPtr(std::make_shared<Pc_Priest>());
+	case PlayerClassID::Druid:							return PlayerClassPtr(std::make_shared<Pc_Druid>());
 
 	// Return Adventurer player class if ID is invalid.
 	default:											return PlayerClassPtr(std::make_shared<Pc_Adventurer>());
@@ -235,9 +235,9 @@ PlayerClassPtr Factory::CreatePlayerClass(PlayerClassID id) {
 // Returns race data.
 RacePtr Factory::CreateRace(RaceID id){
 	switch (id){
-	case RaceID::HUMAN:									return RacePtr(std::make_shared<Human>());
-	case RaceID::VULPINE:								return RacePtr(std::make_shared<Vulpine>());
-	case RaceID::RUNETOUCHED:							return RacePtr(std::make_shared<Runetouched>());
+	case RaceID::Human:									return RacePtr(std::make_shared<Human>());
+	case RaceID::Vulpine:								return RacePtr(std::make_shared<Vulpine>());
+	case RaceID::Runetouched:							return RacePtr(std::make_shared<Runetouched>());
 
 	// Returns HUMAN race data if ID is invalid.
 	default:											return RacePtr(std::make_shared<Human>());
@@ -247,8 +247,8 @@ RacePtr Factory::CreateRace(RaceID id){
 // Returns tileset data. Used by maps.
 TilesetPtr Factory::CreateTileset(TilesetID id){
 	switch (id){
-	case TilesetID::TEST_TILESET:						return TilesetPtr(std::make_unique<Ts_TestTileset>());
-	case TilesetID::FIELD:								return TilesetPtr(std::make_unique<Ts_Field>());
+	case TilesetID::TestTileset:						return TilesetPtr(std::make_unique<Ts_TestTileset>());
+	case TilesetID::Field:								return TilesetPtr(std::make_unique<Ts_Field>());
 
 	// Returns TEST tileset if ID is invalid.
 	default:											return TilesetPtr(std::make_unique<Ts_TestTileset>());

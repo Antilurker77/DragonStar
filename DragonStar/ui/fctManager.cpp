@@ -101,49 +101,49 @@ void FCTManager::AddDamageHealUnit(int value, bool isCrit, std::vector<Element> 
 		sf::Sprite icon;
 		std::string filepath = "gfx/ui/icon/small_icon/";
 		switch (e) {
-		case Element::PHYSICAL:
+		case Element::Physical:
 			filepath += "physical.png";
 			break;
-		case Element::ARCANE:
+		case Element::Arcane:
 			filepath += "arcane.png";
 			break;
-		case Element::FIRE:
+		case Element::Fire:
 			filepath += "fire.png";
 			break;
-		case Element::ICE:
+		case Element::Ice:
 			filepath += "ice.png";
 			break;
-		case Element::LIGHTNING:
+		case Element::Lightning:
 			filepath += "lightning.png";
 			break;
-		case Element::POISON:
+		case Element::Poison:
 			filepath += "poison.png";
 			break;
-		case Element::WATER:
+		case Element::Water:
 			filepath += "water.png";
 			break;
-		case Element::WIND:
+		case Element::Wind:
 			filepath += "wind.png";
 			break;
-		case Element::EARTH:
+		case Element::Earth:
 			filepath += "earth.png";
 			break;
-		case Element::MIND:
+		case Element::Mind:
 			filepath += "mind.png";
 			break;
-		case Element::LIGHT:
+		case Element::Light:
 			filepath += "light.png";
 			break;
-		case Element::DARK:
+		case Element::Dark:
 			filepath += "dark.png";
 			break;
-		case Element::ASTRAL:
+		case Element::Astral:
 			filepath += "astral.png";
 			break;
-		case Element::DIVINE_HEAL:
+		case Element::DivineHeal:
 			filepath += "divine.png";
 			break;
-		case Element::NATURE_HEAL:
+		case Element::NatureHeal:
 			filepath += "nature.png";
 			break;
 		default:

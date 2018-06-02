@@ -9,14 +9,14 @@
 #pragma once
 
 enum class RaceID {
-	NONE = 0,
-	HUMAN = 1,
-	ELF = 2,
-	SHADOW_ELF = 3,
-	STONE_DWARF = 4,
-	DRACONIAN = 5,
-	VULPINE = 6,
-	ANUBIAN = 7,
-	RUNETOUCHED = 8,
-	PLACEHOLDER = 9
+	None = 0,
+	Human = 1,
+	Elf = 2,
+	ShadowElf = 3,
+	StoneDwarf = 4,
+	Draconian = 5,
+	Vulpine = 6,
+	Anubian = 7,
+	Runetouched = 8,
+	Placeholder = 9
 };

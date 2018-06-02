@@ -296,7 +296,7 @@ void Aura::calcDuraiton() {
 }
 
 void Aura::setAuraOptions() {
-	auraOptions.AbilityID = AbilityID::UNDEFINED;
+	auraOptions.AbilityID = AbilityID::Undefined;
 	auraOptions.AuraID = id;
 	auraOptions.BonusCritChance = bonusCrit + snapshotCritChance;
 	auraOptions.BonusCritDamage = bonusCritDmg + snapshotCritPower;

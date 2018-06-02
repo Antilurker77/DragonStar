@@ -21,28 +21,28 @@ Ab_WarpSlice::Ab_WarpSlice() {
 	setAttackDefault();
 
 	name = "Warp Slice";
-	abilityID = AbilityID::WARP_SLICE;
+	abilityID = AbilityID::WarpSlice;
 	icon = "warp_slice.png";
 
 	abilityTypes = {
-		AbilityType::SWORD_SKILL
+		AbilityType::SwordSkill
 	};
 	tier = 2;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	elements = {
-		Element::ARCANE
+		Element::Arcane
 	};
 
 	usableWeapons = {
-		EquipType::SWORD_1H,
-		EquipType::SWORD_2H
+		EquipType::Sword1H,
+		EquipType::Sword2H
 	};
 
 	mpCost = 40;
@@ -51,7 +51,7 @@ Ab_WarpSlice::Ab_WarpSlice() {
 	range = 3;
 	useAttackRange = false;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 	ignoreBodyBlock = true;

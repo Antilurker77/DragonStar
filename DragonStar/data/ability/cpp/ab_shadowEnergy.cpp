@@ -18,21 +18,21 @@ Ab_ShadowEnergy::Ab_ShadowEnergy() {
 	setHelpfulSpellDefault();
 
 	name = "Shadow Energy";
-	abilityID = AbilityID::SHADOW_ENERGY;
+	abilityID = AbilityID::ShadowEnergy;
 	icon = "dark_bolt.png";
 
 	abilityTypes = {
-		AbilityType::DARK_SPELL
+		AbilityType::DarkSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::SPELL,
-		Category::SINGLE_TARGET
+		Category::Spell,
+		Category::SingleTarget
 	};
 
 	elements = {
-		Element::DARK
+		Element::Dark
 	};
 
 	castTime = 100;
@@ -41,7 +41,7 @@ Ab_ShadowEnergy::Ab_ShadowEnergy() {
 	aiSearchRange = 0;
 	mpCost = 30;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTarget = false;
 	requireTargetsInArea = false;
@@ -67,5 +67,5 @@ std::string Ab_ShadowEnergy::GetDescription() {
 }
 
 void Ab_ShadowEnergy::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::AddAuraStack(user, user, AuraID::SHADOW_ENERGY);
+	Combat::AddAuraStack(user, user, AuraID::ShadowEnergy);
 }

@@ -24,7 +24,7 @@ En_Fenrok::En_Fenrok() {
 	name = "Fenrok";
 	title = "the Unhunted";
 
-	creatureType = CreatureType::BEAST;
+	creatureType = CreatureType::Beast;
 	isUnique = true;
 
 	baseHP = 20000;
@@ -45,12 +45,12 @@ En_Fenrok::En_Fenrok() {
 	attackSpeed = 180;
 	attackRange = 1;
 
-	attackType = EquipType::UNARMED_STR;
-	attackElement = { Element::PHYSICAL };
+	attackType = EquipType::UnarmedStrength;
+	attackElement = { Element::Physical };
 	attackDamage = 40;
 	attackMod = 0.8;
 
-	offHandAttackType = EquipType::NONE;
+	offHandAttackType = EquipType::None;
 	offHandAttackElement = {};
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
@@ -60,12 +60,12 @@ En_Fenrok::En_Fenrok() {
 	lootPoints = 475u;
 
 	statMods = {
-		StatMod(StatModType::CRIT_CHANCE, 0.05)
+		StatMod(StatModType::CritChance, 0.05)
 	};
 	abilities = { 
-		AbilityID::BITE, // 1
-		AbilityID::TERRIFYING_HOWL, // 2
-		AbilityID::SHADOW_ENERGY // 3
+		AbilityID::Bite, // 1
+		AbilityID::TerrifyingHowl, // 2
+		AbilityID::ShadowEnergy // 3
 	};
 }
 
@@ -74,7 +74,7 @@ Idea En_Fenrok::ExecuteAI(ActorPtr& user, BattleScene& world) {
 	idea.first = sf::Vector3i(-1, -1, -1);
 
 	// Shadow Energy
-	if (user->IsAbilityAvailable(3) && user->GetAttributePercent(Attribute::HP) <= 0.5 && !user->HasAura(AuraID::SHADOW_ENERGY)) {
+	if (user->IsAbilityAvailable(3) && user->GetAttributePercent(Attribute::HP) <= 0.5 && !user->HasAura(AuraID::ShadowEnergy)) {
 		idea.first = user->GetHexPosition();
 		idea.second = 3;
 		return idea;

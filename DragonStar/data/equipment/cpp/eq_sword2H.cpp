@@ -23,14 +23,14 @@ Eq_IronGreatsword::Eq_IronGreatsword() {
 	tier = 1;
 
 	textureFilepath = "iron_greatsword.png";
-	equipType = EquipType::SWORD_2H;
-	equipmentID = EquipmentID::IRON_GREATSWORD;
+	equipType = EquipType::Sword2H;
+	equipmentID = EquipmentID::IronGreatsword;
 
 	equipPower = 100;
 	attackSpeed = 300;
 	attackRange = 1;
 	attributeMultiplier = 2.00;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

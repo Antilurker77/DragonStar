@@ -17,22 +17,22 @@ Ab_Obliterate::Ab_Obliterate() {
 	setHarmfulSpellDefault();
 
 	name = "Obliterate";
-	abilityID = AbilityID::OBLITERATE;
+	abilityID = AbilityID::Obliterate;
 	icon = "obliterate.png";
 
 	abilityTypes = {
-		AbilityType::DARK_SPELL
+		AbilityType::DarkSpell
 	};
 	tier = 2;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::DARK };
+	elements = { Element::Dark };
 
 	castTime = 100;
 	range = 4;
@@ -43,7 +43,7 @@ Ab_Obliterate::Ab_Obliterate() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 }
 
 std::vector<sf::Vector3i> Ab_Obliterate::GetTargetArea(sf::Vector3i selectedTile) {

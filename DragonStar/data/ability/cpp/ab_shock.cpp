@@ -17,22 +17,22 @@ Ab_Shock::Ab_Shock() {
 	setHarmfulSpellDefault();
 
 	name = "Shock";
-	abilityID = AbilityID::SHOCK;
+	abilityID = AbilityID::Shock;
 	icon = "shock.png";
 
 	abilityTypes = {
-		AbilityType::LIGHTNING_SPELL
+		AbilityType::LightningSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::LIGHTNING };
+	elements = { Element::Lightning };
 
 	castTime = 150;
 	range = 4;
@@ -42,7 +42,7 @@ Ab_Shock::Ab_Shock() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Shock::GetTargetArea(sf::Vector3i selectedTile) {

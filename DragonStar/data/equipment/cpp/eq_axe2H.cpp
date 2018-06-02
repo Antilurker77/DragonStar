@@ -23,14 +23,14 @@ Eq_IronGreataxe::Eq_IronGreataxe() {
 	tier = 1;
 
 	textureFilepath = "iron_greataxe.png";
-	equipType = EquipType::AXE_2H;
-	equipmentID = EquipmentID::IRON_GREATAXE;
+	equipType = EquipType::Axe2H;
+	equipmentID = EquipmentID::IronGreataxe;
 
 	equipPower = 110;
 	attackSpeed = 330;
 	attackRange = 1;
 	attributeMultiplier = 2.20;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

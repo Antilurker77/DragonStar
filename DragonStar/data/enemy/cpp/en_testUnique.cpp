@@ -21,7 +21,7 @@ En_TestUnique::En_TestUnique() {
 	name = "Testifan";
 	title = "Slayer of Testers";
 
-	creatureType = CreatureType::HUMANOID;
+	creatureType = CreatureType::Humanoid;
 	isUnique = true;
 
 	baseHP = 6500;
@@ -42,12 +42,12 @@ En_TestUnique::En_TestUnique() {
 	attackSpeed = 350;
 	attackRange = 1;
 
-	attackType = EquipType::SWORD_2H;
-	attackElement = { Element::PHYSICAL };
+	attackType = EquipType::Sword2H;
+	attackElement = { Element::Physical };
 	attackDamage = 100;
 	attackMod = 2.0;
 
-	offHandAttackType = EquipType::NONE;
+	offHandAttackType = EquipType::None;
 	offHandAttackElement = { };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
@@ -57,7 +57,7 @@ En_TestUnique::En_TestUnique() {
 	lootPoints = 400u;
 
 	statMods = { };
-	abilities = { AbilityID::POWER_STRIKE };
+	abilities = { AbilityID::PowerStrike };
 }
 
 Idea En_TestUnique::ExecuteAI(ActorPtr& user, BattleScene& world) {

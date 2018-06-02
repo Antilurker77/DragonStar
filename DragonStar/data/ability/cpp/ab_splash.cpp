@@ -19,22 +19,22 @@ Ab_Splash::Ab_Splash() {
 	setHarmfulSpellDefault();
 
 	name = "Splash";
-	abilityID = AbilityID::SPLASH;
+	abilityID = AbilityID::Splash;
 	icon = "splash.png";
 
 	abilityTypes = {
-		AbilityType::WATER_SPELL
+		AbilityType::WaterSpell
 	};
 	tier = 1;
 
 	categories = { 
-		Category::DAMAGING,
-		Category::AREA_OF_EFFECT,
-		Category::DIRECT,
-		Category::SPELL	
+		Category::Damaging,
+		Category::AreaOfEffect,
+		Category::Direct,
+		Category::Spell	
 	};
 
-	elements = { Element::WATER };
+	elements = { Element::Water };
 
 	castTime = 250;
 	range = 4;
@@ -47,7 +47,7 @@ Ab_Splash::Ab_Splash() {
 
 	areaIgnoreBodyBlock = true;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Splash::GetTargetArea(sf::Vector3i selectedTile) {

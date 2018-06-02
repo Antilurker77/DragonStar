@@ -13,7 +13,7 @@ Fa_Fenrok::Fa_Fenrok() {
 	name = "Fenrok";
 	isUnique = true;
 	isBoss = false;
-	mapID = MapID::FIELD_FIELD;
+	mapID = MapID::FieldField;
 	startingLocations = {
 		sf::Vector2i(1, 2),
 		sf::Vector2i(0, 3),
@@ -23,6 +23,6 @@ Fa_Fenrok::Fa_Fenrok() {
 		sf::Vector2i(2, 3)
 	};
 	enemies = {
-		{ EnemyID::FENROK, 0,{ 1, -2 } }
+		{ EnemyID::Fenrok, 0,{ 1, -2 } }
 	};
 }

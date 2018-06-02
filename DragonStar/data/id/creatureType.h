@@ -9,14 +9,14 @@
 #pragma once
 
 enum class CreatureType {
-	NONE,
-	HUMANOID,
-	BEAST,
-	FLORA,
-	DRAGON,
-	CONSTRUCT,
-	ELEMENTAL,
-	ANGEL,
-	DEMON,
-	SPIRIT
+	None,
+	Humanoid,
+	Beast,
+	Flora,
+	Dragon,
+	Construct,
+	Elemental,
+	Angel,
+	Demon,
+	Spirit
 };

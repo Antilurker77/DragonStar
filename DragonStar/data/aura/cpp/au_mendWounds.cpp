@@ -15,18 +15,18 @@
 
 Au_MendWounds::Au_MendWounds() {
 	name = "Mend Wounds";
-	id = AuraID::MEND_WOUNDS;
+	id = AuraID::MendWounds;
 	icon = "mend_wounds.png";
 
 	categories = {
-		Category::HEALING,
-		Category::OVER_TIME,
-		Category::SINGLE_TARGET,
-		Category::SPELL
+		Category::Healing,
+		Category::OverTime,
+		Category::SingleTarget,
+		Category::Spell
 	};
 
 	elements = {
-		Element::NATURE_HEAL
+		Element::NatureHeal
 	};
 
 	canCrit = true;

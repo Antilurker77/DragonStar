@@ -15,20 +15,20 @@
 
 Au_FlameSlash::Au_FlameSlash() {
 	name = "Flame Slash";
-	id = AuraID::FLAME_SLASH;
+	id = AuraID::FlameSlash;
 	icon = "flame_slash.png";
 
 	categories = {
-		Category::SPELL
+		Category::Spell
 	};
 
 	elements = {
-		Element::FIRE
+		Element::Fire
 	};
 
 	statMods = {
-		StatMod(StatModType::DAMAGE, 0.1, { Category::DIRECT }, { Element::FIRE }),
-		StatMod(StatModType::AURA_SNAPSHOT_POWER, 0.1, { Category::ANY },{ Element::FIRE })
+		StatMod(StatModType::Damage, 0.1, { Category::Direct }, { Element::Fire }),
+		StatMod(StatModType::AuraSnapshotPower, 0.1, { Category::Any },{ Element::Fire })
 	};
 
 	canCrit = false;

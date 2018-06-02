@@ -18,22 +18,22 @@ Ab_MagicMissile::Ab_MagicMissile() {
 	setHarmfulSpellDefault();
 
 	name = "Magic Missile";
-	abilityID = AbilityID::MAGIC_MISSILE;
+	abilityID = AbilityID::MagicMissile;
 	icon = "magic_missile.png";
 
 	abilityTypes = {
-		AbilityType::ARCANE_SPELL
+		AbilityType::ArcaneSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::ARCANE };
+	elements = { Element::Arcane };
 
 	castTime = 200;
 	range = 4;
@@ -43,7 +43,7 @@ Ab_MagicMissile::Ab_MagicMissile() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_MagicMissile::GetTargetArea(sf::Vector3i selectedTile) {

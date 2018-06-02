@@ -17,29 +17,29 @@ Ab_MendWounds::Ab_MendWounds() {
 	setHelpfulSpellDefault();
 
 	name = "Mend Wounds";
-	abilityID = AbilityID::MEND_WOUNDS;
+	abilityID = AbilityID::MendWounds;
 	icon = "mend_wounds.png";
 
 	abilityTypes = {
-		AbilityType::NATURE_HEAL
+		AbilityType::NatureHeal
 	};
 	tier = 1;
 
 	categories = {
-		Category::DIRECT,
-		Category::HEALING,
-		Category::SINGLE_TARGET,
-		Category::SPELL
+		Category::Direct,
+		Category::Healing,
+		Category::SingleTarget,
+		Category::Spell
 	};
 
-	elements = { Element::NATURE_HEAL };
+	elements = { Element::NatureHeal };
 
 	castTime = 250;
 	range = 5;
 	aiSearchRange = range;
 	mpCost = 25;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_MendWounds::GetTargetArea(sf::Vector3i selectedTile) {
@@ -65,5 +65,5 @@ std::string Ab_MendWounds::GetDescription() {
 
 void Ab_MendWounds::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	Combat::ScalingHeal(user, targets[0], 60.0, Attribute::HP, abilityOptions);
-	Combat::AddAuraStack(user, targets[0], AuraID::MEND_WOUNDS);
+	Combat::AddAuraStack(user, targets[0], AuraID::MendWounds);
 }

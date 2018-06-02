@@ -23,8 +23,8 @@ Eq_IronGreaves::Eq_IronGreaves() {
 	tier = 1;
 
 	textureFilepath = "iron_greaves.png";
-	equipType = EquipType::HEAVY_FEET;
-	equipmentID = EquipmentID::IRON_GREAVES;
+	equipType = EquipType::HeavyFeet;
+	equipmentID = EquipmentID::IronGreaves;
 
 	equipPower = 6;
 	blockChance = 0.0;

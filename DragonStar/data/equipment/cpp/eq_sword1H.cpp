@@ -23,14 +23,14 @@ Eq_IronSword::Eq_IronSword() {
 	tier = 1;
 
 	textureFilepath = "iron_sword.png";
-	equipType = EquipType::SWORD_1H;
-	equipmentID = EquipmentID::IRON_SWORD;
+	equipType = EquipType::Sword1H;
+	equipmentID = EquipmentID::IronSword;
 
 	equipPower = 50;
 	attackSpeed = 200;
 	attackRange = 1;
 	attributeMultiplier = 1.00;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

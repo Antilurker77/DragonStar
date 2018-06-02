@@ -23,8 +23,8 @@ Eq_PowerOrb::Eq_PowerOrb() {
 	tier = 1;
 
 	textureFilepath = "power_orb.png";
-	equipType = EquipType::OFF_HAND;
-	equipmentID = EquipmentID::POWER_ORB;
+	equipType = EquipType::OffHand;
+	equipmentID = EquipmentID::PowerOrb;
 
 	equipPower = 0;
 	blockChance = 0.0;

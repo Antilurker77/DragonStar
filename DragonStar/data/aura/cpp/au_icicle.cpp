@@ -15,19 +15,19 @@
 
 Au_Icicle::Au_Icicle() {
 	name = "Icicle";
-	id = AuraID::ICICLE;
+	id = AuraID::Icicle;
 	icon = "icicle.png";
 
 	categories = {
-		Category::SPELL
+		Category::Spell
 	};
 
 	elements = {
-		Element::ICE
+		Element::Ice
 	};
 
 	statMods = {
-		StatMod(StatModType::MOVEMENT_SPEED, -0.2)
+		StatMod(StatModType::MovementSpeed, -0.2)
 	};
 
 	canCrit = false;

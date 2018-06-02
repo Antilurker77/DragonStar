@@ -21,8 +21,8 @@ AbilityScroll::AbilityScroll(AbilityID id) {
 	tier = ability->GetTier();
 	weight = 1;
 
-	if (std::find(abilityTypes.begin(), abilityTypes.end(), AbilityType::ASTRAL_SPELL) != abilityTypes.end() || 
-		std::find(abilityTypes.begin(), abilityTypes.end(), AbilityType::ASTRAL_HEAL) != abilityTypes.end()) {
+	if (std::find(abilityTypes.begin(), abilityTypes.end(), AbilityType::AstralSpell) != abilityTypes.end() || 
+		std::find(abilityTypes.begin(), abilityTypes.end(), AbilityType::AstralHeal) != abilityTypes.end()) {
 		itemQuality = ItemQuality::Unique;
 	}
 	else {

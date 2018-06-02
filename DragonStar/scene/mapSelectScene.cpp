@@ -298,7 +298,7 @@ void MapSelectScene::buildDomains() {
 		size_t n = nodesPerStep[i];
 		for (size_t j = 0; j < n; j++) {
 			MapNode d;
-			d.FormationID = FormationID::TEST_BOSS;
+			d.FormationID = FormationID::TestBoss;
 			d.Seed = Random::RandSeed(mt);
 			//d.Level = i * 4 + 1;
 			d.Level = 1;

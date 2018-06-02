@@ -20,22 +20,22 @@ Ab_HealingRain::Ab_HealingRain() {
 	setHelpfulSpellDefault();
 
 	name = "Healing Rain";
-	abilityID = AbilityID::HEALING_RAIN;
+	abilityID = AbilityID::HealingRain;
 	icon = "healing_rain.png";
 
 	abilityTypes = {
-		AbilityType::NATURE_HEAL
+		AbilityType::NatureHeal
 	};
 	tier = 3;
 
 	categories = {
-		Category::HEALING,
-		Category::AREA_OF_EFFECT,
-		Category::OVER_TIME,
-		Category::SPELL
+		Category::Healing,
+		Category::AreaOfEffect,
+		Category::OverTime,
+		Category::Spell
 	};
 
-	elements = { Element::NATURE_HEAL };
+	elements = { Element::NatureHeal };
 
 	castTime = 225;
 	range = 2;
@@ -48,7 +48,7 @@ Ab_HealingRain::Ab_HealingRain() {
 
 	areaIgnoreBodyBlock = true;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_HealingRain::GetTargetArea(sf::Vector3i selectedTile) {
@@ -74,6 +74,6 @@ std::string Ab_HealingRain::GetDescription() {
 
 void Ab_HealingRain::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	for (auto tile : targetArea) {
-		Combat::CreateGroundEffect(user, battleScene, AuraID::HEALING_RAIN, tile);
+		Combat::CreateGroundEffect(user, battleScene, AuraID::HealingRain, tile);
 	}
 }

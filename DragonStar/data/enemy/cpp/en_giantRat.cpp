@@ -21,7 +21,7 @@ En_GiantRat::En_GiantRat() {
 
 	name = "Giant Rat";
 
-	creatureType = CreatureType::BEAST;
+	creatureType = CreatureType::Beast;
 
 	baseHP = 1000;
 	baseMP = 55;
@@ -41,13 +41,13 @@ En_GiantRat::En_GiantRat() {
 	attackSpeed = 150;
 	attackRange = 1;
 
-	attackType = EquipType::UNARMED_STR;
-	attackElement = { Element::PHYSICAL };
+	attackType = EquipType::UnarmedStrength;
+	attackElement = { Element::Physical };
 	attackDamage = 40;
 	attackMod = 0.8;
 
-	offHandAttackType = EquipType::NONE;
-	offHandAttackElement = { Element::PHYSICAL };
+	offHandAttackType = EquipType::None;
+	offHandAttackElement = { Element::Physical };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
@@ -56,11 +56,11 @@ En_GiantRat::En_GiantRat() {
 	lootPoints = 60u;
 
 	statMods = {
-		StatMod(StatModType::RESISTANCE, 0.1,{ Category::ANY },{ Element::POISON })
+		StatMod(StatModType::Resistance, 0.1,{ Category::Any },{ Element::Poison })
 	};
 
 	abilities = {
-		AbilityID::BITE // 1
+		AbilityID::Bite // 1
 	};
 }
 

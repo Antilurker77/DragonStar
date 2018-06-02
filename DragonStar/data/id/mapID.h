@@ -9,14 +9,14 @@
 #pragma once
 
 enum class MapID {
-	BASIC_DUNGEON,
-	TEST_MAP,
-	TEST_MAP_XL,
-	TEST_MAP_XS,
-	TEST_ARENA,
-	TEST_ARENA_B,
-	FIELD_FIELD,
-	FIELD_SEWER,
-	FIELD_SEWER_INTERSECTION,
-	FIELD_SMALL_ISLAND
+	BasicDungeon,
+	TestMap,
+	TestMapXL,
+	TestMapXS,
+	TestArena,
+	TestArenaB,
+	FieldField,
+	FieldSewer,
+	FieldSewerIntersection,
+	FieldSmallIsland
 };

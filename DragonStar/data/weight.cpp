@@ -15,19 +15,19 @@ std::vector<FormationWeight> Weight::GetCommonFaWeights(int tier) {
 	switch (tier) {
 	case 1:
 		return {
-			{ FormationID::FLAMEBLADES_STALKERS_FIELD, 0.75 },
-			{ FormationID::LESSER_FLAMEBLADES_FIELD, 1.0 },
-			{ FormationID::SENTRY_AMBUSH, 1.0 },
-			{ FormationID::SEWER_RATS, 0.5 },
-			{ FormationID::SEWER_RATS_SLIMES, 1.0 },
-			{ FormationID::SEWER_SLIMES, 0.5 },
-			{ FormationID::SEWER_RATS_INTERSECTION, 1.0 },
-			{ FormationID::SHADOW_STALKERS_FIELD, 1.0 }
+			{ FormationID::FlamebladesStalkersField, 0.75 },
+			{ FormationID::LesserFlamebladesField, 1.0 },
+			{ FormationID::SentryAmbush, 1.0 },
+			{ FormationID::SewerRats, 0.5 },
+			{ FormationID::SewerRatsSlimes, 1.0 },
+			{ FormationID::SewerSlimes, 0.5 },
+			{ FormationID::SewerRatsIntersection, 1.0 },
+			{ FormationID::ShadowStalkersField, 1.0 }
 		};
 	default:
 		return {
-			{ FormationID::TEST_FORMATION_A, 1.0 },
-			{ FormationID::TEST_FORMATION_B, 0.5 }
+			{ FormationID::TestFormationA, 1.0 },
+			{ FormationID::TestFormationB, 0.5 }
 		};
 	}
 	
@@ -37,8 +37,8 @@ std::vector<FormationWeight> Weight::GetUniqueFaWeights(int tier) {
 	switch (tier) {
 	default:
 		return {
-			{ FormationID::TEST_UNIQUE, 1.0 },
-			{ FormationID::FENROK, 1.0 }
+			{ FormationID::TestUnique, 1.0 },
+			{ FormationID::Fenrok, 1.0 }
 		};
 	}
 }
@@ -47,88 +47,88 @@ std::vector<FormationWeight> Weight::GetBossFaWeights(int tier) {
 	switch (tier) {
 	default:
 		return {
-			{ FormationID::TEST_BOSS, 1.0 }
+			{ FormationID::TestBoss, 1.0 }
 		};
 	}
 }
 
 EquipmentID Weight::GetRandomEq(std::mt19937_64& mt, int tier) {
-	EquipmentID id = EquipmentID::UNDEFINED;
+	EquipmentID id = EquipmentID::Undefined;
 	std::vector<EquipmentWeight> weights;
 
 	// Tier 6
 	if (tier >= 6) {
 		
 		// Jewelry
-		weights.push_back({ EquipmentID::DRAGONITE_NECKLACE, 0.50 });
-		weights.push_back({ EquipmentID::DRAGONITE_RING, 1.00 });
+		weights.push_back({ EquipmentID::DragoniteNecklace, 0.50 });
+		weights.push_back({ EquipmentID::DragoniteRing, 1.00 });
 	}
 	// Tier 5
 	else if (tier == 5) {
 		
 		// Jewelry
-		weights.push_back({ EquipmentID::DRAGONITE_NECKLACE, 0.50 });
-		weights.push_back({ EquipmentID::DRAGONITE_RING, 1.00 });
+		weights.push_back({ EquipmentID::DragoniteNecklace, 0.50 });
+		weights.push_back({ EquipmentID::DragoniteRing, 1.00 });
 	}
 	// Tier 4
 	else if (tier == 4) {
 		
 		// Jewelry
-		weights.push_back({ EquipmentID::GOLD_NECKLACE, 0.50 });
-		weights.push_back({ EquipmentID::GOLD_RING, 1.00 });
+		weights.push_back({ EquipmentID::GoldNecklace, 0.50 });
+		weights.push_back({ EquipmentID::GoldRing, 1.00 });
 	}
 	// Tier 3
 	else if (tier == 3) {
 
 		// Jewelry
-		weights.push_back({ EquipmentID::GOLD_NECKLACE, 0.50 });
-		weights.push_back({ EquipmentID::GOLD_RING, 1.00 });
+		weights.push_back({ EquipmentID::GoldNecklace, 0.50 });
+		weights.push_back({ EquipmentID::GoldRing, 1.00 });
 	}
 	// Tier 2
 	else if (tier == 2) {
 
 		// Jewelry
-		weights.push_back({ EquipmentID::SILVER_NECKLACE, 0.50 });
-		weights.push_back({ EquipmentID::SILVER_RING, 1.00 });
+		weights.push_back({ EquipmentID::SilverNecklace, 0.50 });
+		weights.push_back({ EquipmentID::SilverRing, 1.00 });
 	}
 	// Tier 1
 	else {
 		// Weapons
-		weights.push_back({ EquipmentID::IRON_SWORD, 0.25 });
-		weights.push_back({ EquipmentID::IRON_GREATSWORD, 0.25 });
-		weights.push_back({ EquipmentID::IRON_AXE, 0.25 });
-		weights.push_back({ EquipmentID::IRON_GREATAXE, 0.25 });
-		weights.push_back({ EquipmentID::IRON_MACE, 0.25 });
-		weights.push_back({ EquipmentID::IRON_GREATMACE, 0.25 });
-		weights.push_back({ EquipmentID::IRON_DAGGER, 0.50 });
-		weights.push_back({ EquipmentID::IRON_SPEAR, 0.50 });
-		weights.push_back({ EquipmentID::LONGBOW, 0.25 });
-		weights.push_back({ EquipmentID::LIGHT_CROSSBOW, 0.25 });
-		weights.push_back({ EquipmentID::WOODEN_WAND, 0.50 });
-		weights.push_back({ EquipmentID::WOODEN_STAFF, 0.50 });
+		weights.push_back({ EquipmentID::IronSword, 0.25 });
+		weights.push_back({ EquipmentID::IronGreatsword, 0.25 });
+		weights.push_back({ EquipmentID::IronAxe, 0.25 });
+		weights.push_back({ EquipmentID::IronGreataxe, 0.25 });
+		weights.push_back({ EquipmentID::IronMace, 0.25 });
+		weights.push_back({ EquipmentID::IronGreatmace, 0.25 });
+		weights.push_back({ EquipmentID::IronDagger, 0.50 });
+		weights.push_back({ EquipmentID::IronSpear, 0.50 });
+		weights.push_back({ EquipmentID::Longbow, 0.25 });
+		weights.push_back({ EquipmentID::LightCrossbow, 0.25 });
+		weights.push_back({ EquipmentID::WoodenWand, 0.50 });
+		weights.push_back({ EquipmentID::WoodenStaff, 0.50 });
 
 		// Off-Hand
-		weights.push_back({ EquipmentID::IRON_SHIELD, 0.25 });
-		weights.push_back({ EquipmentID::IRON_BUCKLER, 0.25 });
-		weights.push_back({ EquipmentID::POWER_ORB, 0.50 });
+		weights.push_back({ EquipmentID::IronShield, 0.25 });
+		weights.push_back({ EquipmentID::IronBuckler, 0.25 });
+		weights.push_back({ EquipmentID::PowerOrb, 0.50 });
 
 		// Armor
-		weights.push_back({ EquipmentID::IRON_HELM, 0.50 });
-		weights.push_back({ EquipmentID::LEATHER_HELMET, 0.50 });
-		weights.push_back({ EquipmentID::SILK_HAT, 0.50 });
-		weights.push_back({ EquipmentID::IRON_ARMOR, 0.50 });
-		weights.push_back({ EquipmentID::LEATHER_ARMOR, 0.50 });
-		weights.push_back({ EquipmentID::SILK_ROBES, 0.50 });
-		weights.push_back({ EquipmentID::IRON_GAUNTLETS, 0.50 });
-		weights.push_back({ EquipmentID::LEATHER_GLOVES, 0.50 });
-		weights.push_back({ EquipmentID::SILK_GLOVES, 0.50 });
-		weights.push_back({ EquipmentID::IRON_GREAVES, 0.50 });
-		weights.push_back({ EquipmentID::LEATHER_BOOTS, 0.50 });
-		weights.push_back({ EquipmentID::SILK_SHOES, 0.50 });
+		weights.push_back({ EquipmentID::IronHelm, 0.50 });
+		weights.push_back({ EquipmentID::LeatherHelmet, 0.50 });
+		weights.push_back({ EquipmentID::SilkHat, 0.50 });
+		weights.push_back({ EquipmentID::IronArmor, 0.50 });
+		weights.push_back({ EquipmentID::LeatherArmor, 0.50 });
+		weights.push_back({ EquipmentID::SilkRobes, 0.50 });
+		weights.push_back({ EquipmentID::IronGauntlets, 0.50 });
+		weights.push_back({ EquipmentID::LeatherGloves, 0.50 });
+		weights.push_back({ EquipmentID::SilkGloves, 0.50 });
+		weights.push_back({ EquipmentID::IronGreaves, 0.50 });
+		weights.push_back({ EquipmentID::LeatherBoots, 0.50 });
+		weights.push_back({ EquipmentID::SilkShoes, 0.50 });
 
 		// Jewelry
-		weights.push_back({ EquipmentID::SILVER_NECKLACE, 0.50 });
-		weights.push_back({ EquipmentID::SILVER_RING, 1.00 });
+		weights.push_back({ EquipmentID::SilverNecklace, 0.50 });
+		weights.push_back({ EquipmentID::SilverRing, 1.00 });
 	}
 
 	while (true) {
@@ -145,17 +145,17 @@ EquipmentID Weight::GetRandomUniqueEq(std::mt19937_64& mt, int tier, std::vector
 
 	switch (tier) {
 	case 1:
-		weights.push_back({ EquipmentID::CLOUD_LANCE, 0.50 });
+		weights.push_back({ EquipmentID::CloudLance, 0.50 });
 		
-		weights.push_back({ EquipmentID::AMULET_OF_DIVINE_LIGHT, 0.50 });
+		weights.push_back({ EquipmentID::AmuletOfDivineLight, 0.50 });
 		
-		weights.push_back({ EquipmentID::BAND_OF_TWIN_DISCIPLINES, 0.50 });
-		weights.push_back({ EquipmentID::RING_OF_VITALITY, 0.50 });
+		weights.push_back({ EquipmentID::BandOfTwinDisciplines, 0.50 });
+		weights.push_back({ EquipmentID::RingOfVitality, 0.50 });
 		
-		weights.push_back({ EquipmentID::CHARM_OF_STRENGTH, 1.00 });
-		weights.push_back({ EquipmentID::CHARM_OF_DEXTERITY, 1.00 });
-		weights.push_back({ EquipmentID::CHARM_OF_INTELLIGENCE, 1.00 });
-		weights.push_back({ EquipmentID::CHARM_OF_WISDOM, 1.00 });
+		weights.push_back({ EquipmentID::CharmOfStrength, 1.00 });
+		weights.push_back({ EquipmentID::CharmOfDexterity, 1.00 });
+		weights.push_back({ EquipmentID::CharmOfIntelligence, 1.00 });
+		weights.push_back({ EquipmentID::CharmOfWisdom, 1.00 });
 		break;
 	default:
 		break;
@@ -180,7 +180,7 @@ EquipmentID Weight::GetRandomUniqueEq(std::mt19937_64& mt, int tier, std::vector
 		}
 	}
 	else {
-		return EquipmentID::UNDEFINED;
+		return EquipmentID::Undefined;
 	}
 }
 
@@ -266,12 +266,12 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 1:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
-			weights.push_back({ AbilityID::RENDING_SLASH, 1.00 });
-			weights.push_back({ AbilityID::FLAME_SLASH, 1.00 });
+			weights.push_back({ AbilityID::PowerStrike, 1.00 });
+			weights.push_back({ AbilityID::RendingSlash, 1.00 });
+			weights.push_back({ AbilityID::FlameSlash, 1.00 });
 			break;
 		case 2:
-			weights.push_back({ AbilityID::WARP_SLICE, 1.00 });
+			weights.push_back({ AbilityID::WarpSlice, 1.00 });
 			break;
 		case 3:
 			break;
@@ -283,9 +283,9 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 2:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
-			weights.push_back({ AbilityID::RENDING_SLASH, 1.00 });
-			weights.push_back({ AbilityID::CHOPPER, 1.00 });
+			weights.push_back({ AbilityID::PowerStrike, 1.00 });
+			weights.push_back({ AbilityID::RendingSlash, 1.00 });
+			weights.push_back({ AbilityID::Chopper, 1.00 });
 			break;
 		case 2:
 			break;
@@ -299,7 +299,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 3:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
+			weights.push_back({ AbilityID::PowerStrike, 1.00 });
 			break;
 		case 2:
 			break;
@@ -313,8 +313,8 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 4:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
-			weights.push_back({ AbilityID::RENDING_SLASH, 1.00 });
+			weights.push_back({ AbilityID::PowerStrike, 1.00 });
+			weights.push_back({ AbilityID::RendingSlash, 1.00 });
 			break;
 		case 2:
 			break;
@@ -328,7 +328,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 5:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::POWER_STRIKE, 1.00 });
+			weights.push_back({ AbilityID::PowerStrike, 1.00 });
 			break;
 		case 2:
 			break;
@@ -342,7 +342,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 6:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::POWER_SHOT, 1.00 });
+			weights.push_back({ AbilityID::PowerShot, 1.00 });
 			break;
 		case 2:
 			break;
@@ -356,18 +356,18 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 7:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::PRISMATIC_BOLT, 1.00 });
-			weights.push_back({ AbilityID::ELEMENTAL_ENERGY, 1.00 });
-			weights.push_back({ AbilityID::MAGIC_MISSILE, 1.00 });
-			weights.push_back({ AbilityID::ARCANE_BLAST, 1.00 });
-			weights.push_back({ AbilityID::FLAME_BOLT, 1.00 });
-			weights.push_back({ AbilityID::DRAGONFIRE_BOLT, 1.00 });
-			weights.push_back({ AbilityID::FIRE_NOVA, 1.00 });
-			weights.push_back({ AbilityID::ICICLE, 1.00 });
-			weights.push_back({ AbilityID::SHOCK, 1.00 });
+			weights.push_back({ AbilityID::PrismaticBolt, 1.00 });
+			weights.push_back({ AbilityID::ElementalEnergy, 1.00 });
+			weights.push_back({ AbilityID::MagicMissile, 1.00 });
+			weights.push_back({ AbilityID::ArcaneBlast, 1.00 });
+			weights.push_back({ AbilityID::FlameBolt, 1.00 });
+			weights.push_back({ AbilityID::DragonfireBolt, 1.00 });
+			weights.push_back({ AbilityID::FireNova, 1.00 });
+			weights.push_back({ AbilityID::Icicle, 1.00 });
+			weights.push_back({ AbilityID::Shock, 1.00 });
 			break;
 		case 2:
-			weights.push_back({ AbilityID::FIREBALL, 1.00 });
+			weights.push_back({ AbilityID::Fireball, 1.00 });
 			break;
 		case 3:
 			break;
@@ -379,13 +379,13 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 8:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::PRISMATIC_BOLT, 1.00 });
-			weights.push_back({ AbilityID::ELEMENTAL_ENERGY, 1.00 });
-			weights.push_back({ AbilityID::VENOM, 1.00 });
-			weights.push_back({ AbilityID::SPLASH, 1.00 });
-			weights.push_back({ AbilityID::WATER_BOLT, 1.00 });
-			weights.push_back({ AbilityID::GALE, 1.00 });
-			weights.push_back({ AbilityID::BOULDER, 1.00 });
+			weights.push_back({ AbilityID::PrismaticBolt, 1.00 });
+			weights.push_back({ AbilityID::ElementalEnergy, 1.00 });
+			weights.push_back({ AbilityID::Venom, 1.00 });
+			weights.push_back({ AbilityID::Splash, 1.00 });
+			weights.push_back({ AbilityID::WaterBolt, 1.00 });
+			weights.push_back({ AbilityID::Gale, 1.00 });
+			weights.push_back({ AbilityID::Boulder, 1.00 });
 			break;
 		case 2:
 			break;
@@ -399,14 +399,14 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 9:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::PRISMATIC_BOLT, 1.00 });
-			weights.push_back({ AbilityID::ELEMENTAL_ENERGY, 1.00 });
-			weights.push_back({ AbilityID::PSIONIC_MISSILE, 1.00 });
-			weights.push_back({ AbilityID::LIGHT_BOLT, 1.00 });
-			weights.push_back({ AbilityID::DARK_BOLT, 1.00 });
+			weights.push_back({ AbilityID::PrismaticBolt, 1.00 });
+			weights.push_back({ AbilityID::ElementalEnergy, 1.00 });
+			weights.push_back({ AbilityID::PsionicMissile, 1.00 });
+			weights.push_back({ AbilityID::LightBolt, 1.00 });
+			weights.push_back({ AbilityID::DarkBolt, 1.00 });
 			break;
 		case 2:
-			weights.push_back({ AbilityID::OBLITERATE, 1.00 });
+			weights.push_back({ AbilityID::Obliterate, 1.00 });
 			break;
 		case 3:
 			break;
@@ -418,7 +418,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 10:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::HEAL, 1.00 });
+			weights.push_back({ AbilityID::Heal, 1.00 });
 			break;
 		case 2:
 			break;
@@ -432,12 +432,12 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 11:
 		switch (tierPicked) {
 		case 1:
-			weights.push_back({ AbilityID::MEND_WOUNDS, 1.00 });
+			weights.push_back({ AbilityID::MendWounds, 1.00 });
 			break;
 		case 2:
 			break;
 		case 3:
-			weights.push_back({ AbilityID::HEALING_RAIN, 1.00 });
+			weights.push_back({ AbilityID::HealingRain, 1.00 });
 			break;
 		default:
 			break;
@@ -457,7 +457,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 		}
 	}
 	else {
-		return AbilityID::POWER_STRIKE;
+		return AbilityID::PowerStrike;
 	}
 }
 

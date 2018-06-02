@@ -9,13 +9,13 @@
 #pragma once
 
 enum class Attribute {
-	NONE = 0,
-	HP,
-	MP,
-	SP,
-	STR,
-	DEX,
-	INT,
-	WIS,
-	VIT
+	None = 0,
+	HP, // Health Points
+	MP, // Magic Points
+	SP, // Stamina Points
+	STR, // Strength
+	DEX, // Dexterity
+	INT, // Intelligence
+	WIS, // Wisdom
+	VIT // Vitality
 };

@@ -16,27 +16,27 @@ Ab_Attack::Ab_Attack() {
 	setAttackDefault();
 
 	name = "Attack";
-	abilityID = AbilityID::ATTACK;
+	abilityID = AbilityID::Attack;
 	icon = "attack.png";
 
 	abilityTypes = {
-		AbilityType::AXE_SKILL,
-		AbilityType::BOW_SKILL,
-		AbilityType::CLAW_SKILL,
-		AbilityType::DAGGER_SKILL,
-		AbilityType::MACE_SKILL,
-		AbilityType::SPEAR_SKILL,
-		AbilityType::STAFF_SKILL,
-		AbilityType::SWORD_SKILL,
-		AbilityType::WAND_SKILL
+		AbilityType::AxeSkill,
+		AbilityType::BowSkill,
+		AbilityType::ClawSkill,
+		AbilityType::DaggerSkill,
+		AbilityType::MaceSkill,
+		AbilityType::SpearSkill,
+		AbilityType::StaffSkill,
+		AbilityType::SwordSkill,
+		AbilityType::WandSkill
 	};
 	tier = 1;
 
 	categories = { 
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	requireTargetsInArea = true;

@@ -15,18 +15,18 @@
 
 Au_HealingRain::Au_HealingRain() {
 	name = "Healing Rain";
-	id = AuraID::HEALING_RAIN;
+	id = AuraID::HealingRain;
 	icon = "healing_rain.png";
 
 	categories = {
-		Category::HEALING,
-		Category::OVER_TIME,
-		Category::SINGLE_TARGET,
-		Category::SPELL
+		Category::Healing,
+		Category::OverTime,
+		Category::SingleTarget,
+		Category::Spell
 	};
 
 	elements = {
-		Element::NATURE_HEAL
+		Element::NatureHeal
 	};
 
 	// debug

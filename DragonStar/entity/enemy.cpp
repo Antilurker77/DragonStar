@@ -45,7 +45,7 @@ Enemy::Enemy(EnemyID enemyID, int level, sf::Vector3i spawnPosition) {
 	spCurrent = GetMaxSP();
 
 	// ability slot set-up
-	abilities.push_back(Factory::CreateAbility(AbilityID::ATTACK)); // slot 0 is always attack
+	abilities.push_back(Factory::CreateAbility(AbilityID::Attack)); // slot 0 is always attack
 	std::vector<AbilityID> abilityIDs = enemyInfo->GetAbilities();
 	for (size_t i = 0; i < abilityIDs.size(); i++) {
 		abilities.push_back(Factory::CreateAbility(abilityIDs[i]));
@@ -176,7 +176,7 @@ int Enemy::GetMaxHP() {
 
 	double hpd = hp;
 	hpd = getStat(hpd, StatModType::HP, false, false);
-	double hpMult = getStat(1.0, StatModType::HP_MULT, true, false);
+	double hpMult = getStat(1.0, StatModType::HPMult, true, false);
 
 	hp = std::floor(hpd * hpMult);
 
@@ -188,7 +188,7 @@ int Enemy::GetMaxMP() {
 
 	double mpd = mp;
 	mpd = getStat(mpd, StatModType::MP, false, false);
-	double mpMult = getStat(1.0, StatModType::MP_MULT, true, false);
+	double mpMult = getStat(1.0, StatModType::MPMult, true, false);
 
 	mp = std::floor(mpd * mpMult);
 
@@ -200,7 +200,7 @@ int Enemy::GetMaxSP() {
 
 	double spd = sp;
 	spd = getStat(spd, StatModType::SP, false, false);
-	double spMult = getStat(1.0, StatModType::SP_MULT, true, false);
+	double spMult = getStat(1.0, StatModType::SPMult, true, false);
 
 	sp = std::floor(spd * spMult);
 
@@ -208,31 +208,31 @@ int Enemy::GetMaxSP() {
 }
 
 double Enemy::GetHPRegen() {
-	double hpRegen = getStat(0.0, StatModType::HP_REGEN, false, false);
+	double hpRegen = getStat(0.0, StatModType::HPRegen, false, false);
 
 	return hpRegen;
 }
 
 double Enemy::GetMPRegen() {
-	double mpRegen = getStat(1.0, StatModType::MP_REGEN, false, false);
+	double mpRegen = getStat(1.0, StatModType::MPRegen, false, false);
 
 	return mpRegen;
 }
 
 double Enemy::GetSPRegen() {
-	double spRegen = getStat(5.0, StatModType::SP_REGEN, false, false);
+	double spRegen = getStat(5.0, StatModType::SPRegen, false, false);
 
 	return spRegen;
 }
 
 double Enemy::GetHPLeech(EventOptions eventOptions, bool consumeBuffs) {
-	double hpLeech = getStat(0.0, StatModType::HP_LEECH, eventOptions, false, consumeBuffs);
+	double hpLeech = getStat(0.0, StatModType::HPLeech, eventOptions, false, consumeBuffs);
 
 	return hpLeech;
 }
 
 double Enemy::GetMPLeech(EventOptions eventOptions, bool consumeBuffs) {
-	double mpLeech = getStat(0.0, StatModType::MP_LEECH, eventOptions, false, consumeBuffs);
+	double mpLeech = getStat(0.0, StatModType::MPLeech, eventOptions, false, consumeBuffs);
 
 	return mpLeech;
 }
@@ -247,9 +247,9 @@ int Enemy::GetSTR(bool consumeBuffs) {
 
 	// Auras
 	getStatModValueFromAuras(strd, StatModType::STR, false, consumeBuffs);
-	getStatModValueFromAuras(strd, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::STR_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(strd, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::STRMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -257,9 +257,9 @@ int Enemy::GetSTR(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(strd, statMods, StatModType::STR, false);
-			StatModCalc::GetStatModValue(strd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::STR_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(strd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::STRMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -280,9 +280,9 @@ int Enemy::GetDEX(bool consumeBuffs) {
 	// Auras
 	statMods = getAuraStatMods();
 	getStatModValueFromAuras(dexd, StatModType::DEX, false, consumeBuffs);
-	getStatModValueFromAuras(dexd, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::DEX_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(dexd, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::DEXMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -290,9 +290,9 @@ int Enemy::GetDEX(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(dexd, statMods, StatModType::DEX, false);
-			StatModCalc::GetStatModValue(dexd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::DEX_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(dexd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::DEXMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -311,9 +311,9 @@ int Enemy::GetINT(bool consumeBuffs) {
 
 	// Auras
 	getStatModValueFromAuras(inted, StatModType::INT, false, consumeBuffs);
-	getStatModValueFromAuras(inted, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::INT_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(inted, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::INTMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -321,9 +321,9 @@ int Enemy::GetINT(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(inted, statMods, StatModType::INT, false);
-			StatModCalc::GetStatModValue(inted, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::INT_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(inted, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::INTMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -342,9 +342,9 @@ int Enemy::GetWIS(bool consumeBuffs) {
 
 	// Auras
 	getStatModValueFromAuras(wisd, StatModType::WIS, false, consumeBuffs);
-	getStatModValueFromAuras(wisd, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::WIS_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(wisd, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::WISMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -352,9 +352,9 @@ int Enemy::GetWIS(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(wisd, statMods, StatModType::WIS, false);
-			StatModCalc::GetStatModValue(wisd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::WIS_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(wisd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::WISMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -372,7 +372,7 @@ int Enemy::GetVIT(bool consumeBuffs) {
 
 	// Auras
 	getStatModValueFromAuras(vitd, StatModType::VIT, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::VIT_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::VITMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -380,7 +380,7 @@ int Enemy::GetVIT(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(vitd, statMods, StatModType::VIT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::VIT_MULT, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::VITMult, false);
 		}
 	}
 
@@ -398,18 +398,18 @@ int Enemy::GetArmor(bool consumeBuffs) {
 	std::vector<StatMod> statMods = {};
 
 	// Auras
-	getStatModValueFromAuras(armord, StatModType::ARMOR, false, consumeBuffs);
-	getStatModValueFromAuras(armorPerLevel, StatModType::ARMOR_PER_LEVEL, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ARMOR_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(armord, StatModType::Armor, false, consumeBuffs);
+	getStatModValueFromAuras(armorPerLevel, StatModType::ArmorPerLevel, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::ArmorMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
 		std::vector<AuraPtr> gev = battleScene->GetGroundEffectsAtHex(GetHexPosition(), IsPlayer());
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
-			StatModCalc::GetStatModValue(armord, statMods, StatModType::ARMOR, false);
-			StatModCalc::GetStatModValue(armorPerLevel, statMods, StatModType::ARMOR_PER_LEVEL, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ARMOR_MULT, true);
+			StatModCalc::GetStatModValue(armord, statMods, StatModType::Armor, false);
+			StatModCalc::GetStatModValue(armorPerLevel, statMods, StatModType::ArmorPerLevel, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ArmorMult, true);
 		}
 	}
 
@@ -421,9 +421,9 @@ int Enemy::GetArmor(bool consumeBuffs) {
 void Enemy::OnEvent(EventType eventType, ActorPtr& target, EventOptions& eventOptions, EventResult& eventResult, bool isOffHand, double& amount) {
 	if (eventType == EventType::Attack) {
 		EventOptions eventOptionsLocal;
-		eventOptionsLocal.AbilityID = AbilityID::UNDEFINED;
-		eventOptionsLocal.AuraID = AuraID::UNDEFINED;
-		eventOptionsLocal.Categories = { Category::DAMAGING };
+		eventOptionsLocal.AbilityID = AbilityID::Undefined;
+		eventOptionsLocal.AuraID = AuraID::Undefined;
+		eventOptionsLocal.Categories = { Category::Damaging };
 		eventOptionsLocal.TriggerOnHit = false;
 
 		for (auto au : auras) {
@@ -451,7 +451,7 @@ void Enemy::OnEvent(EventType eventType, ActorPtr& target, EventOptions& eventOp
 }
 
 bool Enemy::IsDualWielding() {
-	if (enemyInfo->GetOffHandAttackType() == EquipType::NONE) {
+	if (enemyInfo->GetOffHandAttackType() == EquipType::None) {
 		return false;
 	}
 	else {
@@ -468,7 +468,7 @@ int Enemy::GetAttackRange(bool consumeBuffs) {
 	EventOptions eventOptions;
 	eventOptions.Categories = GetMainHandCategories();
 	eventOptions.Elements = GetMainHandElements();
-	attackRange = getStat(attackRange, StatModType::RANGE, eventOptions, false, consumeBuffs);
+	attackRange = getStat(attackRange, StatModType::Range, eventOptions, false, consumeBuffs);
 	return (int)attackRange;
 }
 
@@ -507,40 +507,40 @@ std::vector<Category> Enemy::GetMainHandCategories() {
 	std::vector<Category> categories = {};
 	EquipType equipType = enemyInfo->GetAttackType();
 	switch (equipType) {
-	case EquipType::UNARMED_STR:
-	case EquipType::UNARMED_DEX:
-	case EquipType::UNARMED_INT:
-		categories.push_back(Category::UNARMED);
+	case EquipType::UnarmedStrength:
+	case EquipType::UnarmedDexterity:
+	case EquipType::UnarmedIntelligence:
+		categories.push_back(Category::Unarmed);
 		break;
-	case EquipType::SWORD_1H:
-	case EquipType::SWORD_2H:
-		categories.push_back(Category::SWORD);
+	case EquipType::Sword1H:
+	case EquipType::Sword2H:
+		categories.push_back(Category::Sword);
 		break;
-	case EquipType::AXE_1H:
-	case EquipType::AXE_2H:
-		categories.push_back(Category::AXE);
+	case EquipType::Axe1H:
+	case EquipType::Axe2H:
+		categories.push_back(Category::Axe);
 		break;
-	case EquipType::MACE_1H:
-	case EquipType::MACE_2H:
-		categories.push_back(Category::MACE);
+	case EquipType::Mace1H:
+	case EquipType::Mace2H:
+		categories.push_back(Category::Mace);
 		break;
-	case EquipType::DAGGER:
-		categories.push_back(Category::DAGGER);
+	case EquipType::Dagger:
+		categories.push_back(Category::Dagger);
 		break;
-	case EquipType::CLAW:
-		categories.push_back(Category::CLAW);
+	case EquipType::Claw:
+		categories.push_back(Category::Claw);
 		break;
-	case EquipType::SPEAR:
-		categories.push_back(Category::SPEAR);
+	case EquipType::Spear:
+		categories.push_back(Category::Spear);
 		break;
-	case EquipType::BOW:
-		categories.push_back(Category::BOW);
+	case EquipType::Bow:
+		categories.push_back(Category::Bow);
 		break;
-	case EquipType::WAND:
-		categories.push_back(Category::WAND);
+	case EquipType::Wand:
+		categories.push_back(Category::Wand);
 		break;
-	case EquipType::STAFF:
-		categories.push_back(Category::STAFF);
+	case EquipType::Staff:
+		categories.push_back(Category::Staff);
 		break;
 	default:
 		break;
@@ -588,40 +588,40 @@ std::vector<Category> Enemy::GetOffHandCategories() {
 	std::vector<Category> categories = {};
 	EquipType equipType = enemyInfo->GetOffHandAttackType();
 	switch (equipType) {
-	case EquipType::UNARMED_STR:
-	case EquipType::UNARMED_DEX:
-	case EquipType::UNARMED_INT:
-		categories.push_back(Category::UNARMED);
+	case EquipType::UnarmedStrength:
+	case EquipType::UnarmedDexterity:
+	case EquipType::UnarmedIntelligence:
+		categories.push_back(Category::Unarmed);
 		break;
-	case EquipType::SWORD_1H:
-	case EquipType::SWORD_2H:
-		categories.push_back(Category::SWORD);
+	case EquipType::Sword1H:
+	case EquipType::Sword2H:
+		categories.push_back(Category::Sword);
 		break;
-	case EquipType::AXE_1H:
-	case EquipType::AXE_2H:
-		categories.push_back(Category::AXE);
+	case EquipType::Axe1H:
+	case EquipType::Axe2H:
+		categories.push_back(Category::Axe);
 		break;
-	case EquipType::MACE_1H:
-	case EquipType::MACE_2H:
-		categories.push_back(Category::MACE);
+	case EquipType::Mace1H:
+	case EquipType::Mace2H:
+		categories.push_back(Category::Mace);
 		break;
-	case EquipType::DAGGER:
-		categories.push_back(Category::DAGGER);
+	case EquipType::Dagger:
+		categories.push_back(Category::Dagger);
 		break;
-	case EquipType::CLAW:
-		categories.push_back(Category::CLAW);
+	case EquipType::Claw:
+		categories.push_back(Category::Claw);
 		break;
-	case EquipType::SPEAR:
-		categories.push_back(Category::SPEAR);
+	case EquipType::Spear:
+		categories.push_back(Category::Spear);
 		break;
-	case EquipType::BOW:
-		categories.push_back(Category::BOW);
+	case EquipType::Bow:
+		categories.push_back(Category::Bow);
 		break;
-	case EquipType::WAND:
-		categories.push_back(Category::WAND);
+	case EquipType::Wand:
+		categories.push_back(Category::Wand);
 		break;
-	case EquipType::STAFF:
-		categories.push_back(Category::STAFF);
+	case EquipType::Staff:
+		categories.push_back(Category::Staff);
 		break;
 	default:
 		break;
@@ -635,50 +635,50 @@ std::vector<Element> Enemy::GetOffHandElements() {
 }
 
 double Enemy::GetDamageDealt(EventOptions eventOptions, bool consumeBuffs) {
-	double damageDealt = getStat(1.0, StatModType::DAMAGE, eventOptions, true, consumeBuffs);
+	double damageDealt = getStat(1.0, StatModType::Damage, eventOptions, true, consumeBuffs);
 
 	return damageDealt;
 }
 
 double Enemy::GetDamageTaken(EventOptions eventOptions, bool consumeBuffs) {
-	double damageTaken = getStat(1.0, StatModType::DAMAGE_TAKEN, eventOptions, true, consumeBuffs);
+	double damageTaken = getStat(1.0, StatModType::DamageTaken, eventOptions, true, consumeBuffs);
 
 	return damageTaken;
 }
 
 double Enemy::GetHealingDealt(EventOptions eventOptions, bool consumeBuffs) {
-	double healingDealt = getStat(1.0, StatModType::HEALING, eventOptions, true, consumeBuffs);
+	double healingDealt = getStat(1.0, StatModType::Healing, eventOptions, true, consumeBuffs);
 
 	return healingDealt;
 }
 
 double Enemy::GetHealingTaken(EventOptions eventOptions, bool consumeBuffs) {
-	double healingTaken = getStat(1.0, StatModType::HEALING_TAKEN, eventOptions, true, consumeBuffs);
+	double healingTaken = getStat(1.0, StatModType::HealingTaken, eventOptions, true, consumeBuffs);
 
 	return healingTaken;
 }
 
 double Enemy::GetResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double resistance = getStat(0.0, StatModType::RESISTANCE, eventOptions, false, consumeBuffs);
+	double resistance = getStat(0.0, StatModType::Resistance, eventOptions, false, consumeBuffs);
 
 	return resistance;
 }
 
 double Enemy::GetArmorPen(EventOptions eventOptions, bool consumeBuffs) {
-	double armorPen = getStat(0.0, StatModType::ARMOR_PEN, eventOptions, false, consumeBuffs);
+	double armorPen = getStat(0.0, StatModType::ArmorPen, eventOptions, false, consumeBuffs);
 
 	return armorPen;
 }
 
 double Enemy::GetResistancePen(EventOptions eventOptions, bool consumeBuffs) {
-	double resistPen = getStat(0.0, StatModType::RESISTANCE_PEN, eventOptions, false, consumeBuffs);
+	double resistPen = getStat(0.0, StatModType::ResistancePen, eventOptions, false, consumeBuffs);
 
 	return resistPen;
 }
 
 double Enemy::GetCritChance(EventOptions eventOptions, bool consumeBuffs) {
 	double critChance = (double)GetDEX(consumeBuffs) / 1000.0;
-	critChance = getStat(critChance, StatModType::CRIT_CHANCE, eventOptions, false, consumeBuffs);
+	critChance = getStat(critChance, StatModType::CritChance, eventOptions, false, consumeBuffs);
 
 	return critChance;
 }
@@ -686,19 +686,19 @@ double Enemy::GetCritChance(EventOptions eventOptions, bool consumeBuffs) {
 double Enemy::GetCritDamage(EventOptions eventOptions, bool consumeBuffs) {
 	double critDamage = (double)GetSTR(consumeBuffs) / 200.0;
 	critDamage += 1.25;
-	critDamage = getStat(critDamage, StatModType::CRIT_DAMAGE, eventOptions, true, consumeBuffs);
+	critDamage = getStat(critDamage, StatModType::CritPower, eventOptions, true, consumeBuffs);
 
 	return critDamage;
 }
 
 double Enemy::GetCritChanceProtection(EventOptions eventOptions, bool consumeBuffs) {
-	double critChanceProtection = getStat(0.0, StatModType::CRIT_CHANCE_PROTECTION, eventOptions, false, consumeBuffs);
+	double critChanceProtection = getStat(0.0, StatModType::CritChanceProtection, eventOptions, false, consumeBuffs);
 
 	return critChanceProtection;
 }
 
 double Enemy::GetCritDamageProtection(EventOptions eventOptions, bool consumeBuffs) {
-	double critDamageProtection = getStat(1.0, StatModType::CRIT_DAMAGE_PROTECTION, eventOptions, true, consumeBuffs);
+	double critDamageProtection = getStat(1.0, StatModType::CritPowerProtection, eventOptions, true, consumeBuffs);
 
 	// can't be more than 100% protection
 	if (critDamageProtection < 0.0) {
@@ -709,43 +709,43 @@ double Enemy::GetCritDamageProtection(EventOptions eventOptions, bool consumeBuf
 }
 
 double Enemy::GetHaste(EventOptions eventOptions, bool consumeBuffs) {
-	double haste = getStat(1.0, StatModType::HASTE, eventOptions, true, consumeBuffs);
+	double haste = getStat(1.0, StatModType::Haste, eventOptions, true, consumeBuffs);
 
 	return haste;
 }
 
 double Enemy::GetCastTimeReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double castTimeReduction = getStat(0.0, StatModType::CAST_TIME_REDUCTION, eventOptions, false, consumeBuffs);
+	double castTimeReduction = getStat(0.0, StatModType::CastTimeReduction, eventOptions, false, consumeBuffs);
 
 	return castTimeReduction;
 }
 
 double Enemy::GetInstantCast(EventOptions eventOptions, bool consumeBuffs) {
-	double instantCast = getStat(0.0, StatModType::INSTANT, eventOptions, false, consumeBuffs);
+	double instantCast = getStat(0.0, StatModType::Instant, eventOptions, false, consumeBuffs);
 
 	return instantCast;
 }
 
 double Enemy::GetRangeIncrease(EventOptions eventOptions, bool consumeBuffs) {
-	double range = getStat(0.0, StatModType::RANGE, eventOptions, false, consumeBuffs);
+	double range = getStat(0.0, StatModType::Range, eventOptions, false, consumeBuffs);
 
 	return range;
 }
 
 double Enemy::GetDoubleStrikeChance(EventOptions eventOptions, bool consumeBuffs) {
-	double doubleStrikeChance = getStat(0.0, StatModType::DOUBLE_STRIKE_CHANCE, eventOptions, false, consumeBuffs);
+	double doubleStrikeChance = getStat(0.0, StatModType::DoubleStrikeChance, eventOptions, false, consumeBuffs);
 
 	return doubleStrikeChance;
 }
 
 double Enemy::GetDoubleStrikeDamage(EventOptions eventOptions, bool consumeBuffs) {
-	double doubleStrikeDamage = getStat(1.0, StatModType::DOUBLE_STRIKE_DAMAGE, eventOptions, true, consumeBuffs);
+	double doubleStrikeDamage = getStat(1.0, StatModType::DoubleStrikeDamage, eventOptions, true, consumeBuffs);
 
 	return doubleStrikeDamage;
 }
 
 double Enemy::GetCounterChance(EventOptions eventOptions, bool consumeBuffs) {
-	double counterChance = getStat(0.0, StatModType::COUNTER_CHANCE, eventOptions, false, consumeBuffs);
+	double counterChance = getStat(0.0, StatModType::CounterChance, eventOptions, false, consumeBuffs);
 
 	return counterChance;
 }
@@ -757,7 +757,7 @@ std::vector<StatMod> Enemy::GetOnHitDamage(EventOptions eventOptions, bool consu
 	// EnemyInfo
 	check = enemyInfo->GetStatMods();
 	for (auto sm : check) {
-		if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+		if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 			statMods.push_back(sm);
 		}
 	}
@@ -768,7 +768,7 @@ std::vector<StatMod> Enemy::GetOnHitDamage(EventOptions eventOptions, bool consu
 		for (auto ge : gev) {
 			check = ge->GetStatMods();
 			for (auto sm : check) {
-				if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+				if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 					statMods.push_back(sm);
 				}
 			}
@@ -779,7 +779,7 @@ std::vector<StatMod> Enemy::GetOnHitDamage(EventOptions eventOptions, bool consu
 	for (size_t i = 0; i < auras.size(); i++) {
 		check = auras[i]->GetStatMods();
 		for (auto sm : check) {
-			if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+			if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 				statMods.push_back(sm);
 				auras[i]->WasUsed(consumeBuffs);
 			}
@@ -790,115 +790,115 @@ std::vector<StatMod> Enemy::GetOnHitDamage(EventOptions eventOptions, bool consu
 }
 
 double Enemy::GetHitChance(EventOptions eventOptions, bool consumeBuffs) {
-	double hitChance = getStat(0.9, StatModType::HIT_CHANCE, eventOptions, false, consumeBuffs);
+	double hitChance = getStat(0.9, StatModType::HitChance, eventOptions, false, consumeBuffs);
 
 	return hitChance;
 }
 
 double Enemy::GetDodgeChance(EventOptions eventOptions, bool consumeBuffs) {
-	double dodgeChance = getStat(0.0, StatModType::DODGE_CHANCE, eventOptions, false, consumeBuffs);
+	double dodgeChance = getStat(0.0, StatModType::DodgeChance, eventOptions, false, consumeBuffs);
 
 	return dodgeChance;
 }
 
 double Enemy::GetBlockChance(EventOptions eventOptions, bool consumeBuffs) {
-	double blockChance = getStat(0.0, StatModType::BLOCK_CHANCE, eventOptions, false, consumeBuffs);
+	double blockChance = getStat(0.0, StatModType::BlockChance, eventOptions, false, consumeBuffs);
 
 	return blockChance;
 }
 
 double Enemy::GetHPCostReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double hpCostReduction = getStat(0.0, StatModType::HP_COST_REDUCTION, eventOptions, false, consumeBuffs);
+	double hpCostReduction = getStat(0.0, StatModType::HPCostReduction, eventOptions, false, consumeBuffs);
 
 	return hpCostReduction;
 }
 
 double Enemy::GetMPCostReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double mpCostReduction = getStat(0.0, StatModType::MP_COST_REDUCTION, eventOptions, false, consumeBuffs);
+	double mpCostReduction = getStat(0.0, StatModType::MPCostReduction, eventOptions, false, consumeBuffs);
 
 	return mpCostReduction;
 }
 
 double Enemy::GetSPCostReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double spCostReduction = getStat(0.0, StatModType::SP_COST_REDUCTION, eventOptions, false, consumeBuffs);
+	double spCostReduction = getStat(0.0, StatModType::SPCostReduction, eventOptions, false, consumeBuffs);
 
 	return spCostReduction;
 }
 
 double Enemy::GetCooldownReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double cdr = getStat(0.0, StatModType::COOLDOWN_REDUCTION, eventOptions, false, consumeBuffs);
+	double cdr = getStat(0.0, StatModType::CooldownReduction, eventOptions, false, consumeBuffs);
 
 	return cdr;
 }
 
 double Enemy::GetAuraSnapshotPower(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotPower = getStat(1.0, StatModType::AURA_SNAPSHOT_POWER, eventOptions, true, consumeBuffs);
+	double auraSnapshotPower = getStat(1.0, StatModType::AuraSnapshotPower, eventOptions, true, consumeBuffs);
 
 	return auraSnapshotPower;
 }
 
 double Enemy::GetAuraSnapshotCritChance(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotCritChance = getStat(0.0, StatModType::AURA_SNAPSHOT_CRIT_CHANCE, eventOptions, false, consumeBuffs);
+	double auraSnapshotCritChance = getStat(0.0, StatModType::AuraSnapshotCritChance, eventOptions, false, consumeBuffs);
 
 	return auraSnapshotCritChance;
 }
 
 double Enemy::GetAuraSnapshotCritPower(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotCritPower = getStat(1.0, StatModType::AURA_SNAPSHOT_CRIT_POWER, eventOptions, true, consumeBuffs);
+	double auraSnapshotCritPower = getStat(1.0, StatModType::AuraSnapshotCritPower, eventOptions, true, consumeBuffs);
 
 	return auraSnapshotCritPower;
 }
 
 double Enemy::GetAuraSnapshotResistPen(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotCritPower = getStat(1.0, StatModType::AURA_SNAPSHOT_CRIT_POWER, eventOptions, true, consumeBuffs);
+	double auraSnapshotCritPower = getStat(1.0, StatModType::AuraSnapshotCritPower, eventOptions, true, consumeBuffs);
 
 	return auraSnapshotCritPower;
 }
 
 double Enemy::GetStunResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double stunResistance = getStat(0.0, StatModType::STUN_RESISTANCE, eventOptions, false, consumeBuffs);
+	double stunResistance = getStat(0.0, StatModType::StunResistance, eventOptions, false, consumeBuffs);
 
 	return stunResistance;
 }
 
 double Enemy::GetDisarmResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double disarmResistance = getStat(0.0, StatModType::DISARM_RESISTANCE, eventOptions, false, consumeBuffs);
+	double disarmResistance = getStat(0.0, StatModType::DisarmResistance, eventOptions, false, consumeBuffs);
 
 	return disarmResistance;
 }
 
 double Enemy::GetSilenceResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double silenceResistance = getStat(0.0, StatModType::SILENCE_RESISTANCE, eventOptions, false, consumeBuffs);
+	double silenceResistance = getStat(0.0, StatModType::SilenceResistance, eventOptions, false, consumeBuffs);
 
 	return silenceResistance;
 }
 
 double Enemy::GetKnockbackResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double knockbackResistance = getStat(0.0, StatModType::KNOCKBACK_RESISTANCE, eventOptions, false, consumeBuffs);
+	double knockbackResistance = getStat(0.0, StatModType::KnockbackResistance, eventOptions, false, consumeBuffs);
 
 	return knockbackResistance;
 }
 
 double Enemy::GetSnareResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double snareResistance = getStat(0.0, StatModType::SLOW_ROOT_RESISTANCE, eventOptions, false, consumeBuffs);
+	double snareResistance = getStat(0.0, StatModType::SlowRootResistance, eventOptions, false, consumeBuffs);
 
 	return snareResistance;
 }
 
 double Enemy::GetDeathResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double deathResistance = getStat(0.0, StatModType::DEATH_RESISTANCE, eventOptions, false, consumeBuffs);
+	double deathResistance = getStat(0.0, StatModType::DeathResistance, eventOptions, false, consumeBuffs);
 
 	return deathResistance;
 }
 
 double Enemy::GetGoldFind(bool consumeBuffs) {
-	double goldFind = getStat(0.0, StatModType::GOLD_FIND, false, consumeBuffs);
+	double goldFind = getStat(0.0, StatModType::GoldFind, false, consumeBuffs);
 
 	return goldFind;
 }
 
 double Enemy::GetEXPBoost(bool consumeBuffs) {
-	double expBoost = getStat(0.0, StatModType::EXP_BOOST, false, consumeBuffs);
+	double expBoost = getStat(0.0, StatModType::EXPBoost, false, consumeBuffs);
 
 	return expBoost;
 }
@@ -917,7 +917,7 @@ unsigned int Enemy::GetLootPoints() {
 
 int Enemy::GetMoveSpeed() {
 	int moveSpeed = enemyInfo->GetBaseMoveSpeed();
-	double msMult = getStat(1.0, StatModType::MOVEMENT_SPEED, false, false);
+	double msMult = getStat(1.0, StatModType::MovementSpeed, false, false);
 	return moveSpeed * (1.0 / msMult);
 }
 
@@ -945,10 +945,10 @@ void Enemy::SetAbilitySlotUser() {
 
 double Enemy::getStat(double initialValue, StatModType statModType, bool isMultiplicative, bool consumeBuffs) {
 	EventOptions eo;
-	eo.Categories = { Category::NONE };
-	eo.Elements = { Element::NONE };
-	eo.AbilityID = AbilityID::UNDEFINED;
-	eo.AuraID = AuraID::UNDEFINED;
+	eo.Categories = { Category::None };
+	eo.Elements = { Element::None };
+	eo.AbilityID = AbilityID::Undefined;
+	eo.AuraID = AuraID::Undefined;
 
 	return getStat(initialValue, statModType, eo, isMultiplicative, consumeBuffs);
 }

@@ -15,18 +15,18 @@
 
 Au_CommandingShout::Au_CommandingShout() {
 	name = "Commanding Shout";
-	id = AuraID::COMMANDING_SHOUT;
+	id = AuraID::CommandingShout;
 	icon = "commanding_shout.png";
 
 	categories = {
-		Category::SKILL
+		Category::Skill
 	};
 
 	elements = {};
 
 	statMods = {
-		StatMod(StatModType::DAMAGE, 0.05),
-		StatMod(StatModType::DAMAGE_TAKEN, -0.05)
+		StatMod(StatModType::Damage, 0.05),
+		StatMod(StatModType::DamageTaken, -0.05)
 	};
 
 	canCrit = false;

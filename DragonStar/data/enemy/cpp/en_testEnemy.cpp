@@ -21,7 +21,7 @@ En_TestEnemy::En_TestEnemy() {
 	name = "Test Enemy";
 	title = "";
 
-	creatureType = CreatureType::HUMANOID;
+	creatureType = CreatureType::Humanoid;
 
 	baseHP = 1500;
 	baseMP = 30;
@@ -41,13 +41,13 @@ En_TestEnemy::En_TestEnemy() {
 	attackSpeed = 210;
 	attackRange = 1;
 
-	attackType = EquipType::UNARMED_STR;
-	attackElement = { Element::PHYSICAL };
+	attackType = EquipType::UnarmedStrength;
+	attackElement = { Element::Physical };
 	attackDamage = 50;
 	attackMod = 1.0;
 
-	offHandAttackType = EquipType::NONE;
-	offHandAttackElement = { Element::NONE };
+	offHandAttackType = EquipType::None;
+	offHandAttackElement = { Element::None };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
@@ -55,7 +55,7 @@ En_TestEnemy::En_TestEnemy() {
 	baseEXP = 30u;
 	lootPoints = 100u;
 
-	abilities = { AbilityID::RACIAL_DRAGON_BREATH };
+	abilities = { AbilityID::RacialDragonBreath };
 
 }
 

@@ -17,22 +17,22 @@ Ab_DarkBolt::Ab_DarkBolt() {
 	setHarmfulSpellDefault();
 
 	name = "Dark Bolt";
-	abilityID = AbilityID::DARK_BOLT;
+	abilityID = AbilityID::DarkBolt;
 	icon = "dark_bolt.png";
 
 	abilityTypes = {
-		AbilityType::DARK_SPELL
+		AbilityType::DarkSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::DARK };
+	elements = { Element::Dark };
 
 	castTime = 250;
 	range = 4;
@@ -42,7 +42,7 @@ Ab_DarkBolt::Ab_DarkBolt() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_DarkBolt::GetTargetArea(sf::Vector3i selectedTile) {

@@ -19,22 +19,22 @@ Ab_FireNova::Ab_FireNova() {
 	setHarmfulSpellDefault();
 
 	name = "Fire Nova";
-	abilityID = AbilityID::FIRE_NOVA;
+	abilityID = AbilityID::FireNova;
 	icon = "fire_nova.png";
 
 	abilityTypes = {
-		AbilityType::FIRE_SPELL
+		AbilityType::FireSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::AREA_OF_EFFECT,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::AreaOfEffect,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::FIRE };
+	elements = { Element::Fire };
 
 	castTime = 100;
 	range = 1;
@@ -47,7 +47,7 @@ Ab_FireNova::Ab_FireNova() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 }
 
 std::vector<sf::Vector3i> Ab_FireNova::GetTargetArea(sf::Vector3i selectedTile) {

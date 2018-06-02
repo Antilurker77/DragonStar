@@ -23,14 +23,14 @@ Eq_CharmOfStrength::Eq_CharmOfStrength() {
 	tier = 1;
 
 	textureFilepath = "trinket.png";
-	equipType = EquipType::TRINKET;
-	equipmentID = EquipmentID::CHARM_OF_STRENGTH;
+	equipType = EquipType::Trinket;
+	equipmentID = EquipmentID::CharmOfStrength;
 
 	equipPower = 0;
 	blockChance = 0.0;
 	attackSpeed = 0.0;
 	statMods = {
-		StatMod(StatModType::STR_MULT, 0.1)
+		StatMod(StatModType::STRMult, 0.1)
 	};
 }
 
@@ -42,14 +42,14 @@ Eq_CharmOfDexterity::Eq_CharmOfDexterity() {
 	tier = 1;
 
 	textureFilepath = "trinket.png";
-	equipType = EquipType::TRINKET;
-	equipmentID = EquipmentID::CHARM_OF_DEXTERITY;
+	equipType = EquipType::Trinket;
+	equipmentID = EquipmentID::CharmOfDexterity;
 
 	equipPower = 0;
 	blockChance = 0.0;
 	attackSpeed = 0.0;
 	statMods = {
-		StatMod(StatModType::DEX_MULT, 0.1)
+		StatMod(StatModType::DEXMult, 0.1)
 	};
 }
 
@@ -61,14 +61,14 @@ Eq_CharmOfIntelligence::Eq_CharmOfIntelligence() {
 	tier = 1;
 
 	textureFilepath = "trinket.png";
-	equipType = EquipType::TRINKET;
-	equipmentID = EquipmentID::CHARM_OF_INTELLIGENCE;
+	equipType = EquipType::Trinket;
+	equipmentID = EquipmentID::CharmOfIntelligence;
 
 	equipPower = 0;
 	blockChance = 0.0;
 	attackSpeed = 0.0;
 	statMods = {
-		StatMod(StatModType::INT_MULT, 0.1)
+		StatMod(StatModType::INTMult, 0.1)
 	};
 }
 
@@ -80,13 +80,13 @@ Eq_CharmOfWisdom::Eq_CharmOfWisdom() {
 	tier = 1;
 
 	textureFilepath = "trinket.png";
-	equipType = EquipType::TRINKET;
-	equipmentID = EquipmentID::CHARM_OF_WISDOM;
+	equipType = EquipType::Trinket;
+	equipmentID = EquipmentID::CharmOfWisdom;
 
 	equipPower = 0;
 	blockChance = 0.0;
 	attackSpeed = 0.0;
 	statMods = {
-		StatMod(StatModType::WIS_MULT, 0.1)
+		StatMod(StatModType::WISMult, 0.1)
 	};
 }

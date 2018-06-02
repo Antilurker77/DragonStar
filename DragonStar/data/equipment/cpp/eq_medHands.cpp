@@ -23,8 +23,8 @@ Eq_LeatherGloves::Eq_LeatherGloves() {
 	tier = 1;
 
 	textureFilepath = "leather_gloves.png";
-	equipType = EquipType::MED_HANDS;
-	equipmentID = EquipmentID::LEATHER_GLOVES;
+	equipType = EquipType::MedHands;
+	equipmentID = EquipmentID::LeatherGloves;
 
 	equipPower = 4;
 	blockChance = 0.0;

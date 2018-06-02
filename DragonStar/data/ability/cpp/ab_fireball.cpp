@@ -20,22 +20,22 @@ Ab_Fireball::Ab_Fireball() {
 	setHarmfulSpellDefault();
 
 	name = "Fireball";
-	abilityID = AbilityID::FIREBALL;
+	abilityID = AbilityID::Fireball;
 	icon = "fireball.png";
 
 	abilityTypes = {
-		AbilityType::FIRE_SPELL
+		AbilityType::FireSpell
 	};
 	tier = 2;
 
 	categories = {
-		Category::DAMAGING,
-		Category::AREA_OF_EFFECT,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::AreaOfEffect,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::FIRE };
+	elements = { Element::Fire };
 
 	castTime = 200;
 	range = 4;
@@ -48,7 +48,7 @@ Ab_Fireball::Ab_Fireball() {
 
 	areaIgnoreBodyBlock = true;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Fireball::GetTargetArea(sf::Vector3i selectedTile) {

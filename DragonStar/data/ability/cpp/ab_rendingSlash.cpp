@@ -18,37 +18,37 @@ Ab_RendingSlash::Ab_RendingSlash() {
 	setAttackDefault();
 
 	name = "Rending Slash";
-	abilityID = AbilityID::RENDING_SLASH;
+	abilityID = AbilityID::RendingSlash;
 	icon = "rending_slash.png";
 
 	abilityTypes = {
-		AbilityType::AXE_SKILL,
-		AbilityType::CLAW_SKILL,
-		AbilityType::DAGGER_SKILL,
-		AbilityType::SWORD_SKILL
+		AbilityType::AxeSkill,
+		AbilityType::ClawSkill,
+		AbilityType::DaggerSkill,
+		AbilityType::SwordSkill
 	};
 	tier = 1;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	usableWeapons = {
-		EquipType::SWORD_1H,
-		EquipType::SWORD_2H,
-		EquipType::AXE_1H,
-		EquipType::AXE_2H,
-		EquipType::DAGGER,
-		EquipType::CLAW
+		EquipType::Sword1H,
+		EquipType::Sword2H,
+		EquipType::Axe1H,
+		EquipType::Axe2H,
+		EquipType::Dagger,
+		EquipType::Claw
 	};
 
 	spCost = 25;
 	cooldown = 2000;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 }
@@ -78,7 +78,7 @@ std::string Ab_RendingSlash::GetDescription() {
 void Ab_RendingSlash::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	auto result = Combat::WeaponAttack(user, targets[0], 1.1, false, abilityOptions);
 	if (result.DidHit) {
-		Combat::AddAuraStack(user, targets[0], AuraID::RENDING_SLASH);
+		Combat::AddAuraStack(user, targets[0], AuraID::RendingSlash);
 	}
 	Combat::WeaponAttack(user, targets[0], offHandBasicMultiplier, true, abilityOptions);
 }

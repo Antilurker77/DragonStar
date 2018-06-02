@@ -15,28 +15,28 @@
 
 Au_PrismaticBolt::Au_PrismaticBolt() {
 	name = "Prismatic Bolt";
-	id = AuraID::PRISMATIC_BOLT;
+	id = AuraID::PrismaticBolt;
 	icon = "prismatic_bolt.png";
 
 	categories = {
-		Category::SINGLE_TARGET,
-		Category::SPELL
+		Category::SingleTarget,
+		Category::Spell
 	};
 
 	elements = {
-		Element::FIRE,
-		Element::ICE,
-		Element::LIGHTNING,
-		Element::POISON,
-		Element::WATER,
-		Element::WIND,
-		Element::EARTH,
-		Element::LIGHT,
-		Element::DARK
+		Element::Fire,
+		Element::Ice,
+		Element::Lightning,
+		Element::Poison,
+		Element::Water,
+		Element::Wind,
+		Element::Earth,
+		Element::Light,
+		Element::Dark
 	};
 
 	statMods = {
-		StatMod(StatModType::DAMAGE_TAKEN, 0.05, { Category::ANY }, { Element::FIRE, Element::ICE, Element::LIGHTNING, Element::POISON, Element::WATER, Element::WIND, Element::EARTH, Element::LIGHT, Element::DARK })
+		StatMod(StatModType::DamageTaken, 0.05, { Category::Any }, { Element::Fire, Element::Ice, Element::Lightning, Element::Poison, Element::Water, Element::Wind, Element::Earth, Element::Light, Element::Dark })
 	};
 
 	canCrit = false;

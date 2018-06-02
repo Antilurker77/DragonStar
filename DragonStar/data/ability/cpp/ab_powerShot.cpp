@@ -18,29 +18,29 @@ Ab_PowerShot::Ab_PowerShot() {
 	setAttackDefault();
 
 	name = "Power Shot";
-	abilityID = AbilityID::POWER_SHOT;
+	abilityID = AbilityID::PowerShot;
 	icon = "power_shot.png";
 
 	abilityTypes = {
-		AbilityType::BOW_SKILL
+		AbilityType::BowSkill
 	};
 	tier = 1;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	usableWeapons = {
-		EquipType::BOW
+		EquipType::Bow
 	};
 
 	spCost = 15;
 	cooldown = 800;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 }

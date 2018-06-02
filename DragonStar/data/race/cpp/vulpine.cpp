@@ -16,7 +16,7 @@ Vulpine::Vulpine(){
 
 	filepath = "gfx/actor/vulpine";
 
-	activeRacial = AbilityID::RACIAL_SPIRIT_TAP;
+	activeRacial = AbilityID::RacialSpiritTap;
 
 	passiveRacial = "Wild Hunter";
 	passiveDesc = "Increases water, wind, and earth resistance by 10%. Increases damage dealt to beasts by 10%.";
@@ -24,7 +24,7 @@ Vulpine::Vulpine(){
 
 	// beast damage nyi
 	passivePerks = std::vector<StatMod>({
-		StatMod(StatModType::RESISTANCE, 0.1, { Category::ANY }, { Element::WATER, Element::WIND, Element::EARTH } )
+		StatMod(StatModType::Resistance, 0.1, { Category::Any }, { Element::Water, Element::Wind, Element::Earth } )
 	});
 
 	baseEXPPerLevel = 300;

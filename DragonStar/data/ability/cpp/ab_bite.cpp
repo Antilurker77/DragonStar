@@ -15,25 +15,25 @@ Ab_Bite::Ab_Bite() {
 	setAttackDefault();
 
 	name = "Bite";
-	abilityID = AbilityID::BITE;
+	abilityID = AbilityID::Bite;
 	icon = "strength.png";
 
 	abilityTypes = {
-		AbilityType::UNARMED_SKILL
+		AbilityType::UnarmedSkill
 	};
 	tier = 1;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	spCost = 40;
 	cooldown = 450;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 }

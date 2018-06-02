@@ -9,7 +9,7 @@
 #pragma once
 
 enum class TilesetID {
-	TEST_TILESET,
-	FIELD
+	TestTileset,
+	Field
 };
 

@@ -21,7 +21,7 @@ En_TestAssassin::En_TestAssassin() {
 	name = "Test Assassin";
 	title = "";
 
-	creatureType = CreatureType::HUMANOID;
+	creatureType = CreatureType::Humanoid;
 
 	baseHP = 1200;
 	baseMP = 40;
@@ -42,13 +42,13 @@ En_TestAssassin::En_TestAssassin() {
 	attackSpeed = 180;
 	attackRange = 1;
 
-	attackType = EquipType::DAGGER;
-	attackElement = { Element::PHYSICAL };
+	attackType = EquipType::Dagger;
+	attackElement = { Element::Physical };
 	attackDamage = 45;
 	attackMod = 0.9;
 
-	offHandAttackType = EquipType::DAGGER;
-	offHandAttackElement = { Element::PHYSICAL };
+	offHandAttackType = EquipType::Dagger;
+	offHandAttackElement = { Element::Physical };
 	offHandAttackDamage = 27;
 	offHandAttackMod = 0.9;
 
@@ -56,8 +56,8 @@ En_TestAssassin::En_TestAssassin() {
 	baseEXP = 30u;
 	lootPoints = 80u;
 
-	statMods = { StatMod(StatModType::CRIT_CHANCE, 0.2), StatMod(StatModType::DODGE_CHANCE, 0.1) };
-	abilities = { AbilityID::POWER_STRIKE };
+	statMods = { StatMod(StatModType::CritChance, 0.2), StatMod(StatModType::DodgeChance, 0.1) };
+	abilities = { AbilityID::PowerStrike };
 }
 
 Idea En_TestAssassin::ExecuteAI(ActorPtr& user, BattleScene& world) {

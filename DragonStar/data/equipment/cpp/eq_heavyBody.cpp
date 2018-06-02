@@ -23,8 +23,8 @@ Eq_IronArmor::Eq_IronArmor() {
 	tier = 1;
 
 	textureFilepath = "iron_armor.png";
-	equipType = EquipType::HEAVY_BODY;
-	equipmentID = EquipmentID::IRON_ARMOR;
+	equipType = EquipType::HeavyBody;
+	equipmentID = EquipmentID::IronArmor;
 
 	equipPower = 24;
 	blockChance = 0.0;

@@ -98,14 +98,14 @@ void Ability::UseAbility(sf::Vector3i cursor, std::vector<sf::Vector3i> targetAr
 		calcCooldown = cooldown; // resets cooldown to the base amount, abilities can change calcCooldown in the execute step
 		if (requireTargetsInArea) {
 			if (targets.size() > 0) {
-				if (usage == UseType::INSTANT && customExecuteCondition(targets, cursor, targetArea)) {
+				if (usage == UseType::Instant && customExecuteCondition(targets, cursor, targetArea)) {
 					consumeResources();
 					execute(targets, cursor, targetArea);
 					exhaustUser();
 					doubleStrike(targets[0]);
 					putOnCooldown();
 				}
-				else if (usage == UseType::CAST && customExecuteCondition(targets, cursor, targetArea)) {
+				else if (usage == UseType::Cast && customExecuteCondition(targets, cursor, targetArea)) {
 					if (user->IsCastReady()) {
 						execute(targets, cursor, targetArea);
 						doubleStrike(targets[0]);
@@ -126,13 +126,13 @@ void Ability::UseAbility(sf::Vector3i cursor, std::vector<sf::Vector3i> targetAr
 		}
 		// Does not require targets.
 		else {
-			if (usage == UseType::INSTANT && customExecuteCondition(targets, cursor, targetArea)) {
+			if (usage == UseType::Instant && customExecuteCondition(targets, cursor, targetArea)) {
 				consumeResources();
 				execute(targets, cursor, targetArea);
 				exhaustUser();
 				putOnCooldown();
 			}
-			else if (usage == UseType::CAST && customExecuteCondition(targets, cursor, targetArea)) {
+			else if (usage == UseType::Cast && customExecuteCondition(targets, cursor, targetArea)) {
 				if (user->IsCastReady()) {
 					execute(targets, cursor, targetArea);
 					putOnCooldown();
@@ -194,11 +194,11 @@ int Ability::GetRange() {
 }
 
 bool Ability::IsAttack() {
-	return std::find(categories.begin(), categories.end(), Category::ATTACK) != categories.end();
+	return std::find(categories.begin(), categories.end(), Category::Attack) != categories.end();
 }
 
 bool Ability::IsSpell() {
-	return std::find(categories.begin(), categories.end(), Category::SPELL) != categories.end();
+	return std::find(categories.begin(), categories.end(), Category::Spell) != categories.end();
 }
 
 int Ability::GetAISearchRange() {
@@ -227,7 +227,7 @@ bool Ability::IsFriendly() {
 }
 
 bool Ability::IsCasted() {
-	return usage == UseType::CAST;
+	return usage == UseType::Cast;
 }
 
 int Ability::GetCastTime(bool consumeBuffs) {
@@ -334,7 +334,7 @@ void Ability::setAttackDefault() {
 	requireTargetsInArea = true;
 	useAttackRange = true;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 }
 
 void Ability::setHarmfulSpellDefault() {

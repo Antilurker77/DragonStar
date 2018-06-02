@@ -23,8 +23,8 @@ Eq_LeatherArmor::Eq_LeatherArmor() {
 	tier = 1;
 
 	textureFilepath = "leather_armor.png";
-	equipType = EquipType::MED_BODY;
-	equipmentID = EquipmentID::LEATHER_ARMOR;
+	equipType = EquipType::MedBody;
+	equipmentID = EquipmentID::LeatherArmor;
 
 	equipPower = 16;
 	blockChance = 0.0;

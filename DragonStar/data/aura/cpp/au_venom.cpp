@@ -15,18 +15,18 @@
 
 Au_Venom::Au_Venom() {
 	name = "Venom";
-	id = AuraID::VENOM;
+	id = AuraID::Venom;
 	icon = "venom.png";
 
 	categories = {
-		Category::DAMAGING,
-		Category::OVER_TIME,
-		Category::SINGLE_TARGET,
-		Category::SPELL
+		Category::Damaging,
+		Category::OverTime,
+		Category::SingleTarget,
+		Category::Spell
 	};
 
 	elements = {
-		Element::POISON
+		Element::Poison
 	};
 
 	canCrit = true;

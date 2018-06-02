@@ -19,35 +19,35 @@ Ab_FlameSlash::Ab_FlameSlash() {
 	setAttackDefault();
 
 	name = "Flame Slash";
-	abilityID = AbilityID::FLAME_SLASH;
+	abilityID = AbilityID::FlameSlash;
 	icon = "flame_slash.png";
 
 	abilityTypes = {
-		AbilityType::SWORD_SKILL
+		AbilityType::SwordSkill
 	};
 	tier = 1;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
 	};
 
 	elements = {
-		Element::FIRE
+		Element::Fire
 	};
 
 	usableWeapons = {
-		EquipType::SWORD_1H,
-		EquipType::SWORD_2H
+		EquipType::Sword1H,
+		EquipType::Sword2H
 	};
 
 	mpCost = 10;
 	spCost = 20;
 	cooldown = 600;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 }
@@ -75,5 +75,5 @@ std::string Ab_FlameSlash::GetDescription() {
 void Ab_FlameSlash::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	Combat::WeaponAttack(user, targets[0], 1.7, false, abilityOptions);
 	Combat::WeaponAttack(user, targets[0], offHandBasicMultiplier, true, abilityOptions);
-	Combat::AddAuraStack(user, user, AuraID::FLAME_SLASH);
+	Combat::AddAuraStack(user, user, AuraID::FlameSlash);
 }

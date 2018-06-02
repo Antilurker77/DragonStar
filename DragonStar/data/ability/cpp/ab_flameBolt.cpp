@@ -17,22 +17,22 @@ Ab_FlameBolt::Ab_FlameBolt() {
 	setHarmfulSpellDefault();
 
 	name = "Flame Bolt";
-	abilityID = AbilityID::FLAME_BOLT;
+	abilityID = AbilityID::FlameBolt;
 	icon = "flame_bolt.png";
 
 	abilityTypes = {
-		AbilityType::FIRE_SPELL
+		AbilityType::FireSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::FIRE };
+	elements = { Element::Fire };
 
 	castTime = 200;
 	range = 4;
@@ -42,7 +42,7 @@ Ab_FlameBolt::Ab_FlameBolt() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_FlameBolt::GetTargetArea(sf::Vector3i selectedTile) {

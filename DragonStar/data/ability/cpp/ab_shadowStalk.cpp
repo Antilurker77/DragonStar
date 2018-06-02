@@ -20,23 +20,23 @@ Ab_ShadowStalk::Ab_ShadowStalk() {
 	setAttackDefault();
 
 	name = "Shadow Stalk";
-	abilityID = AbilityID::SHADOW_STALK;
+	abilityID = AbilityID::ShadowStalk;
 	icon = "warp_slice.png";
 
 	abilityTypes = {
-		AbilityType::DAGGER_SKILL
+		AbilityType::DaggerSkill
 	};
 	tier = 2;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	elements = {
-		Element::DARK
+		Element::Dark
 	};
 
 	mpCost = 40;
@@ -46,7 +46,7 @@ Ab_ShadowStalk::Ab_ShadowStalk() {
 	aiSearchRange = range;
 	useAttackRange = false;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 	ignoreBodyBlock = true;

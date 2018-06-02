@@ -23,8 +23,8 @@ Eq_IronBuckler::Eq_IronBuckler() {
 	tier = 1;
 
 	textureFilepath = "iron_buckler.png";
-	equipType = EquipType::BUCKLER;
-	equipmentID = EquipmentID::IRON_BUCKLER;
+	equipType = EquipType::Buckler;
+	equipmentID = EquipmentID::IronBuckler;
 
 	equipPower = 7;
 	blockChance = 0.04;

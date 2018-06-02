@@ -15,16 +15,16 @@
 
 Au_ShadowEnergy::Au_ShadowEnergy() {
 	name = "Shadow Energy";
-	id = AuraID::SHADOW_ENERGY;
+	id = AuraID::ShadowEnergy;
 	icon = "dark_bolt.png";
 
 	categories = {
-		Category::SPELL,
-		Category::DAMAGING
+		Category::Spell,
+		Category::Damaging
 	};
 
 	elements = {
-		Element::DARK
+		Element::Dark
 	};
 
 	statMods = {
@@ -57,7 +57,7 @@ void Au_ShadowEnergy::OnEvent(EventType eventType, ActorPtr& target, BattleScene
 	// OnAttack
 	if (eventType == EventType::Attack) {
 		auto c = eventOptions.Categories;
-		if (std::find(c.begin(), c.end(), Category::DIRECT) != c.end()) {
+		if (std::find(c.begin(), c.end(), Category::Direct) != c.end()) {
 			Combat::ScalingAttack(user, target, 20.0, Attribute::INT, auraOptions);
 		}
 	}

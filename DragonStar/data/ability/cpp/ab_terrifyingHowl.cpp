@@ -18,20 +18,20 @@ Ab_TerrifyingHowl::Ab_TerrifyingHowl() {
 	setAttackDefault();
 
 	name = "Terrifying Howl";
-	abilityID = AbilityID::TERRIFYING_HOWL;
+	abilityID = AbilityID::TerrifyingHowl;
 	icon = "screech.png";
 
 	abilityTypes = {
-		AbilityType::TECH
+		AbilityType::Tech
 	};
 	tier = 1;
 
 	categories = {
-		Category::AREA_OF_EFFECT
+		Category::AreaOfEffect
 	};
 
 	elements = {
-		Element::PHYSICAL
+		Element::Physical
 	};
 
 	castTime = 100;
@@ -80,6 +80,6 @@ std::string Ab_TerrifyingHowl::GetDescription() {
 
 void Ab_TerrifyingHowl::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	for (size_t i = 0; i < targets.size(); i++) {
-		Combat::AddAuraStack(user, targets[i], AuraID::TERRIFYING_HOWL);
+		Combat::AddAuraStack(user, targets[i], AuraID::TerrifyingHowl);
 	}
 }

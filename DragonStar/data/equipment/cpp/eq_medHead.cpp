@@ -23,8 +23,8 @@ Eq_LeatherHelmet::Eq_LeatherHelmet() {
 	tier = 1;
 
 	textureFilepath = "leather_helmet.png";
-	equipType = EquipType::MED_HEAD;
-	equipmentID = EquipmentID::LEATHER_HELMET;
+	equipType = EquipType::MedHead;
+	equipmentID = EquipmentID::LeatherHelmet;
 
 	equipPower = 6;
 	blockChance = 0.0;

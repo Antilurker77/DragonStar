@@ -21,7 +21,7 @@ En_ArcaneSentry::En_ArcaneSentry() {
 
 	name = "Arcane Sentry";
 
-	creatureType = CreatureType::CONSTRUCT;
+	creatureType = CreatureType::Construct;
 
 	baseHP = 1830;
 	baseMP = 250;
@@ -41,13 +41,13 @@ En_ArcaneSentry::En_ArcaneSentry() {
 	attackSpeed = 200;
 	attackRange = 4;
 
-	attackType = EquipType::UNARMED_INT;
-	attackElement = { Element::ARCANE };
+	attackType = EquipType::UnarmedIntelligence;
+	attackElement = { Element::Arcane };
 	attackDamage = 25;
 	attackMod = 0.5;
 
-	offHandAttackType = EquipType::NONE;
-	offHandAttackElement = { Element::PHYSICAL };
+	offHandAttackType = EquipType::None;
+	offHandAttackElement = { Element::Physical };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
@@ -56,13 +56,13 @@ En_ArcaneSentry::En_ArcaneSentry() {
 	lootPoints = 150u;
 
 	statMods = {
-		StatMod(StatModType::RESISTANCE, 0.3, { Category::ANY }, { Element::ARCANE }),
-		StatMod(StatModType::MP_REGEN, 3.0)
+		StatMod(StatModType::Resistance, 0.3, { Category::Any }, { Element::Arcane }),
+		StatMod(StatModType::MPRegen, 3.0)
 	};
 
 	abilities = {
-		AbilityID::MAGIC_MISSILE, // 1
-		AbilityID::ARCANE_BLAST // 2
+		AbilityID::MagicMissile, // 1
+		AbilityID::ArcaneBlast // 2
 	};
 }
 

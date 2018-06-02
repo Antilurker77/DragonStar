@@ -23,14 +23,14 @@ Eq_IronGreatmace::Eq_IronGreatmace() {
 	tier = 1;
 
 	textureFilepath = "iron_greatmace.png";
-	equipType = EquipType::MACE_2H;
-	equipmentID = EquipmentID::IRON_GREATMACE;
+	equipType = EquipType::Mace2H;
+	equipmentID = EquipmentID::IronGreatmace;
 
 	equipPower = 120;
 	attackSpeed = 360;
 	attackRange = 1;
 	attributeMultiplier = 2.4;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

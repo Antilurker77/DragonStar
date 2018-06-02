@@ -15,27 +15,27 @@
 
 Au_ElementalEnergy::Au_ElementalEnergy() {
 	name = "Elemental Energy";
-	id = AuraID::ELEMENTAL_ENERGY;
+	id = AuraID::ElementalEnergy;
 	icon = "elemental_energy.png";
 
 	categories = {
-		Category::SPELL
+		Category::Spell
 	};
 
 	elements = {
-		Element::FIRE,
-		Element::ICE,
-		Element::LIGHTNING,
-		Element::POISON,
-		Element::WATER,
-		Element::WIND,
-		Element::EARTH,
-		Element::LIGHT,
-		Element::DARK
+		Element::Fire,
+		Element::Ice,
+		Element::Lightning,
+		Element::Poison,
+		Element::Water,
+		Element::Wind,
+		Element::Earth,
+		Element::Light,
+		Element::Dark
 	};
 
 	statMods = {
-		StatMod(StatModType::DAMAGE, 0.15,{ Category::ANY },{ Element::FIRE, Element::ICE, Element::LIGHTNING, Element::POISON, Element::WATER, Element::WIND, Element::EARTH, Element::LIGHT, Element::DARK })
+		StatMod(StatModType::Damage, 0.15,{ Category::Any },{ Element::Fire, Element::Ice, Element::Lightning, Element::Poison, Element::Water, Element::Wind, Element::Earth, Element::Light, Element::Dark })
 	};
 
 	canCrit = false;

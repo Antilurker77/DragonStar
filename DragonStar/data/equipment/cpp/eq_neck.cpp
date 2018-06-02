@@ -23,8 +23,8 @@ Eq_SilverNecklace::Eq_SilverNecklace() {
 	tier = 1;
 
 	textureFilepath = "silver_necklace.png";
-	equipType = EquipType::NECK;
-	equipmentID = EquipmentID::SILVER_NECKLACE;
+	equipType = EquipType::Neck;
+	equipmentID = EquipmentID::SilverNecklace;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -40,8 +40,8 @@ Eq_GoldNecklace::Eq_GoldNecklace() {
 	tier = 3;
 
 	textureFilepath = "gold_necklace.png";
-	equipType = EquipType::NECK;
-	equipmentID = EquipmentID::GOLD_NECKLACE;
+	equipType = EquipType::Neck;
+	equipmentID = EquipmentID::GoldNecklace;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -57,8 +57,8 @@ Eq_DragoniteNecklace::Eq_DragoniteNecklace() {
 	tier = 5;
 
 	textureFilepath = "dragonite_necklace.png";
-	equipType = EquipType::NECK;
-	equipmentID = EquipmentID::DRAGONITE_NECKLACE;
+	equipType = EquipType::Neck;
+	equipmentID = EquipmentID::DragoniteNecklace;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -74,19 +74,19 @@ Eq_AmuletOfDivineLight::Eq_AmuletOfDivineLight() {
 	tier = 1;
 
 	textureFilepath = "amulet_of_divine_light.png";
-	equipType = EquipType::NECK;
-	equipmentID = EquipmentID::AMULET_OF_DIVINE_LIGHT;
+	equipType = EquipType::Neck;
+	equipmentID = EquipmentID::AmuletOfDivineLight;
 
 	equipPower = 0;
 	blockChance = 0.0;
 	attackSpeed = 0.0;
 	statMods = {
 		StatMod(StatModType::MP, 10.0),
-		StatMod(StatModType::MP_REGEN, 1.0),
+		StatMod(StatModType::MPRegen, 1.0),
 		StatMod(StatModType::WIS, 3.0),
-		StatMod(StatModType::HEALING, 0.05, { Category::ANY }, { Element::DIVINE_HEAL }),
-		StatMod(StatModType::HASTE, 0.03),
-		StatMod(StatModType::MP_COST_REDUCTION, 0.03),
-		StatMod(StatModType::RESISTANCE, 0.25, { Category::ANY }, { Element::DARK })
+		StatMod(StatModType::Healing, 0.05, { Category::Any }, { Element::DivineHeal }),
+		StatMod(StatModType::Haste, 0.03),
+		StatMod(StatModType::MPCostReduction, 0.03),
+		StatMod(StatModType::Resistance, 0.25, { Category::Any }, { Element::Dark })
 	};
 }

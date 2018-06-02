@@ -31,8 +31,8 @@ typedef std::shared_ptr<Actor> ActorPtr;
 typedef std::shared_ptr<Item> ItemPtr;
 
 enum class ShopTab {
-	CRAFTING,
-	ABILITY
+	Crafting,
+	Ability
 };
 
 class ShopWindow {
@@ -75,7 +75,7 @@ private:
 
 	Button closeButton;
 
-	ShopTab currentTab = ShopTab::CRAFTING;
+	ShopTab currentTab = ShopTab::Crafting;
 
 	// Crafting
 	sfe::RichText tierText;

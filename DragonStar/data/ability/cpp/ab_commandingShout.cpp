@@ -17,21 +17,21 @@ Ab_CommandingShout::Ab_CommandingShout() {
 	setHelpfulSpellDefault();
 
 	name = "Commanding Shout";
-	abilityID = AbilityID::RACIAL_COMMANDING_SHOUT;
+	abilityID = AbilityID::RacialCommandingShout;
 	icon = "commanding_shout.png";
 
 	abilityTypes = {
-		AbilityType::TECH
+		AbilityType::Tech
 	};
 	tier = 1;
 
 	categories = {
-		Category::SKILL,
-		Category::AREA_OF_EFFECT
+		Category::Skill,
+		Category::AreaOfEffect
 	};
 
 	elements = {
-		Element::PHYSICAL
+		Element::Physical
 	};
 
 	castTime = 0;
@@ -39,7 +39,7 @@ Ab_CommandingShout::Ab_CommandingShout() {
 	range = 0;
 	aiSearchRange = 0;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTarget = false;
 	requireTargetsInArea = false;
@@ -63,7 +63,7 @@ void Ab_CommandingShout::execute(std::vector<ActorPtr>& targets, sf::Vector3i cu
 		auto players = battleScene->GetPlayers(true);
 
 		for (auto p : players) {
-			Combat::AddAuraStack(user, p, AuraID::COMMANDING_SHOUT);
+			Combat::AddAuraStack(user, p, AuraID::CommandingShout);
 		}
 	}
 }

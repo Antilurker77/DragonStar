@@ -23,8 +23,8 @@ Eq_SilkRobes::Eq_SilkRobes() {
 	tier = 1;
 
 	textureFilepath = "silk.png";
-	equipType = EquipType::LIGHT_BODY;
-	equipmentID = EquipmentID::SILK_ROBES;
+	equipType = EquipType::LightBody;
+	equipmentID = EquipmentID::SilkRobes;
 
 	equipPower = 8;
 	blockChance = 0.0;

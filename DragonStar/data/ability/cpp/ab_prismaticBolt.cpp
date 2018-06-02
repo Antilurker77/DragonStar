@@ -17,39 +17,39 @@ Ab_PrismaticBolt::Ab_PrismaticBolt() {
 	setHarmfulSpellDefault();
 
 	name = "Prismatic Bolt";
-	abilityID = AbilityID::PRISMATIC_BOLT;
+	abilityID = AbilityID::PrismaticBolt;
 	icon = "prismatic_bolt.png";
 
 	abilityTypes = {
-		AbilityType::FIRE_SPELL,
-		AbilityType::ICE_SPELL,
-		AbilityType::LIGHTNING_SPELL,
-		AbilityType::POISON_SPELL,
-		AbilityType::WATER_SPELL,
-		AbilityType::WIND_SPELL,
-		AbilityType::EARTH_SPELL,
-		AbilityType::LIGHT_SPELL,
-		AbilityType::DARK_SPELL
+		AbilityType::FireSpell,
+		AbilityType::IceSpell,
+		AbilityType::LightningSpell,
+		AbilityType::PoisonSpell,
+		AbilityType::WaterSpell,
+		AbilityType::WindSpell,
+		AbilityType::EarthSpell,
+		AbilityType::LightSpell,
+		AbilityType::DarkSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::SPELL,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Spell,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	elements = {
-		Element::FIRE,
-		Element::ICE,
-		Element::LIGHTNING,
-		Element::POISON,
-		Element::WATER,
-		Element::WIND,
-		Element::EARTH,
-		Element::LIGHT,
-		Element::DARK
+		Element::Fire,
+		Element::Ice,
+		Element::Lightning,
+		Element::Poison,
+		Element::Water,
+		Element::Wind,
+		Element::Earth,
+		Element::Light,
+		Element::Dark
 	};
 
 	castTime = 300;
@@ -57,7 +57,7 @@ Ab_PrismaticBolt::Ab_PrismaticBolt() {
 	aiSearchRange = range;
 	mpCost = 15;
 	
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 
 	requireTargetsInArea = true;
 	ignoreBodyBlock = false;
@@ -85,6 +85,6 @@ std::string Ab_PrismaticBolt::GetDescription() {
 void Ab_PrismaticBolt::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	auto result = Combat::ScalingAttack(user, targets[0], 54.0, Attribute::INT, abilityOptions);
 	if (result.DidHit) {
-		Combat::AddAuraStack(user, targets[0], AuraID::PRISMATIC_BOLT);
+		Combat::AddAuraStack(user, targets[0], AuraID::PrismaticBolt);
 	}
 }

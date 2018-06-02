@@ -23,14 +23,14 @@ Eq_IronSpear::Eq_IronSpear() {
 	tier = 1;
 
 	textureFilepath = "iron_spear.png";
-	equipType = EquipType::SPEAR;
-	equipmentID = EquipmentID::IRON_SPEAR;
+	equipType = EquipType::Spear;
+	equipmentID = EquipmentID::IronSpear;
 
 	equipPower = 80;
 	attackSpeed = 250;
 	attackRange = 1;
 	attributeMultiplier = 1.6;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }
@@ -45,22 +45,22 @@ Eq_CloudLance::Eq_CloudLance() {
 	tier = 1;
 
 	textureFilepath = "iron_spear.png";
-	equipType = EquipType::SPEAR;
-	equipmentID = EquipmentID::CLOUD_LANCE;
+	equipType = EquipType::Spear;
+	equipmentID = EquipmentID::CloudLance;
 
 	equipPower = 80;
 	attackSpeed = 250;
 	attackRange = 1;
 	attributeMultiplier = 1.6;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {
 		StatMod(StatModType::DEX, 9.0),
-		StatMod(StatModType::DAMAGE, 0.1, { Category::ANY }, { Element::WIND }),
-		StatMod(StatModType::HASTE, 0.08),
-		StatMod(StatModType::ARMOR_PEN, 0.15),
-		StatMod(StatModType::ON_HIT_DAMAGE, 12.0, { Element::WIND }, { Category::ANY }),
-		StatMod(StatModType::MOVEMENT_SPEED, 0.1),
-		StatMod(StatModType::RESISTANCE, 0.1, { Category::ANY }, { Element::WIND })
+		StatMod(StatModType::Damage, 0.1, { Category::Any }, { Element::Wind }),
+		StatMod(StatModType::Haste, 0.08),
+		StatMod(StatModType::ArmorPen, 0.15),
+		StatMod(StatModType::OnHitDamage, 12.0, { Element::Wind }, { Category::Any }),
+		StatMod(StatModType::MovementSpeed, 0.1),
+		StatMod(StatModType::Resistance, 0.1, { Category::Any }, { Element::Wind })
 	};
 }

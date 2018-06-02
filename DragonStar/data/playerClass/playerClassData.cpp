@@ -12,456 +12,456 @@
 
 Pc_Adventurer::Pc_Adventurer() {
 	name = "Adventurer";
-	playerClassID = PlayerClassID::ADVENTURER;
+	playerClassID = PlayerClassID::Adventurer;
 
 	equippable = {
-		EquipType::SWORD_1H,
-		EquipType::SWORD_2H,
-		EquipType::AXE_1H,
-		EquipType::AXE_2H,
-		EquipType::MACE_1H,
-		EquipType::MACE_2H,
-		EquipType::DAGGER,
-		EquipType::CLAW,
-		EquipType::SPEAR,
-		EquipType::BOW,
-		EquipType::WAND,
-		EquipType::STAFF,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::OFF_HAND,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Sword1H,
+		EquipType::Sword2H,
+		EquipType::Axe1H,
+		EquipType::Axe2H,
+		EquipType::Mace1H,
+		EquipType::Mace2H,
+		EquipType::Dagger,
+		EquipType::Claw,
+		EquipType::Spear,
+		EquipType::Bow,
+		EquipType::Wand,
+		EquipType::Staff,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::OffHand,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::TECH, 3u },
-		{ AbilityType::SWORD_SKILL, 3u },
-		{ AbilityType::AXE_SKILL, 3u },
-		{ AbilityType::MACE_SKILL, 3u },
-		{ AbilityType::DAGGER_SKILL, 3u },
-		{ AbilityType::CLAW_SKILL, 3u },
-		{ AbilityType::SPEAR_SKILL, 3u },
-		{ AbilityType::BOW_SKILL, 3u },
-		{ AbilityType::SHIELD_SKILL, 3u },
-		{ AbilityType::ARCANE_SPELL, 3u },
-		{ AbilityType::FIRE_SPELL, 3u },
-		{ AbilityType::ICE_SPELL, 3u },
-		{ AbilityType::LIGHTNING_SPELL, 3u },
-		{ AbilityType::POISON_SPELL, 3u },
-		{ AbilityType::WATER_SPELL, 3u },
-		{ AbilityType::WIND_SPELL, 3u },
-		{ AbilityType::EARTH_SPELL, 3u },
-		{ AbilityType::MIND_SPELL, 3u },
-		{ AbilityType::LIGHT_SPELL, 3u },
-		{ AbilityType::DARK_SPELL, 3u },
-		{ AbilityType::SPIRIT_SPELL, 3u },
-		{ AbilityType::ASTRAL_SPELL, 3u },
-		{ AbilityType::DIVINE_HEAL, 3u },
-		{ AbilityType::NATURE_HEAL, 3u },
-		{ AbilityType::ASTRAL_HEAL, 3u },
+		{ AbilityType::Tech, 3u },
+		{ AbilityType::SwordSkill, 3u },
+		{ AbilityType::AxeSkill, 3u },
+		{ AbilityType::MaceSkill, 3u },
+		{ AbilityType::DaggerSkill, 3u },
+		{ AbilityType::ClawSkill, 3u },
+		{ AbilityType::SpearSkill, 3u },
+		{ AbilityType::BowSkill, 3u },
+		{ AbilityType::ShieldSkill, 3u },
+		{ AbilityType::ArcaneSpell, 3u },
+		{ AbilityType::FireSpell, 3u },
+		{ AbilityType::IceSpell, 3u },
+		{ AbilityType::LightningSpell, 3u },
+		{ AbilityType::PoisonSpell, 3u },
+		{ AbilityType::WaterSpell, 3u },
+		{ AbilityType::WindSpell, 3u },
+		{ AbilityType::EarthSpell, 3u },
+		{ AbilityType::MindSpell, 3u },
+		{ AbilityType::LightSpell, 3u },
+		{ AbilityType::DarkSpell, 3u },
+		{ AbilityType::SpiritSpell, 3u },
+		{ AbilityType::AstralSpell, 3u },
+		{ AbilityType::DivineHeal, 3u },
+		{ AbilityType::NatureHeal, 3u },
+		{ AbilityType::AstralHeal, 3u },
 	};
 }
 
 Pc_Blademaster::Pc_Blademaster() {
 	name = "Blademaster";
-	playerClassID = PlayerClassID::BLADEMASTER;
+	playerClassID = PlayerClassID::Blademaster;
 
 	equippable = {
-		EquipType::SWORD_1H,
-		EquipType::SWORD_2H,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Sword1H,
+		EquipType::Sword2H,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::TECH, 3u },
-		{ AbilityType::SWORD_SKILL, 3u },
-		{ AbilityType::SHIELD_SKILL, 2u },
-		{ AbilityType::ARCANE_SPELL, 1u },
-		{ AbilityType::FIRE_SPELL, 1u },
-		{ AbilityType::WATER_SPELL, 1u },
-		{ AbilityType::WIND_SPELL, 1u },
-		{ AbilityType::EARTH_SPELL, 1u },
+		{ AbilityType::Tech, 3u },
+		{ AbilityType::SwordSkill, 3u },
+		{ AbilityType::ShieldSkill, 2u },
+		{ AbilityType::ArcaneSpell, 1u },
+		{ AbilityType::FireSpell, 1u },
+		{ AbilityType::WaterSpell, 1u },
+		{ AbilityType::WindSpell, 1u },
+		{ AbilityType::EarthSpell, 1u },
 	};
 }
 
 Pc_Berserker::Pc_Berserker() {
 	name = "Berserker";
-	playerClassID = PlayerClassID::BERSERKER;
+	playerClassID = PlayerClassID::Berserker;
 
 	equippable = {
-		EquipType::AXE_1H,
-		EquipType::AXE_2H,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Axe1H,
+		EquipType::Axe2H,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::TECH, 3u },
-		{ AbilityType::AXE_SKILL, 3u },
-		{ AbilityType::SHIELD_SKILL, 2u }
+		{ AbilityType::Tech, 3u },
+		{ AbilityType::AxeSkill, 3u },
+		{ AbilityType::ShieldSkill, 2u }
 	};
 }
 
 Pc_Guardian::Pc_Guardian() {
 	name = "Guardian";
-	playerClassID = PlayerClassID::GUARDIAN;
+	playerClassID = PlayerClassID::Guardian;
 
 	equippable = {
-		EquipType::MACE_1H,
-		EquipType::MACE_2H,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Mace1H,
+		EquipType::Mace2H,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::TECH, 3u },
-		{ AbilityType::MACE_SKILL, 3u },
-		{ AbilityType::SHIELD_SKILL, 3u },
-		{ AbilityType::ICE_SPELL, 1u },
-		{ AbilityType::LIGHTNING_SPELL, 1u },
-		{ AbilityType::EARTH_SPELL, 1u },
-		{ AbilityType::LIGHT_SPELL, 1u },
-		{ AbilityType::DIVINE_HEAL, 2u }
+		{ AbilityType::Tech, 3u },
+		{ AbilityType::MaceSkill, 3u },
+		{ AbilityType::ShieldSkill, 3u },
+		{ AbilityType::IceSpell, 1u },
+		{ AbilityType::LightningSpell, 1u },
+		{ AbilityType::EarthSpell, 1u },
+		{ AbilityType::LightSpell, 1u },
+		{ AbilityType::DivineHeal, 2u }
 	};
 }
 
 Pc_Assassin::Pc_Assassin() {
 	name = "Assassin";
-	playerClassID = PlayerClassID::ASSASSIN;
+	playerClassID = PlayerClassID::Assassin;
 
 	equippable = {
-		EquipType::DAGGER,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Dagger,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::TECH, 3u },
-		{ AbilityType::DAGGER_SKILL, 3u },
-		{ AbilityType::POISON_SPELL, 1u },
-		{ AbilityType::DARK_SPELL, 1u },
+		{ AbilityType::Tech, 3u },
+		{ AbilityType::DaggerSkill, 3u },
+		{ AbilityType::PoisonSpell, 1u },
+		{ AbilityType::DarkSpell, 1u },
 	};
 }
 
 Pc_Stormsinger::Pc_Stormsinger() {
 	name = "Stormsinger";
-	playerClassID = PlayerClassID::STORMSINGER;
+	playerClassID = PlayerClassID::Stormsinger;
 
 	equippable = {
-		EquipType::SPEAR,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Spear,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::TECH, 3u },
-		{ AbilityType::SPEAR_SKILL, 3u },
-		{ AbilityType::LIGHTNING_SPELL, 1u },
-		{ AbilityType::WATER_SPELL, 1u },
-		{ AbilityType::WIND_SPELL, 1u },
+		{ AbilityType::Tech, 3u },
+		{ AbilityType::SpearSkill, 3u },
+		{ AbilityType::LightningSpell, 1u },
+		{ AbilityType::WaterSpell, 1u },
+		{ AbilityType::WindSpell, 1u },
 	};
 }
 
 Pc_Ranger::Pc_Ranger() {
 	name = "Ranger";
-	playerClassID = PlayerClassID::RANGER;
+	playerClassID = PlayerClassID::Ranger;
 
 	equippable = {
-		EquipType::BOW,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Bow,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::TECH, 3u },
-		{ AbilityType::BOW_SKILL, 3u },
-		{ AbilityType::ARCANE_SPELL, 1u },
-		{ AbilityType::FIRE_SPELL, 1u },
-		{ AbilityType::ICE_SPELL, 1u },
-		{ AbilityType::LIGHTNING_SPELL, 1u },
-		{ AbilityType::POISON_SPELL, 1u },
-		{ AbilityType::WATER_SPELL, 1u },
-		{ AbilityType::WIND_SPELL, 1u },
-		{ AbilityType::EARTH_SPELL, 1u },
-		{ AbilityType::LIGHT_SPELL, 1u },
-		{ AbilityType::DARK_SPELL, 1u },
+		{ AbilityType::Tech, 3u },
+		{ AbilityType::BowSkill, 3u },
+		{ AbilityType::ArcaneSpell, 1u },
+		{ AbilityType::FireSpell, 1u },
+		{ AbilityType::IceSpell, 1u },
+		{ AbilityType::LightningSpell, 1u },
+		{ AbilityType::PoisonSpell, 1u },
+		{ AbilityType::WaterSpell, 1u },
+		{ AbilityType::WindSpell, 1u },
+		{ AbilityType::EarthSpell, 1u },
+		{ AbilityType::LightSpell, 1u },
+		{ AbilityType::DarkSpell, 1u },
 	};
 }
 
 Pc_Wizard::Pc_Wizard() {
 	name = "Wizard";
-	playerClassID = PlayerClassID::WIZARD;
+	playerClassID = PlayerClassID::Wizard;
 
 	equippable = {
-		EquipType::WAND,
-		EquipType::STAFF,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::OFF_HAND,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Wand,
+		EquipType::Staff,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::OffHand,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::ARCANE_SPELL, 3u },
-		{ AbilityType::FIRE_SPELL, 3u },
-		{ AbilityType::ICE_SPELL, 3u },
-		{ AbilityType::LIGHTNING_SPELL, 3u },
-		{ AbilityType::ASTRAL_SPELL, 3u }
+		{ AbilityType::ArcaneSpell, 3u },
+		{ AbilityType::FireSpell, 3u },
+		{ AbilityType::IceSpell, 3u },
+		{ AbilityType::LightningSpell, 3u },
+		{ AbilityType::AstralSpell, 3u }
 	};
 }
 
 Pc_Shaman::Pc_Shaman() {
 	name = "Shaman";
-	playerClassID = PlayerClassID::SHAMAN;
+	playerClassID = PlayerClassID::Shaman;
 
 	equippable = {
-		EquipType::WAND,
-		EquipType::STAFF,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::OFF_HAND,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Wand,
+		EquipType::Staff,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::OffHand,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::POISON_SPELL, 3u },
-		{ AbilityType::WATER_SPELL, 3u },
-		{ AbilityType::WIND_SPELL, 3u },
-		{ AbilityType::EARTH_SPELL, 3u },
-		{ AbilityType::ASTRAL_SPELL, 3u },
-		{ AbilityType::NATURE_HEAL, 1u }
+		{ AbilityType::PoisonSpell, 3u },
+		{ AbilityType::WaterSpell, 3u },
+		{ AbilityType::WindSpell, 3u },
+		{ AbilityType::EarthSpell, 3u },
+		{ AbilityType::AstralSpell, 3u },
+		{ AbilityType::NatureHeal, 1u }
 	};
 }
 
 Pc_Acolyte::Pc_Acolyte() {
 	name = "Acolyte";
-	playerClassID = PlayerClassID::ACOLYTE;
+	playerClassID = PlayerClassID::Acolyte;
 
 	equippable = {
-		EquipType::WAND,
-		EquipType::STAFF,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::OFF_HAND,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Wand,
+		EquipType::Staff,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::OffHand,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::MIND_SPELL, 3u },
-		{ AbilityType::LIGHT_SPELL, 3u },
-		{ AbilityType::DARK_SPELL, 3u },
-		{ AbilityType::ASTRAL_SPELL, 3u },
-		{ AbilityType::DIVINE_HEAL, 1u },
+		{ AbilityType::MindSpell, 3u },
+		{ AbilityType::LightSpell, 3u },
+		{ AbilityType::DarkSpell, 3u },
+		{ AbilityType::AstralSpell, 3u },
+		{ AbilityType::DivineHeal, 1u },
 	};
 }
 
 Pc_Priest::Pc_Priest() {
 	name = "Priest";
-	playerClassID = PlayerClassID::PRIEST;
+	playerClassID = PlayerClassID::Priest;
 
 	equippable = {
-		EquipType::WAND,
-		EquipType::STAFF,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::OFF_HAND,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Wand,
+		EquipType::Staff,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::OffHand,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::LIGHT_SPELL, 1u },
-		{ AbilityType::DIVINE_HEAL, 3u },
-		{ AbilityType::ASTRAL_HEAL, 3u },
+		{ AbilityType::LightSpell, 1u },
+		{ AbilityType::DivineHeal, 3u },
+		{ AbilityType::AstralHeal, 3u },
 	};
 }
 
 Pc_Druid::Pc_Druid() {
 	name = "Druid";
-	playerClassID = PlayerClassID::DRUID;
+	playerClassID = PlayerClassID::Druid;
 
 	equippable = {
-		EquipType::WAND,
-		EquipType::STAFF,
-		EquipType::SHIELD,
-		EquipType::BUCKLER,
-		EquipType::OFF_HAND,
-		EquipType::HEAVY_BODY,
-		EquipType::HEAVY_FEET,
-		EquipType::HEAVY_HANDS,
-		EquipType::HEAVY_HEAD,
-		EquipType::LIGHT_BODY,
-		EquipType::LIGHT_FEET,
-		EquipType::LIGHT_HANDS,
-		EquipType::LIGHT_HEAD,
-		EquipType::MED_BODY,
-		EquipType::MED_FEET,
-		EquipType::MED_HANDS,
-		EquipType::MED_HEAD,
-		EquipType::RING,
-		EquipType::NECK,
-		EquipType::TRINKET
+		EquipType::Wand,
+		EquipType::Staff,
+		EquipType::Shield,
+		EquipType::Buckler,
+		EquipType::OffHand,
+		EquipType::HeavyBody,
+		EquipType::HeavyFeet,
+		EquipType::HeavyHands,
+		EquipType::HeavyHead,
+		EquipType::LightBody,
+		EquipType::LightFeet,
+		EquipType::LightHands,
+		EquipType::LightHead,
+		EquipType::MedBody,
+		EquipType::MedFeet,
+		EquipType::MedHands,
+		EquipType::MedHead,
+		EquipType::Ring,
+		EquipType::Neck,
+		EquipType::Trinket
 	};
 
 	usable = {
-		{ AbilityType::WATER_SPELL, 1u },
-		{ AbilityType::WIND_SPELL, 1u },
-		{ AbilityType::EARTH_SPELL, 1u },
-		{ AbilityType::NATURE_HEAL, 3u },
-		{ AbilityType::ASTRAL_HEAL, 3u },
+		{ AbilityType::WaterSpell, 1u },
+		{ AbilityType::WindSpell, 1u },
+		{ AbilityType::EarthSpell, 1u },
+		{ AbilityType::NatureHeal, 3u },
+		{ AbilityType::AstralHeal, 3u },
 	};
 }

@@ -10,16 +10,16 @@
 #pragma once
 
 enum class PlayerClassID {
-	ADVENTURER = 0,
-	BLADEMASTER,
-	BERSERKER,
-	GUARDIAN,
-	ASSASSIN,
-	STORMSINGER,
-	RANGER,
-	WIZARD,
-	SHAMAN,
-	ACOLYTE,
-	PRIEST,
-	DRUID
+	Adventurer = 0,
+	Blademaster,
+	Berserker,
+	Guardian,
+	Assassin,
+	Stormsinger,
+	Ranger,
+	Wizard,
+	Shaman,
+	Acolyte,
+	Priest,
+	Druid
 };

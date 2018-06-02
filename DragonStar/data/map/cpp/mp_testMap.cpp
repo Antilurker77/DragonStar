@@ -10,7 +10,7 @@
 #include "../../../hex/hexMath.h"
 
 Mp_TestMap::Mp_TestMap(){
-	tileset = Factory::CreateTileset(TilesetID::TEST_TILESET);
+	tileset = Factory::CreateTileset(TilesetID::TestTileset);
 
 	std::vector<sf::Vector3i> shape;
 

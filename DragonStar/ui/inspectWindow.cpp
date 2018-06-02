@@ -180,8 +180,8 @@ void InspectWindow::SetActor(ActorPtr& actor) {
 
 	// Set Up Event Option
 	EventOptions eventOptions;
-	eventOptions.Categories = { Category::ANY };
-	eventOptions.Elements = { Element::NONE };
+	eventOptions.Categories = { Category::Any };
+	eventOptions.Elements = { Element::None };
 
 	// converts seconds into string
 	auto convertToSec = [](int i) {
@@ -251,19 +251,19 @@ void InspectWindow::SetActor(ActorPtr& actor) {
 
 	// Get Resistances
 	std::array<Element, 13> elements = {
-		Element::PHYSICAL,
-		Element::ARCANE,
-		Element::FIRE,
-		Element::ICE,
-		Element::LIGHTNING,
-		Element::POISON,
-		Element::WATER,
-		Element::WIND,
-		Element::EARTH,
-		Element::MIND,
-		Element::LIGHT,
-		Element::DARK,
-		Element::ASTRAL
+		Element::Physical,
+		Element::Arcane,
+		Element::Fire,
+		Element::Ice,
+		Element::Lightning,
+		Element::Poison,
+		Element::Water,
+		Element::Wind,
+		Element::Earth,
+		Element::Mind,
+		Element::Light,
+		Element::Dark,
+		Element::Astral
 	};
 	for (size_t i = 0; i < elements.size(); i++) {
 		eventOptions.Elements = { elements[i] };
@@ -271,7 +271,7 @@ void InspectWindow::SetActor(ActorPtr& actor) {
 		resistance = std::round(resistance * 100);
 		resistanceTextValues[i].setString(std::to_string((int)resistance) + "%");
 	}
-	eventOptions.Elements = { Element::NONE };
+	eventOptions.Elements = { Element::None };
 
 	// Auras
 	buffs = actor->GetBuffAuras();

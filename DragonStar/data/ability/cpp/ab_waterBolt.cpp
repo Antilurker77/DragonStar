@@ -17,22 +17,22 @@ Ab_WaterBolt::Ab_WaterBolt() {
 	setHarmfulSpellDefault();
 
 	name = "Water Bolt";
-	abilityID = AbilityID::WATER_BOLT;
+	abilityID = AbilityID::WaterBolt;
 	icon = "water_bolt.png";
 
 	abilityTypes = {
-		AbilityType::WATER_SPELL
+		AbilityType::WaterSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::WATER };
+	elements = { Element::Water };
 
 	castTime = 200;
 	range = 4;
@@ -42,7 +42,7 @@ Ab_WaterBolt::Ab_WaterBolt() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_WaterBolt::GetTargetArea(sf::Vector3i selectedTile) {

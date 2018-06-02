@@ -9,25 +9,25 @@
 #pragma once
 
 enum class EnemyID {
-	UNDEFINED,
+	Undefined = 0,
 
 	// Common
-	TEST_ASSASSIN,
-	TEST_ENEMY,
-	TEST_HEALER,
-	TEST_MAGE,
+	TestAssassin,
+	TestEnemy,
+	TestHealer,
+	TestMage,
 
-	ARCANE_SENTRY,
-	GIANT_RAT,
-	LESSER_FLAMEBLADE,
-	SHADOW_STALKER,
-	SLIME,
-	TARGET_DUMMY,
+	ArcaneSentry,
+	GiantRat,
+	LesserFlameblade,
+	ShadowStalker,
+	Slime,
+	TargetDummy,
 
 	// Unique
-	TEST_UNIQUE,
+	TestUnique,
 
-	FENROK
+	Fenrok
 
 	// Boss
 };

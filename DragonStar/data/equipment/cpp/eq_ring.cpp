@@ -25,8 +25,8 @@ Eq_SilverRing::Eq_SilverRing() {
 	tier = 1;
 
 	textureFilepath = "silver_ring.png";
-	equipType = EquipType::RING;
-	equipmentID = EquipmentID::SILVER_RING;
+	equipType = EquipType::Ring;
+	equipmentID = EquipmentID::SilverRing;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -44,8 +44,8 @@ Eq_GoldRing::Eq_GoldRing() {
 	tier = 3;
 
 	textureFilepath = "gold_ring.png";
-	equipType = EquipType::RING;
-	equipmentID = EquipmentID::GOLD_RING;
+	equipType = EquipType::Ring;
+	equipmentID = EquipmentID::GoldRing;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -63,8 +63,8 @@ Eq_DragoniteRing::Eq_DragoniteRing() {
 	tier = 5;
 
 	textureFilepath = "dragonite_ring.png";
-	equipType = EquipType::RING;
-	equipmentID = EquipmentID::DRAGONITE_RING;
+	equipType = EquipType::Ring;
+	equipmentID = EquipmentID::DragoniteRing;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -82,8 +82,8 @@ Eq_BandOfTwinDisciplines::Eq_BandOfTwinDisciplines() {
 	tier = 1;
 
 	textureFilepath = "band_of_twin_disciplines.png";
-	equipType = EquipType::RING;
-	equipmentID = EquipmentID::BAND_OF_TWIN_DISCIPLINES;
+	equipType = EquipType::Ring;
+	equipmentID = EquipmentID::BandOfTwinDisciplines;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -91,9 +91,9 @@ Eq_BandOfTwinDisciplines::Eq_BandOfTwinDisciplines() {
 	statMods = {
 		StatMod(StatModType::MP, 5.0),
 		StatMod(StatModType::INT, 3.0),
-		StatMod(StatModType::DAMAGE, 0.04, { Category::ANY }, { Element::LIGHT, Element::DARK }),
-		StatMod(StatModType::HASTE, 0.03),
-		StatMod(StatModType::RESISTANCE, 0.07, { Category::ANY }, { Element::LIGHT, Element::DARK })
+		StatMod(StatModType::Damage, 0.04, { Category::Any }, { Element::Light, Element::Dark }),
+		StatMod(StatModType::Haste, 0.03),
+		StatMod(StatModType::Resistance, 0.07, { Category::Any }, { Element::Light, Element::Dark })
 	};
 	extraAffixes = {
 		"Casting a Light or Dark spell increases the damage of your next Mind spell by 10%. Stacks up to 5 times and lasts 15s."
@@ -105,9 +105,9 @@ void Eq_BandOfTwinDisciplines::OnEvent(EventType eventType, ActorPtr& user, Acto
 		auto cat = eventOptions.Categories;
 		auto ele = eventOptions.Elements;
 
-		if (std::find(cat.begin(), cat.end(), Category::SPELL) != cat.end()) {
-			if (std::find(ele.begin(), ele.end(), Element::LIGHT) != ele.end() || std::find(ele.begin(), ele.end(), Element::DARK) != ele.end()) {
-				Combat::AddAuraStack(user, user, AuraID::BAND_OF_TWIN_DISCIPLINES);
+		if (std::find(cat.begin(), cat.end(), Category::Spell) != cat.end()) {
+			if (std::find(ele.begin(), ele.end(), Element::Light) != ele.end() || std::find(ele.begin(), ele.end(), Element::Dark) != ele.end()) {
+				Combat::AddAuraStack(user, user, AuraID::BandOfTwinDisciplines);
 			}
 		}
 	}
@@ -123,17 +123,17 @@ Eq_RingOfVitality::Eq_RingOfVitality() {
 	tier = 1;
 
 	textureFilepath = "ring_of_vitality.png";
-	equipType = EquipType::RING;
-	equipmentID = EquipmentID::RING_OF_VITALITY;
+	equipType = EquipType::Ring;
+	equipmentID = EquipmentID::RingOfVitality;
 
 	equipPower = 0;
 	blockChance = 0.0;
 	attackSpeed = 0.0;
 	statMods = {
 		StatMod(StatModType::HP, 45.0),
-		StatMod(StatModType::HP_REGEN, 5.0),
+		StatMod(StatModType::HPRegen, 5.0),
 		StatMod(StatModType::VIT, 20.0),
-		StatMod(StatModType::RESISTANCE, 0.05, { Category::ANY }, { Element::PHYSICAL })
+		StatMod(StatModType::Resistance, 0.05, { Category::Any }, { Element::Physical })
 	};
 }
 
@@ -147,8 +147,8 @@ Eq_OmegaRing::Eq_OmegaRing() {
 	tier = 6;
 
 	textureFilepath = "omega_ring.png";
-	equipType = EquipType::RING;
-	equipmentID = EquipmentID::OMEGA_RING;
+	equipType = EquipType::Ring;
+	equipmentID = EquipmentID::OmegaRing;
 
 	equipPower = 0;
 	blockChance = 0.0;
@@ -157,12 +157,12 @@ Eq_OmegaRing::Eq_OmegaRing() {
 		StatMod(StatModType::HP, 50.0),
 		StatMod(StatModType::MP, 10.0),
 		StatMod(StatModType::SP, 5.0),
-		StatMod(StatModType::ALL_ATTRIBUTES, 3.0),
-		StatMod(StatModType::ARMOR, 4.0),
-		StatMod(StatModType::CRIT_CHANCE, 0.05),
-		StatMod(StatModType::CRIT_DAMAGE, 0.25),
-		StatMod(StatModType::HASTE, 0.04),
-		StatMod(StatModType::DOUBLE_STRIKE_CHANCE, 0.08),
-		StatMod(StatModType::RESISTANCE, 0.15,{ Category::ANY },{ Element::FIRE, Element::ICE, Element::LIGHTNING, Element::POISON, Element::WATER, Element::WIND, Element::EARTH, Element::LIGHT, Element::DARK })
+		StatMod(StatModType::AllAttributes, 3.0),
+		StatMod(StatModType::Armor, 4.0),
+		StatMod(StatModType::CritChance, 0.05),
+		StatMod(StatModType::CritPower, 0.25),
+		StatMod(StatModType::Haste, 0.04),
+		StatMod(StatModType::DoubleStrikeChance, 0.08),
+		StatMod(StatModType::Resistance, 0.15,{ Category::Any },{ Element::Fire, Element::Ice, Element::Lightning, Element::Poison, Element::Water, Element::Wind, Element::Earth, Element::Light, Element::Dark })
 	};
 }

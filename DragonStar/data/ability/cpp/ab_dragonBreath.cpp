@@ -17,23 +17,23 @@ Ab_DragonBreath::Ab_DragonBreath() {
 	setAttackDefault();
 
 	name = "Dragon Breath";
-	abilityID = AbilityID::RACIAL_DRAGON_BREATH;
+	abilityID = AbilityID::RacialDragonBreath;
 	icon = "dragon_breath.png";
 
 	abilityTypes = {
-		AbilityType::TECH
+		AbilityType::Tech
 	};
 	tier = 1;
 
 	categories = {
-		Category::SKILL,
-		Category::DAMAGING,
-		Category::AREA_OF_EFFECT,
-		Category::DIRECT
+		Category::Skill,
+		Category::Damaging,
+		Category::AreaOfEffect,
+		Category::Direct
 	};
 
 	elements = {
-		Element::FIRE
+		Element::Fire
 	};
 
 	castTime = 100;
@@ -73,7 +73,7 @@ std::string Ab_DragonBreath::GetDescription() {
 	std::string damage = "45";
 
 	if (user != nullptr) {
-		damage = std::to_string(Combat::ScalingAttackEstimate(user, 45.0, Attribute::NONE, abilityOptions));
+		damage = std::to_string(Combat::ScalingAttackEstimate(user, 45.0, Attribute::None, abilityOptions));
 	}
 
 	std::string desc = "Breathe fire, dealing #damage " + damage + " #default fire damage to all enemies in a cone of length 2 in front of you.";
@@ -84,6 +84,6 @@ std::string Ab_DragonBreath::GetDescription() {
 
 void Ab_DragonBreath::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	for (size_t i = 0; i < targets.size(); i++) {
-		Combat::ScalingAttack(user, targets[i], 45.0, Attribute::NONE, abilityOptions);
+		Combat::ScalingAttack(user, targets[i], 45.0, Attribute::None, abilityOptions);
 	}
 }

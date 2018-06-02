@@ -18,37 +18,37 @@ Ab_ElementalEnergy::Ab_ElementalEnergy() {
 	setHelpfulSpellDefault();
 
 	name = "Elemental Energy";
-	abilityID = AbilityID::ELEMENTAL_ENERGY;
+	abilityID = AbilityID::ElementalEnergy;
 	icon = "elemental_energy.png";
 
 	abilityTypes = {
-		AbilityType::DARK_SPELL,
-		AbilityType::EARTH_SPELL,
-		AbilityType::FIRE_SPELL,
-		AbilityType::ICE_SPELL,
-		AbilityType::LIGHTNING_SPELL,
-		AbilityType::POISON_SPELL,
-		AbilityType::WATER_SPELL,
-		AbilityType::WIND_SPELL,
-		AbilityType::LIGHT_SPELL
+		AbilityType::DarkSpell,
+		AbilityType::EarthSpell,
+		AbilityType::FireSpell,
+		AbilityType::IceSpell,
+		AbilityType::LightningSpell,
+		AbilityType::PoisonSpell,
+		AbilityType::WaterSpell,
+		AbilityType::WindSpell,
+		AbilityType::LightSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::SPELL,
-		Category::SINGLE_TARGET
+		Category::Spell,
+		Category::SingleTarget
 	};
 
 	elements = {
-		Element::FIRE,
-		Element::ICE,
-		Element::LIGHTNING,
-		Element::POISON,
-		Element::WATER,
-		Element::WIND,
-		Element::EARTH,
-		Element::LIGHT,
-		Element::DARK
+		Element::Fire,
+		Element::Ice,
+		Element::Lightning,
+		Element::Poison,
+		Element::Water,
+		Element::Wind,
+		Element::Earth,
+		Element::Light,
+		Element::Dark
 	};
 
 	castTime = 0;
@@ -57,7 +57,7 @@ Ab_ElementalEnergy::Ab_ElementalEnergy() {
 	aiSearchRange = 0;
 	mpCost = 24;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTarget = false;
 	requireTargetsInArea = false;
@@ -77,5 +77,5 @@ std::string Ab_ElementalEnergy::GetDescription() {
 }
 
 void Ab_ElementalEnergy::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
-	Combat::AddAuraStack(user, user, AuraID::ELEMENTAL_ENERGY);
+	Combat::AddAuraStack(user, user, AuraID::ElementalEnergy);
 }

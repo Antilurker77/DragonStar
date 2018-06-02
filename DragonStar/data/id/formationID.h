@@ -9,26 +9,26 @@
 #pragma once
 
 enum class FormationID {
-	UNDEFINED,
+	Undefined = 0,
 
 	// Common
-	TEST_FORMATION_A,
-	TEST_FORMATION_B,
+	TestFormationA,
+	TestFormationB,
 
-	FLAMEBLADES_STALKERS_FIELD,
-	LESSER_FLAMEBLADES_FIELD,
-	SENTRY_AMBUSH,
-	SEWER_RATS,
-	SEWER_RATS_INTERSECTION,
-	SEWER_RATS_SLIMES,
-	SEWER_SLIMES,
-	SHADOW_STALKERS_FIELD,
+	FlamebladesStalkersField,
+	LesserFlamebladesField,
+	SentryAmbush,
+	SewerRats,
+	SewerRatsIntersection,
+	SewerRatsSlimes,
+	SewerSlimes,
+	ShadowStalkersField,
 
 	// Unique
-	TEST_UNIQUE,
+	TestUnique,
 
-	FENROK,
+	Fenrok,
 
 	// Boss
-	TEST_BOSS
+	TestBoss
 };

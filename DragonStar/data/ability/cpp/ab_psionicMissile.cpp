@@ -18,22 +18,22 @@ Ab_PsionicMissile::Ab_PsionicMissile() {
 	setHarmfulSpellDefault();
 
 	name = "Psionic Missile";
-	abilityID = AbilityID::PSIONIC_MISSILE;
+	abilityID = AbilityID::PsionicMissile;
 	icon = "psionic_missile.png";
 
 	abilityTypes = {
-		AbilityType::MIND_SPELL
+		AbilityType::MindSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::MIND };
+	elements = { Element::Mind };
 
 	castTime = 250;
 	range = 4;
@@ -43,7 +43,7 @@ Ab_PsionicMissile::Ab_PsionicMissile() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_PsionicMissile::GetTargetArea(sf::Vector3i selectedTile) {

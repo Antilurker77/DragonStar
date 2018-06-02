@@ -16,15 +16,15 @@ Runetouched::Runetouched() {
 
 	filepath = "gfx/actor/runetouched";
 
-	activeRacial = AbilityID::RACIAL_MAGIC_EATER;
+	activeRacial = AbilityID::RacialMagicEater;
 
 	passiveRacial = "Spellweaver";
 	passiveDesc = "Increases arcane resistance by 10%. Increases spell critical strike chance by 5%.";
 	passiveIcon = "gfx/ui/icon/default.png";
 
 	passivePerks = std::vector<StatMod>({
-		StatMod(StatModType::RESISTANCE, 0.1, { Category::ANY }, { Element::ARCANE }),
-		StatMod(StatModType::CRIT_CHANCE, 0.05, { Category::SPELL })
+		StatMod(StatModType::Resistance, 0.1, { Category::Any }, { Element::Arcane }),
+		StatMod(StatModType::CritChance, 0.05, { Category::Spell })
 	});
 
 	baseEXPPerLevel = 300;

@@ -23,14 +23,14 @@ Eq_WoodenWand::Eq_WoodenWand() {
 	tier = 1;
 
 	textureFilepath = "wooden_wand.png";
-	equipType = EquipType::WAND;
-	equipmentID = EquipmentID::WOODEN_WAND;
+	equipType = EquipType::Wand;
+	equipmentID = EquipmentID::WoodenWand;
 
 	equipPower = 30;
 	attackSpeed = 200;
 	attackRange = 4;
 	attributeMultiplier = 0.6;
-	attackElements = { Element::ARCANE };
+	attackElements = { Element::Arcane };
 	blockChance = 0.0;
 	statMods = {};
 }

@@ -15,18 +15,18 @@
 
 Au_RendingSlash::Au_RendingSlash() {
 	name = "Rending Slash";
-	id = AuraID::RENDING_SLASH;
+	id = AuraID::RendingSlash;
 	icon = "rending_slash.png";
 
 	categories = {
-		Category::DAMAGING,
-		Category::OVER_TIME,
-		Category::SINGLE_TARGET,
-		Category::ATTACK
+		Category::Damaging,
+		Category::OverTime,
+		Category::SingleTarget,
+		Category::Attack
 	};
 
 	elements = {
-		Element::PHYSICAL
+		Element::Physical
 	};
 
 	canCrit = true;

@@ -23,8 +23,8 @@ Eq_SilkShoes::Eq_SilkShoes() {
 	tier = 1;
 
 	textureFilepath = "silk_shoes.png";
-	equipType = EquipType::LIGHT_FEET;
-	equipmentID = EquipmentID::SILK_SHOES;
+	equipType = EquipType::LightFeet;
+	equipmentID = EquipmentID::SilkShoes;
 
 	equipPower = 2;
 	blockChance = 0.0;

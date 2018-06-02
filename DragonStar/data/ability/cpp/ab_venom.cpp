@@ -17,22 +17,22 @@ Ab_Venom::Ab_Venom() {
 	setHarmfulSpellDefault();
 
 	name = "Venom";
-	abilityID = AbilityID::VENOM;
+	abilityID = AbilityID::Venom;
 	icon = "venom.png";
 
 	abilityTypes = {
-		AbilityType::POISON_SPELL
+		AbilityType::PoisonSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::POISON };
+	elements = { Element::Poison };
 
 	castTime = 200;
 	range = 4;
@@ -42,7 +42,7 @@ Ab_Venom::Ab_Venom() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Venom::GetTargetArea(sf::Vector3i selectedTile) {
@@ -69,6 +69,6 @@ std::string Ab_Venom::GetDescription() {
 void Ab_Venom::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	auto result = Combat::ScalingAttack(user, targets[0], 15.0, Attribute::INT, abilityOptions);
 	if (result.DidHit) {
-		Combat::AddAuraStack(user, targets[0], AuraID::VENOM);
+		Combat::AddAuraStack(user, targets[0], AuraID::Venom);
 	}
 }

@@ -17,22 +17,22 @@ Ab_Boulder::Ab_Boulder() {
 	setHarmfulSpellDefault();
 
 	name = "Boulder";
-	abilityID = AbilityID::BOULDER;
+	abilityID = AbilityID::Boulder;
 	icon = "boulder.png";
 
 	abilityTypes = {
-		AbilityType::EARTH_SPELL
+		AbilityType::EarthSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::EARTH };
+	elements = { Element::Earth };
 
 	castTime = 250;
 	range = 4;
@@ -43,7 +43,7 @@ Ab_Boulder::Ab_Boulder() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Boulder::GetTargetArea(sf::Vector3i selectedTile) {

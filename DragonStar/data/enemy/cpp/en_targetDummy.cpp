@@ -21,7 +21,7 @@ En_TargetDummy::En_TargetDummy() {
 	name = "Target Dummy";
 	title = "";
 
-	creatureType = CreatureType::CONSTRUCT;
+	creatureType = CreatureType::Construct;
 
 	baseHP = 7500;
 	baseMP = 250;
@@ -41,13 +41,13 @@ En_TargetDummy::En_TargetDummy() {
 	attackSpeed = 210;
 	attackRange = 1;
 
-	attackType = EquipType::UNARMED_STR;
-	attackElement = { Element::PHYSICAL };
+	attackType = EquipType::UnarmedStrength;
+	attackElement = { Element::Physical };
 	attackDamage = 50;
 	attackMod = 1.0;
 
-	offHandAttackType = EquipType::NONE;
-	offHandAttackElement = { Element::NONE };
+	offHandAttackType = EquipType::None;
+	offHandAttackElement = { Element::None };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
@@ -57,7 +57,7 @@ En_TargetDummy::En_TargetDummy() {
 
 	abilities = { };
 	statMods = {
-		StatMod(StatModType::RESISTANCE, 1.00, { Category::ANY }, { Element::MIND })
+		StatMod(StatModType::Resistance, 1.00, { Category::Any }, { Element::Mind })
 	};
 }
 

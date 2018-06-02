@@ -23,8 +23,8 @@ Eq_IronGauntlets::Eq_IronGauntlets() {
 	tier = 1;
 
 	textureFilepath = "iron_gauntlets.png";
-	equipType = EquipType::HEAVY_HANDS;
-	equipmentID = EquipmentID::IRON_GAUNTLETS;
+	equipType = EquipType::HeavyHands;
+	equipmentID = EquipmentID::IronGauntlets;
 
 	equipPower = 6;
 	blockChance = 0.0;

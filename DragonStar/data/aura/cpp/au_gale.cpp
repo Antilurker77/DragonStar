@@ -15,19 +15,19 @@
 
 Au_Gale::Au_Gale() {
 	name = "Gale";
-	id = AuraID::GALE;
+	id = AuraID::Gale;
 	icon = "gale.png";
 
 	categories = {
-		Category::SPELL
+		Category::Spell
 	};
 
 	elements = {
-		Element::WIND
+		Element::Wind
 	};
 
 	statMods = {
-		StatMod(StatModType::CAST_TIME_REDUCTION, 10.0, AbilityID::GALE)
+		StatMod(StatModType::CastTimeReduction, 10.0, AbilityID::Gale)
 	};
 
 	canCrit = false;

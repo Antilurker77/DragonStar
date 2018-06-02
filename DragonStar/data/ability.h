@@ -29,8 +29,8 @@ enum class EquipType;
 typedef std::shared_ptr<Actor> ActorPtr;
 
 enum class UseType {
-	INSTANT,
-	CAST
+	Instant,
+	Cast
 };
 
 class Ability {
@@ -156,7 +156,7 @@ protected:
 	std::vector<EquipType> usableWeapons = {};
 	const double offHandBasicMultiplier = 1.00; // Multiplier for basic off-hand attacks.
 
-	UseType usage = UseType::INSTANT;
+	UseType usage = UseType::Instant;
 	int castTime = 0;
 	double attackSpeedMultipler = 1.0;
 	int channelTicks = 0;

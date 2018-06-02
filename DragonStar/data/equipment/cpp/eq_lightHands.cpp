@@ -23,8 +23,8 @@ Eq_SilkGloves::Eq_SilkGloves() {
 	tier = 1;
 
 	textureFilepath = "silk_gloves.png";
-	equipType = EquipType::LIGHT_HANDS;
-	equipmentID = EquipmentID::SILK_GLOVES;
+	equipType = EquipType::LightHands;
+	equipmentID = EquipmentID::SilkGloves;
 
 	equipPower = 2;
 	blockChance = 0.0;

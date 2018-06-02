@@ -17,22 +17,22 @@ Ab_LightBolt::Ab_LightBolt() {
 	setHarmfulSpellDefault();
 
 	name = "Light Bolt";
-	abilityID = AbilityID::LIGHT_BOLT;
+	abilityID = AbilityID::LightBolt;
 	icon = "light_bolt.png";
 
 	abilityTypes = {
-		AbilityType::LIGHT_SPELL
+		AbilityType::LightSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::LIGHT };
+	elements = { Element::Light };
 
 	castTime = 200;
 	range = 4;
@@ -44,7 +44,7 @@ Ab_LightBolt::Ab_LightBolt() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_LightBolt::GetTargetArea(sf::Vector3i selectedTile) {

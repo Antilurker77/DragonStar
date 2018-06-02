@@ -15,20 +15,20 @@
 
 Au_BandOfTwinDisciplines::Au_BandOfTwinDisciplines() {
 	name = "Twin Disciplines";
-	id = AuraID::BAND_OF_TWIN_DISCIPLINES;
+	id = AuraID::BandOfTwinDisciplines;
 	icon = "psionic_missile.png";
 
 	categories = {
-		Category::SPELL
+		Category::Spell
 	};
 
 	elements = {
-		Element::MIND
+		Element::Mind
 	};
 
 	statMods = {
-		StatMod(StatModType::DAMAGE, 0.1, { Category::DIRECT, Category::SPELL }, { Element::MIND }),
-		StatMod(StatModType::AURA_SNAPSHOT_POWER, 0.1, { Category::SPELL }, { Element::MIND })
+		StatMod(StatModType::Damage, 0.1, { Category::Direct, Category::Spell }, { Element::Mind }),
+		StatMod(StatModType::AuraSnapshotPower, 0.1, { Category::Spell }, { Element::Mind })
 	};
 
 	canCrit = false;

@@ -15,20 +15,20 @@
 
 Au_SlimeTouch::Au_SlimeTouch() {
 	name = "Slime Touch";
-	id = AuraID::SLIME_TOUCH;
+	id = AuraID::SlimeTouch;
 	icon = "slime_touch.png";
 
 	categories = {
-		Category::SKILL
+		Category::Skill
 	};
 
 	elements = {
-		Element::WATER
+		Element::Water
 	};
 
 	statMods = {
-		StatMod(StatModType::HASTE, -0.03),
-		StatMod(StatModType::MOVEMENT_SPEED, -0.03)
+		StatMod(StatModType::Haste, -0.03),
+		StatMod(StatModType::MovementSpeed, -0.03)
 	};
 
 	canCrit = false;

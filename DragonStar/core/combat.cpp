@@ -140,13 +140,13 @@ static void applyLeech(ActorPtr& user, EventOptions eventOptions, EventResult& e
 	int sp = std::floor(eventResult.ResultValue * staminaLeech);
 
 	if (hp > 0) {
-		eventResult.LifeLeeched = user->HealActor(hp, { Element::NONE }, Attribute::HP, false);
+		eventResult.LifeLeeched = user->HealActor(hp, { Element::None }, Attribute::HP, false);
 	}
 	if (mp > 0) {
-		eventResult.ManaLeeched = user->HealActor(mp, { Element::NONE }, Attribute::MP, false);
+		eventResult.ManaLeeched = user->HealActor(mp, { Element::None }, Attribute::MP, false);
 	}
 	if (sp > 0) {
-		eventResult.StaminaLeeched = user->HealActor(sp, { Element::NONE }, Attribute::SP, false);
+		eventResult.StaminaLeeched = user->HealActor(sp, { Element::None }, Attribute::SP, false);
 	}
 }
 

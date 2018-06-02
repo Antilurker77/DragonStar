@@ -17,23 +17,23 @@
 StatMod::StatMod(StatModType statMod, double value) {
 	this->statModType = statMod;
 	this->value = value;
-	this->categories = { Category::ANY };
-	this->elements = { Element::NONE };
+	this->categories = { Category::Any };
+	this->elements = { Element::None };
 
-	this->ability = AbilityID::UNDEFINED;
-	this->aura = AuraID::UNDEFINED;
-	this->onHitElements = { Element::NONE };
+	this->ability = AbilityID::Undefined;
+	this->aura = AuraID::Undefined;
+	this->onHitElements = { Element::None };
 }
 
 StatMod::StatMod(StatModType statMod, double value, std::vector<Category> categories) {
 	this->statModType = statMod;
 	this->value = value;
 	this->categories = categories;
-	this->elements = { Element::NONE };
+	this->elements = { Element::None };
 
-	this->ability = AbilityID::UNDEFINED;
-	this->aura = AuraID::UNDEFINED;
-	this->onHitElements = { Element::NONE };
+	this->ability = AbilityID::Undefined;
+	this->aura = AuraID::Undefined;
+	this->onHitElements = { Element::None };
 }
 
 StatMod::StatMod(StatModType statMod, double value, std::vector<Category> categories, std::vector<Element> element){
@@ -42,9 +42,9 @@ StatMod::StatMod(StatModType statMod, double value, std::vector<Category> catego
 	this->categories = categories;
 	this->elements = element;
 
-	this->ability = AbilityID::UNDEFINED;
-	this->aura = AuraID::UNDEFINED;
-	this->onHitElements = { Element::NONE };
+	this->ability = AbilityID::Undefined;
+	this->aura = AuraID::Undefined;
+	this->onHitElements = { Element::None };
 }
 
 StatMod::StatMod(StatModType statMod, double value, std::vector<Element> onHitElements, std::vector<Category> categories) {
@@ -52,10 +52,10 @@ StatMod::StatMod(StatModType statMod, double value, std::vector<Element> onHitEl
 	this->value = value;
 	this->onHitElements = onHitElements;
 	this->categories = categories;
-	this->elements = { Element::NONE };
+	this->elements = { Element::None };
 
-	this->ability = AbilityID::UNDEFINED;
-	this->aura = AuraID::UNDEFINED;
+	this->ability = AbilityID::Undefined;
+	this->aura = AuraID::Undefined;
 }
 
 StatMod::StatMod(StatModType statMod, double value, std::vector<Element> onHitElements, std::vector<Category> categories, std::vector<Element> element){
@@ -65,30 +65,30 @@ StatMod::StatMod(StatModType statMod, double value, std::vector<Element> onHitEl
 	this->categories = categories;
 	this->elements = element;
 
-	this->ability = AbilityID::UNDEFINED;
-	this->aura = AuraID::UNDEFINED;
+	this->ability = AbilityID::Undefined;
+	this->aura = AuraID::Undefined;
 }
 
 StatMod::StatMod(StatModType statMod, double value, AbilityID ability){
 	this->statModType = statMod;
 	this->value = value;
 	this->ability = ability;
-	this->aura = AuraID::UNDEFINED;
+	this->aura = AuraID::Undefined;
 
-	this->categories = { Category::NONE };
-	this->elements = { Element::NONE };
-	this->onHitElements = { Element::NONE };
+	this->categories = { Category::None };
+	this->elements = { Element::None };
+	this->onHitElements = { Element::None };
 }
 
 StatMod::StatMod(StatModType statMod, double value, AuraID aura) {
 	this->statModType = statMod;
 	this->value = value;
-	this->ability = AbilityID::UNDEFINED;
+	this->ability = AbilityID::Undefined;
 	this->aura = aura;
 
-	this->categories = { Category::NONE };
-	this->elements = { Element::NONE };
-	this->onHitElements = { Element::NONE };
+	this->categories = { Category::None };
+	this->elements = { Element::None };
+	this->onHitElements = { Element::None };
 }
 
 StatMod::StatMod(StatModType statMod, double value, std::vector<Element> onHitElements, AbilityID ability){
@@ -97,19 +97,19 @@ StatMod::StatMod(StatModType statMod, double value, std::vector<Element> onHitEl
 	this->onHitElements = onHitElements;
 	this->ability = ability;
 
-	this->categories = { Category::NONE };
-	this->elements = { Element::NONE };
+	this->categories = { Category::None };
+	this->elements = { Element::None };
 }
 
 StatMod::StatMod(StatModType statMod, double value, std::vector<Element> onHitElements, AuraID aura) {
 	this->statModType = statMod;
 	this->value = value;
 	this->onHitElements = onHitElements;
-	this->ability = AbilityID::UNDEFINED;
+	this->ability = AbilityID::Undefined;
 	this->aura = aura;
 
-	this->categories = { Category::NONE };
-	this->elements = { Element::NONE };
+	this->categories = { Category::None };
+	this->elements = { Element::None };
 }
 
 StatMod::StatMod(StatMod& copy, int multiplier) {
@@ -155,7 +155,7 @@ bool StatMod::MatchesCategories(std::vector<Category> testCategories) {
 	bool match = false;
 
 	// check if categories contains Category::ANY, if true than statmod will apply
-	if (std::find(categories.begin(), categories.end(), Category::ANY) != categories.end()) {
+	if (std::find(categories.begin(), categories.end(), Category::Any) != categories.end()) {
 		match = true;
 	}
 	else {
@@ -183,7 +183,7 @@ void StatModCalc::GetStatModValue(double& value, std::vector<StatMod>& statMods,
 void StatModCalc::GetStatModValue(double& value, std::vector<StatMod>& statMods, StatModType statModType, EventOptions& eventOptions, bool isMultiplicative) {
 	for (size_t i = 0; i < statMods.size(); i++) {
 		if (statMods[i].GetStatModType() == statModType) {
-			if (eventOptions.AbilityID != AbilityID::UNDEFINED && statMods[i].GetAbility() == eventOptions.AbilityID) {
+			if (eventOptions.AbilityID != AbilityID::Undefined && statMods[i].GetAbility() == eventOptions.AbilityID) {
 				if (isMultiplicative) {
 					value *= statMods[i].GetValue() + 1.0;
 				}
@@ -191,7 +191,7 @@ void StatModCalc::GetStatModValue(double& value, std::vector<StatMod>& statMods,
 					value += statMods[i].GetValue();
 				}
 			}
-			else if (eventOptions.AuraID != AuraID::UNDEFINED && statMods[i].GetAura() == eventOptions.AuraID) {
+			else if (eventOptions.AuraID != AuraID::Undefined && statMods[i].GetAura() == eventOptions.AuraID) {
 				if (isMultiplicative) {
 					value *= statMods[i].GetValue() + 1.0;
 				}
@@ -200,9 +200,9 @@ void StatModCalc::GetStatModValue(double& value, std::vector<StatMod>& statMods,
 				}
 			}
 			// if statMod is not for a specific ability or aura
-			else if (statMods[i].GetAbility() == AbilityID::UNDEFINED && statMods[i].GetAura() == AuraID::UNDEFINED) {
+			else if (statMods[i].GetAbility() == AbilityID::Undefined && statMods[i].GetAura() == AuraID::Undefined) {
 				if (statMods[i].MatchesCategories(eventOptions.Categories)) {
-					if (statMods[i].GetElements()[0] == Element::NONE) {
+					if (statMods[i].GetElements()[0] == Element::None) {
 						if (isMultiplicative) {
 							value *= statMods[i].GetValue() + 1.0;
 						}
@@ -235,50 +235,50 @@ void StatModCalc::GetStatModValue(double& value, std::vector<StatMod>& statMods,
 
 bool StatModCalc::IsPercent(StatModType statModType) {
 	std::vector<StatModType> percentBoosts{
-		StatModType::HP_MULT,
-		StatModType::HP_LEECH,
-		StatModType::MP_MULT,
-		StatModType::MP_LEECH,
-		StatModType::SP_MULT,
-		StatModType::SP_LEECH,
-		StatModType::STR_MULT,
-		StatModType::DEX_MULT,
-		StatModType::INT_MULT,
-		StatModType::WIS_MULT,
-		StatModType::ALL_ATTRIBUTES_MULT,
-		StatModType::VIT_MULT,
-		StatModType::ARMOR_MULT,
-		StatModType::DAMAGE,
-		StatModType::DAMAGE_TAKEN,
-		StatModType::HEALING,
-		StatModType::HEALING_TAKEN,
-		StatModType::RESISTANCE,
-		StatModType::ARMOR_PEN,
-		StatModType::RESISTANCE_PEN,
-		StatModType::CRIT_CHANCE,
-		StatModType::CRIT_DAMAGE,
-		StatModType::CRIT_CHANCE_PROTECTION,
-		StatModType::CRIT_DAMAGE_PROTECTION,
-		StatModType::HASTE,
-		StatModType::DOUBLE_STRIKE_CHANCE,
-		StatModType::DOUBLE_STRIKE_DAMAGE,
-		StatModType::COUNTER_CHANCE,
-		StatModType::HIT_CHANCE,
-		StatModType::DODGE_CHANCE,
-		StatModType::BLOCK_CHANCE,
-		StatModType::HP_COST_REDUCTION,
-		StatModType::MP_COST_REDUCTION,
-		StatModType::SP_COST_REDUCTION,
-		StatModType::COOLDOWN_REDUCTION,
-		StatModType::STUN_RESISTANCE,
-		StatModType::DISARM_RESISTANCE,
-		StatModType::SILENCE_RESISTANCE,
-		StatModType::KNOCKBACK_RESISTANCE,
-		StatModType::SLOW_ROOT_RESISTANCE,
-		StatModType::DEATH_RESISTANCE,
-		StatModType::MOVEMENT_SPEED,
-		StatModType::GOLD_FIND,
-		StatModType::EXP_BOOST
+		StatModType::HPMult,
+		StatModType::HPLeech,
+		StatModType::MPMult,
+		StatModType::MPLeech,
+		StatModType::SPMult,
+		StatModType::SPLeech,
+		StatModType::STRMult,
+		StatModType::DEXMult,
+		StatModType::INTMult,
+		StatModType::WISMult,
+		StatModType::AllAttributesMult,
+		StatModType::VITMult,
+		StatModType::ArmorMult,
+		StatModType::Damage,
+		StatModType::DamageTaken,
+		StatModType::Healing,
+		StatModType::HealingTaken,
+		StatModType::Resistance,
+		StatModType::ArmorPen,
+		StatModType::ResistancePen,
+		StatModType::CritChance,
+		StatModType::CritPower,
+		StatModType::CritChanceProtection,
+		StatModType::CritPowerProtection,
+		StatModType::Haste,
+		StatModType::DoubleStrikeChance,
+		StatModType::DoubleStrikeDamage,
+		StatModType::CounterChance,
+		StatModType::HitChance,
+		StatModType::DodgeChance,
+		StatModType::BlockChance,
+		StatModType::HPCostReduction,
+		StatModType::MPCostReduction,
+		StatModType::SPCostReduction,
+		StatModType::CooldownReduction,
+		StatModType::StunResistance,
+		StatModType::DisarmResistance,
+		StatModType::SilenceResistance,
+		StatModType::KnockbackResistance,
+		StatModType::SlowRootResistance,
+		StatModType::DeathResistance,
+		StatModType::MovementSpeed,
+		StatModType::GoldFind,
+		StatModType::EXPBoost
 	};
 
 	if (std::find(percentBoosts.begin(), percentBoosts.end(), statModType) != percentBoosts.end()) {
@@ -290,9 +290,9 @@ bool StatModCalc::IsPercent(StatModType statModType) {
 
 bool StatModCalc::IsDecimal(StatModType statModType) {
 	std::vector<StatModType> decimalBoosts{
-		StatModType::HP_REGEN,
-		StatModType::MP_REGEN,
-		StatModType::SP_REGEN
+		StatModType::HPRegen,
+		StatModType::MPRegen,
+		StatModType::SPRegen
 	};
 
 	if (std::find(decimalBoosts.begin(), decimalBoosts.end(), statModType) != decimalBoosts.end()) {

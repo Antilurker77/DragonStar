@@ -17,22 +17,22 @@ Ab_DragonfireBolt::Ab_DragonfireBolt() {
 	setHarmfulSpellDefault();
 
 	name = "Dragonfire Bolt";
-	abilityID = AbilityID::DRAGONFIRE_BOLT;
+	abilityID = AbilityID::DragonfireBolt;
 	icon = "dragonfire_bolt.png";
 
 	abilityTypes = {
-		AbilityType::FIRE_SPELL
+		AbilityType::FireSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::FIRE };
+	elements = { Element::Fire };
 
 	castTime = 200;
 	range = 4;
@@ -43,7 +43,7 @@ Ab_DragonfireBolt::Ab_DragonfireBolt() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_DragonfireBolt::GetTargetArea(sf::Vector3i selectedTile) {

@@ -17,29 +17,29 @@ Ab_Heal::Ab_Heal() {
 	setHelpfulSpellDefault();
 
 	name = "Heal";
-	abilityID = AbilityID::HEAL;
+	abilityID = AbilityID::Heal;
 	icon = "heal.png";
 
 	abilityTypes = {
-		AbilityType::DIVINE_HEAL
+		AbilityType::DivineHeal
 	};
 	tier = 1;
 
 	categories = {
-		Category::DIRECT,
-		Category::HEALING,
-		Category::SINGLE_TARGET,
-		Category::SPELL
+		Category::Direct,
+		Category::Healing,
+		Category::SingleTarget,
+		Category::Spell
 	};
 
-	elements = { Element::DIVINE_HEAL };
+	elements = { Element::DivineHeal };
 
 	castTime = 250;
 	range = 5;
 	aiSearchRange = range;
 	mpCost = 25;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Heal::GetTargetArea(sf::Vector3i selectedTile) {

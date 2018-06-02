@@ -149,12 +149,12 @@ bool ShopWindow::Update(float secondsPerUpdate, sf::Vector2i mousePos, bool left
 
 	// Switch to Item Crafting
 	if (craftButton.Update(secondsPerUpdate, mousePos) && leftClick) {
-		currentTab = ShopTab::CRAFTING;
+		currentTab = ShopTab::Crafting;
 	}
 
 	// Switch to Ability Shop
 	if (abilityButton.Update(secondsPerUpdate, mousePos) && leftClick) {
-		currentTab = ShopTab::ABILITY;
+		currentTab = ShopTab::Ability;
 		isDropdownOpen = false;
 		isTierDropdownOpen = false;
 		isBaseItemDropdownOpen = false;
@@ -166,7 +166,7 @@ bool ShopWindow::Update(float secondsPerUpdate, sf::Vector2i mousePos, bool left
 		return false;
 	}
 
-	if (currentTab == ShopTab::CRAFTING) {				
+	if (currentTab == ShopTab::Crafting) {				
 		if (!isDropdownOpen) {
 			if (craftItemsButton.Update(secondsPerUpdate, mousePos) && leftClick) {
 				if (*gold >= craftCost) {
@@ -227,7 +227,7 @@ bool ShopWindow::Update(float secondsPerUpdate, sf::Vector2i mousePos, bool left
 			}
 		}
 	}
-	else if (currentTab == ShopTab::ABILITY) {
+	else if (currentTab == ShopTab::Ability) {
 
 	}
 
@@ -245,7 +245,7 @@ void ShopWindow::Render(sf::RenderTarget& window) {
 	window.draw(goldSprite);
 	window.draw(goldText);
 
-	if (currentTab == ShopTab::CRAFTING) {
+	if (currentTab == ShopTab::Crafting) {
 		window.draw(tierText);
 		window.draw(baseItemText);
 		window.draw(affixText);
@@ -266,7 +266,7 @@ void ShopWindow::Render(sf::RenderTarget& window) {
 			}
 		}
 	}
-	else if (currentTab == ShopTab::ABILITY) {
+	else if (currentTab == ShopTab::Ability) {
 
 	}
 
@@ -339,57 +339,57 @@ void ShopWindow::updateBaseItemDropdown() {
 
 	switch (selectedTier) {
 	case 1:
-		baseItemDropdown.AddOption("Iron Sword", EquipmentID::IRON_SWORD);
-		baseItemDropdown.AddOption("Iron Greatsword", EquipmentID::IRON_GREATSWORD);
-		baseItemDropdown.AddOption("Iron Axe", EquipmentID::IRON_AXE);
-		baseItemDropdown.AddOption("Iron Greataxe", EquipmentID::IRON_GREATAXE);
-		baseItemDropdown.AddOption("Iron Mace", EquipmentID::IRON_MACE);
-		baseItemDropdown.AddOption("Iron Greatmace", EquipmentID::IRON_GREATMACE);
-		baseItemDropdown.AddOption("Iron Dagger", EquipmentID::IRON_DAGGER);
-		baseItemDropdown.AddOption("Iron Spear", EquipmentID::IRON_SPEAR);
-		baseItemDropdown.AddOption("Longbow", EquipmentID::LONGBOW);
-		baseItemDropdown.AddOption("Wooden Wand", EquipmentID::WOODEN_WAND);
-		baseItemDropdown.AddOption("Wooden Staff", EquipmentID::WOODEN_STAFF);
-		baseItemDropdown.AddOption("Iron Shield", EquipmentID::IRON_SHIELD);
-		baseItemDropdown.AddOption("Iron Buckler", EquipmentID::IRON_BUCKLER);
-		baseItemDropdown.AddOption("Power Orb", EquipmentID::POWER_ORB);
-		baseItemDropdown.AddOption("Silk Hat", EquipmentID::SILK_HAT);
-		baseItemDropdown.AddOption("Silk Robes", EquipmentID::SILK_ROBES);
-		baseItemDropdown.AddOption("Silk Gloves", EquipmentID::SILK_GLOVES);
-		baseItemDropdown.AddOption("Silk Shoes", EquipmentID::SILK_SHOES);
-		baseItemDropdown.AddOption("Leather Helmet", EquipmentID::LEATHER_HELMET);
-		baseItemDropdown.AddOption("Leather Armor", EquipmentID::LEATHER_ARMOR);
-		baseItemDropdown.AddOption("Leather Gloves", EquipmentID::LEATHER_GLOVES);
-		baseItemDropdown.AddOption("Leather Boots", EquipmentID::LEATHER_BOOTS);
-		baseItemDropdown.AddOption("Iron Helm", EquipmentID::IRON_HELM);
-		baseItemDropdown.AddOption("Iron Armor", EquipmentID::IRON_ARMOR);
-		baseItemDropdown.AddOption("Iron Gauntlets", EquipmentID::IRON_GAUNTLETS);
-		baseItemDropdown.AddOption("Iron Greaves", EquipmentID::IRON_GREAVES);
-		baseItemDropdown.AddOption("Silver Necklace", EquipmentID::SILVER_NECKLACE);
-		baseItemDropdown.AddOption("Silver Ring", EquipmentID::SILVER_RING);
+		baseItemDropdown.AddOption("Iron Sword", EquipmentID::IronSword);
+		baseItemDropdown.AddOption("Iron Greatsword", EquipmentID::IronGreatsword);
+		baseItemDropdown.AddOption("Iron Axe", EquipmentID::IronAxe);
+		baseItemDropdown.AddOption("Iron Greataxe", EquipmentID::IronGreataxe);
+		baseItemDropdown.AddOption("Iron Mace", EquipmentID::IronMace);
+		baseItemDropdown.AddOption("Iron Greatmace", EquipmentID::IronGreatmace);
+		baseItemDropdown.AddOption("Iron Dagger", EquipmentID::IronDagger);
+		baseItemDropdown.AddOption("Iron Spear", EquipmentID::IronSpear);
+		baseItemDropdown.AddOption("Longbow", EquipmentID::Longbow);
+		baseItemDropdown.AddOption("Wooden Wand", EquipmentID::WoodenWand);
+		baseItemDropdown.AddOption("Wooden Staff", EquipmentID::WoodenStaff);
+		baseItemDropdown.AddOption("Iron Shield", EquipmentID::IronShield);
+		baseItemDropdown.AddOption("Iron Buckler", EquipmentID::IronBuckler);
+		baseItemDropdown.AddOption("Power Orb", EquipmentID::PowerOrb);
+		baseItemDropdown.AddOption("Silk Hat", EquipmentID::SilkHat);
+		baseItemDropdown.AddOption("Silk Robes", EquipmentID::SilkRobes);
+		baseItemDropdown.AddOption("Silk Gloves", EquipmentID::SilkGloves);
+		baseItemDropdown.AddOption("Silk Shoes", EquipmentID::SilkShoes);
+		baseItemDropdown.AddOption("Leather Helmet", EquipmentID::LeatherHelmet);
+		baseItemDropdown.AddOption("Leather Armor", EquipmentID::LeatherArmor);
+		baseItemDropdown.AddOption("Leather Gloves", EquipmentID::LeatherGloves);
+		baseItemDropdown.AddOption("Leather Boots", EquipmentID::LeatherBoots);
+		baseItemDropdown.AddOption("Iron Helm", EquipmentID::IronHelm);
+		baseItemDropdown.AddOption("Iron Armor", EquipmentID::IronArmor);
+		baseItemDropdown.AddOption("Iron Gauntlets", EquipmentID::IronGauntlets);
+		baseItemDropdown.AddOption("Iron Greaves", EquipmentID::IronGreaves);
+		baseItemDropdown.AddOption("Silver Necklace", EquipmentID::SilverNecklace);
+		baseItemDropdown.AddOption("Silver Ring", EquipmentID::SilverRing);
 		break;
 	case 2:
-		baseItemDropdown.AddOption("Silver Necklace", EquipmentID::SILVER_NECKLACE);
-		baseItemDropdown.AddOption("Silver Ring", EquipmentID::SILVER_RING);
+		baseItemDropdown.AddOption("Silver Necklace", EquipmentID::SilverNecklace);
+		baseItemDropdown.AddOption("Silver Ring", EquipmentID::SilverRing);
 		break;
 	case 3:
-		baseItemDropdown.AddOption("Gold Necklace", EquipmentID::GOLD_NECKLACE);
-		baseItemDropdown.AddOption("Gold Ring", EquipmentID::GOLD_RING);
+		baseItemDropdown.AddOption("Gold Necklace", EquipmentID::GoldNecklace);
+		baseItemDropdown.AddOption("Gold Ring", EquipmentID::GoldRing);
 		break;
 	case 4:
-		baseItemDropdown.AddOption("Gold Necklace", EquipmentID::GOLD_NECKLACE);
-		baseItemDropdown.AddOption("Gold Ring", EquipmentID::GOLD_RING);
+		baseItemDropdown.AddOption("Gold Necklace", EquipmentID::GoldNecklace);
+		baseItemDropdown.AddOption("Gold Ring", EquipmentID::GoldRing);
 		break;
 	case 5:
-		baseItemDropdown.AddOption("Dragonite Necklace", EquipmentID::DRAGONITE_NECKLACE);
-		baseItemDropdown.AddOption("Dragonite Ring", EquipmentID::DRAGONITE_RING);
+		baseItemDropdown.AddOption("Dragonite Necklace", EquipmentID::DragoniteNecklace);
+		baseItemDropdown.AddOption("Dragonite Ring", EquipmentID::DragoniteRing);
 		break;
 	case 6:
-		baseItemDropdown.AddOption("Dragonite Necklace", EquipmentID::DRAGONITE_NECKLACE);
-		baseItemDropdown.AddOption("Dragonite Ring", EquipmentID::DRAGONITE_RING);
+		baseItemDropdown.AddOption("Dragonite Necklace", EquipmentID::DragoniteNecklace);
+		baseItemDropdown.AddOption("Dragonite Ring", EquipmentID::DragoniteRing);
 		break;
 	default:
-		baseItemDropdown.AddOption("Silver Ring", EquipmentID::SILVER_RING);
+		baseItemDropdown.AddOption("Silver Ring", EquipmentID::SilverRing);
 		break;
 	}
 }

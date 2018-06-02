@@ -615,7 +615,7 @@ void Actor::SetAbilitySlotWorld(size_t index, BattleScene* w) {
 }
 
 AuraID Actor::getWeaponOnHitAura(bool isOffHand) {
-	return AuraID::UNDEFINED;
+	return AuraID::Undefined;
 }
 
 std::vector<StatMod> Actor::getAuraStatMods() {
@@ -631,10 +631,10 @@ std::vector<StatMod> Actor::getAuraStatMods() {
 
 void Actor::getStatModValueFromAuras(double& value, StatModType statModType, bool isMultiplicative, bool consumeBuffs) {
 	EventOptions eo;
-	eo.Categories = { Category::NONE };
-	eo.Elements = { Element::NONE };
-	eo.AbilityID = AbilityID::UNDEFINED;
-	eo.AuraID = AuraID::UNDEFINED;
+	eo.Categories = { Category::None };
+	eo.Elements = { Element::None };
+	eo.AbilityID = AbilityID::Undefined;
+	eo.AuraID = AuraID::Undefined;
 	
 	getStatModValueFromAuras(value, statModType, eo, isMultiplicative, consumeBuffs);
 }
@@ -654,24 +654,24 @@ void Actor::getStatModValueFromAuras(double& value, StatModType statModType, Eve
 
 Attribute Actor::getWeaponAttribute(EquipType weaponType) {
 	switch (weaponType) {
-	case EquipType::UNARMED_STR:
-	case EquipType::SWORD_1H:
-	case EquipType::SWORD_2H:
-	case EquipType::AXE_1H:
-	case EquipType::AXE_2H:
-	case EquipType::MACE_1H:
-	case EquipType::MACE_2H:
+	case EquipType::UnarmedStrength:
+	case EquipType::Sword1H:
+	case EquipType::Sword2H:
+	case EquipType::Axe1H:
+	case EquipType::Axe2H:
+	case EquipType::Mace1H:
+	case EquipType::Mace2H:
 		return Attribute::STR;
 		break;
-	case EquipType::UNARMED_DEX:
-	case EquipType::DAGGER:
-	case EquipType::CLAW:
-	case EquipType::SPEAR:
-	case EquipType::BOW:
+	case EquipType::UnarmedDexterity:
+	case EquipType::Dagger:
+	case EquipType::Claw:
+	case EquipType::Spear:
+	case EquipType::Bow:
 		return Attribute::DEX;
 		break;
-	case EquipType::UNARMED_INT:
-	case EquipType::WAND:
+	case EquipType::UnarmedIntelligence:
+	case EquipType::Wand:
 		return Attribute::INT;
 		break;
 	default:

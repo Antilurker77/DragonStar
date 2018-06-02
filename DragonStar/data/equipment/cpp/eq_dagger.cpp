@@ -23,14 +23,14 @@ Eq_IronDagger::Eq_IronDagger() {
 	tier = 1;
 
 	textureFilepath = "iron_dagger.png";
-	equipType = EquipType::DAGGER;
-	equipmentID = EquipmentID::IRON_DAGGER;
+	equipType = EquipType::Dagger;
+	equipmentID = EquipmentID::IronDagger;
 
 	equipPower = 35;
 	attackSpeed = 140;
 	attackRange = 1;
 	attributeMultiplier = 0.7;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

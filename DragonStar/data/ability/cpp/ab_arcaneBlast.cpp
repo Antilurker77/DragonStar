@@ -17,22 +17,22 @@ Ab_ArcaneBlast::Ab_ArcaneBlast() {
 	setHarmfulSpellDefault();
 
 	name = "Arcane Blast";
-	abilityID = AbilityID::ARCANE_BLAST;
+	abilityID = AbilityID::ArcaneBlast;
 	icon = "arcane_blast.png";
 
 	tier = 1;
 	abilityTypes = {
-		AbilityType::ARCANE_SPELL
+		AbilityType::ArcaneSpell
 	};
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::ARCANE };
+	elements = { Element::Arcane };
 
 	castTime = 100;
 	cooldown = 1000;
@@ -43,7 +43,7 @@ Ab_ArcaneBlast::Ab_ArcaneBlast() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 }
 
 std::vector<sf::Vector3i> Ab_ArcaneBlast::GetTargetArea(sf::Vector3i selectedTile) {

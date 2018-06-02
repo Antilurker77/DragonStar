@@ -90,10 +90,10 @@ void PartyCreationScene::makeParty() {
 	party.clear();
 
 	// hardcoded test
-	party.push_back(ActorPtr(std::make_shared<Player>("Adriathe", RaceID::HUMAN, PlayerClassID::ADVENTURER)));
-	party.push_back(ActorPtr(std::make_shared<Player>("Bera", RaceID::HUMAN, PlayerClassID::ADVENTURER, true)));
-	party.push_back(ActorPtr(std::make_shared<Player>("Cerruk", RaceID::HUMAN, PlayerClassID::ADVENTURER)));
-	party.push_back(ActorPtr(std::make_shared<Player>("Dega", RaceID::HUMAN, PlayerClassID::ADVENTURER, true)));
-	party.push_back(ActorPtr(std::make_shared<Player>("Ethandis", RaceID::HUMAN, PlayerClassID::ADVENTURER)));
-	party.push_back(ActorPtr(std::make_shared<Player>("Fathe", RaceID::HUMAN, PlayerClassID::ADVENTURER, true)));
+	party.push_back(ActorPtr(std::make_shared<Player>("Adriathe", RaceID::Human, PlayerClassID::Adventurer)));
+	party.push_back(ActorPtr(std::make_shared<Player>("Bera", RaceID::Human, PlayerClassID::Adventurer, true)));
+	party.push_back(ActorPtr(std::make_shared<Player>("Cerruk", RaceID::Human, PlayerClassID::Adventurer)));
+	party.push_back(ActorPtr(std::make_shared<Player>("Dega", RaceID::Human, PlayerClassID::Adventurer, true)));
+	party.push_back(ActorPtr(std::make_shared<Player>("Ethandis", RaceID::Human, PlayerClassID::Adventurer)));
+	party.push_back(ActorPtr(std::make_shared<Player>("Fathe", RaceID::Human, PlayerClassID::Adventurer, true)));
 }

@@ -18,22 +18,22 @@ Ab_Gale::Ab_Gale() {
 	setHarmfulSpellDefault();
 
 	name = "Gale";
-	abilityID = AbilityID::GALE;
+	abilityID = AbilityID::Gale;
 	icon = "gale.png";
 
 	abilityTypes = {
-		AbilityType::WIND_SPELL
+		AbilityType::WindSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::WIND };
+	elements = { Element::Wind };
 
 	castTime = 200;
 	range = 4;
@@ -43,7 +43,7 @@ Ab_Gale::Ab_Gale() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Gale::GetTargetArea(sf::Vector3i selectedTile) {
@@ -66,5 +66,5 @@ std::string Ab_Gale::GetDescription() {
 
 void Ab_Gale::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	auto result = Combat::ScalingAttack(user, targets[0], 45.0, Attribute::INT, abilityOptions);
-	Combat::AddAuraStack(user, user, AuraID::GALE);
+	Combat::AddAuraStack(user, user, AuraID::Gale);
 }

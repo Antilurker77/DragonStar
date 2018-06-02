@@ -23,14 +23,14 @@ Eq_Longbow::Eq_Longbow() {
 	tier = 1;
 
 	textureFilepath = "longbow.png";
-	equipType = EquipType::BOW;
-	equipmentID = EquipmentID::LONGBOW;
+	equipType = EquipType::Bow;
+	equipmentID = EquipmentID::Longbow;
 
 	equipPower = 55;
 	attackSpeed = 240;
 	attackRange = 4;
 	attributeMultiplier = 1.1;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

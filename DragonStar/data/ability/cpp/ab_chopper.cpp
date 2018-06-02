@@ -18,30 +18,30 @@ Ab_Chopper::Ab_Chopper() {
 	setAttackDefault();
 
 	name = "Chopper";
-	abilityID = AbilityID::CHOPPER;
+	abilityID = AbilityID::Chopper;
 	icon = "chopper.png";
 
 	abilityTypes = {
-		AbilityType::AXE_SKILL
+		AbilityType::AxeSkill
 	};
 	tier = 1;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	usableWeapons = {
-		EquipType::AXE_1H,
-		EquipType::AXE_2H
+		EquipType::Axe1H,
+		EquipType::Axe2H
 	};
 
 	spCost = 35;
 	cooldown = 1000;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 

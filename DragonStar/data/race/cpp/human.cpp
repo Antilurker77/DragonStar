@@ -16,14 +16,14 @@ Human::Human(){
 
 	filepath = "gfx/actor/human";
 
-	activeRacial = AbilityID::RACIAL_COMMANDING_SHOUT;
+	activeRacial = AbilityID::RacialCommandingShout;
 
 	passiveRacial = "Avarice";
 	passiveDesc = "Increases gold find by 10%.";
 	passiveIcon = "gfx/ui/icon/default.png";
 
 	passivePerks = std::vector<StatMod>({
-		StatMod(StatModType::GOLD_FIND, 0.1, {Category::ANY}) 
+		StatMod(StatModType::GoldFind, 0.1, {Category::Any}) 
 	});
 
 	baseEXPPerLevel = 300;

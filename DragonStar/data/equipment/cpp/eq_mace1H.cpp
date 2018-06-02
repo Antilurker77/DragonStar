@@ -23,14 +23,14 @@ Eq_IronMace::Eq_IronMace() {
 	tier = 1;
 
 	textureFilepath = "iron_mace.png";
-	equipType = EquipType::MACE_1H;
-	equipmentID = EquipmentID::IRON_MACE;
+	equipType = EquipType::Mace1H;
+	equipmentID = EquipmentID::IronMace;
 
 	equipPower = 60;
 	attackSpeed = 240;
 	attackRange = 1;
 	attributeMultiplier = 1.2;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

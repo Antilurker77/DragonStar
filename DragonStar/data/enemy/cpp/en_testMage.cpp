@@ -21,7 +21,7 @@ En_TestMage::En_TestMage() {
 	name = "Test Mage";
 	title = "";
 
-	creatureType = CreatureType::HUMANOID;
+	creatureType = CreatureType::Humanoid;
 
 	baseHP = 1155;
 	baseMP = 360;
@@ -41,13 +41,13 @@ En_TestMage::En_TestMage() {
 	attackSpeed = 300;
 	attackRange = 1;
 
-	attackType = EquipType::STAFF;
-	attackElement = { Element::PHYSICAL };
+	attackType = EquipType::Staff;
+	attackElement = { Element::Physical };
 	attackDamage = 25;
 	attackMod = 0.75;
 
-	offHandAttackType = EquipType::NONE;
-	offHandAttackElement = { Element::PHYSICAL };
+	offHandAttackType = EquipType::None;
+	offHandAttackElement = { Element::Physical };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
@@ -55,8 +55,8 @@ En_TestMage::En_TestMage() {
 	baseEXP = 40u;
 	lootPoints = 80u;
 
-	statMods = { StatMod(StatModType::RESISTANCE, 0.1, { Category::SPELL }) };
-	abilities = { AbilityID::DARK_BOLT, AbilityID::PRISMATIC_BOLT, AbilityID::VENOM };
+	statMods = { StatMod(StatModType::Resistance, 0.1, { Category::Spell }) };
+	abilities = { AbilityID::DarkBolt, AbilityID::PrismaticBolt, AbilityID::Venom };
 }
 
 Idea En_TestMage::ExecuteAI(ActorPtr& user, BattleScene& world) {
@@ -70,7 +70,7 @@ Idea En_TestMage::ExecuteAI(ActorPtr& user, BattleScene& world) {
 		// Prismatic Bolt
 		if (user->IsAbilityAvailable(2)) {
 			ActorVector playersInRange = ActorFilter::WithinRange(players, user, world, 4, false, false);
-			playersInRange = ActorFilter::DoesNotHaveAura(playersInRange, AuraID::PRISMATIC_BOLT);
+			playersInRange = ActorFilter::DoesNotHaveAura(playersInRange, AuraID::PrismaticBolt);
 			if (!playersInRange.empty()) {
 				ActorPtr target = ActorFilter::RandomActor(playersInRange);
 				idea.first = target->GetHexPosition();
@@ -82,7 +82,7 @@ Idea En_TestMage::ExecuteAI(ActorPtr& user, BattleScene& world) {
 		// Venom
 		if (user->IsAbilityAvailable(3)) {
 			ActorVector playersInRange = ActorFilter::WithinRange(players, user, world, 4, false, false);
-			playersInRange = ActorFilter::DoesNotHaveAura(playersInRange, AuraID::VENOM);
+			playersInRange = ActorFilter::DoesNotHaveAura(playersInRange, AuraID::Venom);
 			if (!playersInRange.empty()) {
 				ActorPtr target = ActorFilter::RandomActor(playersInRange);
 				idea.first = target->GetHexPosition();

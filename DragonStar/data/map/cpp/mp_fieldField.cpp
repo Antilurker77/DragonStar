@@ -10,7 +10,7 @@
 #include "../../../hex/hexMath.h"
 
 Mp_FieldField::Mp_FieldField() {
-	tileset = Factory::CreateTileset(TilesetID::FIELD);
+	tileset = Factory::CreateTileset(TilesetID::Field);
 
 	std::vector<sf::Vector3i> shape;
 

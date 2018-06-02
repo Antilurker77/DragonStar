@@ -470,67 +470,67 @@ void EquipWindow::setDisplayedItems(size_t filter) {
 
 	switch (filter) {
 	case 0:
-		typesToShow.push_back(EquipType::SWORD_1H);
-		typesToShow.push_back(EquipType::SWORD_2H);
+		typesToShow.push_back(EquipType::Sword1H);
+		typesToShow.push_back(EquipType::Sword2H);
 		break;
 	case 1:
-		typesToShow.push_back(EquipType::AXE_1H);
-		typesToShow.push_back(EquipType::AXE_2H);
+		typesToShow.push_back(EquipType::Axe1H);
+		typesToShow.push_back(EquipType::Axe2H);
 		break;
 	case 2:
-		typesToShow.push_back(EquipType::MACE_1H);
-		typesToShow.push_back(EquipType::MACE_2H);
+		typesToShow.push_back(EquipType::Mace1H);
+		typesToShow.push_back(EquipType::Mace2H);
 		break;
 	case 3:
-		typesToShow.push_back(EquipType::DAGGER);
+		typesToShow.push_back(EquipType::Dagger);
 		break;
 	case 4:
-		typesToShow.push_back(EquipType::SPEAR);
+		typesToShow.push_back(EquipType::Spear);
 		break;
 	case 5:
-		typesToShow.push_back(EquipType::BOW);
+		typesToShow.push_back(EquipType::Bow);
 		break;
 	case 6:
-		typesToShow.push_back(EquipType::WAND);
+		typesToShow.push_back(EquipType::Wand);
 		break;
 	case 7:
-		typesToShow.push_back(EquipType::STAFF);
+		typesToShow.push_back(EquipType::Staff);
 		break;
 	case 8:
-		typesToShow.push_back(EquipType::SHIELD);
-		typesToShow.push_back(EquipType::BUCKLER);
+		typesToShow.push_back(EquipType::Shield);
+		typesToShow.push_back(EquipType::Buckler);
 		break;
 	case 9:
-		typesToShow.push_back(EquipType::OFF_HAND);
+		typesToShow.push_back(EquipType::OffHand);
 		break;
 	case 10:
-		typesToShow.push_back(EquipType::HEAVY_HEAD);
-		typesToShow.push_back(EquipType::MED_HEAD);
-		typesToShow.push_back(EquipType::LIGHT_HEAD);
+		typesToShow.push_back(EquipType::HeavyHead);
+		typesToShow.push_back(EquipType::MedHead);
+		typesToShow.push_back(EquipType::LightHead);
 		break;
 	case 11:
-		typesToShow.push_back(EquipType::HEAVY_BODY);
-		typesToShow.push_back(EquipType::MED_BODY);
-		typesToShow.push_back(EquipType::LIGHT_BODY);
+		typesToShow.push_back(EquipType::HeavyBody);
+		typesToShow.push_back(EquipType::MedBody);
+		typesToShow.push_back(EquipType::LightBody);
 		break;
 	case 12:
-		typesToShow.push_back(EquipType::HEAVY_HANDS);
-		typesToShow.push_back(EquipType::MED_HANDS);
-		typesToShow.push_back(EquipType::LIGHT_HANDS);
+		typesToShow.push_back(EquipType::HeavyHands);
+		typesToShow.push_back(EquipType::MedHands);
+		typesToShow.push_back(EquipType::LightHands);
 		break;
 	case 13:
-		typesToShow.push_back(EquipType::HEAVY_FEET);
-		typesToShow.push_back(EquipType::MED_FEET);
-		typesToShow.push_back(EquipType::LIGHT_FEET);
+		typesToShow.push_back(EquipType::HeavyFeet);
+		typesToShow.push_back(EquipType::MedFeet);
+		typesToShow.push_back(EquipType::LightFeet);
 		break;
 	case 14:
-		typesToShow.push_back(EquipType::NECK);
+		typesToShow.push_back(EquipType::Neck);
 		break;
 	case 15:
-		typesToShow.push_back(EquipType::RING);
+		typesToShow.push_back(EquipType::Ring);
 		break;
 	case 16:
-		typesToShow.push_back(EquipType::TRINKET);
+		typesToShow.push_back(EquipType::Trinket);
 		break;
 	default:
 		break;
@@ -612,8 +612,8 @@ void EquipWindow::setStatTexts() {
 	
 	// Generic EventOptions for polling stats.
 	EventOptions eventOptions;
-	eventOptions.Categories = { Category::ANY };
-	eventOptions.Elements = { Element::NONE };
+	eventOptions.Categories = { Category::Any };
+	eventOptions.Elements = { Element::None };
 
 	std::string s = "";
 

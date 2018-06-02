@@ -17,22 +17,22 @@ Ab_Icicle::Ab_Icicle() {
 	setHarmfulSpellDefault();
 
 	name = "Icicle";
-	abilityID = AbilityID::ICICLE;
+	abilityID = AbilityID::Icicle;
 	icon = "icicle.png";
 
 	abilityTypes = {
-		AbilityType::ICE_SPELL
+		AbilityType::IceSpell
 	};
 	tier = 1;
 
 	categories = {
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT,
-		Category::SPELL
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct,
+		Category::Spell
 	};
 
-	elements = { Element::ICE };
+	elements = { Element::Ice };
 
 	castTime = 200;
 	range = 4;
@@ -42,7 +42,7 @@ Ab_Icicle::Ab_Icicle() {
 	requireTargetsInArea = true;
 	isGroundTargeted = false;
 
-	usage = UseType::CAST;
+	usage = UseType::Cast;
 }
 
 std::vector<sf::Vector3i> Ab_Icicle::GetTargetArea(sf::Vector3i selectedTile) {
@@ -66,6 +66,6 @@ std::string Ab_Icicle::GetDescription() {
 void Ab_Icicle::execute(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea) {
 	auto result = Combat::ScalingAttack(user, targets[0], 38.0, Attribute::INT, abilityOptions);
 	if (result.DidHit) {
-		Combat::AddAuraStack(user, targets[0], AuraID::ICICLE);
+		Combat::AddAuraStack(user, targets[0], AuraID::Icicle);
 	}
 }

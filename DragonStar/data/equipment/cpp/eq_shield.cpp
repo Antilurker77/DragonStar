@@ -23,8 +23,8 @@ Eq_IronShield::Eq_IronShield() {
 	tier = 1;
 
 	textureFilepath = "iron_shield.png";
-	equipType = EquipType::SHIELD;
-	equipmentID = EquipmentID::IRON_SHIELD;
+	equipType = EquipType::Shield;
+	equipmentID = EquipmentID::IronShield;
 
 	equipPower = 14;
 	blockChance = 0.15;

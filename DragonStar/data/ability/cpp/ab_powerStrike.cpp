@@ -18,42 +18,42 @@ Ab_PowerStrike::Ab_PowerStrike() {
 	setAttackDefault();
 
 	name = "Power Strike";
-	abilityID = AbilityID::POWER_STRIKE;
+	abilityID = AbilityID::PowerStrike;
 	icon = "power_strike.png";
 
 	abilityTypes = {
-		AbilityType::AXE_SKILL,
-		AbilityType::CLAW_SKILL,
-		AbilityType::DAGGER_SKILL,
-		AbilityType::MACE_SKILL,
-		AbilityType::SPEAR_SKILL,
-		AbilityType::SWORD_SKILL
+		AbilityType::AxeSkill,
+		AbilityType::ClawSkill,
+		AbilityType::DaggerSkill,
+		AbilityType::MaceSkill,
+		AbilityType::SpearSkill,
+		AbilityType::SwordSkill
 	};
 	tier = 1;
 
 	categories = {
-		Category::ATTACK,
-		Category::DAMAGING,
-		Category::SINGLE_TARGET,
-		Category::DIRECT
+		Category::Attack,
+		Category::Damaging,
+		Category::SingleTarget,
+		Category::Direct
 	};
 
 	usableWeapons = {
-		EquipType::SWORD_1H,
-		EquipType::SWORD_2H,
-		EquipType::AXE_1H,
-		EquipType::AXE_2H,
-		EquipType::MACE_1H,
-		EquipType::MACE_2H,
-		EquipType::DAGGER,
-		EquipType::CLAW,
-		EquipType::SPEAR
+		EquipType::Sword1H,
+		EquipType::Sword2H,
+		EquipType::Axe1H,
+		EquipType::Axe2H,
+		EquipType::Mace1H,
+		EquipType::Mace2H,
+		EquipType::Dagger,
+		EquipType::Claw,
+		EquipType::Spear
 	};
 
 	spCost = 20;
 	cooldown = 800;
 
-	usage = UseType::INSTANT;
+	usage = UseType::Instant;
 
 	requireTargetsInArea = true;
 }

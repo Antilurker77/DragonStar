@@ -47,7 +47,7 @@ Player::Player(std::string n, RaceID raceID, PlayerClassID classID, bool female)
 	exp = 0;
 
 	abilities.resize(12);
-	abilities[0] = Factory::CreateAbility(AbilityID::ATTACK); // 0 is always attack
+	abilities[0] = Factory::CreateAbility(AbilityID::Attack); // 0 is always attack
 	abilities[11] = Factory::CreateAbility(race->GetActiveID()); // last slot is racial ability by default
 
 	// Default Linen Armor
@@ -133,7 +133,7 @@ int Player::GetMaxHP() {
 
 	double hpd = hp;
 	hpd = getStat(hpd, StatModType::HP, false, false);
-	double hpMult = getStat(1.0, StatModType::HP_MULT, true, false);
+	double hpMult = getStat(1.0, StatModType::HPMult, true, false);
 
 	hp = std::floor(hpd * hpMult);
 	return hp;
@@ -145,7 +145,7 @@ int Player::GetMaxMP() {
 
 	double mpd = mp;
 	mpd = getStat(mpd, StatModType::MP, false, false);
-	double mpMult = getStat(1.0, StatModType::MP_MULT, true, false);
+	double mpMult = getStat(1.0, StatModType::MPMult, true, false);
 
 	mp = std::floor(mpd * mpMult);
 
@@ -158,7 +158,7 @@ int Player::GetMaxSP() {
 
 	double spd = sp;
 	spd = getStat(spd, StatModType::SP, false, false);
-	double spMult = getStat(1.0, StatModType::SP_MULT, true, false);
+	double spMult = getStat(1.0, StatModType::SPMult, true, false);
 
 	sp = std::floor(spd * spMult);
 
@@ -166,31 +166,31 @@ int Player::GetMaxSP() {
 }
 
 double Player::GetHPRegen() {
-	double hpRegen = getStat(0.0, StatModType::HP_REGEN, false, false);
+	double hpRegen = getStat(0.0, StatModType::HPRegen, false, false);
 
 	return hpRegen;
 }
 
 double Player::GetMPRegen() {
-	double mpRegen = getStat(1.0, StatModType::MP_REGEN, false, false);
+	double mpRegen = getStat(1.0, StatModType::MPRegen, false, false);
 
 	return mpRegen;
 }
 
 double Player::GetSPRegen() {
-	double spRegen = getStat(5.0, StatModType::SP_REGEN, false, false);
+	double spRegen = getStat(5.0, StatModType::SPRegen, false, false);
 
 	return spRegen;
 }
 
 double Player::GetHPLeech(EventOptions eventOptions, bool consumeBuffs) {
-	double hpLeech = getStat(0.0, StatModType::HP_LEECH, eventOptions, false, consumeBuffs);
+	double hpLeech = getStat(0.0, StatModType::HPLeech, eventOptions, false, consumeBuffs);
 
 	return hpLeech;
 }
 
 double Player::GetMPLeech(EventOptions eventOptions, bool consumeBuffs) {
-	double mpLeech = getStat(0.0, StatModType::MP_LEECH, eventOptions, false, consumeBuffs);
+	double mpLeech = getStat(0.0, StatModType::MPLeech, eventOptions, false, consumeBuffs);
 
 	return mpLeech;
 }
@@ -210,17 +210,17 @@ int Player::GetSTR(bool consumeBuffs) {
 			Equipment* equip = (Equipment*)equipment[i].get();
 			statMods = equip->GetStatMods();
 			StatModCalc::GetStatModValue(strd, statMods, StatModType::STR, false);
-			StatModCalc::GetStatModValue(strd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::STR_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(strd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::STRMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
 	// Auras
 	getStatModValueFromAuras(strd, StatModType::STR, false, consumeBuffs);
-	getStatModValueFromAuras(strd, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::STR_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(strd, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::STRMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -228,9 +228,9 @@ int Player::GetSTR(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(strd, statMods, StatModType::STR, false);
-			StatModCalc::GetStatModValue(strd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::STR_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(strd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::STRMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -254,17 +254,17 @@ int Player::GetDEX(bool consumeBuffs) {
 			Equipment* equip = (Equipment*)equipment[i].get();
 			statMods = equip->GetStatMods();
 			StatModCalc::GetStatModValue(dexd, statMods, StatModType::DEX, false);
-			StatModCalc::GetStatModValue(dexd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::DEX_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(dexd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::DEXMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
 	// Auras
 	getStatModValueFromAuras(dexd, StatModType::DEX, false, consumeBuffs);
-	getStatModValueFromAuras(dexd, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::DEX_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(dexd, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::DEXMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -272,9 +272,9 @@ int Player::GetDEX(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(dexd, statMods, StatModType::DEX, false);
-			StatModCalc::GetStatModValue(dexd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::DEX_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(dexd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::DEXMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -298,17 +298,17 @@ int Player::GetINT(bool consumeBuffs) {
 			Equipment* equip = (Equipment*)equipment[i].get();
 			statMods = equip->GetStatMods();
 			StatModCalc::GetStatModValue(intellegenced, statMods, StatModType::INT, false);
-			StatModCalc::GetStatModValue(intellegenced, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::INT_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(intellegenced, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::INTMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
 	// Auras
 	getStatModValueFromAuras(intellegenced, StatModType::INT, false, consumeBuffs);
-	getStatModValueFromAuras(intellegenced, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::INT_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(intellegenced, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::INTMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -316,9 +316,9 @@ int Player::GetINT(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(intellegenced, statMods, StatModType::INT, false);
-			StatModCalc::GetStatModValue(intellegenced, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::INT_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(intellegenced, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::INTMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -342,17 +342,17 @@ int Player::GetWIS(bool consumeBuffs) {
 			Equipment* equip = (Equipment*)equipment[i].get();
 			statMods = equip->GetStatMods();
 			StatModCalc::GetStatModValue(wisd, statMods, StatModType::WIS, false);
-			StatModCalc::GetStatModValue(wisd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::WIS_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(wisd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::WISMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
 	// Auras
 	getStatModValueFromAuras(wisd, StatModType::WIS, false, consumeBuffs);
-	getStatModValueFromAuras(wisd, StatModType::ALL_ATTRIBUTES, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::WIS_MULT, true, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ALL_ATTRIBUTES_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(wisd, StatModType::AllAttributes, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::WISMult, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::AllAttributesMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -360,9 +360,9 @@ int Player::GetWIS(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(wisd, statMods, StatModType::WIS, false);
-			StatModCalc::GetStatModValue(wisd, statMods, StatModType::ALL_ATTRIBUTES, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::WIS_MULT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ALL_ATTRIBUTES_MULT, false);
+			StatModCalc::GetStatModValue(wisd, statMods, StatModType::AllAttributes, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::WISMult, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::AllAttributesMult, false);
 		}
 	}
 
@@ -385,13 +385,13 @@ int Player::GetVIT(bool consumeBuffs) {
 			Equipment* equip = (Equipment*)equipment[i].get();
 			statMods = equip->GetStatMods();
 			StatModCalc::GetStatModValue(vitd, statMods, StatModType::VIT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::VIT_MULT, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::VITMult, false);
 		}
 	}
 
 	// Auras
 	getStatModValueFromAuras(vitd, StatModType::VIT, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::VIT_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::VITMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
@@ -399,7 +399,7 @@ int Player::GetVIT(bool consumeBuffs) {
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
 			StatModCalc::GetStatModValue(vitd, statMods, StatModType::VIT, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::VIT_MULT, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::VITMult, false);
 		}
 	}
 
@@ -427,33 +427,33 @@ int Player::GetArmor(bool consumeBuffs) {
 
 	// Race
 	statMods = race->GetPassivePerks();
-	StatModCalc::GetStatModValue(armord, statMods, StatModType::ARMOR, false);
-	StatModCalc::GetStatModValue(armorPerLevel, statMods, StatModType::ARMOR_PER_LEVEL, false);
-	StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ARMOR_MULT, false);
+	StatModCalc::GetStatModValue(armord, statMods, StatModType::Armor, false);
+	StatModCalc::GetStatModValue(armorPerLevel, statMods, StatModType::ArmorPerLevel, false);
+	StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ArmorMult, false);
 
 	// Gear
 	for (size_t i = 0; i < equipment.size(); i++) {
 		if (equipment[i] != nullptr) {
 			Equipment* equip = (Equipment*)equipment[i].get();
 			statMods = equip->GetStatMods();
-			StatModCalc::GetStatModValue(armord, statMods, StatModType::ARMOR, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ARMOR_MULT, false);
+			StatModCalc::GetStatModValue(armord, statMods, StatModType::Armor, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ArmorMult, false);
 		}
 	}
 
 	// Auras
-	getStatModValueFromAuras(armord, StatModType::ARMOR, false, consumeBuffs);
-	getStatModValueFromAuras(armorPerLevel, StatModType::ARMOR_PER_LEVEL, false, consumeBuffs);
-	getStatModValueFromAuras(multiplier, StatModType::ARMOR_MULT, true, consumeBuffs);
+	getStatModValueFromAuras(armord, StatModType::Armor, false, consumeBuffs);
+	getStatModValueFromAuras(armorPerLevel, StatModType::ArmorPerLevel, false, consumeBuffs);
+	getStatModValueFromAuras(multiplier, StatModType::ArmorMult, true, consumeBuffs);
 
 	// Ground Effects
 	if (battleScene != nullptr) {
 		std::vector<AuraPtr> gev = battleScene->GetGroundEffectsAtHex(GetHexPosition(), IsPlayer());
 		for (auto ge : gev) {
 			statMods = ge->GetStatMods();
-			StatModCalc::GetStatModValue(armord, statMods, StatModType::ARMOR, false);
-			StatModCalc::GetStatModValue(armorPerLevel, statMods, StatModType::ARMOR_PER_LEVEL, false);
-			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ARMOR_MULT, true);
+			StatModCalc::GetStatModValue(armord, statMods, StatModType::Armor, false);
+			StatModCalc::GetStatModValue(armorPerLevel, statMods, StatModType::ArmorPerLevel, false);
+			StatModCalc::GetStatModValue(multiplier, statMods, StatModType::ArmorMult, true);
 		}
 	}
 
@@ -467,9 +467,9 @@ void Player::OnEvent(EventType eventType, ActorPtr& target, EventOptions& eventO
 	// Also triggers on-hit damage stat mods.
 	if (eventType == EventType::Attack) {
 		EventOptions eventOptionsLocal;
-		eventOptionsLocal.AbilityID = AbilityID::UNDEFINED;
-		eventOptionsLocal.AuraID = AuraID::UNDEFINED;
-		eventOptionsLocal.Categories = { Category::DAMAGING };
+		eventOptionsLocal.AbilityID = AbilityID::Undefined;
+		eventOptionsLocal.AuraID = AuraID::Undefined;
+		eventOptionsLocal.Categories = { Category::Damaging };
 		eventOptionsLocal.TriggerOnHit = false;
 
 		for (auto au : auras) {
@@ -565,7 +565,7 @@ int Player::GetAttackRange(bool consumeBuffs) {
 	EventOptions eventOptions;
 	eventOptions.Categories = GetMainHandCategories();
 	eventOptions.Elements = GetMainHandElements();
-	range = getStat(range, StatModType::RANGE, eventOptions, false, consumeBuffs);
+	range = getStat(range, StatModType::Range, eventOptions, false, consumeBuffs);
 
 	return (int)range;
 }
@@ -619,55 +619,55 @@ EquipType Player::GetMainHandEquipType() {
 		return eq->GetEquipType();
 	}
 	else {
-		return EquipType::UNARMED_STR;
+		return EquipType::UnarmedStrength;
 	}
 }
 
 std::vector<Category> Player::GetMainHandCategories() {
-	std::vector<Category> categories = { Category::UNARMED };
+	std::vector<Category> categories = { Category::Unarmed };
 
 	if (equipment[0] != nullptr) {
 		categories.clear();
 		Equipment* equip = (Equipment*)equipment[0].get();
 		EquipType equipType = equip->GetEquipType();
 		switch (equipType) {
-			case EquipType::UNARMED_STR:
-			case EquipType::UNARMED_DEX:
-			case EquipType::UNARMED_INT:
-				categories.push_back(Category::UNARMED);
+			case EquipType::UnarmedStrength:
+			case EquipType::UnarmedDexterity:
+			case EquipType::UnarmedIntelligence:
+				categories.push_back(Category::Unarmed);
 				break;
-			case EquipType::SWORD_1H:
-			case EquipType::SWORD_2H:
-				categories.push_back(Category::SWORD);
+			case EquipType::Sword1H:
+			case EquipType::Sword2H:
+				categories.push_back(Category::Sword);
 				break;
-			case EquipType::AXE_1H:
-			case EquipType::AXE_2H:
-				categories.push_back(Category::AXE);
+			case EquipType::Axe1H:
+			case EquipType::Axe2H:
+				categories.push_back(Category::Axe);
 				break;
-			case EquipType::MACE_1H:
-			case EquipType::MACE_2H:
-				categories.push_back(Category::MACE);
+			case EquipType::Mace1H:
+			case EquipType::Mace2H:
+				categories.push_back(Category::Mace);
 				break;
-			case EquipType::DAGGER:
-				categories.push_back(Category::DAGGER);
+			case EquipType::Dagger:
+				categories.push_back(Category::Dagger);
 				break;
-			case EquipType::CLAW:
-				categories.push_back(Category::CLAW);
+			case EquipType::Claw:
+				categories.push_back(Category::Claw);
 				break;
-			case EquipType::SPEAR:
-				categories.push_back(Category::SPEAR);
+			case EquipType::Spear:
+				categories.push_back(Category::Spear);
 				break;
-			case EquipType::BOW:
-				categories.push_back(Category::BOW);
+			case EquipType::Bow:
+				categories.push_back(Category::Bow);
 				break;
-			case EquipType::WAND:
-				categories.push_back(Category::WAND);
+			case EquipType::Wand:
+				categories.push_back(Category::Wand);
 				break;
-			case EquipType::STAFF:
-				categories.push_back(Category::STAFF);
+			case EquipType::Staff:
+				categories.push_back(Category::Staff);
 				break;
 			default:
-				categories.push_back(Category::UNARMED);
+				categories.push_back(Category::Unarmed);
 				break;
 		}
 	}
@@ -676,7 +676,7 @@ std::vector<Category> Player::GetMainHandCategories() {
 }
 
 std::vector<Element> Player::GetMainHandElements() {
-	std::vector<Element> elements = { Element::PHYSICAL };
+	std::vector<Element> elements = { Element::Physical };
 
 	if (equipment[0] != nullptr) {
 		Equipment* equip = (Equipment*)equipment[0].get();
@@ -740,12 +740,12 @@ EquipType Player::GetOffHandEquipType() {
 		return eq->GetEquipType();
 	}
 	else {
-		return EquipType::NONE;
+		return EquipType::None;
 	}
 }
 
 std::vector<Category> Player::GetOffHandCategories() {
-	std::vector<Category> categories = { Category::UNARMED };
+	std::vector<Category> categories = { Category::Unarmed };
 
 	if (equipment[1] != nullptr) {
 		categories.clear();
@@ -753,43 +753,43 @@ std::vector<Category> Player::GetOffHandCategories() {
 		if (equip->IsWeapon()) {
 			EquipType equipType = equip->GetEquipType();
 			switch (equipType) {
-			case EquipType::UNARMED_STR:
-			case EquipType::UNARMED_DEX:
-			case EquipType::UNARMED_INT:
-				categories.push_back(Category::UNARMED);
+			case EquipType::UnarmedStrength:
+			case EquipType::UnarmedDexterity:
+			case EquipType::UnarmedIntelligence:
+				categories.push_back(Category::Unarmed);
 				break;
-			case EquipType::SWORD_1H:
-			case EquipType::SWORD_2H:
-				categories.push_back(Category::SWORD);
+			case EquipType::Sword1H:
+			case EquipType::Sword2H:
+				categories.push_back(Category::Sword);
 				break;
-			case EquipType::AXE_1H:
-			case EquipType::AXE_2H:
-				categories.push_back(Category::AXE);
+			case EquipType::Axe1H:
+			case EquipType::Axe2H:
+				categories.push_back(Category::Axe);
 				break;
-			case EquipType::MACE_1H:
-			case EquipType::MACE_2H:
-				categories.push_back(Category::MACE);
+			case EquipType::Mace1H:
+			case EquipType::Mace2H:
+				categories.push_back(Category::Mace);
 				break;
-			case EquipType::DAGGER:
-				categories.push_back(Category::DAGGER);
+			case EquipType::Dagger:
+				categories.push_back(Category::Dagger);
 				break;
-			case EquipType::CLAW:
-				categories.push_back(Category::CLAW);
+			case EquipType::Claw:
+				categories.push_back(Category::Claw);
 				break;
-			case EquipType::SPEAR:
-				categories.push_back(Category::SPEAR);
+			case EquipType::Spear:
+				categories.push_back(Category::Spear);
 				break;
-			case EquipType::BOW:
-				categories.push_back(Category::BOW);
+			case EquipType::Bow:
+				categories.push_back(Category::Bow);
 				break;
-			case EquipType::WAND:
-				categories.push_back(Category::WAND);
+			case EquipType::Wand:
+				categories.push_back(Category::Wand);
 				break;
-			case EquipType::STAFF:
-				categories.push_back(Category::STAFF);
+			case EquipType::Staff:
+				categories.push_back(Category::Staff);
 				break;
 			default:
-				categories.push_back(Category::UNARMED);
+				categories.push_back(Category::Unarmed);
 				break;
 			}
 		}
@@ -799,7 +799,7 @@ std::vector<Category> Player::GetOffHandCategories() {
 }
 
 std::vector<Element> Player::GetOffHandElements() {
-	std::vector<Element> elements = { Element::PHYSICAL };
+	std::vector<Element> elements = { Element::Physical };
 
 	if (equipment[1] != nullptr) {
 		Equipment* equip = (Equipment*)equipment[1].get();
@@ -812,50 +812,50 @@ std::vector<Element> Player::GetOffHandElements() {
 }
 
 double Player::GetDamageDealt(EventOptions eventOptions, bool consumeBuffs) {
-	double damageDealt = getStat(1.0, StatModType::DAMAGE, eventOptions, true, consumeBuffs);
+	double damageDealt = getStat(1.0, StatModType::Damage, eventOptions, true, consumeBuffs);
 
 	return damageDealt;
 }
 
 double Player::GetDamageTaken(EventOptions eventOptions, bool consumeBuffs) {
-	double damageTaken = getStat(1.0, StatModType::DAMAGE_TAKEN, eventOptions, true, consumeBuffs);
+	double damageTaken = getStat(1.0, StatModType::DamageTaken, eventOptions, true, consumeBuffs);
 
 	return damageTaken;
 }
 
 double Player::GetHealingDealt(EventOptions eventOptions, bool consumeBuffs) {
-	double healingDealt = getStat(1.0, StatModType::HEALING, eventOptions, true, consumeBuffs);
+	double healingDealt = getStat(1.0, StatModType::Healing, eventOptions, true, consumeBuffs);
 
 	return healingDealt;
 }
 
 double Player::GetHealingTaken(EventOptions eventOptions, bool consumeBuffs) {
-	double healingTaken = getStat(1.0, StatModType::HEALING_TAKEN, eventOptions, true, consumeBuffs);
+	double healingTaken = getStat(1.0, StatModType::HealingTaken, eventOptions, true, consumeBuffs);
 
 	return healingTaken;
 }
 
 double Player::GetResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double resistance = getStat(0.0, StatModType::RESISTANCE, eventOptions, false, consumeBuffs);
+	double resistance = getStat(0.0, StatModType::Resistance, eventOptions, false, consumeBuffs);
 
 	return resistance;
 }
 
 double Player::GetArmorPen(EventOptions eventOptions, bool consumeBuffs) {
-	double armorPen = getStat(0.0, StatModType::ARMOR_PEN, eventOptions, false, consumeBuffs);
+	double armorPen = getStat(0.0, StatModType::ArmorPen, eventOptions, false, consumeBuffs);
 
 	return armorPen;
 }
 
 double Player::GetResistancePen(EventOptions eventOptions, bool consumeBuffs) {
-	double resistPen = getStat(0.0, StatModType::RESISTANCE_PEN, eventOptions, false, consumeBuffs);
+	double resistPen = getStat(0.0, StatModType::ResistancePen, eventOptions, false, consumeBuffs);
 
 	return resistPen;
 }
 
 double Player::GetCritChance(EventOptions eventOptions, bool consumeBuffs) {
 	double critChance = (double)GetDEX(consumeBuffs) / 1000.0;
-	critChance = getStat(critChance, StatModType::CRIT_CHANCE, eventOptions, false, consumeBuffs);
+	critChance = getStat(critChance, StatModType::CritChance, eventOptions, false, consumeBuffs);
 
 	return critChance;
 }
@@ -863,19 +863,19 @@ double Player::GetCritChance(EventOptions eventOptions, bool consumeBuffs) {
 double Player::GetCritDamage(EventOptions eventOptions, bool consumeBuffs) {
 	double critDamage = (double)GetSTR(consumeBuffs) / 200.0;
 	critDamage += 1.25;
-	critDamage = getStat(critDamage, StatModType::CRIT_DAMAGE, eventOptions, true, consumeBuffs);
+	critDamage = getStat(critDamage, StatModType::CritPower, eventOptions, true, consumeBuffs);
 
 	return critDamage;
 }
 
 double Player::GetCritChanceProtection(EventOptions eventOptions, bool consumeBuffs) {
-	double critChanceProtection = getStat(0.0, StatModType::CRIT_CHANCE_PROTECTION, eventOptions, false, consumeBuffs);
+	double critChanceProtection = getStat(0.0, StatModType::CritChanceProtection, eventOptions, false, consumeBuffs);
 
 	return critChanceProtection;
 }
 
 double Player::GetCritDamageProtection(EventOptions eventOptions, bool consumeBuffs) {
-	double critDamageProtection = getStat(1.0, StatModType::CRIT_DAMAGE_PROTECTION, eventOptions, true, consumeBuffs);
+	double critDamageProtection = getStat(1.0, StatModType::CritPowerProtection, eventOptions, true, consumeBuffs);
 
 	// can't be more than 100% protection
 	if (critDamageProtection < 0.0) {
@@ -886,43 +886,43 @@ double Player::GetCritDamageProtection(EventOptions eventOptions, bool consumeBu
 }
 
 double Player::GetHaste(EventOptions eventOptions, bool consumeBuffs) {
-	double haste = getStat(1.0, StatModType::HASTE, eventOptions, true, consumeBuffs);
+	double haste = getStat(1.0, StatModType::Haste, eventOptions, true, consumeBuffs);
 
 	return haste;
 }
 
 double Player::GetCastTimeReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double castTimeReduction = getStat(0.0, StatModType::CAST_TIME_REDUCTION, eventOptions, false, consumeBuffs);
+	double castTimeReduction = getStat(0.0, StatModType::CastTimeReduction, eventOptions, false, consumeBuffs);
 
 	return castTimeReduction;
 }
 
 double Player::GetInstantCast(EventOptions eventOptions, bool consumeBuffs) {
-	double instantCast = getStat(0.0, StatModType::INSTANT, eventOptions, false, consumeBuffs);
+	double instantCast = getStat(0.0, StatModType::Instant, eventOptions, false, consumeBuffs);
 
 	return instantCast;
 }
 
 double Player::GetRangeIncrease(EventOptions eventOptions, bool consumeBuffs) {
-	double range = getStat(0.0, StatModType::RANGE, eventOptions, false, consumeBuffs);
+	double range = getStat(0.0, StatModType::Range, eventOptions, false, consumeBuffs);
 
 	return range;
 }
 
 double Player::GetDoubleStrikeChance(EventOptions eventOptions, bool consumeBuffs) {
-	double doubleStrikeChance = getStat(0.0, StatModType::DOUBLE_STRIKE_CHANCE, eventOptions, false, consumeBuffs);
+	double doubleStrikeChance = getStat(0.0, StatModType::DoubleStrikeChance, eventOptions, false, consumeBuffs);
 
 	return doubleStrikeChance;
 }
 
 double Player::GetDoubleStrikeDamage(EventOptions eventOptions, bool consumeBuffs) {
-	double doubleStrikeDamage = getStat(1.0, StatModType::DOUBLE_STRIKE_DAMAGE, eventOptions, true, consumeBuffs);
+	double doubleStrikeDamage = getStat(1.0, StatModType::DoubleStrikeDamage, eventOptions, true, consumeBuffs);
 
 	return doubleStrikeDamage;
 }
 
 double Player::GetCounterChance(EventOptions eventOptions, bool consumeBuffs) {
-	double counterChance = getStat(0.0, StatModType::COUNTER_CHANCE, eventOptions, false, consumeBuffs);
+	double counterChance = getStat(0.0, StatModType::CounterChance, eventOptions, false, consumeBuffs);
 
 	return counterChance;
 }
@@ -936,7 +936,7 @@ std::vector<StatMod> Player::GetOnHitDamage(EventOptions eventOptions, bool cons
 		Equipment* weapon = (Equipment*)equipment[0].get();
 		check = weapon->GetStatMods();
 		for (auto sm : check) {
-			if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+			if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 				statMods.push_back(sm);
 			}
 		}
@@ -945,7 +945,7 @@ std::vector<StatMod> Player::GetOnHitDamage(EventOptions eventOptions, bool cons
 		Equipment* weapon = (Equipment*)equipment[1].get();
 		check = weapon->GetStatMods();
 		for (auto sm : check) {
-			if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+			if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 				statMods.push_back(sm);
 			}
 		}
@@ -956,7 +956,7 @@ std::vector<StatMod> Player::GetOnHitDamage(EventOptions eventOptions, bool cons
 			Equipment* eq = (Equipment*)equipment[i].get();
 			check = eq->GetStatMods();
 			for (auto sm : check) {
-				if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+				if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 					statMods.push_back(sm);
 				}
 			}
@@ -969,7 +969,7 @@ std::vector<StatMod> Player::GetOnHitDamage(EventOptions eventOptions, bool cons
 		for (auto ge : gev) {
 			check = ge->GetStatMods();
 			for (auto sm : check) {
-				if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+				if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 					statMods.push_back(sm);
 				}
 			}
@@ -980,7 +980,7 @@ std::vector<StatMod> Player::GetOnHitDamage(EventOptions eventOptions, bool cons
 	for (size_t i = 0; i < auras.size(); i++) {
 		check = auras[i]->GetStatMods();
 		for (auto sm : check) {
-			if (sm.GetStatModType() == StatModType::ON_HIT_DAMAGE && sm.MatchesCategories(eventOptions.Categories)) {
+			if (sm.GetStatModType() == StatModType::OnHitDamage && sm.MatchesCategories(eventOptions.Categories)) {
 				statMods.push_back(sm);
 				auras[i]->WasUsed(consumeBuffs);
 			}
@@ -991,13 +991,13 @@ std::vector<StatMod> Player::GetOnHitDamage(EventOptions eventOptions, bool cons
 }
 
 double Player::GetHitChance(EventOptions eventOptions, bool consumeBuffs) {
-	double hitChance = getStat(0.9, StatModType::HIT_CHANCE, eventOptions, false, consumeBuffs);
+	double hitChance = getStat(0.9, StatModType::HitChance, eventOptions, false, consumeBuffs);
 
 	return hitChance;
 }
 
 double Player::GetDodgeChance(EventOptions eventOptions, bool consumeBuffs) {
-	double dodgeChance = getStat(0.0, StatModType::DODGE_CHANCE, eventOptions, false, consumeBuffs);
+	double dodgeChance = getStat(0.0, StatModType::DodgeChance, eventOptions, false, consumeBuffs);
 
 	return dodgeChance;
 }
@@ -1008,8 +1008,8 @@ double Player::GetBlockChance(EventOptions eventOptions, bool consumeBuffs) {
 	// Need a shield equipped to block things.
 	if (equipment[1] != nullptr) {
 		Equipment* equip = (Equipment*)equipment[1].get();
-		if (equip->GetEquipType() == EquipType::SHIELD || equip->GetEquipType() == EquipType::BUCKLER) {
-			blockChance = getStat(0.0, StatModType::BLOCK_CHANCE, eventOptions, false, consumeBuffs);
+		if (equip->GetEquipType() == EquipType::Shield || equip->GetEquipType() == EquipType::Buckler) {
+			blockChance = getStat(0.0, StatModType::BlockChance, eventOptions, false, consumeBuffs);
 			blockChance += equip->GetBlockChance();
 		}
 	}
@@ -1018,97 +1018,97 @@ double Player::GetBlockChance(EventOptions eventOptions, bool consumeBuffs) {
 }
 
 double Player::GetHPCostReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double hpCostReduction = getStat(0.0, StatModType::HP_COST_REDUCTION, eventOptions, false, consumeBuffs);
+	double hpCostReduction = getStat(0.0, StatModType::HPCostReduction, eventOptions, false, consumeBuffs);
 
 	return hpCostReduction;
 }
 
 double Player::GetMPCostReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double mpCostReduction = getStat(0.0, StatModType::MP_COST_REDUCTION, eventOptions, false, consumeBuffs);
+	double mpCostReduction = getStat(0.0, StatModType::MPCostReduction, eventOptions, false, consumeBuffs);
 
 	return mpCostReduction;
 }
 
 double Player::GetSPCostReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double spCostReduction = getStat(0.0, StatModType::SP_COST_REDUCTION, eventOptions, false, consumeBuffs);
+	double spCostReduction = getStat(0.0, StatModType::SPCostReduction, eventOptions, false, consumeBuffs);
 
 	return spCostReduction;
 }
 
 double Player::GetCooldownReduction(EventOptions eventOptions, bool consumeBuffs) {
-	double cdr = getStat(0.0, StatModType::COOLDOWN_REDUCTION, eventOptions, false, consumeBuffs);
+	double cdr = getStat(0.0, StatModType::CooldownReduction, eventOptions, false, consumeBuffs);
 
 	return cdr;
 }
 
 double Player::GetAuraSnapshotPower(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotPower = getStat(1.0, StatModType::AURA_SNAPSHOT_POWER, eventOptions, true, consumeBuffs);
+	double auraSnapshotPower = getStat(1.0, StatModType::AuraSnapshotPower, eventOptions, true, consumeBuffs);
 
 	return auraSnapshotPower;
 }
 
 double Player::GetAuraSnapshotCritChance(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotCritChance = getStat(0.0, StatModType::AURA_SNAPSHOT_CRIT_CHANCE, eventOptions, false, consumeBuffs);
+	double auraSnapshotCritChance = getStat(0.0, StatModType::AuraSnapshotCritChance, eventOptions, false, consumeBuffs);
 
 	return auraSnapshotCritChance;
 }
 
 double Player::GetAuraSnapshotCritPower(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotCritPower = getStat(1.0, StatModType::AURA_SNAPSHOT_CRIT_POWER, eventOptions, true, consumeBuffs);
+	double auraSnapshotCritPower = getStat(1.0, StatModType::AuraSnapshotCritPower, eventOptions, true, consumeBuffs);
 
 	return auraSnapshotCritPower;
 }
 
 double Player::GetAuraSnapshotResistPen(EventOptions eventOptions, bool consumeBuffs) {
-	double auraSnapshotResistPen = getStat(0.0, StatModType::AURA_SNAPSHOT_RES_PEN, eventOptions, false, consumeBuffs);
+	double auraSnapshotResistPen = getStat(0.0, StatModType::AuraSnapshotResPen, eventOptions, false, consumeBuffs);
 
 	return auraSnapshotResistPen;
 }
 
 double Player::GetStunResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double stunResistance = getStat(0.0, StatModType::STUN_RESISTANCE, eventOptions, false, consumeBuffs);
+	double stunResistance = getStat(0.0, StatModType::StunResistance, eventOptions, false, consumeBuffs);
 
 	return stunResistance;
 }
 
 double Player::GetDisarmResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double disarmResistance = getStat(0.0, StatModType::DISARM_RESISTANCE, eventOptions, false, consumeBuffs);
+	double disarmResistance = getStat(0.0, StatModType::DisarmResistance, eventOptions, false, consumeBuffs);
 
 	return disarmResistance;
 }
 
 double Player::GetSilenceResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double silenceResistance = getStat(0.0, StatModType::SILENCE_RESISTANCE, eventOptions, false, consumeBuffs);
+	double silenceResistance = getStat(0.0, StatModType::SilenceResistance, eventOptions, false, consumeBuffs);
 
 	return silenceResistance;
 }
 
 double Player::GetKnockbackResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double knockbackResistance = getStat(0.0, StatModType::KNOCKBACK_RESISTANCE, eventOptions, false, consumeBuffs);
+	double knockbackResistance = getStat(0.0, StatModType::KnockbackResistance, eventOptions, false, consumeBuffs);
 
 	return knockbackResistance;
 }
 
 double Player::GetSnareResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double snareResistance = getStat(0.0, StatModType::SLOW_ROOT_RESISTANCE, eventOptions, false, consumeBuffs);
+	double snareResistance = getStat(0.0, StatModType::SlowRootResistance, eventOptions, false, consumeBuffs);
 
 	return snareResistance;
 }
 
 double Player::GetDeathResistance(EventOptions eventOptions, bool consumeBuffs) {
-	double deathResistance = getStat(0.0, StatModType::DEATH_RESISTANCE, eventOptions, false, consumeBuffs);
+	double deathResistance = getStat(0.0, StatModType::DeathResistance, eventOptions, false, consumeBuffs);
 
 	return deathResistance;
 }
 
 double Player::GetGoldFind(bool consumeBuffs) {
-	double goldFind = getStat(0.0, StatModType::GOLD_FIND, false, consumeBuffs);
+	double goldFind = getStat(0.0, StatModType::GoldFind, false, consumeBuffs);
 
 	return goldFind;
 }
 
 double Player::GetEXPBoost(bool consumeBuffs) {
-	double expBoost = getStat(0.0, StatModType::EXP_BOOST, false, consumeBuffs);
+	double expBoost = getStat(0.0, StatModType::EXPBoost, false, consumeBuffs);
 
 	return expBoost;
 }
@@ -1132,17 +1132,17 @@ unsigned int Player::GetEXP(){
 
 bool Player::Equip(std::vector<ItemPtr>& inventory, size_t index, size_t slot) {
 	std::vector<std::vector<EquipType>> validTypesInSlot = {
-		{ EquipType::SWORD_1H, EquipType::SWORD_2H, EquipType::AXE_1H, EquipType::AXE_2H, EquipType::MACE_1H, EquipType::MACE_2H, 
-		  EquipType::DAGGER, EquipType::SPEAR, EquipType::BOW, EquipType::WAND, EquipType::STAFF }, // Main-Hand 0
-		{ EquipType::SWORD_1H, EquipType::AXE_1H, EquipType::MACE_1H, EquipType::DAGGER, EquipType::SHIELD, EquipType::OFF_HAND }, // Off-Hand 1
-		{ EquipType::HEAVY_HEAD, EquipType::MED_HEAD, EquipType::LIGHT_HEAD }, // Head 2
-		{ EquipType::NECK }, // Neck 3
-		{ EquipType::HEAVY_BODY, EquipType::MED_BODY, EquipType::LIGHT_BODY }, // Body 4
-		{ EquipType::HEAVY_HANDS, EquipType::MED_HANDS, EquipType::LIGHT_HANDS }, // Hands 5
-		{ EquipType::RING }, // Ring 6
-		{ EquipType::RING }, // Ring 7
-		{ EquipType::HEAVY_FEET, EquipType::MED_FEET, EquipType::LIGHT_FEET, }, // Feet 8
-		{ EquipType::TRINKET } // Trinket 9
+		{ EquipType::Sword1H, EquipType::Sword2H, EquipType::Axe1H, EquipType::Axe2H, EquipType::Mace1H, EquipType::Mace2H, 
+		  EquipType::Dagger, EquipType::Spear, EquipType::Bow, EquipType::Wand, EquipType::Staff }, // Main-Hand 0
+		{ EquipType::Sword1H, EquipType::Axe1H, EquipType::Mace1H, EquipType::Dagger, EquipType::Shield, EquipType::OffHand }, // Off-Hand 1
+		{ EquipType::HeavyHead, EquipType::MedHead, EquipType::LightHead }, // Head 2
+		{ EquipType::Neck }, // Neck 3
+		{ EquipType::HeavyBody, EquipType::MedBody, EquipType::LightBody }, // Body 4
+		{ EquipType::HeavyHands, EquipType::MedHands, EquipType::LightHands }, // Hands 5
+		{ EquipType::Ring }, // Ring 6
+		{ EquipType::Ring }, // Ring 7
+		{ EquipType::HeavyFeet, EquipType::MedFeet, EquipType::LightFeet, }, // Feet 8
+		{ EquipType::Trinket } // Trinket 9
 	};
 	
 	if (inventory[index]->IsEquipment()) {
@@ -1330,7 +1330,7 @@ unsigned int Player::GetEXPToNextLevel() {
 // Returns the player's movespeed.
 int Player::GetMoveSpeed(){
 	int moveSpeed = 50;
-	double msMult = getStat(1.0, StatModType::MOVEMENT_SPEED, false, false);
+	double msMult = getStat(1.0, StatModType::MovementSpeed, false, false);
 	return moveSpeed * (1.0 / msMult);
 }
 
@@ -1346,7 +1346,7 @@ bool Player::CanSwim(){
 
 // Returns Humanoid creature type for all players.
 CreatureType Player::GetCreatureType(){
-	return CreatureType::HUMANOID;
+	return CreatureType::Humanoid;
 }
 
 bool Player::IsPlayer() {
@@ -1363,10 +1363,10 @@ void Player::SetAbilitySlotUser() {
 
 double Player::getStat(double initialValue, StatModType statModType, bool isMultiplicative, bool consumeBuffs) {
 	EventOptions eo;
-	eo.Categories = { Category::NONE };
-	eo.Elements = { Element::NONE };
-	eo.AbilityID = AbilityID::UNDEFINED;
-	eo.AuraID = AuraID::UNDEFINED;
+	eo.Categories = { Category::None };
+	eo.Elements = { Element::None };
+	eo.AbilityID = AbilityID::Undefined;
+	eo.AuraID = AuraID::Undefined;
 
 	return getStat(initialValue, statModType, eo, isMultiplicative, consumeBuffs);
 }
@@ -1406,7 +1406,7 @@ double Player::getStat(double initialValue, StatModType statModType, EventOption
 }
 
 AuraID Player::getWeaponOnHitAura(bool isOffHand) {
-	AuraID auraID = AuraID::UNDEFINED;
+	AuraID auraID = AuraID::Undefined;
 
 	if (!isOffHand && equipment[0] != nullptr) {
 		Equipment* weapon = (Equipment*)equipment[0].get();

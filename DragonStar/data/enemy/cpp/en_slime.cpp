@@ -21,7 +21,7 @@ En_Slime::En_Slime() {
 	name = "Slime";
 	title = "";
 
-	creatureType = CreatureType::ELEMENTAL;
+	creatureType = CreatureType::Elemental;
 
 	baseHP = 1400;
 	baseMP = 25;
@@ -42,13 +42,13 @@ En_Slime::En_Slime() {
 	attackSpeed = 180;
 	attackRange = 1;
 
-	attackType = EquipType::UNARMED_STR;
-	attackElement = { Element::POISON, Element::WATER };
+	attackType = EquipType::UnarmedStrength;
+	attackElement = { Element::Poison, Element::Water };
 	attackDamage = 80;
 	attackMod = 0.0;
 
-	offHandAttackType = EquipType::NONE;
-	offHandAttackElement = { Element::PHYSICAL };
+	offHandAttackType = EquipType::None;
+	offHandAttackElement = { Element::Physical };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
@@ -57,12 +57,12 @@ En_Slime::En_Slime() {
 	lootPoints = 80u;
 
 	statMods = {
-		StatMod(StatModType::RESISTANCE, 0.75,{ Category::ANY },{ Element::PHYSICAL }),
-		StatMod(StatModType::RESISTANCE, 0.30,{ Category::ANY },{ Element::POISON }),
-		StatMod(StatModType::RESISTANCE, 0.30,{ Category::ANY },{ Element::WATER }),
-		StatMod(StatModType::RESISTANCE, 1.00,{ Category::ANY },{ Element::MIND }),
-		StatMod(StatModType::RESISTANCE, -0.3,{ Category::ANY },{ Element::ICE }),
-		StatMod(StatModType::RESISTANCE, -0.3,{ Category::ANY },{ Element::LIGHTNING })
+		StatMod(StatModType::Resistance, 0.75,{ Category::Any },{ Element::Physical }),
+		StatMod(StatModType::Resistance, 0.30,{ Category::Any },{ Element::Poison }),
+		StatMod(StatModType::Resistance, 0.30,{ Category::Any },{ Element::Water }),
+		StatMod(StatModType::Resistance, 1.00,{ Category::Any },{ Element::Mind }),
+		StatMod(StatModType::Resistance, -0.3,{ Category::Any },{ Element::Ice }),
+		StatMod(StatModType::Resistance, -0.3,{ Category::Any },{ Element::Lightning })
 	};
 
 	abilities = {};
@@ -87,7 +87,7 @@ void En_Slime::OnEvent(EventType eventType, ActorPtr& user, ActorPtr& target, Ba
 	// OnAttack
 	if (eventType == EventType::Attack) {
 		if (eventResult.DidHit) {
-			Combat::AddAuraStack(user, target, AuraID::SLIME_TOUCH);
+			Combat::AddAuraStack(user, target, AuraID::SlimeTouch);
 		}
 	}
 }

@@ -15,20 +15,20 @@
 
 Au_TerrifyingHowl::Au_TerrifyingHowl() {
 	name = "Terrifying Howl";
-	id = AuraID::TERRIFYING_HOWL;
+	id = AuraID::TerrifyingHowl;
 	icon = "screech.png";
 
 	categories = {
-		Category::SKILL
+		Category::Skill
 	};
 
 	elements = {
-		Element::PHYSICAL
+		Element::Physical
 	};
 
 	statMods = {
-		StatMod(StatModType::DAMAGE, -0.2),
-		StatMod(StatModType::HIT_CHANCE, -0.2)
+		StatMod(StatModType::Damage, -0.2),
+		StatMod(StatModType::HitChance, -0.2)
 	};
 
 	canCrit = false;

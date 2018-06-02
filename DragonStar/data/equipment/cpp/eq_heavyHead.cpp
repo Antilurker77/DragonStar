@@ -23,8 +23,8 @@ Eq_IronHelm::Eq_IronHelm() {
 	tier = 1;
 
 	textureFilepath = "iron_helm.png";
-	equipType = EquipType::HEAVY_HEAD;
-	equipmentID = EquipmentID::IRON_HELM;
+	equipType = EquipType::HeavyHead;
+	equipmentID = EquipmentID::IronHelm;
 
 	equipPower = 9;
 	blockChance = 0.0;

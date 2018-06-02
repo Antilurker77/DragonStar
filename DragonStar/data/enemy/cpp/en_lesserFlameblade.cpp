@@ -21,7 +21,7 @@ En_LesserFlameblade::En_LesserFlameblade() {
 	name = "Lesser Flameblade";
 	title = "";
 
-	creatureType = CreatureType::ELEMENTAL;
+	creatureType = CreatureType::Elemental;
 
 	baseHP = 1650;
 	baseMP = 225;
@@ -42,13 +42,13 @@ En_LesserFlameblade::En_LesserFlameblade() {
 	attackSpeed = 200;
 	attackRange = 1;
 
-	attackType = EquipType::SWORD_1H;
-	attackElement = { Element::PHYSICAL, Element::FIRE };
+	attackType = EquipType::Sword1H;
+	attackElement = { Element::Physical, Element::Fire };
 	attackDamage = 50;
 	attackMod = 1.0;
 
-	offHandAttackType = EquipType::NONE;
-	offHandAttackElement = { Element::PHYSICAL };
+	offHandAttackType = EquipType::None;
+	offHandAttackElement = { Element::Physical };
 	offHandAttackDamage = 0;
 	offHandAttackMod = 0;
 
@@ -57,13 +57,13 @@ En_LesserFlameblade::En_LesserFlameblade() {
 	lootPoints = 120u;
 
 	statMods = { 
-		StatMod(StatModType::RESISTANCE, 0.5, { Category::ANY }, { Element::FIRE }),
-		StatMod(StatModType::RESISTANCE, -0.5, { Category::ANY }, { Element::WATER })
+		StatMod(StatModType::Resistance, 0.5, { Category::Any }, { Element::Fire }),
+		StatMod(StatModType::Resistance, -0.5, { Category::Any }, { Element::Water })
 	};
 
 	abilities = { 
-		AbilityID::FLAME_SLASH, // 1
-		AbilityID::FIRE_NOVA // 2
+		AbilityID::FlameSlash, // 1
+		AbilityID::FireNova // 2
 	};
 }
 
@@ -78,7 +78,7 @@ Idea En_LesserFlameblade::ExecuteAI(ActorPtr& user, BattleScene& world) {
 		idea.first = ActorFilter::RandomActor(players)->GetHexPosition();
 		
 		// Fire Nova
-		if (user->IsAbilityAvailable(2) && user->HasAura(AuraID::FLAME_SLASH)) {
+		if (user->IsAbilityAvailable(2) && user->HasAura(AuraID::FlameSlash)) {
 			idea.second = 2;
 			return idea;
 		}

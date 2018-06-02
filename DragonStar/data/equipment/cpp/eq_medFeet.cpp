@@ -23,8 +23,8 @@ Eq_LeatherBoots::Eq_LeatherBoots() {
 	tier = 1;
 
 	textureFilepath = "leather_boots.png";
-	equipType = EquipType::MED_FEET;
-	equipmentID = EquipmentID::LEATHER_BOOTS;
+	equipType = EquipType::MedFeet;
+	equipmentID = EquipmentID::LeatherBoots;
 
 	equipPower = 4;
 	blockChance = 0.0;

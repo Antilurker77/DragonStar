@@ -23,14 +23,14 @@ Eq_WoodenStaff::Eq_WoodenStaff() {
 	tier = 1;
 
 	textureFilepath = "wooden_staff.png";
-	equipType = EquipType::STAFF;
-	equipmentID = EquipmentID::WOODEN_STAFF;
+	equipType = EquipType::Staff;
+	equipmentID = EquipmentID::WoodenStaff;
 
 	equipPower = 40;
 	attackSpeed = 260;
 	attackRange = 1;
 	attributeMultiplier = 0.8;
-	attackElements = { Element::PHYSICAL };
+	attackElements = { Element::Physical };
 	blockChance = 0.0;
 	statMods = {};
 }

@@ -21,7 +21,7 @@ En_ShadowStalker::En_ShadowStalker() {
 
 	name = "Shadow Stalker";
 
-	creatureType = CreatureType::ELEMENTAL;
+	creatureType = CreatureType::Elemental;
 
 	baseHP = 1500;
 	baseMP = 200;
@@ -41,13 +41,13 @@ En_ShadowStalker::En_ShadowStalker() {
 	attackSpeed = 140;
 	attackRange = 1;
 
-	attackType = EquipType::DAGGER;
-	attackElement = { Element::DARK };
+	attackType = EquipType::Dagger;
+	attackElement = { Element::Dark };
 	attackDamage = 35;
 	attackMod = 0.7;
 
-	offHandAttackType = EquipType::DAGGER;
-	offHandAttackElement = { Element::DARK };
+	offHandAttackType = EquipType::Dagger;
+	offHandAttackElement = { Element::Dark };
 	offHandAttackDamage = 35;
 	offHandAttackMod = 0.7;
 
@@ -56,12 +56,12 @@ En_ShadowStalker::En_ShadowStalker() {
 	lootPoints = 140u;
 
 	statMods = {
-		StatMod(StatModType::RESISTANCE, 0.5,{ Category::ANY },{ Element::DARK }),
-		StatMod(StatModType::RESISTANCE, -0.5,{ Category::ANY },{ Element::LIGHT })
+		StatMod(StatModType::Resistance, 0.5,{ Category::Any },{ Element::Dark }),
+		StatMod(StatModType::Resistance, -0.5,{ Category::Any },{ Element::Light })
 	};
 
 	abilities = {
-		AbilityID::SHADOW_STALK // 1
+		AbilityID::ShadowStalk // 1
 	};
 }
 
