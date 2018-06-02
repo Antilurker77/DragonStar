@@ -18,7 +18,7 @@
 Eq_LeatherGloves::Eq_LeatherGloves() {
 	name = "Leather Gloves";
 	iconFilepath = "hands.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 4;
 	tier = 1;
 

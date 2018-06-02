@@ -18,7 +18,7 @@
 Eq_IronGreaves::Eq_IronGreaves() {
 	name = "Iron Greaves";
 	iconFilepath = "feet.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 8;
 	tier = 1;
 

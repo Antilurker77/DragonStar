@@ -1350,16 +1350,16 @@ void BattleScene::calcVictory() {
 				ItemQuality quality;
 				unsigned int qualRoll = Random::RandSizeT(mt, 0u, 99u);
 				if (qualRoll >= 90u) {
-					quality = ItemQuality::MYTHIC;
+					quality = ItemQuality::Mythic;
 				}
 				else if (qualRoll >= 60u) {
-					quality = ItemQuality::RARE;
+					quality = ItemQuality::Rare;
 				}
 				else if (qualRoll >= 20u) {
-					quality = ItemQuality::MAGICAL;
+					quality = ItemQuality::Magical;
 				}
 				else {
-					quality = ItemQuality::COMMON;
+					quality = ItemQuality::Common;
 				}
 
 				EquipmentID id = Weight::GetRandomEq(mt, tier);

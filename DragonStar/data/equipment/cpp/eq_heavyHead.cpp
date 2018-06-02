@@ -18,7 +18,7 @@
 Eq_IronHelm::Eq_IronHelm() {
 	name = "Iron Helm";
 	iconFilepath = "head.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 8;
 	tier = 1;
 

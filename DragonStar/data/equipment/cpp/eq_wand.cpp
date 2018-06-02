@@ -18,7 +18,7 @@
 Eq_WoodenWand::Eq_WoodenWand() {
 	name = "Wooden Wand";
 	iconFilepath = "wand.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 2;
 	tier = 1;
 

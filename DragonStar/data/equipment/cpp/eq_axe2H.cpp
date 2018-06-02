@@ -18,7 +18,7 @@
 Eq_IronGreataxe::Eq_IronGreataxe() {
 	name = "Iron Greataxe";
 	iconFilepath = "axe.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 11;
 	tier = 1;
 

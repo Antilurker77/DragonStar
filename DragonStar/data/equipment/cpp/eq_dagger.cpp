@@ -18,7 +18,7 @@
 Eq_IronDagger::Eq_IronDagger() {
 	name = "Iron Dagger";
 	iconFilepath = "dagger.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 4;
 	tier = 1;
 

@@ -18,7 +18,7 @@
 Eq_CharmOfStrength::Eq_CharmOfStrength() {
 	name = "Charm of Strength";
 	iconFilepath = "trinket.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 1;
 
@@ -37,7 +37,7 @@ Eq_CharmOfStrength::Eq_CharmOfStrength() {
 Eq_CharmOfDexterity::Eq_CharmOfDexterity() {
 	name = "Charm of Dexterity";
 	iconFilepath = "trinket.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 1;
 
@@ -56,7 +56,7 @@ Eq_CharmOfDexterity::Eq_CharmOfDexterity() {
 Eq_CharmOfIntelligence::Eq_CharmOfIntelligence() {
 	name = "Charm of Intelligence";
 	iconFilepath = "trinket.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 1;
 
@@ -75,7 +75,7 @@ Eq_CharmOfIntelligence::Eq_CharmOfIntelligence() {
 Eq_CharmOfWisdom::Eq_CharmOfWisdom() {
 	name = "Charm of Wisdom";
 	iconFilepath = "trinket.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 1;
 

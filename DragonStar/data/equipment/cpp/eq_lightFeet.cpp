@@ -18,7 +18,7 @@
 Eq_SilkShoes::Eq_SilkShoes() {
 	name = "Silk Shoes";
 	iconFilepath = "feet.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 2;
 	tier = 1;
 

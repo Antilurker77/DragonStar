@@ -10,10 +10,10 @@
 #pragma once
 
 enum class ItemQuality {
-	COMMON,
-	MAGICAL,
-	RARE,
-	MYTHIC,
-	UNIQUE,
-	RELIC
+	Common,
+	Magical,
+	Rare,
+	Mythic,
+	Unique,
+	Relic
 };

@@ -18,7 +18,7 @@
 Eq_IronGreatsword::Eq_IronGreatsword() {
 	name = "Iron Greatsword";
 	iconFilepath = "sword.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 9;
 	tier = 1;
 

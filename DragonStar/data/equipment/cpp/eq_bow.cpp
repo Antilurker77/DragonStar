@@ -18,7 +18,7 @@
 Eq_Longbow::Eq_Longbow() {
 	name = "Longbow";
 	iconFilepath = "longbow.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 4;
 	tier = 1;
 

@@ -58,23 +58,23 @@ void VictoryWindow::Initialize(unsigned int xp, unsigned int gold, std::vector<I
 		icon.setTexture(*t);
 
 		switch (e->GetItemQuality()) {
-		case ItemQuality::MAGICAL:
+		case ItemQuality::Magical:
 			s += "#magical ";
 			icon.setColor(sf::Color(30, 255, 0, 255));
 			break;
-		case ItemQuality::RARE:
+		case ItemQuality::Rare:
 			s += "#rare ";
 			icon.setColor(sf::Color(0, 110, 220, 255));
 			break;
-		case ItemQuality::MYTHIC:
+		case ItemQuality::Mythic:
 			s += "#mythic ";
 			icon.setColor(sf::Color(165, 55, 240, 255));
 			break;
-		case ItemQuality::UNIQUE:
+		case ItemQuality::Unique:
 			s += "#unique ";
 			icon.setColor(sf::Color(255, 130, 0, 255));
 			break;
-		case ItemQuality::RELIC:
+		case ItemQuality::Relic:
 			s += "#relic ";
 			icon.setColor(sf::Color(230, 0, 0, 255));
 			break;

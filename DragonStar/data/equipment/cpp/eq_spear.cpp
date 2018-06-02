@@ -18,7 +18,7 @@
 Eq_IronSpear::Eq_IronSpear() {
 	name = "Iron Spear";
 	iconFilepath = "spear.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 10;
 	tier = 1;
 
@@ -40,7 +40,7 @@ Eq_IronSpear::Eq_IronSpear() {
 Eq_CloudLance::Eq_CloudLance() {
 	name = "Cloud Lance";
 	iconFilepath = "spear.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 10;
 	tier = 1;
 

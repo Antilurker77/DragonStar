@@ -18,7 +18,7 @@
 Eq_SilkGloves::Eq_SilkGloves() {
 	name = "Silk Gloves";
 	iconFilepath = "hands.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 2;
 	tier = 1;
 

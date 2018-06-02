@@ -18,7 +18,7 @@
 Eq_SilkHat::Eq_SilkHat() {
 	name = "Silk Hat";
 	iconFilepath = "head.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 2;
 	tier = 1;
 

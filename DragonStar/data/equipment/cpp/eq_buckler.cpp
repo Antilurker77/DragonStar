@@ -18,7 +18,7 @@
 Eq_IronBuckler::Eq_IronBuckler() {
 	name = "Iron Buckler";
 	iconFilepath = "shield.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 4;
 	tier = 1;
 

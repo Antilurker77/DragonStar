@@ -20,7 +20,7 @@
 Eq_SilverRing::Eq_SilverRing() {
 	name = "Silver Ring";
 	iconFilepath = "ring.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 1;
 	tier = 1;
 
@@ -39,7 +39,7 @@ Eq_SilverRing::Eq_SilverRing() {
 Eq_GoldRing::Eq_GoldRing() {
 	name = "Gold Ring";
 	iconFilepath = "ring.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 1;
 	tier = 3;
 
@@ -58,7 +58,7 @@ Eq_GoldRing::Eq_GoldRing() {
 Eq_DragoniteRing::Eq_DragoniteRing() {
 	name = "Dragonite Ring";
 	iconFilepath = "ring.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 1;
 	tier = 5;
 
@@ -77,7 +77,7 @@ Eq_DragoniteRing::Eq_DragoniteRing() {
 Eq_BandOfTwinDisciplines::Eq_BandOfTwinDisciplines() {
 	name = "Band of Twin Disciplines";
 	iconFilepath = "ring.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 1;
 
@@ -118,7 +118,7 @@ void Eq_BandOfTwinDisciplines::OnEvent(EventType eventType, ActorPtr& user, Acto
 Eq_RingOfVitality::Eq_RingOfVitality() {
 	name = "Ring of Vitality";
 	iconFilepath = "ring.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 1;
 
@@ -142,7 +142,7 @@ Eq_RingOfVitality::Eq_RingOfVitality() {
 Eq_OmegaRing::Eq_OmegaRing() {
 	name = "Omega Ring";
 	iconFilepath = "ring.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 6;
 

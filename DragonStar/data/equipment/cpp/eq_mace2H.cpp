@@ -18,7 +18,7 @@
 Eq_IronGreatmace::Eq_IronGreatmace() {
 	name = "Iron Greatmace";
 	iconFilepath = "mace.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 13;
 	tier = 1;
 

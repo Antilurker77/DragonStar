@@ -18,7 +18,7 @@
 Eq_WoodenStaff::Eq_WoodenStaff() {
 	name = "Wooden Staff";
 	iconFilepath = "staff.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 7;
 	tier = 1;
 

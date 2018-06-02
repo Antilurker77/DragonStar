@@ -18,7 +18,7 @@
 Eq_IronArmor::Eq_IronArmor() {
 	name = "Iron Armor";
 	iconFilepath = "body.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 16;
 	tier = 1;
 

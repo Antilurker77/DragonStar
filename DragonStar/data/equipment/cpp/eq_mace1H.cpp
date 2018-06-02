@@ -18,7 +18,7 @@
 Eq_IronMace::Eq_IronMace() {
 	name = "Iron Mace";
 	iconFilepath = "mace.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 7;
 	tier = 1;
 

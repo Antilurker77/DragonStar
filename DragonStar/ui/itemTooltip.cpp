@@ -74,19 +74,19 @@ void ItemTooltip::SetItem(ItemPtr& item) {
 	// Name Text
 	std::string nameString = "";
 	switch (item->GetItemQuality()) {
-	case ItemQuality::MAGICAL:
+	case ItemQuality::Magical:
 		nameString += "#magical ";
 		break;
-	case ItemQuality::RARE:
+	case ItemQuality::Rare:
 		nameString += "#rare ";
 		break;
-	case ItemQuality::MYTHIC:
+	case ItemQuality::Mythic:
 		nameString += "#mythic ";
 		break;
-	case ItemQuality::UNIQUE:
+	case ItemQuality::Unique:
 		nameString += "#unique ";
 		break;
-	case ItemQuality::RELIC:
+	case ItemQuality::Relic:
 		nameString += "#relic ";
 		break;
 	default:

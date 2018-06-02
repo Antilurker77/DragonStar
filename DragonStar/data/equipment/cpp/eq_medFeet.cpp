@@ -18,7 +18,7 @@
 Eq_LeatherBoots::Eq_LeatherBoots() {
 	name = "Leather Boots";
 	iconFilepath = "feet.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 4;
 	tier = 1;
 

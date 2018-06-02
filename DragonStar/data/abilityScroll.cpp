@@ -23,21 +23,21 @@ AbilityScroll::AbilityScroll(AbilityID id) {
 
 	if (std::find(abilityTypes.begin(), abilityTypes.end(), AbilityType::ASTRAL_SPELL) != abilityTypes.end() || 
 		std::find(abilityTypes.begin(), abilityTypes.end(), AbilityType::ASTRAL_HEAL) != abilityTypes.end()) {
-		itemQuality = ItemQuality::UNIQUE;
+		itemQuality = ItemQuality::Unique;
 	}
 	else {
 		switch (tier) {
 		case 2:
-			itemQuality = ItemQuality::MAGICAL;
+			itemQuality = ItemQuality::Magical;
 			break;
 		case 3:
-			itemQuality = ItemQuality::RARE;
+			itemQuality = ItemQuality::Rare;
 			break;
 		case 4:
-			itemQuality = ItemQuality::MYTHIC;
+			itemQuality = ItemQuality::Mythic;
 			break;
 		default:
-			itemQuality = ItemQuality::COMMON;
+			itemQuality = ItemQuality::Common;
 			break;
 		}
 	}

@@ -18,7 +18,7 @@
 Eq_LeatherHelmet::Eq_LeatherHelmet() {
 	name = "Leather Helmet";
 	iconFilepath = "head.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 4;
 	tier = 1;
 

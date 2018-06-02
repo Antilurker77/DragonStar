@@ -18,7 +18,7 @@
 Eq_IronGauntlets::Eq_IronGauntlets() {
 	name = "Iron Gauntlets";
 	iconFilepath = "hands.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 8;
 	tier = 1;
 

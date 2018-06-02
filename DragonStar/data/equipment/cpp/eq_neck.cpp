@@ -18,7 +18,7 @@
 Eq_SilverNecklace::Eq_SilverNecklace() {
 	name = "Silver Necklace";
 	iconFilepath = "neck.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 1;
 	tier = 1;
 
@@ -35,7 +35,7 @@ Eq_SilverNecklace::Eq_SilverNecklace() {
 Eq_GoldNecklace::Eq_GoldNecklace() {
 	name = "Gold Necklace";
 	iconFilepath = "neck.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 1;
 	tier = 3;
 
@@ -52,7 +52,7 @@ Eq_GoldNecklace::Eq_GoldNecklace() {
 Eq_DragoniteNecklace::Eq_DragoniteNecklace() {
 	name = "Dragonite Necklace";
 	iconFilepath = "neck.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 1;
 	tier = 5;
 
@@ -69,7 +69,7 @@ Eq_DragoniteNecklace::Eq_DragoniteNecklace() {
 Eq_AmuletOfDivineLight::Eq_AmuletOfDivineLight() {
 	name = "Amulet of Divine Light";
 	iconFilepath = "neck.png";
-	itemQuality = ItemQuality::UNIQUE;
+	itemQuality = ItemQuality::Unique;
 	weight = 1;
 	tier = 1;
 

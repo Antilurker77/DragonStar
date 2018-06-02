@@ -308,14 +308,14 @@ void ShopWindow::craftItems() {
 
 		craftedIcons[i].setColor(sf::Color(0, 110, 220, 255));
 
-		ItemQuality rarity = ItemQuality::RARE;
+		ItemQuality rarity = ItemQuality::Rare;
 		int roll = Random::RandInt(1, 6);
 		if (roll == 1) {
-			rarity = ItemQuality::MAGICAL;
+			rarity = ItemQuality::Magical;
 			craftedIcons[i].setColor(sf::Color(30, 255, 0, 255));
 		}
 		else if (roll == 6) {
-			rarity = ItemQuality::MYTHIC;
+			rarity = ItemQuality::Mythic;
 			craftedIcons[i].setColor(sf::Color(165, 55, 240, 255));
 		}
 

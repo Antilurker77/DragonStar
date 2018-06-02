@@ -18,7 +18,7 @@
 Eq_LeatherArmor::Eq_LeatherArmor() {
 	name = "Leather Armor";
 	iconFilepath = "body.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 8;
 	tier = 1;
 

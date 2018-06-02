@@ -118,10 +118,10 @@ unsigned int Equipment::GetPrice() {
 		value += sm.GetValue() * mult;
 	}
 
-	if (itemQuality == ItemQuality::RARE) {
+	if (itemQuality == ItemQuality::Rare) {
 		value *= 1.1;
 	}
-	else if (itemQuality == ItemQuality::MYTHIC) {
+	else if (itemQuality == ItemQuality::Mythic) {
 		value *= 1.25;
 	}
 
@@ -181,7 +181,7 @@ AuraID Equipment::GetOnHitAura() {
 }
 
 bool Equipment::IsUnique() {
-	return itemQuality == ItemQuality::UNIQUE;
+	return itemQuality == ItemQuality::Unique;
 }
 
 bool Equipment::IsWeapon() {
@@ -242,7 +242,7 @@ void Equipment::RollStatMods(ItemQuality quality, uint64_t seed) {
 		size_t i = 0;
 
 		// Rare or better non-jewelry items guarenteed main attribute.
-		if (modsAdded == 0 && (equipType != EquipType::NECK && equipType!= EquipType::RING) && itemQuality >= ItemQuality::RARE) {
+		if (modsAdded == 0 && (equipType != EquipType::NECK && equipType!= EquipType::RING) && itemQuality >= ItemQuality::Rare) {
 			// Wands, Staves, Off-Hand, and Light Armor can roll INT or WIS.
 			if (equipType == EquipType::WAND || equipType == EquipType::STAFF || equipType == EquipType::OFF_HAND ||
 				equipType == EquipType::LIGHT_HEAD || equipType == EquipType::LIGHT_BODY || equipType == EquipType::LIGHT_HANDS || equipType == EquipType::LIGHT_FEET) {
@@ -321,7 +321,7 @@ void Equipment::OnEvent(EventType eventType, ActorPtr& user, ActorPtr& target, B
 
 int Equipment::howManyStatMods(std::mt19937_64& mt) {
 	switch (itemQuality) {
-	case ItemQuality::COMMON:
+	case ItemQuality::Common:
 		if (equipType == EquipType::RING || equipType == EquipType::NECK || equipType == EquipType::OFF_HAND) {
 			return 1;
 		}
@@ -329,13 +329,13 @@ int Equipment::howManyStatMods(std::mt19937_64& mt) {
 			return 0;
 		}
 		break;
-	case ItemQuality::MAGICAL:
+	case ItemQuality::Magical:
 		return Random::RandInt(mt, 2, 3);
 		break;
-	case ItemQuality::RARE:
+	case ItemQuality::Rare:
 		return 4;
 		break;
-	case ItemQuality::MYTHIC:
+	case ItemQuality::Mythic:
 		return 6;
 		break;
 	default:
@@ -945,13 +945,13 @@ void Equipment::rollResistanceStatMods(std::mt19937_64& mt) {
 		Element::DARK
 	};
 
-	if (itemQuality == ItemQuality::MAGICAL) {
+	if (itemQuality == ItemQuality::Magical) {
 		resistCount = Random::RandInt(mt, 0, 1);
 	}
-	else if (itemQuality == ItemQuality::RARE) {
+	else if (itemQuality == ItemQuality::Rare) {
 		resistCount = 1;
 	}
-	else if (itemQuality == ItemQuality::MYTHIC) {
+	else if (itemQuality == ItemQuality::Mythic) {
 		resistCount = 2;
 	}
 

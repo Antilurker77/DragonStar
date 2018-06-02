@@ -299,19 +299,19 @@ void AbilityWindow::setInventoryIcons() {
 			invIcons[i].setTexture(*assetManager.LoadTexture(fp));
 
 			switch (inventory->at(displayedItems[i])->GetItemQuality()) {
-			case ItemQuality::MAGICAL:
+			case ItemQuality::Magical:
 				invIcons[i].setColor(sf::Color(30, 255, 0, 255));
 				break;
-			case ItemQuality::RARE:
+			case ItemQuality::Rare:
 				invIcons[i].setColor(sf::Color(0, 110, 220, 255));
 				break;
-			case ItemQuality::MYTHIC:
+			case ItemQuality::Mythic:
 				invIcons[i].setColor(sf::Color(165, 55, 240, 255));
 				break;
-			case ItemQuality::UNIQUE:
+			case ItemQuality::Unique:
 				invIcons[i].setColor(sf::Color(255, 130, 0, 255));
 				break;
-			case ItemQuality::RELIC:
+			case ItemQuality::Relic:
 				invIcons[i].setColor(sf::Color(230, 0, 0, 255));
 				break;
 			default:

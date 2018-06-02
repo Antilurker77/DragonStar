@@ -18,7 +18,7 @@
 Eq_PowerOrb::Eq_PowerOrb() {
 	name = "Power Orb";
 	iconFilepath = "off_hand.png";
-	itemQuality = ItemQuality::COMMON;
+	itemQuality = ItemQuality::Common;
 	weight = 1;
 	tier = 1;
 
