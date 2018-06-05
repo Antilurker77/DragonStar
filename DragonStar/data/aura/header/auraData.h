@@ -12,6 +12,7 @@
 #include "au_flameSlash.h"
 #include "au_gale.h"
 #include "au_healingRain.h"
+#include "au_heartBroken.h"
 #include "au_icicle.h"
 #include "au_mendWounds.h"
 #include "au_prismaticBolt.h"

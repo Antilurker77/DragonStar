@@ -23,6 +23,7 @@
 #include "ab_gale.h"
 #include "ab_heal.h"
 #include "ab_healingRain.h"
+#include "ab_heartSeeker.h"
 #include "ab_icicle.h"
 #include "ab_lightBolt.h"
 #include "ab_magicMissile.h"

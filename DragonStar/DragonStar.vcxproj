@@ -104,6 +104,7 @@
     <ClCompile Include="data\ability\cpp\ab_bite.cpp" />
     <ClCompile Include="data\ability\cpp\ab_boulder.cpp" />
     <ClCompile Include="data\ability\cpp\ab_chopper.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_heartSeeker.cpp" />
     <ClCompile Include="data\ability\cpp\ab_lightBolt.cpp" />
     <ClCompile Include="data\ability\cpp\ab_powerShot.cpp" />
     <ClCompile Include="data\ability\cpp\ab_psionicMissile.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="data\aura\cpp\au_flameSlash.cpp" />
     <ClCompile Include="data\aura\cpp\au_gale.cpp" />
     <ClCompile Include="data\aura\cpp\au_healingRain.cpp" />
+    <ClCompile Include="data\aura\cpp\au_heartBroken.cpp" />
     <ClCompile Include="data\aura\cpp\au_icicle.cpp" />
     <ClCompile Include="data\aura\cpp\au_mendWounds.cpp" />
     <ClCompile Include="data\aura\cpp\au_prismaticBolt.cpp" />
@@ -303,6 +305,7 @@
     <ClInclude Include="data\ability\header\ab_healingRain.h" />
     <ClInclude Include="data\ability\header\ab_warpSlice.h" />
     <ClInclude Include="data\ability\header\ab_waterBolt.h" />
+    <ClInclude Include="data\ability\header\ab_heartSeeker.h" />
     <ClInclude Include="data\aura.h" />
     <ClInclude Include="data\aura\header\auraData.h" />
     <ClInclude Include="data\aura\header\au_bandOfTwinDisciplines.h" />
@@ -311,6 +314,7 @@
     <ClInclude Include="data\aura\header\au_flameSlash.h" />
     <ClInclude Include="data\aura\header\au_gale.h" />
     <ClInclude Include="data\aura\header\au_healingRain.h" />
+    <ClInclude Include="data\aura\header\au_heartBroken.h" />
     <ClInclude Include="data\aura\header\au_icicle.h" />
     <ClInclude Include="data\aura\header\au_mendWounds.h" />
     <ClInclude Include="data\aura\header\au_prismaticBolt.h" />

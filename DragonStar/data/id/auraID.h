@@ -16,6 +16,7 @@ enum class AuraID {
 	FlameSlash,
 	Gale,
 	HealingRain,
+	HeartBroken,
 	Icicle,
 	MendWounds,
 	PrismaticBolt,
