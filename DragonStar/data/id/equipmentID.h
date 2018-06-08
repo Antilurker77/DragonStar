@@ -20,6 +20,7 @@ enum class EquipmentID {
 	DragoniteSword,
 
 	// Unique 1H Sword
+	Flametongue,
 
 	// Generic 2H Sword
 	IronGreatsword,

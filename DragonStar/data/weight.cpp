@@ -145,6 +145,8 @@ EquipmentID Weight::GetRandomUniqueEq(std::mt19937_64& mt, int tier, std::vector
 
 	switch (tier) {
 	case 1:
+		weights.push_back({ EquipmentID::Flametongue, 0.50 });
+		
 		weights.push_back({ EquipmentID::CloudLance, 0.50 });
 		
 		weights.push_back({ EquipmentID::AmuletOfDivineLight, 0.50 });

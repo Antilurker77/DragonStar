@@ -469,7 +469,7 @@ void Player::OnEvent(EventType eventType, ActorPtr& target, EventOptions& eventO
 		EventOptions eventOptionsLocal;
 		eventOptionsLocal.AbilityID = AbilityID::Undefined;
 		eventOptionsLocal.AuraID = AuraID::Undefined;
-		eventOptionsLocal.Categories = { Category::Damaging };
+		eventOptionsLocal.Categories = { Category::Damaging, Category::SingleTarget };
 		eventOptionsLocal.TriggerOnHit = false;
 
 		for (auto au : auras) {

@@ -14,3 +14,9 @@ class Eq_IronSword : public Equipment {
 public:
 	Eq_IronSword();
 };
+
+class Eq_Flametongue : public Equipment {
+public:
+	Eq_Flametongue();
+	void OnEvent(EventType eventType, ActorPtr& user, ActorPtr& target, BattleScene* battleScene, EventOptions& eventOptions, EventResult& eventResult, bool isOffHand, double& amount);
+};
