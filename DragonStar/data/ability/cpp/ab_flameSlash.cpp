@@ -29,6 +29,7 @@ Ab_FlameSlash::Ab_FlameSlash() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct,

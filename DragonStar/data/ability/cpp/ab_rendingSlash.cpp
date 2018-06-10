@@ -31,6 +31,7 @@ Ab_RendingSlash::Ab_RendingSlash() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct

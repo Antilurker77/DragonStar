@@ -28,6 +28,7 @@ Ab_HeartSeeker::Ab_HeartSeeker() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct

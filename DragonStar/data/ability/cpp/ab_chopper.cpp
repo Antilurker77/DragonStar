@@ -28,6 +28,7 @@ Ab_Chopper::Ab_Chopper() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct

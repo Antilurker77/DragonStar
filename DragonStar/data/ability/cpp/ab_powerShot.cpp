@@ -28,6 +28,7 @@ Ab_PowerShot::Ab_PowerShot() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct

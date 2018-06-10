@@ -31,6 +31,7 @@ Ab_WarpSlice::Ab_WarpSlice() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct

@@ -26,7 +26,6 @@ Ab_CommandingShout::Ab_CommandingShout() {
 	tier = 1;
 
 	categories = {
-		Category::Skill,
 		Category::AreaOfEffect
 	};
 

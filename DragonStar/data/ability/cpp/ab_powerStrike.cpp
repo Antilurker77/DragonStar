@@ -33,6 +33,7 @@ Ab_PowerStrike::Ab_PowerStrike() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct

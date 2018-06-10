@@ -30,6 +30,7 @@ Ab_ShadowStalk::Ab_ShadowStalk() {
 
 	categories = {
 		Category::Attack,
+		Category::Skill,
 		Category::Damaging,
 		Category::SingleTarget,
 		Category::Direct
