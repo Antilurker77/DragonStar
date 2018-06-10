@@ -278,6 +278,7 @@ enum class EquipmentID {
 	DragoniteGauntlets,
 
 	// Unique Heavy Hands
+	StoneGauntlets,
 
 	// Generic Heavy Feet
 	IronGreaves,

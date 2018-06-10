@@ -15,3 +15,7 @@ public:
 	Eq_IronGauntlets();
 };
 
+class Eq_StoneGauntlets : public Equipment {
+public:
+	Eq_StoneGauntlets();
+};
