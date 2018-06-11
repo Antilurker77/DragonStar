@@ -160,6 +160,8 @@ EquipmentID Weight::GetRandomUniqueEq(std::mt19937_64& mt, int tier, std::vector
 		weights.push_back({ EquipmentID::CharmOfDexterity, 1.00 });
 		weights.push_back({ EquipmentID::CharmOfIntelligence, 1.00 });
 		weights.push_back({ EquipmentID::CharmOfWisdom, 1.00 });
+		weights.push_back({ EquipmentID::CharmOfConstitution, 1.00 });
+		weights.push_back({ EquipmentID::SpringWaterStone, 1.00 });
 		break;
 	default:
 		break;

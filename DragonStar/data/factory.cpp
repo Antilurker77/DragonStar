@@ -150,6 +150,7 @@ ItemPtr Factory::CreateEquipment(EquipmentID id) {
 	switch (id) {
 	case EquipmentID::AmuletOfDivineLight:				return ItemPtr(std::make_shared<Eq_AmuletOfDivineLight>());
 	case EquipmentID::BandOfTwinDisciplines:			return ItemPtr(std::make_shared<Eq_BandOfTwinDisciplines>());
+	case EquipmentID::CharmOfConstitution:				return ItemPtr(std::make_shared<Eq_CharmOfConstitution>());
 	case EquipmentID::CharmOfDexterity:					return ItemPtr(std::make_shared<Eq_CharmOfDexterity>());
 	case EquipmentID::CharmOfIntelligence:				return ItemPtr(std::make_shared<Eq_CharmOfIntelligence>());
 	case EquipmentID::CharmOfStrength:					return ItemPtr(std::make_shared<Eq_CharmOfStrength>());
@@ -188,6 +189,7 @@ ItemPtr Factory::CreateEquipment(EquipmentID id) {
 	case EquipmentID::SilkShoes:						return ItemPtr(std::make_shared<Eq_SilkShoes>());
 	case EquipmentID::SilverNecklace:					return ItemPtr(std::make_shared<Eq_SilverNecklace>());
 	case EquipmentID::SilverRing:						return ItemPtr(std::make_shared<Eq_SilverRing>());
+	case EquipmentID::SpringWaterStone:					return ItemPtr(std::make_shared<Eq_SpringWaterStone>());
 	case EquipmentID::StoneGauntlets:					return ItemPtr(std::make_shared<Eq_StoneGauntlets>());
 	case EquipmentID::WoodenStaff:						return ItemPtr(std::make_shared<Eq_WoodenStaff>());
 	case EquipmentID::WoodenWand:						return ItemPtr(std::make_shared<Eq_WoodenWand>());

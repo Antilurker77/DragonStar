@@ -29,3 +29,13 @@ class Eq_CharmOfWisdom : public Equipment {
 public:
 	Eq_CharmOfWisdom();
 };
+
+class Eq_CharmOfConstitution : public Equipment {
+public:
+	Eq_CharmOfConstitution();
+};
+
+class Eq_SpringWaterStone : public Equipment {
+public:
+	Eq_SpringWaterStone();
+};

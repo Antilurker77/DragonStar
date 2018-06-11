@@ -313,6 +313,8 @@ enum class EquipmentID {
 	CharmOfDexterity,
 	CharmOfIntelligence,
 	CharmOfWisdom,
+	CharmOfConstitution,
+	SpringWaterStone,
 	BrokenPocketwatch,
 };
 

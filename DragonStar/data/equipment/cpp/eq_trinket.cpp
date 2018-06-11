@@ -15,6 +15,8 @@
 #include "../../id/itemQuality.h"
 #include "../../id/statModType.h"
 
+// --------------------------------------------------------------------
+
 Eq_CharmOfStrength::Eq_CharmOfStrength() {
 	name = "Charm of Strength";
 	iconFilepath = "trinket.png";
@@ -33,6 +35,8 @@ Eq_CharmOfStrength::Eq_CharmOfStrength() {
 		StatMod(StatModType::STRMult, 0.1)
 	};
 }
+
+// --------------------------------------------------------------------
 
 Eq_CharmOfDexterity::Eq_CharmOfDexterity() {
 	name = "Charm of Dexterity";
@@ -53,6 +57,8 @@ Eq_CharmOfDexterity::Eq_CharmOfDexterity() {
 	};
 }
 
+// --------------------------------------------------------------------
+
 Eq_CharmOfIntelligence::Eq_CharmOfIntelligence() {
 	name = "Charm of Intelligence";
 	iconFilepath = "trinket.png";
@@ -72,6 +78,8 @@ Eq_CharmOfIntelligence::Eq_CharmOfIntelligence() {
 	};
 }
 
+// --------------------------------------------------------------------
+
 Eq_CharmOfWisdom::Eq_CharmOfWisdom() {
 	name = "Charm of Wisdom";
 	iconFilepath = "trinket.png";
@@ -90,3 +98,48 @@ Eq_CharmOfWisdom::Eq_CharmOfWisdom() {
 		StatMod(StatModType::WISMult, 0.1)
 	};
 }
+
+// --------------------------------------------------------------------
+
+Eq_CharmOfConstitution::Eq_CharmOfConstitution() {
+	name = "Charm of Constitution";
+	iconFilepath = "trinket.png";
+	itemQuality = ItemQuality::Unique;
+	weight = 1;
+	tier = 1;
+
+	textureFilepath = "trinket.png";
+	equipType = EquipType::Trinket;
+	equipmentID = EquipmentID::CharmOfConstitution;
+
+	equipPower = 0;
+	blockChance = 0.0;
+	attackSpeed = 0.0;
+	statMods = {
+		StatMod(StatModType::HPMult, 0.15)
+	};
+}
+
+// --------------------------------------------------------------------
+
+Eq_SpringWaterStone::Eq_SpringWaterStone() {
+	name = "Spring Water Stone";
+	iconFilepath = "trinket.png";
+	itemQuality = ItemQuality::Unique;
+	weight = 1;
+	tier = 1;
+
+	textureFilepath = "trinket.png";
+	equipType = EquipType::Trinket;
+	equipmentID = EquipmentID::SpringWaterStone;
+
+	equipPower = 0;
+	blockChance = 0.0;
+	attackSpeed = 0.0;
+	statMods = {
+		StatMod(StatModType::MPMult, 0.1),
+		StatMod(StatModType::MPRegen, 2.0)
+	};
+}
+
+// --------------------------------------------------------------------
