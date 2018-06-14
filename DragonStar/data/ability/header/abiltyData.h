@@ -11,6 +11,7 @@
 #include "ab_bite.h"
 #include "ab_boulder.h"
 #include "ab_chopper.h"
+#include "ab_cleave.h"
 #include "ab_commandingShout.h"
 #include "ab_darkBolt.h"
 #include "ab_dragonBreath.h"

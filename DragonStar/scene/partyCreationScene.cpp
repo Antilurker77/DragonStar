@@ -264,7 +264,7 @@ void PartyCreationScene::testPartyA() {
 		ItemQuality::Common
 	};
 	loadouts[1].Abilities = {
-		AbilityID::PowerStrike
+		AbilityID::Cleave
 	};
 	loadouts[1].LeftoverGold = 5u;
 

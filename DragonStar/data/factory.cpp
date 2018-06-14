@@ -34,6 +34,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::Bite:								return AbilityPtr(std::make_shared<Ab_Bite>());
 	case AbilityID::Boulder:							return AbilityPtr(std::make_shared<Ab_Boulder>());
 	case AbilityID::Chopper:							return AbilityPtr(std::make_shared<Ab_Chopper>());
+	case AbilityID::Cleave:								return AbilityPtr(std::make_shared<Ab_Cleave>());
 	case AbilityID::DarkBolt:							return AbilityPtr(std::make_shared<Ab_DarkBolt>());
 	case AbilityID::DragonfireBolt:						return AbilityPtr(std::make_shared<Ab_DragonfireBolt>());
 	case AbilityID::ElementalEnergy:					return AbilityPtr(std::make_shared<Ab_ElementalEnergy>());

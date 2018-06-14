@@ -136,7 +136,7 @@ protected:
 	std::vector<Category> categories = {};
 	std::vector<Element> elements = {};
 
-	bool isAttack = false;
+	bool isAttack = false; // if true weapon attack speed is used
 	int range = 0;
 	int aiSearchRange = 0; // determines how many tiles around a target to check, used for enemyAI
 	bool targetOutsideCursor = false; // tells AI if it's possible that the cursor and area of effect may not line up
