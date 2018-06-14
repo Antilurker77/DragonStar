@@ -272,6 +272,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 1:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Cleave, 1.00 });
 			weights.push_back({ AbilityID::PowerStrike, 1.00 });
 			weights.push_back({ AbilityID::RendingSlash, 1.00 });
 			weights.push_back({ AbilityID::FlameSlash, 1.00 });
@@ -289,6 +290,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 2:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Cleave, 1.00 });
 			weights.push_back({ AbilityID::PowerStrike, 1.00 });
 			weights.push_back({ AbilityID::RendingSlash, 1.00 });
 			weights.push_back({ AbilityID::Chopper, 1.00 });
@@ -305,6 +307,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 3:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Cleave, 1.00 });
 			weights.push_back({ AbilityID::PowerStrike, 1.00 });
 			break;
 		case 2:
