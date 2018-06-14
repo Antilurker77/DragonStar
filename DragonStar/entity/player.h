@@ -111,6 +111,10 @@ public:
 	// Attempts to equip an item. Returns true if equipped.
 	bool Equip(std::vector<ItemPtr>& inventory, size_t index, size_t slot);
 
+	// Used for character creation. Assumes piece is equippable and going in
+	// the right slot.
+	bool Equip(ItemPtr item, size_t slot);
+
 	// Unequips an item.
 	void Unequip(std::vector<ItemPtr>& inventory, size_t slot);
 
@@ -142,6 +146,10 @@ public:
 
 	// Teaches a character an ability using a scroll.
 	void LearnAbility(std::vector<ItemPtr>& inventory, size_t index);
+
+	// Teaches a character an ability directly. Used for party initiliaztion,
+	// assumes the ability is legal to learn. Automatically equips it.
+	void LearnAbility(AbilityID abilityID, size_t slot);
 
 	// Equips the ability of a given index into the specified slot.
 	void EquipAbility(size_t index, size_t slot);

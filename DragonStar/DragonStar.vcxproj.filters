@@ -507,6 +507,9 @@
     <ClCompile Include="data\ability\cpp\ab_heartSeeker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scene\playerCreationScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -1095,6 +1098,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_heartSeeker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\playerLoadout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\playerCreationScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

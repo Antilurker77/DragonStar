@@ -99,6 +99,7 @@ void Game::update(float secondsPerUpdate){
 		if (gameState == GameState::MAP_SELECT) {
 			mapSelectScene.SetSeed(partyCreationScene.GetSeed());
 			mapSelectScene.SetParty(partyCreationScene.GetParty());
+			mapSelectScene.SetStartingGold(partyCreationScene.GetStartingGold());
 			mapSelectScene.SetClickBuffer(0.05f);
 		}
 		break;

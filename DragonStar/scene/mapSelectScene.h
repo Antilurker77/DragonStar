@@ -7,8 +7,6 @@
 // in that domain to fight, manage
 // the party, and shop.
 //
-// ...most of this is NYI.
-//
 // ==================================
 
 #pragma once
@@ -52,6 +50,9 @@ public:
 
 	// Sets the party reference.
 	void SetParty(std::vector<ActorPtr>& actors);
+
+	// Sets the starting gold.
+	void SetStartingGold(unsigned int startingGold);
 
 	// Returns the party reference.
 	std::vector<ActorPtr> GetParty();

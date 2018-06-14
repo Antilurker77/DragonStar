@@ -238,6 +238,7 @@
     <ClCompile Include="scene\mainMenuScene.cpp" />
     <ClCompile Include="scene\mapSelectScene.cpp" />
     <ClCompile Include="scene\partyCreationScene.cpp" />
+    <ClCompile Include="scene\playerCreationScene.cpp" />
     <ClCompile Include="ui\abilityBar.cpp" />
     <ClCompile Include="ui\abilityTooltip.cpp" />
     <ClCompile Include="ui\abilityWindow.cpp" />
@@ -435,6 +436,8 @@
     <ClInclude Include="scene\mapNode.h" />
     <ClInclude Include="scene\mapSelectScene.h" />
     <ClInclude Include="scene\partyCreationScene.h" />
+    <ClInclude Include="scene\playerCreationScene.h" />
+    <ClInclude Include="scene\playerLoadout.h" />
     <ClInclude Include="ui\abilityBar.h" />
     <ClInclude Include="ui\abilityTooltip.h" />
     <ClInclude Include="ui\abilityWindow.h" />

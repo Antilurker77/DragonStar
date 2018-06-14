@@ -1218,6 +1218,13 @@ bool Player::Equip(std::vector<ItemPtr>& inventory, size_t index, size_t slot) {
 	}
 }
 
+bool Player::Equip(ItemPtr item, size_t slot) {
+	equipment[slot] = item;
+	setEquipmentTexture(slot);
+	FullHeal();
+	return true;
+}
+
 void Player::Unequip(std::vector<ItemPtr>& inventory, size_t slot) {
 	if (equipment[slot] != nullptr) {
 		inventory.push_back(equipment[slot]);
@@ -1276,6 +1283,10 @@ void Player::LearnAbility(std::vector<ItemPtr>& inventory, size_t index) {
 		learnedAbilities.push_back(s->GetAbilityID());
 		inventory.erase(inventory.begin() + index);
 	}
+}
+
+void Player::LearnAbility(AbilityID abilityID, size_t slot) {
+	abilities[slot] = (Factory::CreateAbility(abilityID));
 }
 
 void Player::EquipAbility(size_t index, size_t slot) {

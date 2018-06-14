@@ -240,6 +240,11 @@ void MapSelectScene::SetParty(std::vector<ActorPtr>& actors) {
 	shopWindow.Initialize(party, inventory, gold);
 }
 
+void MapSelectScene::SetStartingGold(unsigned int startingGold) {
+	gold = startingGold;
+	updateGoldDisplay();
+}
+
 std::vector<ActorPtr> MapSelectScene::GetParty() {
 	return party;
 }
