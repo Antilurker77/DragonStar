@@ -437,6 +437,7 @@
     <ClInclude Include="entity\player.h" />
     <ClInclude Include="hex\hexMath.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="scene\battleScene.h" />
     <ClInclude Include="scene\mainMenuScene.h" />
     <ClInclude Include="scene\mapNode.h" />
@@ -464,12 +465,13 @@
     <ClInclude Include="ui\window.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="gfx\dungeon\dungeon_test.png">
-      <DeploymentContent>true</DeploymentContent>
-    </Image>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ResourceCompile Include="DragonStar.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\gfx\ui\icon\game\ds_0_2_2.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
