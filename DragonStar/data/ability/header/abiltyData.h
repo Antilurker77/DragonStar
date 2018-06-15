@@ -17,6 +17,7 @@
 #include "ab_darkBolt.h"
 #include "ab_dragonBreath.h"
 #include "ab_dragonfireBolt.h"
+#include "ab_dualStrike.h"
 #include "ab_elementalEnergy.h"
 #include "ab_fireball.h"
 #include "ab_fireNova.h"

@@ -47,11 +47,11 @@ bool Ability::IsUsable() {
 			return false;
 		}
 
-		if (!hasRightWeapons()) {
+		if (hasRightWeapons() == false) {
 			return false;
 		}
 
-		if (!customUseConditon()) {
+		if (customUseCondition() == false) {
 			return false;
 		}
 
@@ -473,7 +473,7 @@ bool Ability::hasRightWeapons() {
 	return true;
 }
 
-bool Ability::customUseConditon() {
+bool Ability::customUseCondition() {
 	return true;
 }
 

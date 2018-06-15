@@ -227,7 +227,7 @@ protected:
 	bool hasRightWeapons();
 
 	// Special condition that must be met for ability to be usable.
-	virtual bool customUseConditon();
+	virtual bool customUseCondition();
 
 	// Special condition that must be met on execution. Used for checking map tiles.
 	virtual bool customExecuteCondition(std::vector<ActorPtr>& targets, sf::Vector3i cursor, std::vector<sf::Vector3i> targetArea);

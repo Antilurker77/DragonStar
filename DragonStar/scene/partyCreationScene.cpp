@@ -299,7 +299,7 @@ void PartyCreationScene::testPartyA() {
 		ItemQuality::Common
 	};
 	loadouts[2].Abilities = {
-		AbilityID::PowerStrike
+		AbilityID::DualStrike
 	};
 	loadouts[21].LeftoverGold = 0u;
 
