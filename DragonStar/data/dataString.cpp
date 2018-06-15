@@ -10,9 +10,55 @@
 #include <iomanip>
 #include <sstream>
 
+#include "ability.h"
+#include "factory.h"
+#include "playerClass.h"
+#include "race.h"
 #include "id/category.h"
 #include "id/element.h"
 #include "id/statModType.h"
+
+std::string DataString::CategoryString(std::vector<Category>& categories) {
+	std::string s = "";
+	std::unordered_map<Category, std::string> categoryStrings;
+
+	if (categories[0] == Category::Any) {
+		return s;
+	}
+
+	// text
+	categoryStrings[Category::Damaging] = "Damaging";
+	categoryStrings[Category::Healing] = "Healing";
+	categoryStrings[Category::SingleTarget] = "Single Target";
+	categoryStrings[Category::AreaOfEffect] = "Area of Effect";
+	categoryStrings[Category::Direct] = "Direct";
+	categoryStrings[Category::OverTime] = "Over Time";
+	categoryStrings[Category::Ability] = "Ability";
+	categoryStrings[Category::Attack] = "Attack";
+	categoryStrings[Category::Skill] = "Skill";
+	categoryStrings[Category::Spell] = "Spell";
+	categoryStrings[Category::Unarmed] = "Unarmed";
+	categoryStrings[Category::Sword] = "Sword";
+	categoryStrings[Category::Axe] = "Axe";
+	categoryStrings[Category::Mace] = "Mace";
+	categoryStrings[Category::Shield] = "Shield";
+	categoryStrings[Category::Dagger] = "Dagger";
+	categoryStrings[Category::Claw] = "Claw";
+	categoryStrings[Category::Spear] = "Spear";
+	categoryStrings[Category::Bow] = "Bow";
+	categoryStrings[Category::Wand] = "Wand";
+	categoryStrings[Category::Staff] = "Staff";
+
+	for (size_t i = 0; i < categories.size(); i++) {
+		std::string add = categoryStrings[categories[i]];
+		s += add;
+		if (i + 1 != categories.size()) {
+			s += " ";
+		}
+	}
+
+	return s;
+}
 
 std::string DataString::ElementString(std::vector<Element>& elements, bool capitalize) {
 	std::unordered_map<Element, std::string> elementStrings;
@@ -59,6 +105,10 @@ std::string DataString::ElementString(std::vector<Element>& elements, bool capit
 	}
 
 	return s;
+}
+
+std::string DataString::AbilityString(AbilityID id) {
+	return Factory::CreateAbility(id)->GetName();
 }
 
 std::string DataString::StatModString(StatMod& statMod) {
@@ -156,6 +206,16 @@ std::string DataString::StatModString(StatMod& statMod) {
 		s += ss.str() + " ";
 	}
 
+	if ((unsigned int)statMod.GetAbility() != 0u) {
+		std::string abilityText = DataString::AbilityString(statMod.GetAbility());
+		s += abilityText + " ";
+	}
+
+	std::string categoryText = DataString::CategoryString(statMod.GetCategories());
+	if (categoryText.length() > 0) {
+		s += categoryText + " ";
+	}
+
 	std::string onHitElementText = DataString::ElementString(statMod.GetOnHitElements(), true);
 	if (onHitElementText.length() > 0) {
 		s += onHitElementText + " ";
@@ -190,29 +250,37 @@ std::string DataString::StatModTypeString(StatModType statModType) {
 	case StatModType::Armor:					return "Armor";
 	case StatModType::Damage:					return "Damage";
 	case StatModType::Healing:					return "Healing";
-	case StatModType::ArmorPen:				return "Armor Penetration";
+	case StatModType::ArmorPen:					return "Armor Penetration";
 	case StatModType::CritChance:				return "Critical Strike Chance";
 	case StatModType::CritPower:				return "Critical Strike Damage";
-	case StatModType::CritChanceProtection:	return "Reduced Chance to be Critically Struck";
+	case StatModType::CritChanceProtection:		return "Reduced Chance to be Critically Struck";
 	case StatModType::Haste:					return "Haste";
 	case StatModType::DoubleStrikeChance:		return "Double Strike Chance";
 	case StatModType::CounterChance:			return "Counter Chance";
-	case StatModType::OnHitDamage:			return "Damage on Hit";
+	case StatModType::OnHitDamage:				return "Damage on Hit";
 	case StatModType::HitChance:				return "Hit Chance";
 	case StatModType::DodgeChance:				return "Dodge Chance";
 	case StatModType::BlockChance:				return "Block Chance";
-	case StatModType::MPCostReduction:		return "MP Cost Reduction";
-	case StatModType::SPCostReduction:		return "SP Cost Reduction";
+	case StatModType::MPCostReduction:			return "MP Cost Reduction";
+	case StatModType::SPCostReduction:			return "SP Cost Reduction";
 	case StatModType::CooldownReduction:		return "Cooldown Reduction";
 	case StatModType::StunResistance:			return "Stun Resistance";
-	case StatModType::DisarmResistance:		return "Disarm Resistance";
+	case StatModType::DisarmResistance:			return "Disarm Resistance";
 	case StatModType::SilenceResistance:		return "Silence Resistance";
 	case StatModType::KnockbackResistance:		return "Knockback Resistance";
 	case StatModType::SlowRootResistance:		return "Snare Resistance";
 	case StatModType::DeathResistance:			return "Death Resistance";
 	case StatModType::MovementSpeed:			return "Movement Speed";
-	case StatModType::GoldFind:				return "Gold Find";
-	case StatModType::EXPBoost:				return "EXP Gained";
+	case StatModType::GoldFind:					return "Gold Find";
+	case StatModType::EXPBoost:					return "EXP Gained";
 	default:									return "Unknown";
 	}
+}
+
+std::string DataString::RaceString(RaceID id) {
+	return Factory::CreateRace(id)->GetName();
+}
+
+std::string DataString::PlayerClassString(PlayerClassID id) {
+	return Factory::CreatePlayerClass(id)->GetName();
 }
