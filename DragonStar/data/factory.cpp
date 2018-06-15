@@ -35,6 +35,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::Boulder:							return AbilityPtr(std::make_shared<Ab_Boulder>());
 	case AbilityID::Chopper:							return AbilityPtr(std::make_shared<Ab_Chopper>());
 	case AbilityID::Cleave:								return AbilityPtr(std::make_shared<Ab_Cleave>());
+	case AbilityID::CrushArmor:							return AbilityPtr(std::make_shared<Ab_CrushArmor>());
 	case AbilityID::DarkBolt:							return AbilityPtr(std::make_shared<Ab_DarkBolt>());
 	case AbilityID::DragonfireBolt:						return AbilityPtr(std::make_shared<Ab_DragonfireBolt>());
 	case AbilityID::ElementalEnergy:					return AbilityPtr(std::make_shared<Ab_ElementalEnergy>());
@@ -80,6 +81,7 @@ AuraPtr Factory::CreateAura(AuraID id) {
 	switch (id) {
 	case AuraID::BandOfTwinDisciplines:					return AuraPtr(std::make_shared<Au_BandOfTwinDisciplines>());
 	case AuraID::CommandingShout:						return AuraPtr(std::make_shared<Au_CommandingShout>());
+	case AuraID::CrushArmor:							return AuraPtr(std::make_shared<Au_CrushArmor>());
 	case AuraID::ElementalEnergy:						return AuraPtr(std::make_shared<Au_ElementalEnergy>());
 	case AuraID::FlameSlash:							return AuraPtr(std::make_shared<Au_FlameSlash>());
 	case AuraID::Gale:									return AuraPtr(std::make_shared<Au_Gale>());

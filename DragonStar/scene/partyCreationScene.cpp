@@ -8,6 +8,7 @@
 
 #include "../core/random.h"
 #include "../core/settings.h"
+#include "../data/dataString.h"
 #include "../data/equipment.h"
 #include "../data/factory.h"
 #include "../data/id/abilityID.h"
@@ -152,7 +153,7 @@ PlayerLoadout PartyCreationScene::GetSelectedPlayerLoadout() {
 void PartyCreationScene::SetPlayerTextAndButtons() {
 	for (size_t i = 0; i < loadouts.size(); i++) {
 		if (loadouts[i].HasData) {
-			playerText[i].setString(loadouts[i].Name + "\nRace Class");
+			playerText[i].setString(loadouts[i].Name + "\n" + DataString::RaceString(loadouts[i].Race) + " " + DataString::PlayerClassString(loadouts[i].PlayerClass));
 			playerCreationButtons[i].SetString("Edit", playerButtonSize);
 		}
 		else {
@@ -230,7 +231,7 @@ void PartyCreationScene::testPartyA() {
 		ItemQuality::Common
 	};
 	loadouts[0].Abilities = {
-		AbilityID::PowerStrike
+		AbilityID::CrushArmor
 	};
 	loadouts[0].LeftoverGold = 25u;
 

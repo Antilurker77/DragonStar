@@ -13,6 +13,7 @@
 #include "ab_chopper.h"
 #include "ab_cleave.h"
 #include "ab_commandingShout.h"
+#include "ab_crushArmor.h"
 #include "ab_darkBolt.h"
 #include "ab_dragonBreath.h"
 #include "ab_dragonfireBolt.h"

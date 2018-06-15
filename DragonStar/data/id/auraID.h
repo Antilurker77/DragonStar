@@ -12,6 +12,7 @@ enum class AuraID {
 	Undefined = 0,
 	BandOfTwinDisciplines,
 	CommandingShout,
+	CrushArmor,
 	ElementalEnergy,
 	FlameSlash,
 	Gale,
