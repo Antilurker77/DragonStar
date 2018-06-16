@@ -20,7 +20,7 @@ MessageLog::MessageLog() {
 	}
 
 	// background options
-	background.setFillColor(sf::Color(0, 0, 0, 127));
+	background.setFillColor(sf::Color(0, 0, 0, 191));
 }
 
 void MessageLog::Update() {
