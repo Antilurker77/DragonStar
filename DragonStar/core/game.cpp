@@ -12,7 +12,7 @@ Settings settings;
 const sf::Time Game::timePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game() :
-	window(sf::VideoMode(settings.ScreenWidth, settings.ScreenHeight), "Dragon Star v0.2.2"),
+	window(sf::VideoMode(settings.ScreenWidth, settings.ScreenHeight), "Dragon Star v0.2.3"),
 	camera(sf::Vector2f(0, 0), sf::Vector2f(settings.ScreenWidth, settings.ScreenHeight)),
 	uiView(sf::Vector2f(settings.ScreenWidth / 2, settings.ScreenHeight / 2), sf::Vector2f(settings.ScreenWidth, settings.ScreenHeight))
 {
@@ -22,7 +22,7 @@ Game::Game() :
 	battleScene.SetCamera(&camera);
 
 	if (settings.Fullscreen) {
-		window.create(sf::VideoMode(settings.ScreenWidth, settings.ScreenHeight), "Dragon Star v0.2.2", sf::Style::Fullscreen);
+		window.create(sf::VideoMode(settings.ScreenWidth, settings.ScreenHeight), "Dragon Star v0.2.3", sf::Style::Fullscreen);
 	}
 
 	// VSync

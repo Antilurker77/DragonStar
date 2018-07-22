@@ -22,7 +22,7 @@ MainMenuScene::MainMenuScene() {
 
 	versionText.setFont(*font);
 	versionText.setCharacterSize(32);
-	versionText.setString("v0.2.2");
+	versionText.setString("v0.2.3");
 
 	// Button Setup
 	newGameButton.SetString("New Game", 36);
