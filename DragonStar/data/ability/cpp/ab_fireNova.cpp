@@ -63,7 +63,7 @@ std::string Ab_FireNova::GetDescription() {
 	}
 
 	std::string desc = "Erupt with fire, dealing #damage " + damage + " #default fire damage to adjacent enemies.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

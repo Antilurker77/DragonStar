@@ -59,7 +59,7 @@ std::string Ab_DragonfireBolt::GetDescription() {
 	}
 
 	std::string desc = "Shoot a bolt of draconic flames at the target, dealing #damage " + damage + " #default fire damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

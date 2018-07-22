@@ -61,7 +61,7 @@ std::string Ab_ShadowEnergy::GetDescription() {
 	}
 	
 	std::string desc = "Attacks deal #damage " + damage + " #default dark damage on hit.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

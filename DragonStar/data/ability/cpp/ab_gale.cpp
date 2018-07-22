@@ -59,7 +59,7 @@ std::string Ab_Gale::GetDescription() {
 	}
 
 	std::string desc = "Launch a slicing gale at the target, dealing #damage " + damage + " #default wind damage. Reduces the cast time of Gale by 0.1s. Stacks up to 5 times and lasts 5s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

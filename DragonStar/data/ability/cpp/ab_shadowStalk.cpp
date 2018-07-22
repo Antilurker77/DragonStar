@@ -76,7 +76,7 @@ std::string Ab_ShadowStalk::GetDescription() {
 	}
 
 	std::string desc = "Teleport to a random tile adjacent to the target, then deal #damage " + damage + " #default dark damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

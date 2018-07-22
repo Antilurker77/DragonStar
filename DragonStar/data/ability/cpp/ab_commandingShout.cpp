@@ -52,7 +52,7 @@ std::vector<sf::Vector3i> Ab_CommandingShout::GetTargetArea(sf::Vector3i selecte
 
 std::string Ab_CommandingShout::GetDescription() {
 	std::string desc = "All allies deal 5% more damage and take 5% less damage for 12s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

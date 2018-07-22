@@ -72,7 +72,7 @@ std::string Ab_PowerStrike::GetDescription() {
 	}
 
 	std::string desc = "Deal a powerful strike against the target, dealing #damage " + damage + " #default weapon damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires melee weapon (except staff).";
 

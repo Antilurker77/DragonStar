@@ -58,7 +58,7 @@ std::string Ab_Shock::GetDescription() {
 	}
 
 	std::string desc = "Electrocute the target, dealing #damage " + damage + " #default lightning damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

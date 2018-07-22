@@ -76,7 +76,7 @@ std::string Ab_DualStrike::GetDescription() {
 
 	std::string desc = "Strike the target fiercly with both weapons, dealing #damage " + damageMainHand + " #default weapon damage with your main hand and";
 	desc += " #damage " + damageOffHand + " #default weapon damage with your off-hand" + damageTotal;
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires dual wielding weapons.";
 

@@ -59,7 +59,7 @@ std::string Ab_PowerShot::GetDescription() {
 	}
 
 	std::string desc = "Fire a powerful shot against the target, dealing #damage " + damage + " #default weapon damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires bow.";
 

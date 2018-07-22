@@ -60,7 +60,7 @@ std::string Ab_LightBolt::GetDescription() {
 	}
 
 	std::string desc = "Shoot a bolt of light at the target, dealing #damage " + damage + " #default light damage. Heals for 50% of the damage dealt.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

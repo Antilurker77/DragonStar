@@ -77,7 +77,7 @@ std::string Ab_DragonBreath::GetDescription() {
 	}
 
 	std::string desc = "Breathe fire, dealing #damage " + damage + " #default fire damage to all enemies in a cone of length 2 in front of you.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

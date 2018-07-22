@@ -66,7 +66,7 @@ std::string Ab_FlameSlash::GetDescription() {
 	}
 
 	std::string desc = "Coat your sword in flames and slash the target, dealing #damage " + damage + " #default fire damage and increasing the damage of your next fire ability by 10%. Lasts 8s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires sword.";
 

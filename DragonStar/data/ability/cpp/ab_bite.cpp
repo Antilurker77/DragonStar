@@ -51,7 +51,7 @@ std::string Ab_Bite::GetDescription() {
 	}
 
 	std::string desc = "Deals #damage " + damage + " #default weapon damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

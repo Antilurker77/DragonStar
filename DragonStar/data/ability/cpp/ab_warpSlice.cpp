@@ -81,7 +81,7 @@ std::string Ab_WarpSlice::GetDescription() {
 	}
 
 	std::string desc = "Teleport to a random tile adjacent to the target, then deal #damage " + damage + " #default arcane damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires sword.";
 

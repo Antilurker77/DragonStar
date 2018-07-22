@@ -62,7 +62,7 @@ std::string Ab_CrushArmor::GetDescription() {
 
 	std::string desc = "Swing your mace with tremendous force, dealing #damage " + damage + " #default weapon damage and";
 	desc += " reducing the target's armor by 20% for 12s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires mace.";
 

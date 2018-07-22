@@ -59,7 +59,7 @@ std::string Ab_Boulder::GetDescription() {
 	}
 
 	std::string desc = "Conjure a huge boulder and throw it at the target, dealing #damage " + damage + " #default earth damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

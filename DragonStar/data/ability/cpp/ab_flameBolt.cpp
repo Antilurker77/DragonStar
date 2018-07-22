@@ -58,7 +58,7 @@ std::string Ab_FlameBolt::GetDescription() {
 	}
 
 	std::string desc = "Shoot a bolt of fire at the target, dealing #damage " + damage + " #default fire damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

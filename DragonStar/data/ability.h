@@ -193,6 +193,8 @@ protected:
 	int calcCooldown = cooldown; // how much cooldown is actually applied when ability is used
 	int currentCooldown = 0;
 
+	const size_t charPerLine = 42u;
+
 	// Displays the casting message in the message log.
 	void outputCasting();
 

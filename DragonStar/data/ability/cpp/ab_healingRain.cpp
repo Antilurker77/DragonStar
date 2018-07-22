@@ -67,7 +67,7 @@ std::string Ab_HealingRain::GetDescription() {
 	}
 
 	std::string desc = "Call rain on a targeted area of radius 2, healing #heal " + heal + " #default HP every 1s for 20s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

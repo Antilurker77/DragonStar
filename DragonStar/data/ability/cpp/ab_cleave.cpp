@@ -88,7 +88,7 @@ std::string Ab_Cleave::GetDescription() {
 	}
 
 	std::string desc = "Strike in an arc in front of you, dealing #damage " + damage + " #default weapon damage to all enemies hit.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires sword, axe, or mace.";
 

@@ -59,7 +59,7 @@ std::string Ab_Obliterate::GetDescription() {
 	}
 
 	std::string desc = "Gather an immense amount of dark energy and fire it at the target, dealing #damage " + damage + " #default dark damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

@@ -58,7 +58,7 @@ std::string Ab_WaterBolt::GetDescription() {
 	}
 
 	std::string desc = "Shoot a bolt of water at the target, dealing #damage " + damage + " #default water damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

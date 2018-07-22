@@ -77,7 +77,7 @@ std::string Ab_PrismaticBolt::GetDescription() {
 
 	std::string desc = "Shoot a bolt of elemental energy at the target, dealing #damage " + damage +
 		" #default elemental damage and increasing the amount of elemental damage the target takes by 5% for 8s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

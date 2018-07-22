@@ -58,7 +58,7 @@ std::string Ab_Icicle::GetDescription() {
 	}
 
 	std::string desc = "Hurl an icicle at the target, dealing #damage " + damage + " #default ice damage and reducing the target's movement speed by 20% for 5s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

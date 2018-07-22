@@ -63,7 +63,7 @@ std::string Ab_Attack::GetDescription() {
 	}
 	
 	desc += ", dealing #damage " + damage + " #default weapon damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

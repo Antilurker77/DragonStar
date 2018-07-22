@@ -71,7 +71,7 @@ std::string Ab_Fireball::GetDescription() {
 
 	std::string desc = "Hurl a massive ball of fire at the target location, dealing #damage " + damageCenter + " #default fire damage " +
 		"to the enemy at the center and #damage " + damageOutside + " #default fire damage to the rest.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

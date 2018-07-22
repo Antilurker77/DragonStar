@@ -73,7 +73,7 @@ std::vector<sf::Vector3i> Ab_TerrifyingHowl::GetTargetArea(sf::Vector3i selected
 
 std::string Ab_TerrifyingHowl::GetDescription() {
 	std::string desc = "Reduce the damage dealt and hit chance of all enemies in a cone of length 3 by 20% for 10s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

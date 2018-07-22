@@ -59,7 +59,7 @@ std::string Ab_ArcaneBlast::GetDescription() {
 	}
 
 	std::string desc = "Blast the target with arcane energy, dealing #damage " + damage + " #default arcane damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

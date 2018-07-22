@@ -60,7 +60,7 @@ std::string Ab_HeartSeeker::GetDescription() {
 
 	std::string desc = "Aim for the target's heart, dealing #damage " + damage + " #default weapon damage and inflicting Heart Broken,";
 	desc += "reducing VIT by 25 for 15s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	desc += "\n\nRequires bow.";
 

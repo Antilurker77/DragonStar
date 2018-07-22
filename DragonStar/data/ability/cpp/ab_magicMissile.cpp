@@ -59,7 +59,7 @@ std::string Ab_MagicMissile::GetDescription() {
 	}
 
 	std::string desc = "Shoot a missile of arcane energy at the target, dealing #damage " + damage + " #default arcane damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

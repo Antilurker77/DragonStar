@@ -58,7 +58,7 @@ std::string Ab_MendWounds::GetDescription() {
 
 	std::string desc = "Heal an ally with natural energies, restoring #heal " + mainHeal + " #default HP plus an additional #heal "
 		+ hotHeal + " #default HP every 1s for 4s.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

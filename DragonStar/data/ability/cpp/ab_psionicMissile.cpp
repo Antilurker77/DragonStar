@@ -59,7 +59,7 @@ std::string Ab_PsionicMissile::GetDescription() {
 	}
 
 	std::string desc = "Create a missile of psionic energy and shoot it at the target, dealing #damage " + damage + " #default mind damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

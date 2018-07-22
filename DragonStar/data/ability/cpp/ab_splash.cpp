@@ -66,7 +66,7 @@ std::string Ab_Splash::GetDescription() {
 	}
 
 	std::string desc = "Splash water on to a targeted area of radius 1, dealing #damage " + damage + " #default water damage.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }

@@ -55,7 +55,7 @@ std::string Ab_Heal::GetDescription() {
 	}
 
 	std::string desc = "Heal an ally with divine light, restoring #heal " + healing + " #default HP.";
-	desc = WordWrap::WrapString(desc, 42);
+	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
 }
