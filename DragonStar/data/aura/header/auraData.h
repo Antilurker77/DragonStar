@@ -11,6 +11,7 @@
 #include "au_crushArmor.h"
 #include "au_elementalEnergy.h"
 #include "au_flameSlash.h"
+#include "au_frost.h"
 #include "au_gale.h"
 #include "au_healingRain.h"
 #include "au_heartBroken.h"

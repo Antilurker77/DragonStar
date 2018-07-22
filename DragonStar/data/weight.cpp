@@ -375,6 +375,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 			weights.push_back({ AbilityID::DragonfireBolt, 1.00 });
 			weights.push_back({ AbilityID::FireNova, 1.00 });
 			weights.push_back({ AbilityID::Icicle, 1.00 });
+			weights.push_back({ AbilityID::Frost, 1.00 });
 			weights.push_back({ AbilityID::Shock, 1.00 });
 			break;
 		case 2:

@@ -23,6 +23,7 @@
 #include "ab_fireNova.h"
 #include "ab_flameBolt.h"
 #include "ab_flameSlash.h"
+#include "ab_frost.h"
 #include "ab_gale.h"
 #include "ab_heal.h"
 #include "ab_healingRain.h"

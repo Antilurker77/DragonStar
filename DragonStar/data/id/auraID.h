@@ -15,6 +15,7 @@ enum class AuraID {
 	CrushArmor,
 	ElementalEnergy,
 	FlameSlash,
+	Frost,
 	Gale,
 	HealingRain,
 	HeartBroken,
