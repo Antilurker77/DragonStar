@@ -25,6 +25,7 @@
 #include "ab_flameSlash.h"
 #include "ab_frost.h"
 #include "ab_gale.h"
+#include "ab_grandHeal.h"
 #include "ab_heal.h"
 #include "ab_healingRain.h"
 #include "ab_heartSeeker.h"

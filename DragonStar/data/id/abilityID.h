@@ -48,6 +48,7 @@ enum class AbilityID {
 	Gale,
 	GaleSweep,
 	GlacialCrash,
+	GrandHeal,
 	GroupHeal,
 	Heal,
 	HealingRain,

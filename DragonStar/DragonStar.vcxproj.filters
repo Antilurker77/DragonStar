@@ -528,6 +528,9 @@
     <ClCompile Include="data\ability\cpp\ab_frost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_grandHeal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -1143,6 +1146,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_frost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_grandHeal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
