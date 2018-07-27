@@ -6,6 +6,8 @@
 
 #include "weight.h"
 
+#include <array>
+
 #include "id/abilityID.h"
 #include "id/equipmentID.h"
 #include "id/formationID.h"
@@ -194,74 +196,30 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	std::vector<AbilityWeight> weights;
 
 	// Determine ability tier.
-	double tierRoll = Random::RandDouble(mt, 0.0, 1.0);
+	//double tierRoll = Random::RandDouble(mt, 0.0, 1.0);
+	int tierRoll = Random::RandInt(mt, 1, 100);
 	int tierPicked = 1;
 
 	// Determine which ability tier to take from.
-	switch (tier) {
-	case 1:
-		if (tierRoll >= 0.9) {
-			tierPicked = 2;
-		}
-		else {
-			tierPicked = 1;
-		}
-		break;
-	case 2:
-		if (tierRoll >= 0.8) {
-			tierPicked = 2;
-		}
-		else {
-			tierPicked = 1;
-		}
-		break;
-	case 3:
-		if (tierRoll >= 0.9) {
+	if (tier <= 6 && tier >= 1) {
+		std::array<std::array<int, 2>, 6> tierWeights = { {
+			{90, 100},
+			{80, 100},
+			{60, 90},
+			{45, 85},
+			{10, 40},
+			{10, 30}
+		} };
+
+		if (tierRoll > tierWeights[tier - 1][1]) {
 			tierPicked = 3;
 		}
-		else if (tierRoll >= 0.6) {
-			tierPicked = 1;
-		}
-		else {
-			tierPicked = 2;
-		}
-		break;
-	case 4:
-		if (tierRoll >= 0.85) {
-			tierPicked = 3;
-		}
-		else if (tierRoll >= 0.65) {
-			tierPicked = 1;
-		}
-		else {
-			tierPicked = 2;
-		}
-		break;
-	case 5:
-		if (tierRoll >= 0.9) {
-			tierPicked = 1;
-		}
-		else if (tierRoll >= 0.6) {
+		else if (tierRoll > tierWeights[tier - 1][0]) {
 			tierPicked = 2;
 		}
 		else {
-			tierPicked = 3;
-		}
-		break;
-	case 6:
-		if (tierRoll >= 0.9) {
 			tierPicked = 1;
 		}
-		else if (tierRoll >= 0.7) {
-			tierPicked = 2;
-		}
-		else {
-			tierPicked = 3;
-		}
-		break;
-	default:
-		tierPicked = 1;
-		break;
 	}
 
 	// Roll ID
