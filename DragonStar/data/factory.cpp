@@ -54,6 +54,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::LightBolt:							return AbilityPtr(std::make_shared<Ab_LightBolt>());
 	case AbilityID::MagicMissile:						return AbilityPtr(std::make_shared<Ab_MagicMissile>());
 	case AbilityID::MendWounds:							return AbilityPtr(std::make_shared<Ab_MendWounds>());
+	case AbilityID::MendingWaters:						return AbilityPtr(std::make_shared<Ab_MendingWaters>());
 	case AbilityID::Obliterate:							return AbilityPtr(std::make_shared<Ab_Obliterate>());
 	case AbilityID::PowerShot:							return AbilityPtr(std::make_shared<Ab_PowerShot>());
 	case AbilityID::PowerStrike:						return AbilityPtr(std::make_shared<Ab_PowerStrike>());
@@ -93,6 +94,7 @@ AuraPtr Factory::CreateAura(AuraID id) {
 	case AuraID::HeartBroken:							return AuraPtr(std::make_shared<Au_HeartBroken>());
 	case AuraID::Icicle:								return AuraPtr(std::make_shared<Au_Icicle>());
 	case AuraID::MendWounds:							return AuraPtr(std::make_shared<Au_MendWounds>());
+	case AuraID::MendingWaters:							return AuraPtr(std::make_shared<Au_MendingWaters>());
 	case AuraID::PrismaticBolt:							return AuraPtr(std::make_shared<Au_PrismaticBolt>());
 	case AuraID::RendingSlash:							return AuraPtr(std::make_shared<Au_RendingSlash>());
 	case AuraID::ShadowEnergy:							return AuraPtr(std::make_shared<Au_ShadowEnergy>());

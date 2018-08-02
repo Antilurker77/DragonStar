@@ -17,6 +17,7 @@
 #include "au_heartBroken.h"
 #include "au_icicle.h"
 #include "au_mendWounds.h"
+#include "au_mendingWaters.h"
 #include "au_prismaticBolt.h"
 #include "au_rendingSlash.h"
 #include "au_shadowEnergy.h"

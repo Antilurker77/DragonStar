@@ -21,6 +21,7 @@ enum class AuraID {
 	HeartBroken,
 	Icicle,
 	MendWounds,
+	MendingWaters,
 	PrismaticBolt,
 	RendingSlash,
 	ShadowEnergy,

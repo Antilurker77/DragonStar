@@ -33,6 +33,7 @@
 #include "ab_lightBolt.h"
 #include "ab_magicMissile.h"
 #include "ab_mendWounds.h"
+#include "ab_mendingWaters.h"
 #include "ab_obliterate.h"
 #include "ab_powerShot.h"
 #include "ab_powerStrike.h"

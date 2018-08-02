@@ -404,6 +404,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 		switch (tierPicked) {
 		case 1:
 			weights.push_back({ AbilityID::MendWounds, 1.00 });
+			weights.push_back({ AbilityID::MendingWaters, 1.00 });
 			break;
 		case 2:
 			break;
