@@ -58,11 +58,12 @@ std::string Ab_Attack::GetDescription() {
 		if (user->IsDualWielding()) {
 			damageOffHand = std::to_string(Combat::WeaponAttackEstimate(user, 1.0, true, abilityOptions));
 			desc += " with both weapons, dealing #damage " + damage + " #default weapon damage with your main hand and #damage " + damageOffHand + " #default weapon damage with your off-hand.";
-			return desc;
+		}
+		else {
+			desc += ", dealing #damage " + damage + " #default weapon damage.";
 		}
 	}
 	
-	desc += ", dealing #damage " + damage + " #default weapon damage.";
 	desc = WordWrap::WrapString(desc, charPerLine);
 
 	return desc;
