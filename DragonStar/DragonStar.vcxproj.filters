@@ -537,6 +537,12 @@
     <ClCompile Include="data\ability\cpp\ab_mendingWaters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\aura\cpp\au_spellpower.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_spellpower.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -1161,6 +1167,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_mendingWaters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\aura\header\au_spellpower.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_spellpower.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,6 +22,7 @@
 #include "au_rendingSlash.h"
 #include "au_shadowEnergy.h"
 #include "au_slimeTouch.h"
+#include "au_spellpower.h"
 #include "au_terrifyingHowl.h"
 #include "au_venom.h"
 

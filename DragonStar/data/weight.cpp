@@ -325,6 +325,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 7:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Spellpower, 0.50 });
 			weights.push_back({ AbilityID::PrismaticBolt, 1.00 });
 			weights.push_back({ AbilityID::ElementalEnergy, 1.00 });
 			weights.push_back({ AbilityID::MagicMissile, 1.00 });
@@ -349,6 +350,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 8:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Spellpower, 0.50 });
 			weights.push_back({ AbilityID::PrismaticBolt, 1.00 });
 			weights.push_back({ AbilityID::ElementalEnergy, 1.00 });
 			weights.push_back({ AbilityID::Venom, 1.00 });
@@ -369,6 +371,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 9:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Spellpower, 0.50 });
 			weights.push_back({ AbilityID::PrismaticBolt, 1.00 });
 			weights.push_back({ AbilityID::ElementalEnergy, 1.00 });
 			weights.push_back({ AbilityID::PsionicMissile, 1.00 });
@@ -388,6 +391,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 10:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Spellpower, 0.50 });
 			weights.push_back({ AbilityID::Heal, 1.00 });
 			weights.push_back({ AbilityID::GrandHeal, 1.00 });
 			break;
@@ -403,6 +407,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 	case 11:
 		switch (tierPicked) {
 		case 1:
+			weights.push_back({ AbilityID::Spellpower, 0.50 });
 			weights.push_back({ AbilityID::MendWounds, 1.00 });
 			weights.push_back({ AbilityID::MendingWaters, 1.00 });
 			break;

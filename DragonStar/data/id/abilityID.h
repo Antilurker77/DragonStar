@@ -82,6 +82,7 @@ enum class AbilityID {
 	ShieldSlam,
 	Shock,
 	SonicBlast,
+	Spellpower,
 	SpiralShot,
 	Splash,
 	Sprint,

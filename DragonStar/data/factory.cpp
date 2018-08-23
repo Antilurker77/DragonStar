@@ -64,6 +64,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::ShadowEnergy:						return AbilityPtr(std::make_shared<Ab_ShadowEnergy>());
 	case AbilityID::ShadowStalk:						return AbilityPtr(std::make_shared<Ab_ShadowStalk>());
 	case AbilityID::Shock:								return AbilityPtr(std::make_shared<Ab_Shock>());
+	case AbilityID::Spellpower:							return AbilityPtr(std::make_shared<Ab_Spellpower>());
 	case AbilityID::Splash:								return AbilityPtr(std::make_shared<Ab_Splash>());
 	case AbilityID::TerrifyingHowl:						return AbilityPtr(std::make_shared<Ab_TerrifyingHowl>());
 	case AbilityID::Venom:								return AbilityPtr(std::make_shared<Ab_Venom>());
@@ -99,6 +100,7 @@ AuraPtr Factory::CreateAura(AuraID id) {
 	case AuraID::RendingSlash:							return AuraPtr(std::make_shared<Au_RendingSlash>());
 	case AuraID::ShadowEnergy:							return AuraPtr(std::make_shared<Au_ShadowEnergy>());
 	case AuraID::SlimeTouch:							return AuraPtr(std::make_shared<Au_SlimeTouch>());
+	case AuraID::Spellpower:							return AuraPtr(std::make_shared<Au_Spellpower>());
 	case AuraID::TerrifyingHowl:						return AuraPtr(std::make_shared<Au_TerrifyingHowl>());
 	case AuraID::Venom:									return AuraPtr(std::make_shared<Au_Venom>());
 
