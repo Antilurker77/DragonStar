@@ -45,6 +45,7 @@
 #include "ab_shock.h"
 #include "ab_spellpower.h"
 #include "ab_splash.h"
+#include "ab_tempest.h"
 #include "ab_terrifyingHowl.h"
 #include "ab_venom.h"
 #include "ab_warpSlice.h"

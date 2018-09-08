@@ -27,6 +27,7 @@ enum class AuraID {
 	ShadowEnergy,
 	SlimeTouch,
 	Spellpower,
+	Tempest,
 	TerrifyingHowl,
 	Venom
 };

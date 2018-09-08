@@ -140,6 +140,7 @@
     <ClCompile Include="data\ability\cpp\ab_shock.cpp" />
     <ClCompile Include="data\ability\cpp\ab_spellpower.cpp" />
     <ClCompile Include="data\ability\cpp\ab_splash.cpp" />
+    <ClCompile Include="data\ability\cpp\ab_tempest.cpp" />
     <ClCompile Include="data\ability\cpp\ab_terrifyingHowl.cpp" />
     <ClCompile Include="data\ability\cpp\ab_venom.cpp" />
     <ClCompile Include="data\ability\cpp\ab_warpSlice.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="data\aura\cpp\au_shadowEnergy.cpp" />
     <ClCompile Include="data\aura\cpp\au_slimeTouch.cpp" />
     <ClCompile Include="data\aura\cpp\au_spellpower.cpp" />
+    <ClCompile Include="data\aura\cpp\au_tempest.cpp" />
     <ClCompile Include="data\aura\cpp\au_terrifyingHowl.cpp" />
     <ClCompile Include="data\aura\cpp\au_venom.cpp" />
     <ClCompile Include="data\enemyInfo.cpp" />
@@ -319,6 +321,7 @@
     <ClInclude Include="data\ability\header\ab_shock.h" />
     <ClInclude Include="data\ability\header\ab_spellpower.h" />
     <ClInclude Include="data\ability\header\ab_splash.h" />
+    <ClInclude Include="data\ability\header\ab_tempest.h" />
     <ClInclude Include="data\ability\header\ab_terrifyingHowl.h" />
     <ClInclude Include="data\ability\header\ab_venom.h" />
     <ClInclude Include="data\ability\header\ab_healingRain.h" />
@@ -344,6 +347,7 @@
     <ClInclude Include="data\aura\header\au_shadowEnergy.h" />
     <ClInclude Include="data\aura\header\au_slimeTouch.h" />
     <ClInclude Include="data\aura\header\au_spellpower.h" />
+    <ClInclude Include="data\aura\header\au_tempest.h" />
     <ClInclude Include="data\aura\header\au_terrifyingHowl.h" />
     <ClInclude Include="data\aura\header\au_venom.h" />
     <ClInclude Include="data\enemy\header\en_arcaneSentry.h" />

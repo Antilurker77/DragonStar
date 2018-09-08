@@ -1,10 +1,10 @@
 // ==================================
 //
-// au_crushArmor.cpp
+// au_tempest.cpp
 //
 // ==================================
 
-#include "../header/au_crushArmor.h"
+#include "../header/au_tempest.h"
 
 #include "../../id/abilityID.h"
 #include "../../id/attribute.h"
@@ -13,22 +13,25 @@
 #include "../../id/element.h"
 #include "../../id/statModType.h"
 
-Au_CrushArmor::Au_CrushArmor() {
-	name = "Crush Armor";
-	id = AuraID::CrushArmor;
-	icon = "crush_armor.png";
+Au_Tempest::Au_Tempest() {
+	name = "Tempest";
+	id = AuraID::Tempest;
+	icon = "tempest.png";
 
 	categories = {
+		Category::AreaOfEffect,
 		Category::Attack,
 		Category::Skill
 	};
 
 	elements = {
-		Element::Physical
+		Element::Lightning,
+		Element::Water,
+		Element::Wind
 	};
 
 	statMods = {
-		StatMod(StatModType::ArmorMult, -0.2)
+		StatMod(StatModType::DamageTaken, 0.10,{ Category::Any },{ Element::Lightning, Element::Water, Element::Wind })
 	};
 
 	canCrit = false;
@@ -40,7 +43,6 @@ Au_CrushArmor::Au_CrushArmor() {
 	fixedDuration = false; // if true, ignore VIT in calculations
 	unlimitedDuration = false;
 	consumedOnUse = false; // if true, aura will expire when called in combat calculations
-	isBuff = false;
 
 	isStun = false;
 	isDisarm = false;
@@ -53,6 +55,6 @@ Au_CrushArmor::Au_CrushArmor() {
 	removeAllStacksOnExpiration = false; // Determines whether all stacks or 1 stack are removed when aura expires
 }
 
-std::string Au_CrushArmor::GetDescription() {
-	return "Reduces armor by 20%.";
+std::string Au_Tempest::GetDescription() {
+	return "Increases lightning, water, and wind damage\ntaken by 10%.";
 }
