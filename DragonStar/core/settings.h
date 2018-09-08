@@ -29,8 +29,8 @@ struct BattleKeys {
 
 struct Settings {
 	// Window Size Settings
-	int ScreenWidth = 1280;
-	int ScreenHeight = 720;
+	int ScreenWidth = 1600;
+	int ScreenHeight = 900;
 
 	bool EnableVSync = true;
 	bool Fullscreen = false;
