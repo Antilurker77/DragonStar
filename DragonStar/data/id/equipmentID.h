@@ -137,6 +137,7 @@ enum class EquipmentID {
 	DraconicStaff,
 
 	// Unique Staff
+	StaffOfTheNovice,
 
 	// Generic Shield
 	IronShield,

@@ -14,3 +14,11 @@ class Eq_WoodenStaff : public Equipment {
 public:
 	Eq_WoodenStaff();
 };
+
+
+// --------------------------------------------------------------------
+
+class Eq_StaffOfTheNovice : public Equipment {
+public:
+	Eq_StaffOfTheNovice();
+};
