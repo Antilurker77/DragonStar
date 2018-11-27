@@ -14,3 +14,8 @@ class Eq_IronGreatsword : public Equipment {
 public:
 	Eq_IronGreatsword();
 };
+
+class Eq_HowlingSands : public Equipment {
+public:
+	Eq_HowlingSands();
+};

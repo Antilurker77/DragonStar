@@ -31,6 +31,7 @@ enum class EquipmentID {
 	DragoniteGreatsword,
 
 	// Unique 2H Sword
+	HowlingSands,
 	BladeOfTheFallenKingdom,
 
 	// Generic 1H Axe
