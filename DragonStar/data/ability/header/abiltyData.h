@@ -47,6 +47,7 @@
 #include "ab_splash.h"
 #include "ab_tempest.h"
 #include "ab_terrifyingHowl.h"
+#include "ab_trident.h"
 #include "ab_venom.h"
 #include "ab_warpSlice.h"
 #include "ab_waterBolt.h"

@@ -549,6 +549,12 @@
     <ClCompile Include="data\ability\cpp\ab_tempest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data\aura\cpp\au_trident.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data\ability\cpp\ab_trident.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -1185,6 +1191,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data\ability\header\ab_tempest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\ability\header\ab_trident.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data\aura\header\au_trident.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

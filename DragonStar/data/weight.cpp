@@ -306,6 +306,7 @@ AbilityID Weight::GetRandomAb(std::mt19937_64& mt, int tier) {
 			weights.push_back({ AbilityID::Tempest, 1.00 });
 			break;
 		case 3:
+			weights.push_back({ AbilityID::Trident, 1.00 });
 			break;
 		default:
 			break;

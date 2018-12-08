@@ -68,6 +68,7 @@ AbilityPtr Factory::CreateAbility(AbilityID id) {
 	case AbilityID::Splash:								return AbilityPtr(std::make_shared<Ab_Splash>());
 	case AbilityID::Tempest:							return AbilityPtr(std::make_shared<Ab_Tempest>());
 	case AbilityID::TerrifyingHowl:						return AbilityPtr(std::make_shared<Ab_TerrifyingHowl>());
+	case AbilityID::Trident:							return AbilityPtr(std::make_shared<Ab_Trident>());
 	case AbilityID::Venom:								return AbilityPtr(std::make_shared<Ab_Venom>());
 	case AbilityID::WarpSlice:							return AbilityPtr(std::make_shared<Ab_WarpSlice>());
 	case AbilityID::WaterBolt:							return AbilityPtr(std::make_shared<Ab_WaterBolt>());
@@ -104,6 +105,7 @@ AuraPtr Factory::CreateAura(AuraID id) {
 	case AuraID::Spellpower:							return AuraPtr(std::make_shared<Au_Spellpower>());
 	case AuraID::Tempest:								return AuraPtr(std::make_shared<Au_Tempest>());
 	case AuraID::TerrifyingHowl:						return AuraPtr(std::make_shared<Au_TerrifyingHowl>());
+	case AuraID::Trident:								return AuraPtr(std::make_shared<Au_Trident>());
 	case AuraID::Venom:									return AuraPtr(std::make_shared<Au_Venom>());
 
 	// Returns Venom if ID is invalid.

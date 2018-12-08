@@ -29,5 +29,6 @@ enum class AuraID {
 	Spellpower,
 	Tempest,
 	TerrifyingHowl,
+	Trident,
 	Venom
 };
